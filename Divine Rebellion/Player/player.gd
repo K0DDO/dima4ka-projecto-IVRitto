@@ -7,7 +7,7 @@ func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
 
-func updateAnimation():
+
 	
 func _physics_process(delta):
 	handleInput()

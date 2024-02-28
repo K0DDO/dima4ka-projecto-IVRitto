@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://Player/player.gd" id="1_u5ep8"]
 [ext_resource type="Texture2D" uid="uid://w4w06m6573lh" path="res://Art/body10.png" id="2_fvxog"]
 
+[sub_resource type="Animation" id="Animation_kwujp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(4, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_sn4lo"]
 resource_name = "walk_down"
 length = 0.6
@@ -19,39 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.999999),
 "update": 1,
 "values": [Vector2i(4, 0), Vector2i(5, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kwujp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(4, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_46rnk"]
-resource_name = "walk_up"
-length = 0.6
-loop_mode = 1
-step = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 0.999999),
-"update": 1,
-"values": [Vector2i(6, 0), Vector2i(7, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_spea3"]
@@ -90,6 +72,24 @@ tracks/0/keys = {
 "values": [Vector2i(12, 0), Vector2i(15, 0), Vector2i(14, 0), Vector2i(13, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_46rnk"]
+resource_name = "walk_up"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0.999999),
+"update": 1,
+"values": [Vector2i(6, 0), Vector2i(7, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twyci"]
 _data = {
 "RESET": SubResource("Animation_kwujp"),
@@ -102,7 +102,6 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_u5ep8")
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
