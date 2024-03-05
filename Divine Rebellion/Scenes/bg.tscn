@@ -1,0 +1,131 @@
+[gd_scene load_steps=19 format=3 uid="uid://cjc4nayp1cbpw"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_1y2ea"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="2_2x6va"]
+[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="2_nqwbj"]
+[ext_resource type="Script" path="res://Scripts/BGTreesScript.gd" id="2_old3n"]
+[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="4_ewagd"]
+[ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="4_fk347"]
+[ext_resource type="Script" path="res://Scripts/TreesAndLakeScript.gd" id="4_gyunt"]
+[ext_resource type="Script" path="res://Scripts/MountainsScript.gd" id="4_vto1f"]
+[ext_resource type="Texture2D" uid="uid://dgpqasfcbfvap" path="res://Art/Tech/Menu/name.png" id="9_hy4ky"]
+[ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="10_wibdf"]
+[ext_resource type="Texture2D" uid="uid://c8joga3phslxc" path="res://Art/Tech/Menu/buttons menu.png" id="11_dm20w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1uge"]
+atlas = ExtResource("1_1y2ea")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgui5"]
+atlas = ExtResource("1_1y2ea")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw0xr"]
+atlas = ExtResource("2_2x6va")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcbpl"]
+atlas = ExtResource("1_1y2ea")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67jw7"]
+atlas = ExtResource("1_1y2ea")
+region = Rect2(480, -1, 480, 541)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwpb5"]
+atlas = ExtResource("1_1y2ea")
+region = Rect2(0, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxaix"]
+atlas = ExtResource("11_dm20w")
+region = Rect2(756, 0, 63, 51)
+
+[node name="BG" type="Node2D"]
+position = Vector2(240, 270)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="ParallaxBackground/Sun"]
+texture = SubResource("AtlasTexture_k1uge")
+
+[node name="BG Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="ParallaxBackground/BG Trees"]
+texture = SubResource("AtlasTexture_wgui5")
+script = ExtResource("2_old3n")
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("2_nqwbj")
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_xw0xr")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxBackground/Mountains"]
+texture = SubResource("AtlasTexture_mcbpl")
+script = ExtResource("4_vto1f")
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Trees And Lake" type="Sprite2D" parent="ParallaxBackground/Trees And Lake"]
+position = Vector2(0, 1)
+texture = SubResource("AtlasTexture_67jw7")
+script = ExtResource("4_gyunt")
+
+[node name="Earth" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="Sprite2D" parent="ParallaxBackground/Earth"]
+texture = SubResource("AtlasTexture_qwpb5")
+script = ExtResource("4_fk347")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 77)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("4_ewagd")
+
+[node name="Name" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5, -204)
+texture = ExtResource("9_hy4ky")
+
+[node name="Menu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -78.5)
+texture = ExtResource("10_wibdf")
+
+[node name="StartButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -105)
+texture = SubResource("AtlasTexture_xxaix")
+
+[node name="SettingsButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, -105)
+texture = SubResource("AtlasTexture_xxaix")
+
+[node name="ExitButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -55)
+texture = SubResource("AtlasTexture_xxaix")
+
+[node name="AboutUsButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, -55)
+texture = SubResource("AtlasTexture_xxaix")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://suhm5pka78jv"]
+
+[ext_resource type="Texture2D" uid="uid://c8joga3phslxc" path="res://Art/Tech/Menu/buttons menu.png" id="1_f3xbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vw0q"]
+atlas = ExtResource("1_f3xbg")
+region = Rect2(0, 0, 63, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwb2r"]
+atlas = ExtResource("1_f3xbg")
+region = Rect2(63, 0, 63, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgapp"]
+atlas = ExtResource("1_f3xbg")
+region = Rect2(126, 0, 63, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y60g"]
+atlas = ExtResource("1_f3xbg")
+region = Rect2(189, 0, 63, 51)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_545x4"]
+resource_local_to_scene = true
+frames = 3
+frame_0/texture = SubResource("AtlasTexture_kwb2r")
+frame_1/texture = SubResource("AtlasTexture_fgapp")
+frame_1/duration = 1.0
+frame_2/texture = SubResource("AtlasTexture_7y60g")
+frame_2/duration = 1.0
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_0vw0q")
+texture_hover = SubResource("AnimatedTexture_545x4")
