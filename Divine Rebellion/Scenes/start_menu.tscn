@@ -150,12 +150,11 @@ texture = SubResource("AtlasTexture_xxaix")
 script = ExtResource("14_eukaq")
 
 [node name="StartTimerF" type="Timer" parent="StartButton"]
-wait_time = 14.75
+wait_time = 14.5
 one_shot = true
 autostart = true
 
 [node name="StartTimerT" type="Timer" parent="StartButton"]
-wait_time = 1.25
 one_shot = true
 
 [node name="SettingsButton" type="Sprite2D" parent="."]
@@ -165,12 +164,11 @@ texture = SubResource("AtlasTexture_d6tky")
 script = ExtResource("15_ycbmi")
 
 [node name="SettingsTimerF" type="Timer" parent="SettingsButton"]
-wait_time = 15.0
+wait_time = 14.5
 one_shot = true
 autostart = true
 
 [node name="SettingsTimerT" type="Timer" parent="SettingsButton"]
-wait_time = 1.5
 one_shot = true
 
 [node name="ExitButton" type="Sprite2D" parent="."]
@@ -180,12 +178,11 @@ texture = SubResource("AtlasTexture_oqijo")
 script = ExtResource("16_cssa6")
 
 [node name="ExitTimerF" type="Timer" parent="ExitButton"]
-wait_time = 15.25
+wait_time = 14.5
 one_shot = true
 autostart = true
 
 [node name="ExitTimerT" type="Timer" parent="ExitButton"]
-wait_time = 1.75
 one_shot = true
 
 [node name="AboutUsButton" type="Sprite2D" parent="."]
@@ -195,12 +192,11 @@ texture = SubResource("AtlasTexture_kstkl")
 script = ExtResource("17_vuiho")
 
 [node name="AboutUsTimerF" type="Timer" parent="AboutUsButton"]
-wait_time = 15.5
+wait_time = 14.5
 one_shot = true
 autostart = true
 
 [node name="AboutUsTimerT" type="Timer" parent="AboutUsButton"]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="Name/NameTimer" to="Name" method="_on_timer_timeout"]
