@@ -6,4 +6,4 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		position.y = 16.5
+		position.y = 16

@@ -1,36 +1,216 @@
-[gd_scene load_steps=7 format=3 uid="uid://suhm5pka78jv"]
+[gd_scene load_steps=28 format=3 uid="uid://cjc4nayp1cbpw"]
 
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_15lfv"]
 [ext_resource type="Texture2D" uid="uid://c8joga3phslxc" path="res://Art/Tech/Menu/buttons menu.png" id="1_f3xbg"]
+[ext_resource type="Script" path="res://Scripts/BGTreesScript.gd" id="2_kafp3"]
+[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_ytglg"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_loiqn"]
+[ext_resource type="Script" path="res://Scripts/MountainsScript.gd" id="5_nvm7e"]
+[ext_resource type="Script" path="res://Scripts/TreesAndLakeScript.gd" id="6_pkdvv"]
+[ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="7_ewsd6"]
+[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="8_6o8y0"]
+[ext_resource type="Texture2D" uid="uid://dgpqasfcbfvap" path="res://Art/Tech/Menu/name.png" id="9_y2c6f"]
+[ext_resource type="Script" path="res://Scripts/NameScript.gd" id="10_4xic8"]
+[ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="11_q28w0"]
+[ext_resource type="Script" path="res://Scripts/MenuScript.gd" id="12_tt4gy"]
+[ext_resource type="Script" path="res://Scenes/StartButtonSprite.gd" id="14_eukaq"]
+[ext_resource type="Script" path="res://Scenes/SettingsButtonScript.gd" id="15_ycbmi"]
+[ext_resource type="Script" path="res://Scenes/ExitButtonScript.gd" id="16_cssa6"]
+[ext_resource type="Script" path="res://Scenes/AboutUsButtonScript.gd" id="17_vuiho"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0vw0q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1uge"]
+atlas = ExtResource("1_15lfv")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgui5"]
+atlas = ExtResource("1_15lfv")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw0xr"]
+atlas = ExtResource("4_loiqn")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcbpl"]
+atlas = ExtResource("1_15lfv")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67jw7"]
+atlas = ExtResource("1_15lfv")
+region = Rect2(480, -1, 480, 541)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwpb5"]
+atlas = ExtResource("1_15lfv")
+region = Rect2(0, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxaix"]
 atlas = ExtResource("1_f3xbg")
 region = Rect2(0, 0, 63, 51)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwb2r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6tky"]
 atlas = ExtResource("1_f3xbg")
-region = Rect2(63, 0, 63, 51)
+region = Rect2(378, 0, 63, 51)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fgapp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqijo"]
 atlas = ExtResource("1_f3xbg")
-region = Rect2(126, 0, 63, 51)
+region = Rect2(756, 0, 63, 51)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7y60g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kstkl"]
 atlas = ExtResource("1_f3xbg")
-region = Rect2(189, 0, 63, 51)
+region = Rect2(1134, 0, 63, 51)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_545x4"]
-resource_local_to_scene = true
-frames = 3
-frame_0/texture = SubResource("AtlasTexture_kwb2r")
-frame_1/texture = SubResource("AtlasTexture_fgapp")
-frame_1/duration = 1.0
-frame_2/texture = SubResource("AtlasTexture_7y60g")
-frame_2/duration = 1.0
+[node name="Node2D" type="Node2D"]
+position = Vector2(240, 270)
 
-[node name="StartMenu" type="Node2D"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = SubResource("AtlasTexture_0vw0q")
-texture_hover = SubResource("AnimatedTexture_545x4")
+[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="ParallaxBackground/Sun"]
+texture = SubResource("AtlasTexture_k1uge")
+
+[node name="BG Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="ParallaxBackground/BG Trees"]
+texture = SubResource("AtlasTexture_wgui5")
+script = ExtResource("2_kafp3")
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("3_ytglg")
+
+[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_xw0xr")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxBackground/Mountains"]
+texture = SubResource("AtlasTexture_mcbpl")
+script = ExtResource("5_nvm7e")
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Trees And Lake" type="Sprite2D" parent="ParallaxBackground/Trees And Lake"]
+position = Vector2(0, 1)
+texture = SubResource("AtlasTexture_67jw7")
+script = ExtResource("6_pkdvv")
+
+[node name="Earth" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="Sprite2D" parent="ParallaxBackground/Earth"]
+texture = SubResource("AtlasTexture_qwpb5")
+script = ExtResource("7_ewsd6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 77)
+zoom = Vector2(0.5, 0.5)
+drag_top_margin = 0.29
+script = ExtResource("8_6o8y0")
+
+[node name="Name" type="Sprite2D" parent="."]
+position = Vector2(0, -324)
+texture = ExtResource("9_y2c6f")
+script = ExtResource("10_4xic8")
+
+[node name="NameTimer" type="Timer" parent="Name"]
+wait_time = 13.5
+one_shot = true
+autostart = true
+
+[node name="Menu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -78.5)
+texture = ExtResource("11_q28w0")
+script = ExtResource("12_tt4gy")
+
+[node name="MenuTimerF" type="Timer" parent="Menu"]
+wait_time = 14.5
+one_shot = true
+autostart = true
+
+[node name="MenuTimerT" type="Timer" parent="Menu"]
+one_shot = true
+
+[node name="StartButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -105)
+texture = SubResource("AtlasTexture_xxaix")
+script = ExtResource("14_eukaq")
+
+[node name="StartTimerF" type="Timer" parent="StartButton"]
+wait_time = 14.75
+one_shot = true
+autostart = true
+
+[node name="StartTimerT" type="Timer" parent="StartButton"]
+wait_time = 1.25
+one_shot = true
+
+[node name="SettingsButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, -105)
+texture = SubResource("AtlasTexture_d6tky")
+script = ExtResource("15_ycbmi")
+
+[node name="SettingsTimerF" type="Timer" parent="SettingsButton"]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="SettingsTimerT" type="Timer" parent="SettingsButton"]
+wait_time = 1.5
+one_shot = true
+
+[node name="ExitButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -55)
+texture = SubResource("AtlasTexture_oqijo")
+script = ExtResource("16_cssa6")
+
+[node name="ExitTimerF" type="Timer" parent="ExitButton"]
+wait_time = 15.25
+one_shot = true
+autostart = true
+
+[node name="ExitTimerT" type="Timer" parent="ExitButton"]
+wait_time = 1.75
+one_shot = true
+
+[node name="AboutUsButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, -55)
+texture = SubResource("AtlasTexture_kstkl")
+script = ExtResource("17_vuiho")
+
+[node name="AboutUsTimerF" type="Timer" parent="AboutUsButton"]
+wait_time = 15.5
+one_shot = true
+autostart = true
+
+[node name="AboutUsTimerT" type="Timer" parent="AboutUsButton"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Name/NameTimer" to="Name" method="_on_timer_timeout"]
+[connection signal="timeout" from="Menu/MenuTimerF" to="Menu" method="_on_menu_timer_timeout"]
+[connection signal="timeout" from="Menu/MenuTimerT" to="Menu" method="_on_menu_timer_t_timeout"]
+[connection signal="timeout" from="StartButton/StartTimerF" to="StartButton" method="_on_start_timer_f_timeout"]
+[connection signal="timeout" from="StartButton/StartTimerT" to="StartButton" method="_on_start_timer_t_timeout"]
+[connection signal="timeout" from="SettingsButton/SettingsTimerF" to="SettingsButton" method="_on_settings_timer_f_timeout"]
+[connection signal="timeout" from="SettingsButton/SettingsTimerT" to="SettingsButton" method="_on_settings_timer_t_timeout"]
+[connection signal="timeout" from="ExitButton/ExitTimerF" to="ExitButton" method="_on_exit_timer_f_timeout"]
+[connection signal="timeout" from="ExitButton/ExitTimerT" to="ExitButton" method="_on_exit_timer_t_timeout"]
+[connection signal="timeout" from="AboutUsButton/AboutUsTimerF" to="AboutUsButton" method="_on_about_us_timer_f_timeout"]
+[connection signal="timeout" from="AboutUsButton/AboutUsTimerT" to="AboutUsButton" method="_on_about_us_timer_t_timeout"]
