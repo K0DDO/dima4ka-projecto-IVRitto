@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cjc4nayp1cbpw"]
+[gd_scene load_steps=26 format=3 uid="uid://cjc4nayp1cbpw"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_15lfv"]
 [ext_resource type="Texture2D" uid="uid://c8joga3phslxc" path="res://Art/Tech/Menu/buttons menu.png" id="1_f3xbg"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="7_ewsd6"]
 [ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="8_6o8y0"]
 [ext_resource type="Texture2D" uid="uid://dgpqasfcbfvap" path="res://Art/Tech/Menu/name.png" id="9_y2c6f"]
-[ext_resource type="Script" path="res://Scripts/NameScript.gd" id="10_4xic8"]
 [ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="11_q28w0"]
 [ext_resource type="Script" path="res://Scripts/MenuScript.gd" id="12_tt4gy"]
 [ext_resource type="Script" path="res://Scenes/StartButtonSprite.gd" id="14_eukaq"]
@@ -41,10 +40,6 @@ region = Rect2(480, -1, 480, 541)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwpb5"]
 atlas = ExtResource("1_15lfv")
 region = Rect2(0, 0, 480, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxaix"]
-atlas = ExtResource("1_f3xbg")
-region = Rect2(0, 0, 63, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6tky"]
 atlas = ExtResource("1_f3xbg")
@@ -120,14 +115,8 @@ drag_top_margin = 0.29
 script = ExtResource("8_6o8y0")
 
 [node name="Name" type="Sprite2D" parent="."]
-position = Vector2(0, -324)
+position = Vector2(0, -204)
 texture = ExtResource("9_y2c6f")
-script = ExtResource("10_4xic8")
-
-[node name="NameTimer" type="Timer" parent="Name"]
-wait_time = 13.5
-one_shot = true
-autostart = true
 
 [node name="Menu" type="Sprite2D" parent="."]
 visible = false
@@ -136,26 +125,21 @@ texture = ExtResource("11_q28w0")
 script = ExtResource("12_tt4gy")
 
 [node name="MenuTimerF" type="Timer" parent="Menu"]
-wait_time = 14.5
+wait_time = 14.0
 one_shot = true
 autostart = true
-
-[node name="MenuTimerT" type="Timer" parent="Menu"]
-one_shot = true
 
 [node name="StartButton" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-35, -105)
-texture = SubResource("AtlasTexture_xxaix")
+texture = ExtResource("1_f3xbg")
+hframes = 24
 script = ExtResource("14_eukaq")
 
 [node name="StartTimerF" type="Timer" parent="StartButton"]
-wait_time = 14.5
+wait_time = 14.0
 one_shot = true
 autostart = true
-
-[node name="StartTimerT" type="Timer" parent="StartButton"]
-one_shot = true
 
 [node name="SettingsButton" type="Sprite2D" parent="."]
 visible = false
@@ -164,12 +148,9 @@ texture = SubResource("AtlasTexture_d6tky")
 script = ExtResource("15_ycbmi")
 
 [node name="SettingsTimerF" type="Timer" parent="SettingsButton"]
-wait_time = 14.5
+wait_time = 14.0
 one_shot = true
 autostart = true
-
-[node name="SettingsTimerT" type="Timer" parent="SettingsButton"]
-one_shot = true
 
 [node name="ExitButton" type="Sprite2D" parent="."]
 visible = false
@@ -178,12 +159,9 @@ texture = SubResource("AtlasTexture_oqijo")
 script = ExtResource("16_cssa6")
 
 [node name="ExitTimerF" type="Timer" parent="ExitButton"]
-wait_time = 14.5
+wait_time = 14.0
 one_shot = true
 autostart = true
-
-[node name="ExitTimerT" type="Timer" parent="ExitButton"]
-one_shot = true
 
 [node name="AboutUsButton" type="Sprite2D" parent="."]
 visible = false
@@ -192,21 +170,12 @@ texture = SubResource("AtlasTexture_kstkl")
 script = ExtResource("17_vuiho")
 
 [node name="AboutUsTimerF" type="Timer" parent="AboutUsButton"]
-wait_time = 14.5
+wait_time = 14.0
 one_shot = true
 autostart = true
 
-[node name="AboutUsTimerT" type="Timer" parent="AboutUsButton"]
-one_shot = true
-
-[connection signal="timeout" from="Name/NameTimer" to="Name" method="_on_timer_timeout"]
 [connection signal="timeout" from="Menu/MenuTimerF" to="Menu" method="_on_menu_timer_timeout"]
-[connection signal="timeout" from="Menu/MenuTimerT" to="Menu" method="_on_menu_timer_t_timeout"]
 [connection signal="timeout" from="StartButton/StartTimerF" to="StartButton" method="_on_start_timer_f_timeout"]
-[connection signal="timeout" from="StartButton/StartTimerT" to="StartButton" method="_on_start_timer_t_timeout"]
 [connection signal="timeout" from="SettingsButton/SettingsTimerF" to="SettingsButton" method="_on_settings_timer_f_timeout"]
-[connection signal="timeout" from="SettingsButton/SettingsTimerT" to="SettingsButton" method="_on_settings_timer_t_timeout"]
 [connection signal="timeout" from="ExitButton/ExitTimerF" to="ExitButton" method="_on_exit_timer_f_timeout"]
-[connection signal="timeout" from="ExitButton/ExitTimerT" to="ExitButton" method="_on_exit_timer_t_timeout"]
 [connection signal="timeout" from="AboutUsButton/AboutUsTimerF" to="AboutUsButton" method="_on_about_us_timer_f_timeout"]
-[connection signal="timeout" from="AboutUsButton/AboutUsTimerT" to="AboutUsButton" method="_on_about_us_timer_t_timeout"]

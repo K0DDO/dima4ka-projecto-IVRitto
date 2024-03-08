@@ -12,11 +12,11 @@ func _input(event):
 	if is_pressed == false:
 		if event is InputEventMouseButton:
 			is_pressed = true
-			set_acceleration_up(Vector2(0, 0.1))
-			set_acceleration_down(Vector2(0, 0.4))
+			set_acceleration_up(Vector2(0, 0.02))
+			set_acceleration_down(Vector2(0, 0.08))
 
 func _process(delta):
-	if position.y <= -231:
+	if position.y <= -221:
 		position += speed * delta * 60
 		speed += acceleration_up * delta * 60
 	elif position.y <= -204:
@@ -34,5 +34,5 @@ func set_speed(new_speed : Vector2):
 
 func _on_timer_timeout():
 	if is_pressed == false:
-		set_acceleration_up(Vector2(0, 0.1))
-		set_acceleration_down(Vector2(0, 0.4))
+		set_acceleration_up(Vector2(0, 0.01))
+		set_acceleration_down(Vector2(0, 0.04))

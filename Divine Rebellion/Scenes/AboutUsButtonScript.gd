@@ -6,20 +6,9 @@ func _input(event):
 	if is_pressed == false:
 		if event is InputEventMouseButton:
 			is_pressed = true
-			$AboutUsTimerT.start()
-
-func _ready():
-	pass
-
-func _process(delta):
-	pass
+			visible = not visible
 
 func _on_about_us_timer_f_timeout():
 	if is_pressed == false:
 		visible = not visible
 		is_pressed = true
-
-
-func _on_about_us_timer_t_timeout():
-	if is_pressed == true:
-		visible = not visible
