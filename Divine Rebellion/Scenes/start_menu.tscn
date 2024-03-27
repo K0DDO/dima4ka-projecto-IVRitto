@@ -1,76 +1,34 @@
-[gd_scene load_steps=43 format=3 uid="uid://cjc4nayp1cbpw"]
+[gd_scene load_steps=21 format=3 uid="uid://bfc18rm2lpdqp"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_15lfv"]
-[ext_resource type="Texture2D" uid="uid://4hj3qsj84ipg" path="res://Art/Tech/Menu/buttons menu.png" id="1_f3xbg"]
-[ext_resource type="Script" path="res://Scripts/BGTreesScript.gd" id="2_kafp3"]
+[ext_resource type="Texture2D" uid="uid://ciyapp3o28d4p" path="res://Art/Tech/new game_load game.png" id="1_a63rn"]
+[ext_resource type="Script" path="res://Scripts/LoadGameScript.gd" id="2_je2w2"]
 [ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_ytglg"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_loiqn"]
-[ext_resource type="Script" path="res://Scripts/MountainsScript.gd" id="5_nvm7e"]
-[ext_resource type="Script" path="res://Scripts/TreesAndLakeScript.gd" id="6_pkdvv"]
-[ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="7_ewsd6"]
-[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="8_6o8y0"]
-[ext_resource type="Texture2D" uid="uid://dgpqasfcbfvap" path="res://Art/Tech/Menu/name.png" id="9_y2c6f"]
-[ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="11_q28w0"]
-[ext_resource type="Script" path="res://Scripts/MenuScript.gd" id="12_tt4gy"]
-[ext_resource type="Script" path="res://Scenes/StartButtonSprite.gd" id="14_eukaq"]
-[ext_resource type="Script" path="res://Scenes/SettingsButtonScript.gd" id="15_ycbmi"]
-[ext_resource type="Script" path="res://Scenes/ExitButtonScript.gd" id="16_cssa6"]
-[ext_resource type="Script" path="res://Scenes/AboutUsButtonScript.gd" id="17_vuiho"]
+[ext_resource type="Script" path="res://Scripts/NewGameButtonScript.gd" id="5_vu60a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1uge"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh8vy"]
 atlas = ExtResource("1_15lfv")
 region = Rect2(1920, 0, 480, 540)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wgui5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt7od"]
 atlas = ExtResource("1_15lfv")
 region = Rect2(1440, 0, 480, 540)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw0xr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkxai"]
 atlas = ExtResource("4_loiqn")
 region = Rect2(0, 0, 960, 270)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcbpl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2okb"]
 atlas = ExtResource("1_15lfv")
 region = Rect2(960, 0, 480, 540)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_67jw7"]
-atlas = ExtResource("1_15lfv")
-region = Rect2(480, -1, 480, 541)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwpb5"]
-atlas = ExtResource("1_15lfv")
-region = Rect2(0, 0, 480, 540)
-
-[sub_resource type="Animation" id="Animation_rfhsv"]
+[sub_resource type="Animation" id="Animation_5g3bb"]
 length = 0.001
-
-[sub_resource type="Animation" id="Animation_f05nl"]
-resource_name = "focused"
-length = 0.5
-loop_mode = 1
-step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../StartButton/Start:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_o32us"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../StartButton/Start:frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,37 +38,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_mj88p"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../StartButton/Start:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5jbs"]
-_data = {
-"RESET": SubResource("Animation_rfhsv"),
-"focused": SubResource("Animation_f05nl"),
-"idle": SubResource("Animation_o32us"),
-"pressed": SubResource("Animation_mj88p")
-}
-
-[sub_resource type="Animation" id="Animation_5dn0l"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_2ffsk"]
+[sub_resource type="Animation" id="Animation_hkko8"]
 resource_name = "focused"
 length = 0.5
-loop_mode = 1
 step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -122,10 +52,83 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [11]
+"values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_yv56a"]
+[sub_resource type="Animation" id="Animation_dq8bd"]
+resource_name = "idle"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gx6s7"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vb3pf"]
+_data = {
+"RESET": SubResource("Animation_5g3bb"),
+"focused": SubResource("Animation_hkko8"),
+"idle": SubResource("Animation_dq8bd"),
+"pressed": SubResource("Animation_gx6s7")
+}
+
+[sub_resource type="Animation" id="Animation_8xl8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_f0it7"]
+resource_name = "focused"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_g1ptb"]
 resource_name = "idle"
 length = 0.5
 loop_mode = 1
@@ -140,73 +143,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9]
+"values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_3pkgp"]
-resource_name = "pressed"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [10, 11]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca440"]
-_data = {
-"RESET": SubResource("Animation_5dn0l"),
-"focused": SubResource("Animation_2ffsk"),
-"idle": SubResource("Animation_yv56a"),
-"pressed": SubResource("Animation_3pkgp")
-}
-
-[sub_resource type="Animation" id="Animation_inumx"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_0q785"]
-resource_name = "focused"
-length = 0.5
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_00362"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
-[sub_resource type="Animation" id="Animation_hxtwj"]
+[sub_resource type="Animation" id="Animation_32sg1"]
 resource_name = "pressed"
 length = 0.2
 tracks/0/type = "value"
@@ -219,271 +159,135 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7, 8]
+"values": [2, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0wfo"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h02fa"]
 _data = {
-"RESET": SubResource("Animation_inumx"),
-"focused": SubResource("Animation_0q785"),
-"idle": SubResource("Animation_00362"),
-"pressed": SubResource("Animation_hxtwj")
+"RESET": SubResource("Animation_8xl8a"),
+"focused": SubResource("Animation_f0it7"),
+"idle": SubResource("Animation_g1ptb"),
+"pressed": SubResource("Animation_32sg1")
 }
 
-[sub_resource type="Animation" id="Animation_81318"]
-length = 0.001
+[node name="Start" type="Node2D"]
 
-[sub_resource type="Animation" id="Animation_vusde"]
-resource_name = "focused"
-length = 0.5
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [5]
-}
+[node name="Camera and BG" type="Node2D" parent="."]
 
-[sub_resource type="Animation" id="Animation_l86gr"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
 
-[sub_resource type="Animation" id="Animation_8fhpq"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpvme"]
-_data = {
-"RESET": SubResource("Animation_81318"),
-"focused": SubResource("Animation_vusde"),
-"idle": SubResource("Animation_l86gr"),
-"pressed": SubResource("Animation_8fhpq")
-}
-
-[node name="Node2D" type="Node2D"]
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_qh8vy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 297)
 
-[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
-[node name="Sun" type="Sprite2D" parent="ParallaxBackground/Sun"]
-texture = SubResource("AtlasTexture_k1uge")
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_jt7od")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 300)
 
-[node name="BG Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(240, 270)
-
-[node name="BG Trees" type="Sprite2D" parent="ParallaxBackground/BG Trees"]
-texture = SubResource("AtlasTexture_wgui5")
-script = ExtResource("2_kafp3")
-
-[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(240, 270)
 motion_mirroring = Vector2(980, 0)
 script = ExtResource("3_ytglg")
 
-[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(213, -156)
-texture = SubResource("AtlasTexture_xw0xr")
+texture = SubResource("AtlasTexture_rkxai")
 region_enabled = true
 region_rect = Rect2(0, 0, 1431, 270)
 
-[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
-[node name="Mountains" type="Sprite2D" parent="ParallaxBackground/Mountains"]
-texture = SubResource("AtlasTexture_mcbpl")
-script = ExtResource("5_nvm7e")
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_h2okb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 295)
 
-[node name="Trees And Lake" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
-[node name="Trees And Lake" type="Sprite2D" parent="ParallaxBackground/Trees And Lake"]
-position = Vector2(0, 1)
-texture = SubResource("AtlasTexture_67jw7")
-script = ExtResource("6_pkdvv")
-
-[node name="Earth" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
-[node name="Earth" type="Sprite2D" parent="ParallaxBackground/Earth"]
-texture = SubResource("AtlasTexture_qwpb5")
-script = ExtResource("7_ewsd6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 77)
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(240, 160)
 zoom = Vector2(0.5, 0.5)
 drag_top_margin = 0.29
-script = ExtResource("8_6o8y0")
 
-[node name="Name" type="Sprite2D" parent="."]
-position = Vector2(0, -204)
-texture = ExtResource("9_y2c6f")
+[node name="NewGameButton" type="TextureButton" parent="."]
+offset_left = 165.0
+offset_top = 158.0
+offset_right = 230.0
+offset_bottom = 200.0
 
-[node name="Menu" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(4, -78.5)
-texture = ExtResource("11_q28w0")
-script = ExtResource("12_tt4gy")
+[node name="NewGame" type="Sprite2D" parent="NewGameButton"]
+texture = ExtResource("1_a63rn")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 195, 43)
+script = ExtResource("5_vu60a")
 
-[node name="MenuTimerF" type="Timer" parent="Menu"]
-wait_time = 13.5
+[node name="NewGameButtonAnimation" type="AnimationPlayer" parent="NewGameButton/NewGame"]
+libraries = {
+"": SubResource("AnimationLibrary_vb3pf")
+}
+
+[node name="Timer" type="Timer" parent="NewGameButton/NewGame"]
+wait_time = 0.2
 one_shot = true
-autostart = true
 
-[node name="StartButton" type="TextureButton" parent="."]
-offset_left = -63.0
-offset_top = -128.0
-offset_right = -4.0
-offset_bottom = -83.0
+[node name="LoadGameButton" type="TextureButton" parent="."]
+offset_left = 256.0
+offset_top = 158.0
+offset_right = 321.0
+offset_bottom = 200.0
 
-[node name="Start" type="Sprite2D" parent="StartButton"]
-visible = false
-position = Vector2(28, 23)
-texture = ExtResource("1_f3xbg")
-hframes = 12
+[node name="LoadGame" type="Sprite2D" parent="LoadGameButton"]
+texture = ExtResource("1_a63rn")
+centered = false
+hframes = 3
 frame = 2
-script = ExtResource("14_eukaq")
+region_enabled = true
+region_rect = Rect2(195, 0, 195, 43)
+script = ExtResource("2_je2w2")
 
-[node name="StartButtonAnimation" type="AnimationPlayer" parent="StartButton/Start"]
-root_node = NodePath("../../../SettingsButton/Settings")
+[node name="LoadGameButtonAnimation" type="AnimationPlayer" parent="LoadGameButton/LoadGame"]
 libraries = {
-"": SubResource("AnimationLibrary_n5jbs")
+"": SubResource("AnimationLibrary_h02fa")
 }
 
-[node name="StartTimerF" type="Timer" parent="StartButton/Start"]
-wait_time = 13.5
+[node name="Timer" type="Timer" parent="LoadGameButton/LoadGame"]
+wait_time = 0.2
 one_shot = true
-autostart = true
 
-[node name="AboutUsButton" type="TextureButton" parent="."]
-offset_left = 11.0
-offset_top = -80.0
-offset_right = 72.0
-offset_bottom = -32.0
-
-[node name="AboutUs" type="Sprite2D" parent="AboutUsButton"]
-visible = false
-position = Vector2(29, 25)
-texture = ExtResource("1_f3xbg")
-hframes = 12
-frame = 11
-script = ExtResource("17_vuiho")
-
-[node name="AboutUsButtonAnimation" type="AnimationPlayer" parent="AboutUsButton/AboutUs"]
-libraries = {
-"": SubResource("AnimationLibrary_ca440")
-}
-
-[node name="AboutUsTimerF" type="Timer" parent="AboutUsButton/AboutUs"]
-wait_time = 13.5
-one_shot = true
-autostart = true
-
-[node name="ExitButton" type="TextureButton" parent="."]
-offset_left = -64.0
-offset_top = -80.0
-offset_right = -3.0
-offset_bottom = -32.0
-
-[node name="Exit" type="Sprite2D" parent="ExitButton"]
-visible = false
-position = Vector2(29, 25)
-texture = ExtResource("1_f3xbg")
-hframes = 12
-frame = 7
-script = ExtResource("16_cssa6")
-
-[node name="ExitButtonAnimation" type="AnimationPlayer" parent="ExitButton/Exit"]
-libraries = {
-"": SubResource("AnimationLibrary_t0wfo")
-}
-
-[node name="ExitTimerF" type="Timer" parent="ExitButton/Exit"]
-wait_time = 13.5
-one_shot = true
-autostart = true
-
-[node name="SettingsButton" type="TextureButton" parent="."]
-offset_left = 12.0
-offset_top = -129.0
-offset_right = 71.0
-offset_bottom = -83.0
-
-[node name="Settings" type="Sprite2D" parent="SettingsButton"]
-visible = false
-position = Vector2(28, 24)
-texture = ExtResource("1_f3xbg")
-hframes = 12
-frame = 10
-script = ExtResource("15_ycbmi")
-
-[node name="SettingsButtonAnimation" type="AnimationPlayer" parent="SettingsButton/Settings"]
-libraries = {
-"": SubResource("AnimationLibrary_tpvme")
-}
-
-[node name="SettingsTimerF" type="Timer" parent="SettingsButton/Settings"]
-wait_time = 13.5
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Menu/MenuTimerF" to="Menu" method="_on_menu_timer_timeout"]
-[connection signal="mouse_entered" from="StartButton" to="StartButton/Start" method="_on_start_button_mouse_entered"]
-[connection signal="mouse_exited" from="StartButton" to="StartButton/Start" method="_on_start_button_mouse_exited"]
-[connection signal="pressed" from="StartButton" to="StartButton/Start" method="_on_start_button_pressed"]
-[connection signal="ready" from="StartButton/Start" to="StartButton/Start" method="_on_ready"]
-[connection signal="timeout" from="StartButton/Start/StartTimerF" to="StartButton/Start" method="_on_start_timer_f_timeout"]
-[connection signal="mouse_entered" from="AboutUsButton" to="AboutUsButton/AboutUs" method="_on_about_us_button_mouse_entered"]
-[connection signal="mouse_exited" from="AboutUsButton" to="AboutUsButton/AboutUs" method="_on_about_us_button_mouse_exited"]
-[connection signal="pressed" from="AboutUsButton" to="AboutUsButton/AboutUs" method="_on_about_us_button_pressed"]
-[connection signal="ready" from="AboutUsButton/AboutUs" to="AboutUsButton/AboutUs" method="_on_ready"]
-[connection signal="timeout" from="AboutUsButton/AboutUs/AboutUsTimerF" to="AboutUsButton/AboutUs" method="_on_about_us_timer_f_timeout"]
-[connection signal="mouse_entered" from="ExitButton" to="ExitButton/Exit" method="_on_exit_button_mouse_entered"]
-[connection signal="mouse_exited" from="ExitButton" to="ExitButton/Exit" method="_on_exit_button_mouse_exited"]
-[connection signal="pressed" from="ExitButton" to="ExitButton/Exit" method="_on_exit_button_pressed"]
-[connection signal="ready" from="ExitButton/Exit" to="ExitButton/Exit" method="_on_ready"]
-[connection signal="timeout" from="ExitButton/Exit/ExitTimerF" to="ExitButton/Exit" method="_on_exit_timer_f_timeout"]
-[connection signal="mouse_entered" from="SettingsButton" to="SettingsButton/Settings" method="_on_settings_button_mouse_entered"]
-[connection signal="mouse_exited" from="SettingsButton" to="SettingsButton/Settings" method="_on_settings_button_mouse_exited"]
-[connection signal="pressed" from="SettingsButton" to="SettingsButton/Settings" method="_on_settings_button_pressed"]
-[connection signal="ready" from="SettingsButton/Settings" to="SettingsButton/Settings" method="_on_ready"]
-[connection signal="timeout" from="SettingsButton/Settings/SettingsTimerF" to="SettingsButton/Settings" method="_on_settings_timer_f_timeout"]
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="mouse_entered" from="NewGameButton" to="NewGameButton/NewGame" method="_on_new_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="NewGameButton" to="NewGameButton/NewGame" method="_on_new_game_button_mouse_exited"]
+[connection signal="pressed" from="NewGameButton" to="NewGameButton/NewGame" method="_on_new_game_button_pressed"]
+[connection signal="ready" from="NewGameButton/NewGame" to="NewGameButton/NewGame" method="_on_ready"]
+[connection signal="timeout" from="NewGameButton/NewGame/Timer" to="NewGameButton/NewGame" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="LoadGameButton" to="LoadGameButton/LoadGame" method="_on_load_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="LoadGameButton" to="LoadGameButton/LoadGame" method="_on_load_game_button_mouse_exited"]
+[connection signal="pressed" from="LoadGameButton" to="LoadGameButton/LoadGame" method="_on_load_game_button_pressed"]
+[connection signal="ready" from="LoadGameButton/LoadGame" to="LoadGameButton/LoadGame" method="_on_ready"]
+[connection signal="timeout" from="LoadGameButton/LoadGame/Timer" to="LoadGameButton/LoadGame" method="_on_timer_timeout"]

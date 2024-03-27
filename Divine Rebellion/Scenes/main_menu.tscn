@@ -1,0 +1,477 @@
+[gd_scene load_steps=35 format=3 uid="uid://cjc4nayp1cbpw"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_d2oif"]
+[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_fer1c"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_xryea"]
+[ext_resource type="Texture2D" uid="uid://f7uxmwrxsksu" path="res://Art/Tech/Menu/name.png" id="9_qab7c"]
+[ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="10_2deki"]
+[ext_resource type="Texture2D" uid="uid://4hj3qsj84ipg" path="res://Art/Tech/Menu/buttons menu.png" id="12_ucan5"]
+[ext_resource type="Script" path="res://Scripts/StartButtonSprite.gd" id="13_nv115"]
+[ext_resource type="Script" path="res://Scripts/AboutUsButtonScript.gd" id="14_wou2c"]
+[ext_resource type="Script" path="res://Scripts/ExitButtonScript.gd" id="15_q11gt"]
+[ext_resource type="Script" path="res://Scripts/SettingsButtonScript.gd" id="16_3tsqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ic3m"]
+atlas = ExtResource("1_d2oif")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0051l"]
+atlas = ExtResource("1_d2oif")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k15e"]
+atlas = ExtResource("4_xryea")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og8vy"]
+atlas = ExtResource("1_d2oif")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="Animation" id="Animation_rfhsv"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_f05nl"]
+resource_name = "focused"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../StartButton/Start:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_o32us"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../StartButton/Start:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mj88p"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../StartButton/Start:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5jbs"]
+_data = {
+"RESET": SubResource("Animation_rfhsv"),
+"focused": SubResource("Animation_f05nl"),
+"idle": SubResource("Animation_o32us"),
+"pressed": SubResource("Animation_mj88p")
+}
+
+[sub_resource type="Animation" id="Animation_5dn0l"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_2ffsk"]
+resource_name = "focused"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_yv56a"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_3pkgp"]
+resource_name = "pressed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca440"]
+_data = {
+"RESET": SubResource("Animation_5dn0l"),
+"focused": SubResource("Animation_2ffsk"),
+"idle": SubResource("Animation_yv56a"),
+"pressed": SubResource("Animation_3pkgp")
+}
+
+[sub_resource type="Animation" id="Animation_inumx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_0q785"]
+resource_name = "focused"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_00362"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_hxtwj"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0wfo"]
+_data = {
+"RESET": SubResource("Animation_inumx"),
+"focused": SubResource("Animation_0q785"),
+"idle": SubResource("Animation_00362"),
+"pressed": SubResource("Animation_hxtwj")
+}
+
+[sub_resource type="Animation" id="Animation_81318"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vusde"]
+resource_name = "focused"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_l86gr"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_8fhpq"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpvme"]
+_data = {
+"RESET": SubResource("Animation_81318"),
+"focused": SubResource("Animation_vusde"),
+"idle": SubResource("Animation_l86gr"),
+"pressed": SubResource("Animation_8fhpq")
+}
+
+[node name="Main" type="Node2D"]
+position = Vector2(240, 270)
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_1ic3m")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 294)
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_0051l")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 307)
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("3_fer1c")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_6k15e")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_og8vy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 306)
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(0, -110)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Name" type="Sprite2D" parent="."]
+position = Vector2(0, -200)
+texture = ExtResource("9_qab7c")
+
+[node name="Main Menu" type="Node2D" parent="."]
+position = Vector2(0, 26)
+
+[node name="Menu" type="Sprite2D" parent="Main Menu"]
+position = Vector2(0, -81)
+texture = ExtResource("10_2deki")
+
+[node name="StartButton" type="TextureButton" parent="Main Menu"]
+offset_left = -67.5
+offset_top = -132.0
+offset_right = -7.5
+offset_bottom = -85.0
+
+[node name="Start" type="Sprite2D" parent="Main Menu/StartButton"]
+texture_filter = 1
+position = Vector2(29, 24.5)
+texture = ExtResource("12_ucan5")
+hframes = 12
+script = ExtResource("13_nv115")
+
+[node name="StartButtonAnimation" type="AnimationPlayer" parent="Main Menu/StartButton/Start"]
+root_node = NodePath("../../../SettingsButton/Settings")
+libraries = {
+"": SubResource("AnimationLibrary_n5jbs")
+}
+
+[node name="Timer" type="Timer" parent="Main Menu/StartButton/Start"]
+wait_time = 0.15
+one_shot = true
+
+[node name="AboutUsButton" type="TextureButton" parent="Main Menu"]
+offset_left = 7.5
+offset_top = -82.5
+offset_right = 67.5
+offset_bottom = -35.5
+
+[node name="AboutUs" type="Sprite2D" parent="Main Menu/AboutUsButton"]
+position = Vector2(28, 25.5)
+texture = ExtResource("12_ucan5")
+hframes = 12
+frame = 9
+script = ExtResource("14_wou2c")
+
+[node name="AboutUsButtonAnimation" type="AnimationPlayer" parent="Main Menu/AboutUsButton/AboutUs"]
+libraries = {
+"": SubResource("AnimationLibrary_ca440")
+}
+
+[node name="Timer" type="Timer" parent="Main Menu/AboutUsButton/AboutUs"]
+wait_time = 0.15
+one_shot = true
+
+[node name="ExitButton" type="TextureButton" parent="Main Menu"]
+offset_left = -67.5
+offset_top = -81.0
+offset_right = -7.5
+offset_bottom = -34.0
+
+[node name="Exit" type="Sprite2D" parent="Main Menu/ExitButton"]
+position = Vector2(29, 23.5)
+texture = ExtResource("12_ucan5")
+hframes = 12
+frame = 8
+script = ExtResource("15_q11gt")
+
+[node name="ExitButtonAnimation" type="AnimationPlayer" parent="Main Menu/ExitButton/Exit"]
+libraries = {
+"": SubResource("AnimationLibrary_t0wfo")
+}
+
+[node name="Timer" type="Timer" parent="Main Menu/ExitButton/Exit"]
+wait_time = 0.125
+one_shot = true
+
+[node name="SettingsButton" type="TextureButton" parent="Main Menu"]
+offset_left = 7.5
+offset_top = -131.0
+offset_right = 67.5
+offset_bottom = -84.0
+
+[node name="Settings" type="Sprite2D" parent="Main Menu/SettingsButton"]
+position = Vector2(28, 23.5)
+texture = ExtResource("12_ucan5")
+hframes = 12
+frame = 3
+script = ExtResource("16_3tsqa")
+
+[node name="SettingsButtonAnimation" type="AnimationPlayer" parent="Main Menu/SettingsButton/Settings"]
+libraries = {
+"": SubResource("AnimationLibrary_tpvme")
+}
+
+[node name="Timer" type="Timer" parent="Main Menu/SettingsButton/Settings"]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="mouse_entered" from="Main Menu/StartButton" to="Main Menu/StartButton/Start" method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="Main Menu/StartButton" to="Main Menu/StartButton/Start" method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="Main Menu/StartButton" to="Main Menu/StartButton/Start" method="_on_start_button_pressed"]
+[connection signal="ready" from="Main Menu/StartButton/Start" to="Main Menu/StartButton/Start" method="_on_ready"]
+[connection signal="timeout" from="Main Menu/StartButton/Start/Timer" to="Main Menu/StartButton/Start" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Main Menu/AboutUsButton" to="Main Menu/AboutUsButton/AboutUs" method="_on_about_us_button_mouse_entered"]
+[connection signal="mouse_exited" from="Main Menu/AboutUsButton" to="Main Menu/AboutUsButton/AboutUs" method="_on_about_us_button_mouse_exited"]
+[connection signal="pressed" from="Main Menu/AboutUsButton" to="Main Menu/AboutUsButton/AboutUs" method="_on_about_us_button_pressed"]
+[connection signal="ready" from="Main Menu/AboutUsButton/AboutUs" to="Main Menu/AboutUsButton/AboutUs" method="_on_ready"]
+[connection signal="timeout" from="Main Menu/AboutUsButton/AboutUs/Timer" to="Main Menu/AboutUsButton/AboutUs" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Main Menu/ExitButton" to="Main Menu/ExitButton/Exit" method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Main Menu/ExitButton" to="Main Menu/ExitButton/Exit" method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="Main Menu/ExitButton" to="Main Menu/ExitButton/Exit" method="_on_exit_button_pressed"]
+[connection signal="ready" from="Main Menu/ExitButton/Exit" to="Main Menu/ExitButton/Exit" method="_on_ready"]
+[connection signal="timeout" from="Main Menu/ExitButton/Exit/Timer" to="Main Menu/ExitButton/Exit" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Main Menu/SettingsButton" to="Main Menu/SettingsButton/Settings" method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="Main Menu/SettingsButton" to="Main Menu/SettingsButton/Settings" method="_on_settings_button_mouse_exited"]
+[connection signal="pressed" from="Main Menu/SettingsButton" to="Main Menu/SettingsButton/Settings" method="_on_settings_button_pressed"]
+[connection signal="ready" from="Main Menu/SettingsButton/Settings" to="Main Menu/SettingsButton/Settings" method="_on_ready"]
+[connection signal="timeout" from="Main Menu/SettingsButton/Settings/Timer" to="Main Menu/SettingsButton/Settings" method="_on_timer_timeout"]

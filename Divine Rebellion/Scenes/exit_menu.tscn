@@ -1,0 +1,306 @@
+[gd_scene load_steps=22 format=3 uid="uid://wutt2s1q5j3w"]
+
+[ext_resource type="Texture2D" uid="uid://dxx44k0ove1mr" path="res://Art/Tech/exit.png" id="1_no3by"]
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="2_wd7me"]
+[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_jmalv"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_1hhk0"]
+[ext_resource type="Script" path="res://Scripts/YesButtonScript.gd" id="5_qehiv"]
+[ext_resource type="Script" path="res://Scripts/NoButtonScript.gd" id="6_kj4wo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb1x1"]
+atlas = ExtResource("2_wd7me")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ja5"]
+atlas = ExtResource("2_wd7me")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq7gh"]
+atlas = ExtResource("4_1hhk0")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q8ns"]
+atlas = ExtResource("2_wd7me")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csgud"]
+atlas = ExtResource("1_no3by")
+region = Rect2(0, 0, 59, 6)
+
+[sub_resource type="Animation" id="Animation_n58aj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cqu8o"]
+resource_name = "focused"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_84ts4"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vmrto"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5xd8"]
+_data = {
+"RESET": SubResource("Animation_n58aj"),
+"focused": SubResource("Animation_cqu8o"),
+"idle": SubResource("Animation_84ts4"),
+"pressed": SubResource("Animation_vmrto")
+}
+
+[sub_resource type="Animation" id="Animation_8sehb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_60khq"]
+resource_name = "focused"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_1ia5f"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f5w3l"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jx2m"]
+_data = {
+"RESET": SubResource("Animation_8sehb"),
+"focused": SubResource("Animation_60khq"),
+"idle": SubResource("Animation_1ia5f"),
+"pressed": SubResource("Animation_f5w3l")
+}
+
+[node name="Exit" type="Node2D"]
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_kb1x1")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 288)
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_f2ja5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 309)
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("3_jmalv")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_pq7gh")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_4q8ns")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 304)
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 160)
+zoom = Vector2(0.5, 0.5)
+drag_top_margin = 0.29
+
+[node name="Exit Menu" type="Node2D" parent="."]
+
+[node name="AYS" type="Sprite2D" parent="Exit Menu"]
+position = Vector2(240, 130)
+texture = SubResource("AtlasTexture_csgud")
+
+[node name="YesButton" type="TextureButton" parent="Exit Menu"]
+offset_left = 165.0
+offset_top = 158.0
+offset_right = 225.0
+offset_bottom = 200.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes" type="Sprite2D" parent="Exit Menu/YesButton"]
+texture = ExtResource("1_no3by")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(59, 0, 180, 43)
+script = ExtResource("5_qehiv")
+
+[node name="YesButtonAnimation" type="AnimationPlayer" parent="Exit Menu/YesButton/Yes"]
+libraries = {
+"": SubResource("AnimationLibrary_s5xd8")
+}
+
+[node name="Timer" type="Timer" parent="Exit Menu/YesButton/Yes"]
+wait_time = 0.15
+one_shot = true
+
+[node name="NoButton" type="TextureButton" parent="Exit Menu"]
+offset_left = 256.0
+offset_top = 158.0
+offset_right = 316.0
+offset_bottom = 200.0
+metadata/_edit_use_anchors_ = true
+
+[node name="No" type="Sprite2D" parent="Exit Menu/NoButton"]
+texture = ExtResource("1_no3by")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(239, 0, 180, 43)
+script = ExtResource("6_kj4wo")
+
+[node name="NoButtonAnimation" type="AnimationPlayer" parent="Exit Menu/NoButton/No"]
+libraries = {
+"": SubResource("AnimationLibrary_7jx2m")
+}
+
+[node name="Timer" type="Timer" parent="Exit Menu/NoButton/No"]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="mouse_entered" from="Exit Menu/YesButton" to="Exit Menu/YesButton/Yes" method="_on_yes_button_mouse_entered"]
+[connection signal="mouse_exited" from="Exit Menu/YesButton" to="Exit Menu/YesButton/Yes" method="_on_yes_button_mouse_exited"]
+[connection signal="pressed" from="Exit Menu/YesButton" to="Exit Menu/YesButton/Yes" method="_on_yes_button_pressed"]
+[connection signal="ready" from="Exit Menu/YesButton/Yes" to="Exit Menu/YesButton/Yes" method="_on_ready"]
+[connection signal="timeout" from="Exit Menu/YesButton/Yes/Timer" to="Exit Menu/YesButton/Yes" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Exit Menu/NoButton" to="Exit Menu/NoButton/No" method="_on_no_button_mouse_entered"]
+[connection signal="mouse_exited" from="Exit Menu/NoButton" to="Exit Menu/NoButton/No" method="_on_no_button_mouse_exited"]
+[connection signal="pressed" from="Exit Menu/NoButton" to="Exit Menu/NoButton/No" method="_on_no_button_pressed"]
+[connection signal="ready" from="Exit Menu/NoButton/No" to="Exit Menu/NoButton/No" method="_on_ready"]
+[connection signal="timeout" from="Exit Menu/NoButton/No/Timer" to="Exit Menu/NoButton/No" method="_on_timer_timeout"]

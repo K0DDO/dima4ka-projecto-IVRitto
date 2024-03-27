@@ -1,0 +1,113 @@
+[gd_scene load_steps=17 format=3 uid="uid://dov3okl2daogb"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_p2p52"]
+[ext_resource type="Script" path="res://Scripts/BGTreesScript.gd" id="2_w5ug3"]
+[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_2arlj"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_4ucr0"]
+[ext_resource type="Script" path="res://Scripts/MountainsScript.gd" id="5_47w2c"]
+[ext_resource type="Script" path="res://Scripts/TreesAndLakeScript.gd" id="6_ue8rj"]
+[ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="7_r4k42"]
+[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="8_i6wea"]
+[ext_resource type="Texture2D" uid="uid://f7uxmwrxsksu" path="res://Art/Tech/Menu/name.png" id="9_mju17"]
+[ext_resource type="Script" path="res://Scripts/NameScript.gd" id="10_p5sq2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpxei"]
+atlas = ExtResource("1_p2p52")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j2uq"]
+atlas = ExtResource("1_p2p52")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvuck"]
+atlas = ExtResource("4_4ucr0")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfipi"]
+atlas = ExtResource("1_p2p52")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jvtu"]
+atlas = ExtResource("1_p2p52")
+region = Rect2(480, -1, 480, 541)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ios"]
+atlas = ExtResource("1_p2p52")
+region = Rect2(0, 0, 480, 540)
+
+[node name="Start Scene" type="Node2D"]
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+texture = SubResource("AtlasTexture_kpxei")
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+texture = SubResource("AtlasTexture_5j2uq")
+script = ExtResource("2_w5ug3")
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("3_2arlj")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_jvuck")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+texture = SubResource("AtlasTexture_qfipi")
+script = ExtResource("5_47w2c")
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Trees And Lake" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Trees And Lake"]
+position = Vector2(0, 1)
+texture = SubResource("AtlasTexture_4jvtu")
+script = ExtResource("6_ue8rj")
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Earth"]
+texture = SubResource("AtlasTexture_d5ios")
+script = ExtResource("7_r4k42")
+
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(240, 360)
+zoom = Vector2(0.5, 0.5)
+drag_top_margin = 0.29
+script = ExtResource("8_i6wea")
+
+[node name="Name" type="Sprite2D" parent="Camera and BG"]
+position = Vector2(73.5, 0)
+texture = ExtResource("9_mju17")
+centered = false
+script = ExtResource("10_p5sq2")
+
+[node name="Timer" type="Timer" parent="Camera and BG/Name"]
+wait_time = 14.0
+one_shot = true
+autostart = true
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="timeout" from="Camera and BG/Name/Timer" to="Camera and BG/Name" method="_on_timer_timeout"]
