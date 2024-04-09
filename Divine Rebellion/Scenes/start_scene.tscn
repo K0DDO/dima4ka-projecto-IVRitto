@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://dov3okl2daogb"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_p2p52"]
-[ext_resource type="Script" path="res://Scripts/BGTreesScript.gd" id="2_w5ug3"]
-[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_2arlj"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/BGTreesScript.gd" id="2_7mqhg"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="3_go6uo"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_4ucr0"]
-[ext_resource type="Script" path="res://Scripts/MountainsScript.gd" id="5_47w2c"]
-[ext_resource type="Script" path="res://Scripts/TreesAndLakeScript.gd" id="6_ue8rj"]
-[ext_resource type="Script" path="res://Scripts/EarthScript.gd" id="7_r4k42"]
-[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="8_i6wea"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/MountainsScript.gd" id="5_eam0d"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/TreesAndLakeScript.gd" id="6_nsnid"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/EarthScript.gd" id="7_3bqlq"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CameraScript.gd" id="8_g4ltp"]
 [ext_resource type="Texture2D" uid="uid://f7uxmwrxsksu" path="res://Art/Tech/Menu/name.png" id="9_mju17"]
-[ext_resource type="Script" path="res://Scripts/NameScript.gd" id="10_p5sq2"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/NameScript.gd" id="10_tbcsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpxei"]
 atlas = ExtResource("1_p2p52")
@@ -52,7 +52,7 @@ position = Vector2(240, 270)
 
 [node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
 texture = SubResource("AtlasTexture_5j2uq")
-script = ExtResource("2_w5ug3")
+script = ExtResource("2_7mqhg")
 
 [node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 visible = false
@@ -60,7 +60,7 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(240, 270)
 motion_mirroring = Vector2(980, 0)
-script = ExtResource("3_2arlj")
+script = ExtResource("3_go6uo")
 
 [node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
 texture_filter = 1
@@ -75,7 +75,7 @@ position = Vector2(240, 270)
 
 [node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
 texture = SubResource("AtlasTexture_qfipi")
-script = ExtResource("5_47w2c")
+script = ExtResource("5_eam0d")
 
 [node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
@@ -83,26 +83,26 @@ position = Vector2(240, 270)
 [node name="Trees And Lake" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Trees And Lake"]
 position = Vector2(0, 1)
 texture = SubResource("AtlasTexture_4jvtu")
-script = ExtResource("6_ue8rj")
+script = ExtResource("6_nsnid")
 
 [node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
 position = Vector2(240, 270)
 
 [node name="Earth" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Earth"]
 texture = SubResource("AtlasTexture_d5ios")
-script = ExtResource("7_r4k42")
+script = ExtResource("7_3bqlq")
 
 [node name="Camera2D" type="Camera2D" parent="Camera and BG"]
 position = Vector2(240, 360)
 zoom = Vector2(0.5, 0.5)
 drag_top_margin = 0.29
-script = ExtResource("8_i6wea")
+script = ExtResource("8_g4ltp")
 
 [node name="Name" type="Sprite2D" parent="Camera and BG"]
 position = Vector2(73.5, 0)
 texture = ExtResource("9_mju17")
 centered = false
-script = ExtResource("10_p5sq2")
+script = ExtResource("10_tbcsj")
 
 [node name="Timer" type="Timer" parent="Camera and BG/Name"]
 wait_time = 14.0

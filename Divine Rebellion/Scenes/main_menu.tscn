@@ -1,15 +1,15 @@
 [gd_scene load_steps=35 format=3 uid="uid://cjc4nayp1cbpw"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_d2oif"]
-[ext_resource type="Script" path="res://Scripts/CloudScript.gd" id="3_fer1c"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_j52ss"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_xryea"]
+[ext_resource type="Script" path="res://Scripts/Main menu/StartButtonSprite.gd" id="7_27fuf"]
+[ext_resource type="Script" path="res://Scripts/Main menu/AboutUsButtonScript.gd" id="8_l14hf"]
 [ext_resource type="Texture2D" uid="uid://f7uxmwrxsksu" path="res://Art/Tech/Menu/name.png" id="9_qab7c"]
+[ext_resource type="Script" path="res://Scripts/Main menu/ExitButtonScript.gd" id="9_rdnfh"]
 [ext_resource type="Texture2D" uid="uid://c25g1iq083uc3" path="res://Art/Tech/Menu/menu.png" id="10_2deki"]
+[ext_resource type="Script" path="res://Scripts/Main menu/SettingsButtonScript.gd" id="10_db2h3"]
 [ext_resource type="Texture2D" uid="uid://4hj3qsj84ipg" path="res://Art/Tech/Menu/buttons menu.png" id="12_ucan5"]
-[ext_resource type="Script" path="res://Scripts/StartButtonSprite.gd" id="13_nv115"]
-[ext_resource type="Script" path="res://Scripts/AboutUsButtonScript.gd" id="14_wou2c"]
-[ext_resource type="Script" path="res://Scripts/ExitButtonScript.gd" id="15_q11gt"]
-[ext_resource type="Script" path="res://Scripts/SettingsButtonScript.gd" id="16_3tsqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ic3m"]
 atlas = ExtResource("1_d2oif")
@@ -324,7 +324,7 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(240, 270)
 motion_mirroring = Vector2(980, 0)
-script = ExtResource("3_fer1c")
+script = ExtResource("2_j52ss")
 
 [node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
 texture_filter = 1
@@ -376,7 +376,7 @@ texture_filter = 1
 position = Vector2(29, 24.5)
 texture = ExtResource("12_ucan5")
 hframes = 12
-script = ExtResource("13_nv115")
+script = ExtResource("7_27fuf")
 
 [node name="StartButtonAnimation" type="AnimationPlayer" parent="Main Menu/StartButton/Start"]
 root_node = NodePath("../../../SettingsButton/Settings")
@@ -399,7 +399,7 @@ position = Vector2(28, 25.5)
 texture = ExtResource("12_ucan5")
 hframes = 12
 frame = 9
-script = ExtResource("14_wou2c")
+script = ExtResource("8_l14hf")
 
 [node name="AboutUsButtonAnimation" type="AnimationPlayer" parent="Main Menu/AboutUsButton/AboutUs"]
 libraries = {
@@ -421,7 +421,7 @@ position = Vector2(29, 23.5)
 texture = ExtResource("12_ucan5")
 hframes = 12
 frame = 8
-script = ExtResource("15_q11gt")
+script = ExtResource("9_rdnfh")
 
 [node name="ExitButtonAnimation" type="AnimationPlayer" parent="Main Menu/ExitButton/Exit"]
 libraries = {
@@ -443,7 +443,7 @@ position = Vector2(28, 23.5)
 texture = ExtResource("12_ucan5")
 hframes = 12
 frame = 3
-script = ExtResource("16_3tsqa")
+script = ExtResource("10_db2h3")
 
 [node name="SettingsButtonAnimation" type="AnimationPlayer" parent="Main Menu/SettingsButton/Settings"]
 libraries = {

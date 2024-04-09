@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=3 uid="uid://be2rg58qym27h"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_x5tmf"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_etkdn"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_3sq1i"]
+[ext_resource type="Texture2D" uid="uid://b1sjd5teia0q" path="res://Art/Tech/Сhoosing character menu/cc menu.png" id="4_djynw"]
+[ext_resource type="Texture2D" uid="uid://ds3nvmoip4oe8" path="res://Art/Tech/back_forward.png" id="5_146tl"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/BackButtonScript.gd" id="6_m2t0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwr4j"]
+atlas = ExtResource("1_x5tmf")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6ykm"]
+atlas = ExtResource("1_x5tmf")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2no0"]
+atlas = ExtResource("3_3sq1i")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3n30"]
+atlas = ExtResource("1_x5tmf")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="Animation" id="Animation_w5flg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_68d4i"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2nx5"]
+_data = {
+"RESET": SubResource("Animation_w5flg"),
+"pressed": SubResource("Animation_68d4i")
+}
+
+[node name="Settings" type="Node2D"]
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_lwr4j")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 288)
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_h6ykm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 309)
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("2_etkdn")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_m2no0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_s3n30")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 304)
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(240, 160)
+zoom = Vector2(0.5, 0.5)
+drag_top_margin = 0.29
+
+[node name="Settings menu" type="Sprite2D" parent="."]
+position = Vector2(79.5, 67)
+texture = ExtResource("4_djynw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 337, 207)
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 369.0
+offset_top = 79.0
+offset_right = 384.0
+offset_bottom = 94.0
+
+[node name="Back" type="Sprite2D" parent="BackButton"]
+texture = ExtResource("5_146tl")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 30, 16)
+script = ExtResource("6_m2t0e")
+
+[node name="BackButtonAnimation" type="AnimationPlayer" parent="BackButton/Back"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_x2nx5")
+}
+
+[node name="Timer" type="Timer" parent="BackButton/Back"]
+wait_time = 0.2
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
+[connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]

@@ -1,0 +1,401 @@
+[gd_scene load_steps=18 format=3 uid="uid://f3cdd1jkusqx"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_qolkj"]
+[ext_resource type="Texture2D" uid="uid://b1sjd5teia0q" path="res://Art/Tech/Сhoosing character menu/cc menu.png" id="4_s0ib8"]
+[ext_resource type="Texture2D" uid="uid://ds3nvmoip4oe8" path="res://Art/Tech/back_forward.png" id="5_2u2pp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/BackButtonScript.gd" id="6_aoypq"]
+[ext_resource type="Texture2D" uid="uid://bi0q3qh6k8qc7" path="res://Art/Tech/Сhoosing character menu/cc body.png" id="7_xxlvf"]
+[ext_resource type="Texture2D" uid="uid://b635f6vn51k6t" path="res://Art/Tech/Сhoosing character menu/cc eyes.png" id="8_iy3r5"]
+[ext_resource type="Texture2D" uid="uid://xq7e3cr2p2v" path="res://Art/Tech/Сhoosing character menu/cc buttons.png" id="8_o485b"]
+[ext_resource type="Texture2D" uid="uid://nilnhrblgpve" path="res://Art/Tech/Сhoosing character menu/cc hair.png" id="9_u4r53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dbdm"]
+atlas = ExtResource("1_krpgh")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iroya"]
+atlas = ExtResource("1_krpgh")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luh8a"]
+atlas = ExtResource("3_qolkj")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bukqn"]
+atlas = ExtResource("1_krpgh")
+region = Rect2(960, 0, 480, 540)
+
+[sub_resource type="Animation" id="Animation_w5flg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_68d4i"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2nx5"]
+_data = {
+"RESET": SubResource("Animation_w5flg"),
+"pressed": SubResource("Animation_68d4i")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_0dbdm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 288)
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_iroya")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 309)
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("2_7h763")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_luh8a")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_bukqn")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 304)
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(240, 160)
+zoom = Vector2(0.5, 0.5)
+drag_top_margin = 0.29
+
+[node name="AU menu" type="Sprite2D" parent="."]
+position = Vector2(79.5, 67)
+texture = ExtResource("4_s0ib8")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 337, 207)
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 369.0
+offset_top = 79.0
+offset_right = 384.0
+offset_bottom = 94.0
+
+[node name="Back" type="Sprite2D" parent="BackButton"]
+texture = ExtResource("5_2u2pp")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 30, 16)
+script = ExtResource("6_aoypq")
+
+[node name="BackButtonAnimation" type="AnimationPlayer" parent="BackButton/Back"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_x2nx5")
+}
+
+[node name="Timer" type="Timer" parent="BackButton/Back"]
+wait_time = 0.2
+
+[node name="Body" type="Node2D" parent="."]
+visible = false
+position = Vector2(0.5, 0)
+
+[node name="1" type="Sprite2D" parent="Body"]
+position = Vector2(151, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 66, 23)
+
+[node name="2" type="Sprite2D" parent="Body"]
+position = Vector2(173, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(66, 0, 66, 23)
+
+[node name="3" type="Sprite2D" parent="Body"]
+position = Vector2(195, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(132, 0, 66, 23)
+
+[node name="4" type="Sprite2D" parent="Body"]
+position = Vector2(217, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(198, 0, 66, 23)
+
+[node name="5" type="Sprite2D" parent="Body"]
+position = Vector2(239, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(264, 0, 66, 23)
+
+[node name="6" type="Sprite2D" parent="Body"]
+position = Vector2(261, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(330, 0, 66, 23)
+
+[node name="7" type="Sprite2D" parent="Body"]
+position = Vector2(283, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(396, 0, 66, 23)
+
+[node name="8" type="Sprite2D" parent="Body"]
+position = Vector2(305, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(462, 0, 66, 23)
+
+[node name="9" type="Sprite2D" parent="Body"]
+position = Vector2(327, 211.5)
+texture = ExtResource("7_xxlvf")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(528, 0, 66, 23)
+
+[node name="Eyes" type="Node2D" parent="."]
+visible = false
+position = Vector2(0.5, 0)
+
+[node name="1" type="Sprite2D" parent="Eyes"]
+position = Vector2(164, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 44, 22)
+
+[node name="2" type="Sprite2D" parent="Eyes"]
+position = Vector2(186, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(44, 0, 44, 22)
+
+[node name="3" type="Sprite2D" parent="Eyes"]
+position = Vector2(208, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(88, 0, 44, 22)
+
+[node name="4" type="Sprite2D" parent="Eyes"]
+position = Vector2(230, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(132, 0, 44, 22)
+
+[node name="5" type="Sprite2D" parent="Eyes"]
+position = Vector2(252, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(176, 0, 44, 22)
+
+[node name="6" type="Sprite2D" parent="Eyes"]
+position = Vector2(274, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(220, 0, 44, 22)
+
+[node name="7" type="Sprite2D" parent="Eyes"]
+position = Vector2(296, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(264, 0, 44, 22)
+
+[node name="8" type="Sprite2D" parent="Eyes"]
+position = Vector2(318, 211)
+texture = ExtResource("8_iy3r5")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(308, 0, 44, 22)
+
+[node name="Hair color" type="Node2D" parent="."]
+visible = false
+position = Vector2(0.5, 0)
+
+[node name="1" type="Sprite2D" parent="Hair color"]
+position = Vector2(164, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 44, 22)
+
+[node name="2" type="Sprite2D" parent="Hair color"]
+position = Vector2(186, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(44, 0, 44, 22)
+
+[node name="3" type="Sprite2D" parent="Hair color"]
+position = Vector2(208, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(88, 0, 44, 22)
+
+[node name="4" type="Sprite2D" parent="Hair color"]
+position = Vector2(230, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(132, 0, 44, 22)
+
+[node name="5" type="Sprite2D" parent="Hair color"]
+position = Vector2(252, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(176, 0, 44, 22)
+
+[node name="6" type="Sprite2D" parent="Hair color"]
+position = Vector2(274, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(220, 0, 44, 22)
+
+[node name="7" type="Sprite2D" parent="Hair color"]
+position = Vector2(296, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(264, 0, 44, 22)
+
+[node name="8" type="Sprite2D" parent="Hair color"]
+position = Vector2(318, 211)
+texture = ExtResource("9_u4r53")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(308, 0, 44, 22)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(0.5, 0)
+
+[node name="Body" type="Sprite2D" parent="Buttons"]
+position = Vector2(126, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 114, 28)
+
+[node name="Eyes" type="Sprite2D" parent="Buttons"]
+position = Vector2(164, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(114, 0, 114, 28)
+
+[node name="Hair" type="Sprite2D" parent="Buttons"]
+position = Vector2(202, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(228, 0, 114, 28)
+
+[node name="Hair Color" type="Sprite2D" parent="Buttons"]
+position = Vector2(240, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(342, 0, 114, 28)
+
+[node name="Top" type="Sprite2D" parent="Buttons"]
+position = Vector2(278, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(456, 0, 114, 28)
+
+[node name="Bottom" type="Sprite2D" parent="Buttons"]
+position = Vector2(316, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(570, 0, 114, 28)
+
+[node name="Boots" type="Sprite2D" parent="Buttons"]
+position = Vector2(354, 174)
+texture = ExtResource("8_o485b")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(684, 0, 114, 28)
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
+[connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
