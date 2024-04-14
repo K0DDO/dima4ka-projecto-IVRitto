@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://33h1djjvcru4"]
+[gd_scene load_steps=10 format=3 uid="uid://33h1djjvcru4"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_i7jfy"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_1h8eh"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_tp0ng"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://new_theme.tres" id="4_dwt3d"]
+[ext_resource type="FontFile" uid="uid://sl5jw4gkqwgl" path="res://Divine Rebellion Font.ttf" id="4_lw5sl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvky8"]
 atlas = ExtResource("1_i7jfy")
@@ -83,5 +85,25 @@ position = Vector2(0, 10)
 anchor_mode = 0
 zoom = Vector2(0.5, 0.5)
 drag_top_margin = 0.29
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 143.0
+offset_top = 93.5
+offset_right = 335.0
+offset_bottom = 117.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_lw5sl")
+theme_override_font_sizes/font_size = 24
+text = "Divine Rebellion"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 143.0
+offset_top = 91.0
+offset_right = 335.0
+offset_bottom = 115.0
+theme = ExtResource("4_dwt3d")
+text = "Divine Rebellion"
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]

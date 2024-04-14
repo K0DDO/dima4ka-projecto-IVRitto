@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b78i1nbh81d5p"]
+
+[ext_resource type="Texture2D" uid="uid://dcih4gmdwe3ts" path="res://Art/Tech/Сhoosing character menu/cc 5.png" id="1_ncxwo"]
+[ext_resource type="FontFile" uid="uid://sl5jw4gkqwgl" path="res://Divine Rebellion Font.ttf" id="2_kwd08"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_spbbk"]
+texture = ExtResource("1_ncxwo")
+region_rect = Rect2(184, 0, 184, 6)
+
+[resource]
+HSlider/icons/tick = null
+HSlider/styles/slider = SubResource("StyleBoxTexture_spbbk")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("2_kwd08")

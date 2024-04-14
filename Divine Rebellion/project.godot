@@ -17,7 +17,6 @@ run/max_fps=60
 boot_splash/show_image=false
 config/icon="res://Art/Tech/icon.png"
 config/windows_native_icon="res://Art/Tech/icon.ico"
-boot_splash/minimum_display_time=1000
 
 [autoload]
 

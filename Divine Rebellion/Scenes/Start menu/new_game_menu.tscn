@@ -1,39 +1,99 @@
-[gd_scene load_steps=147 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=312 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_qolkj"]
 [ext_resource type="Texture2D" uid="uid://b1sjd5teia0q" path="res://Art/Tech/Сhoosing character menu/cc menu.png" id="4_s0ib8"]
 [ext_resource type="Texture2D" uid="uid://ds3nvmoip4oe8" path="res://Art/Tech/back_forward.png" id="5_2u2pp"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/CCBackButton.gd" id="6_oif6a"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CCBackButton.gd" id="6_oif6a"]
 [ext_resource type="Texture2D" uid="uid://bi0q3qh6k8qc7" path="res://Art/Tech/Сhoosing character menu/cc body.png" id="7_xxlvf"]
 [ext_resource type="Texture2D" uid="uid://b635f6vn51k6t" path="res://Art/Tech/Сhoosing character menu/cc eyes.png" id="8_iy3r5"]
 [ext_resource type="Texture2D" uid="uid://xq7e3cr2p2v" path="res://Art/Tech/Сhoosing character menu/cc buttons.png" id="8_o485b"]
 [ext_resource type="Texture2D" uid="uid://nilnhrblgpve" path="res://Art/Tech/Сhoosing character menu/cc hair.png" id="9_u4r53"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton1.gd" id="10_4a4mt"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton2.gd" id="11_8t477"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/BodyButton.gd" id="11_32rlp"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton3.gd" id="12_jgw1b"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/EyesButton.gd" id="12_lduir"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/HairButton.gd" id="13_acffi"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton4.gd" id="13_hc8qd"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/HairColorButton.gd" id="14_84l6b"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton5.gd" id="14_i2sdi"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/TopButton.gd" id="15_1ch47"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton6.gd" id="15_44a56"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton7.gd" id="16_sjx0j"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/BottomButton.gd" id="16_vi8fj"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton8.gd" id="17_cdp0j"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/BootsButton.gd" id="17_j66ga"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Body Button/BodyButton9.gd" id="18_hucel"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton1.gd" id="21_yxnt7"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton2.gd" id="22_mwbp6"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton3.gd" id="23_mtne2"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton4.gd" id="24_inmxx"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton5.gd" id="25_cv63i"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton6.gd" id="26_dhpye"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton7.gd" id="27_0m5ta"]
-[ext_resource type="Script" path="res://Scenes/Start menu/New Game/Eyes Button/EyeButton8.gd" id="28_en4s8"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton1.gd" id="10_4a4mt"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton2.gd" id="11_8t477"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BodyButton.gd" id="11_32rlp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton3.gd" id="12_jgw1b"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/EyesButton.gd" id="12_lduir"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/HairButton.gd" id="13_acffi"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton4.gd" id="13_hc8qd"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/HairColorButton.gd" id="14_84l6b"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton5.gd" id="14_i2sdi"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/TopButton.gd" id="15_1ch47"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton6.gd" id="15_44a56"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton7.gd" id="16_sjx0j"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BottomButton.gd" id="16_vi8fj"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton8.gd" id="17_cdp0j"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BootsButton.gd" id="17_j66ga"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton9.gd" id="18_hucel"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton1.gd" id="21_yxnt7"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton2.gd" id="22_mwbp6"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton3.gd" id="23_mtne2"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton4.gd" id="24_inmxx"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton5.gd" id="25_cv63i"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton6.gd" id="26_dhpye"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton7.gd" id="27_0m5ta"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton8.gd" id="28_en4s8"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton1.gd" id="31_5lse8"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton2.gd" id="33_boih0"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair1.gd" id="33_e300j"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton3.gd" id="34_2vo2u"]
+[ext_resource type="Texture2D" uid="uid://cowjv2vy7ctx0" path="res://Art/Tech/Сhoosing character menu/hair_top_bottom_boots.png" id="35_2ktqx"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton4.gd" id="35_ocwe1"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair2.gd" id="35_qb1yn"]
+[ext_resource type="Texture2D" uid="uid://pvle4qtu7xa8" path="res://Art/Character/hair/hairall.png" id="36_0rlt0"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton5.gd" id="36_64bl7"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton6.gd" id="37_4264q"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair3.gd" id="37_g8v8m"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton7.gd" id="38_i8oug"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton8.gd" id="39_boyee"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair4.gd" id="39_k3moy"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton9.gd" id="40_64olb"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton10.gd" id="41_8rivi"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair5.gd" id="41_pr4yq"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair6.gd" id="43_ibnt3"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton1.gd" id="44_e01fr"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair7.gd" id="45_navgn"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton2.gd" id="45_t8wpp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton3.gd" id="46_8p57e"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair8.gd" id="47_ks5o5"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton4.gd" id="47_ulxfv"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton5.gd" id="48_obeg6"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair9.gd" id="49_11wpy"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton6.gd" id="49_ch6xd"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton7.gd" id="50_lj7tu"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton8.gd" id="51_dervg"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair10.gd" id="51_ldol4"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton1.gd" id="63_5a628"]
+[ext_resource type="Texture2D" uid="uid://cqobb38o16ffy" path="res://Art/Character/clothes/topall.png" id="63_hnr23"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton2.gd" id="65_5ysgv"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton3.gd" id="66_g51r1"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton4.gd" id="67_pftkp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton5.gd" id="68_gcm3i"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton6.gd" id="69_8j5gp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton7.gd" id="70_muc02"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton1.gd" id="72_e0fwd"]
+[ext_resource type="Texture2D" uid="uid://cdak1l7d5htmc" path="res://Art/Character/clothes/bottomall.png" id="73_06w3x"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton2.gd" id="74_a8xqp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton3.gd" id="75_2jy73"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton1.gd" id="77_qvbts"]
+[ext_resource type="Texture2D" uid="uid://s6eegporp6q2" path="res://Art/Character/clothes/boots.png" id="78_prg0d"]
+[ext_resource type="Texture2D" uid="uid://cpmoyy0i87xbt" path="res://Art/Tech/Сhoosing character menu/cc 1.png" id="79_7gybr"]
+[ext_resource type="Texture2D" uid="uid://bt0s6lykn0bu8" path="res://Art/Character/body/body.png" id="80_u7t71"]
+[ext_resource type="Texture2D" uid="uid://3me8v0yj15ij" path="res://Art/Character/eyes/eyesall.png" id="81_laxar"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton2.gd" id="81_ojbt4"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Body.gd" id="81_t4b88"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Bottom.gd" id="82_oacoe"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton3.gd" id="82_pkna6"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Boots.gd" id="83_uvcm7"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Top.gd" id="84_6lqbe"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Hair.gd" id="85_20vsd"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Eyes.gd" id="87_s0sil"]
+[ext_resource type="Texture2D" uid="uid://c8s31reof8l0p" path="res://Art/Tech/Сhoosing character menu/cc 2.png" id="88_k6m2o"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Larrow.gd" id="89_3yqbp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Rarrow.gd" id="90_jds8b"]
+[ext_resource type="Texture2D" uid="uid://bobadpnp6evql" path="res://Art/Tech/Сhoosing character menu/cc 4.png" id="91_rb4w1"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/NextButton.gd" id="92_lmva8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dbdm"]
 atlas = ExtResource("1_krpgh")
@@ -86,6 +146,61 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_w5flg"),
 "pressed": SubResource("Animation_68d4i")
+}
+
+[sub_resource type="Animation" id="Animation_ps66s"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7loch"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_dh1q0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxmlf"]
+_data = {
+"RESET": SubResource("Animation_dh1q0"),
+"idle": SubResource("Animation_ps66s"),
+"pressed": SubResource("Animation_7loch")
 }
 
 [sub_resource type="Animation" id="Animation_mavnd"]
@@ -1279,6 +1394,549 @@ _data = {
 "pressed": SubResource("Animation_6dci5")
 }
 
+[sub_resource type="Animation" id="Animation_a138h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4ax73"]
+resource_name = "focused"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_1n7sx"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7iu1l"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4hs0"]
+_data = {
+"RESET": SubResource("Animation_a138h"),
+"focused": SubResource("Animation_4ax73"),
+"idle": SubResource("Animation_1n7sx"),
+"pressed": SubResource("Animation_7iu1l")
+}
+
+[sub_resource type="Animation" id="Animation_3yv51"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xyg6h"]
+resource_name = "focused"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rfyi8"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n6inf"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yn87"]
+_data = {
+"RESET": SubResource("Animation_3yv51"),
+"focused": SubResource("Animation_xyg6h"),
+"idle": SubResource("Animation_rfyi8"),
+"pressed": SubResource("Animation_n6inf")
+}
+
+[sub_resource type="Animation" id="Animation_qqjyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f14s6"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fi46m"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ep7xk"]
+_data = {
+"RESET": SubResource("Animation_qqjyx"),
+"idle": SubResource("Animation_f14s6"),
+"pressed": SubResource("Animation_fi46m")
+}
+
+[sub_resource type="Animation" id="Animation_28lk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o4drn"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gvfm0"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bw5dc"]
+_data = {
+"RESET": SubResource("Animation_28lk3"),
+"idle": SubResource("Animation_o4drn"),
+"pressed": SubResource("Animation_gvfm0")
+}
+
+[sub_resource type="Animation" id="Animation_0r6n8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o6xy2"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ag1cy"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7d3l"]
+_data = {
+"RESET": SubResource("Animation_0r6n8"),
+"idle": SubResource("Animation_o6xy2"),
+"pressed": SubResource("Animation_ag1cy")
+}
+
+[sub_resource type="Animation" id="Animation_b7buj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ikdrd"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pj7gr"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4l4q"]
+_data = {
+"RESET": SubResource("Animation_b7buj"),
+"idle": SubResource("Animation_ikdrd"),
+"pressed": SubResource("Animation_pj7gr")
+}
+
+[sub_resource type="Animation" id="Animation_ihtyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vx6ot"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bi5hl"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lkmxk"]
+_data = {
+"RESET": SubResource("Animation_ihtyj"),
+"idle": SubResource("Animation_vx6ot"),
+"pressed": SubResource("Animation_bi5hl")
+}
+
+[sub_resource type="Animation" id="Animation_glcqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_68cur"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_u8r86"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvcdq"]
+_data = {
+"RESET": SubResource("Animation_glcqj"),
+"idle": SubResource("Animation_68cur"),
+"pressed": SubResource("Animation_u8r86")
+}
+
+[sub_resource type="Animation" id="Animation_lu3ei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_q4awi"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hrqh7"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_egepr"]
+_data = {
+"RESET": SubResource("Animation_lu3ei"),
+"idle": SubResource("Animation_q4awi"),
+"pressed": SubResource("Animation_hrqh7")
+}
+
 [sub_resource type="Animation" id="Animation_3kpe8"]
 length = 0.001
 tracks/0/type = "value"
@@ -1425,6 +2083,408 @@ _data = {
 "pressed": SubResource("Animation_q7ogj")
 }
 
+[sub_resource type="Animation" id="Animation_rw2wv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pyunm"]
+resource_name = "focused"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_4i3ja"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aw2x5"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18yc5"]
+_data = {
+"RESET": SubResource("Animation_rw2wv"),
+"focused": SubResource("Animation_pyunm"),
+"idle": SubResource("Animation_4i3ja"),
+"pressed": SubResource("Animation_aw2x5")
+}
+
+[sub_resource type="Animation" id="Animation_plo2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pm1gl"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_asp0i"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmwrt"]
+_data = {
+"RESET": SubResource("Animation_plo2p"),
+"idle": SubResource("Animation_pm1gl"),
+"pressed": SubResource("Animation_asp0i")
+}
+
+[sub_resource type="Animation" id="Animation_yvjyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8mcv5"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8ycx5"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eirwk"]
+_data = {
+"RESET": SubResource("Animation_yvjyu"),
+"idle": SubResource("Animation_8mcv5"),
+"pressed": SubResource("Animation_8ycx5")
+}
+
+[sub_resource type="Animation" id="Animation_lqodj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fd1x2"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ka2b0"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00qc8"]
+_data = {
+"RESET": SubResource("Animation_lqodj"),
+"idle": SubResource("Animation_fd1x2"),
+"pressed": SubResource("Animation_ka2b0")
+}
+
+[sub_resource type="Animation" id="Animation_2hhjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2icn4"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nyihj"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_50btu"]
+_data = {
+"RESET": SubResource("Animation_2hhjl"),
+"idle": SubResource("Animation_2icn4"),
+"pressed": SubResource("Animation_nyihj")
+}
+
+[sub_resource type="Animation" id="Animation_pvm03"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7q2wf"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nqa41"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hag6f"]
+_data = {
+"RESET": SubResource("Animation_pvm03"),
+"idle": SubResource("Animation_7q2wf"),
+"pressed": SubResource("Animation_nqa41")
+}
+
+[sub_resource type="Animation" id="Animation_ar56w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rbfnl"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0swp1"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk2up"]
+_data = {
+"RESET": SubResource("Animation_ar56w"),
+"idle": SubResource("Animation_rbfnl"),
+"pressed": SubResource("Animation_0swp1")
+}
+
 [sub_resource type="Animation" id="Animation_qxsx4"]
 length = 0.001
 tracks/0/type = "value"
@@ -1496,6 +2556,189 @@ _data = {
 "focused": SubResource("Animation_10x3h"),
 "idle": SubResource("Animation_k3iky"),
 "pressed": SubResource("Animation_loa40")
+}
+
+[sub_resource type="Animation" id="Animation_768g5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_tjitp"]
+resource_name = "focused"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_gnksl"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_keeah"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxits"]
+_data = {
+"RESET": SubResource("Animation_768g5"),
+"focused": SubResource("Animation_tjitp"),
+"idle": SubResource("Animation_gnksl"),
+"pressed": SubResource("Animation_keeah")
+}
+
+[sub_resource type="Animation" id="Animation_6ymsb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_um4ro"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_b2fyo"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pytxs"]
+_data = {
+"RESET": SubResource("Animation_6ymsb"),
+"idle": SubResource("Animation_um4ro"),
+"pressed": SubResource("Animation_b2fyo")
+}
+
+[sub_resource type="Animation" id="Animation_bxqqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_glpn2"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hqdkw"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tt5k6"]
+_data = {
+"RESET": SubResource("Animation_bxqqs"),
+"idle": SubResource("Animation_glpn2"),
+"pressed": SubResource("Animation_hqdkw")
 }
 
 [sub_resource type="Animation" id="Animation_74ol3"]
@@ -1571,6 +2814,311 @@ _data = {
 "pressed": SubResource("Animation_nlyui")
 }
 
+[sub_resource type="Animation" id="Animation_plujv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_df5su"]
+resource_name = "focused"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_x82eu"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sdisd"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhaic"]
+_data = {
+"RESET": SubResource("Animation_plujv"),
+"focused": SubResource("Animation_df5su"),
+"idle": SubResource("Animation_x82eu"),
+"pressed": SubResource("Animation_sdisd")
+}
+
+[sub_resource type="Animation" id="Animation_l60em"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3wm5q"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_udwpx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nujk"]
+_data = {
+"RESET": SubResource("Animation_udwpx"),
+"idle": SubResource("Animation_l60em"),
+"pressed": SubResource("Animation_3wm5q")
+}
+
+[sub_resource type="Animation" id="Animation_45bds"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kcmgx"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5m5at"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbau8"]
+_data = {
+"RESET": SubResource("Animation_5m5at"),
+"idle": SubResource("Animation_45bds"),
+"pressed": SubResource("Animation_kcmgx")
+}
+
+[sub_resource type="Animation" id="Animation_f76gl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dk6oi"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c5231"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gapk3"]
+_data = {
+"RESET": SubResource("Animation_f76gl"),
+"idle": SubResource("Animation_dk6oi"),
+"pressed": SubResource("Animation_c5231")
+}
+
+[sub_resource type="Animation" id="Animation_1m7cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_urqvf"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aghgw"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxvev"]
+_data = {
+"RESET": SubResource("Animation_1m7cu"),
+"idle": SubResource("Animation_urqvf"),
+"pressed": SubResource("Animation_aghgw")
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera and BG" type="Node2D" parent="."]
@@ -1635,17 +3183,17 @@ zoom = Vector2(0.5, 0.5)
 drag_top_margin = 0.29
 
 [node name="AU menu" type="Sprite2D" parent="."]
-position = Vector2(79.5, 67)
+position = Vector2(79, 67)
 texture = ExtResource("4_s0ib8")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 337, 207)
 
 [node name="BackButton" type="TextureButton" parent="."]
-offset_left = 369.0
-offset_top = 79.0
-offset_right = 384.0
-offset_bottom = 94.0
+offset_left = 370.0
+offset_top = 81.0
+offset_right = 385.0
+offset_bottom = 96.0
 
 [node name="Back" type="Sprite2D" parent="BackButton"]
 texture = ExtResource("5_2u2pp")
@@ -1664,16 +3212,36 @@ libraries = {
 [node name="Timer" type="Timer" parent="BackButton/Back"]
 wait_time = 0.2
 
+[node name="NextButton" type="TextureButton" parent="."]
+offset_left = 370.0
+offset_top = 233.0
+offset_right = 385.0
+offset_bottom = 248.0
+
+[node name="Next" type="Sprite2D" parent="NextButton"]
+texture = ExtResource("91_rb4w1")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 0, 30, 16)
+script = ExtResource("92_lmva8")
+
+[node name="Animation" type="AnimationPlayer" parent="NextButton/Next"]
+libraries = {
+"": SubResource("AnimationLibrary_sxmlf")
+}
+
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(0.5, 0)
 
 [node name="BodyButton" type="TextureButton" parent="Buttons"]
-offset_left = 107.0
+offset_left = 106.5
 offset_top = 160.0
-offset_right = 145.0
+offset_right = 144.5
 offset_bottom = 187.0
 
 [node name="Body" type="Sprite2D" parent="Buttons/BodyButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -1871,12 +3439,13 @@ libraries = {
 }
 
 [node name="EyesButton" type="TextureButton" parent="Buttons"]
-offset_left = 145.0
+offset_left = 144.5
 offset_top = 160.0
-offset_right = 183.0
+offset_right = 182.5
 offset_bottom = 187.0
 
 [node name="Eyes" type="Sprite2D" parent="Buttons/EyesButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -1891,6 +3460,7 @@ libraries = {
 }
 
 [node name="Eyes" type="Node2D" parent="Buttons/EyesButton/Eyes"]
+visible = false
 position = Vector2(-145, -160)
 
 [node name="Button1" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
@@ -2053,12 +3623,13 @@ libraries = {
 }
 
 [node name="HairButton" type="TextureButton" parent="Buttons"]
-offset_left = 183.0
+offset_left = 182.5
 offset_top = 160.0
-offset_right = 221.0
+offset_right = 220.5
 offset_bottom = 187.0
 
 [node name="Hair" type="Sprite2D" parent="Buttons/HairButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -2072,13 +3643,287 @@ libraries = {
 "": SubResource("AnimationLibrary_ehyl5")
 }
 
+[node name="Hair" type="Node2D" parent="Buttons/HairButton/Hair"]
+visible = false
+
+[node name="Button1" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = -54.0
+offset_top = 40.0
+offset_right = -32.0
+offset_bottom = 62.0
+
+[node name="1" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button1"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("31_5lse8")
+
+[node name="Button1Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button1/1"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair1" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button1/1"]
+position = Vector2(0.5, 4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 256)
+script = ExtResource("33_e300j")
+
+[node name="Button2" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = -32.0
+offset_top = 40.0
+offset_right = -10.0
+offset_bottom = 62.0
+
+[node name="2" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button2"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("33_boih0")
+
+[node name="Button2Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button2/2"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair2" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button2/2"]
+position = Vector2(0.5, 2)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 256, 32, 256)
+script = ExtResource("35_qb1yn")
+
+[node name="Button3" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = -10.0
+offset_top = 40.0
+offset_right = 12.0
+offset_bottom = 62.0
+
+[node name="3" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button3"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("34_2vo2u")
+
+[node name="Button3Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button3/3"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair3" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button3/3"]
+position = Vector2(0.5, 4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 512, 32, 256)
+script = ExtResource("37_g8v8m")
+
+[node name="Button4" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 34.0
+offset_bottom = 62.0
+
+[node name="4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("35_ocwe1")
+
+[node name="Button4Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button4/4"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4/4"]
+position = Vector2(0.500015, 3.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 768, 32, 256)
+script = ExtResource("39_k3moy")
+
+[node name="Button5" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 34.0
+offset_top = 40.0
+offset_right = 56.0
+offset_bottom = 62.0
+
+[node name="5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button5"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("36_64bl7")
+
+[node name="Button5Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button5/5"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button5/5"]
+position = Vector2(0.500015, 3.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 1024, 32, 256)
+script = ExtResource("41_pr4yq")
+
+[node name="Button6" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 56.0
+offset_top = 40.0
+offset_right = 78.0
+offset_bottom = 62.0
+
+[node name="6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button6"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("37_4264q")
+
+[node name="Button6Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button6/6"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button6/6"]
+position = Vector2(0.500015, 4.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 1280, 32, 256)
+script = ExtResource("43_ibnt3")
+
+[node name="Button7" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 78.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 62.0
+
+[node name="7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button7"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("38_i8oug")
+
+[node name="Button7Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button7/7"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button7/7"]
+position = Vector2(1, 3.5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 1536, 32, 256)
+script = ExtResource("45_navgn")
+
+[node name="Button8" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 100.0
+offset_top = 40.0
+offset_right = 122.0
+offset_bottom = 62.0
+
+[node name="8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button8"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("39_boyee")
+
+[node name="Button8Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button8/8"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button8/8"]
+position = Vector2(2, 3)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 1792, 32, 256)
+script = ExtResource("47_ks5o5")
+
+[node name="Button9" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 122.0
+offset_top = 40.0
+offset_right = 144.0
+offset_bottom = 62.0
+
+[node name="9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button9"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("40_64olb")
+
+[node name="Button9Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button9/9"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button9/9"]
+position = Vector2(0.5, 5.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2048, 32, 256)
+script = ExtResource("49_11wpy")
+
+[node name="Button10" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 144.0
+offset_top = 40.0
+offset_right = 167.0
+offset_bottom = 62.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button10/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
 [node name="HairColorButton" type="TextureButton" parent="Buttons"]
-offset_left = 221.0
+offset_left = 220.5
 offset_top = 160.0
-offset_right = 259.0
+offset_right = 258.5
 offset_bottom = 187.0
 
 [node name="Hair Color" type="Sprite2D" parent="Buttons/HairColorButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -2091,61 +3936,159 @@ script = ExtResource("14_84l6b")
 visible = false
 position = Vector2(-221, -160)
 
-[node name="1" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(164, 211)
-texture = ExtResource("9_u4r53")
-hframes = 2
-region_enabled = true
-region_rect = Rect2(0, 0, 44, 22)
+[node name="Button1" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 153.0
+offset_top = 200.0
+offset_right = 175.0
+offset_bottom = 222.0
 
-[node name="2" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(186, 211)
+[node name="1" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button1"]
 texture = ExtResource("9_u4r53")
-hframes = 2
+centered = false
+hframes = 3
+frame = 1
 region_enabled = true
-region_rect = Rect2(44, 0, 44, 22)
+region_rect = Rect2(0, 0, 66, 23)
+script = ExtResource("44_e01fr")
 
-[node name="3" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(208, 211)
-texture = ExtResource("9_u4r53")
-hframes = 2
-region_enabled = true
-region_rect = Rect2(88, 0, 44, 22)
+[node name="Button1Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button1/1"]
+libraries = {
+"": SubResource("AnimationLibrary_6yn87")
+}
 
-[node name="4" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(230, 211)
-texture = ExtResource("9_u4r53")
-hframes = 2
-region_enabled = true
-region_rect = Rect2(132, 0, 44, 22)
+[node name="Button2" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 175.0
+offset_top = 200.0
+offset_right = 197.0
+offset_bottom = 222.0
 
-[node name="5" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(252, 211)
+[node name="2" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button2"]
 texture = ExtResource("9_u4r53")
-hframes = 2
+centered = false
+hframes = 3
 region_enabled = true
-region_rect = Rect2(176, 0, 44, 22)
+region_rect = Rect2(66, 0, 66, 23)
+script = ExtResource("45_t8wpp")
 
-[node name="6" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(274, 211)
-texture = ExtResource("9_u4r53")
-hframes = 2
-region_enabled = true
-region_rect = Rect2(220, 0, 44, 22)
+[node name="Button2Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button2/2"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_ep7xk")
+}
 
-[node name="7" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(296, 211)
-texture = ExtResource("9_u4r53")
-hframes = 2
-region_enabled = true
-region_rect = Rect2(264, 0, 44, 22)
+[node name="Button3" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 197.0
+offset_top = 200.0
+offset_right = 219.0
+offset_bottom = 222.0
 
-[node name="8" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-position = Vector2(318, 211)
+[node name="3" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button3"]
 texture = ExtResource("9_u4r53")
-hframes = 2
+centered = false
+hframes = 3
 region_enabled = true
-region_rect = Rect2(308, 0, 44, 22)
+region_rect = Rect2(132, 0, 66, 23)
+script = ExtResource("46_8p57e")
+
+[node name="Button3Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button3/3"]
+libraries = {
+"": SubResource("AnimationLibrary_bw5dc")
+}
+
+[node name="Button4" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 219.0
+offset_top = 200.0
+offset_right = 241.0
+offset_bottom = 222.0
+
+[node name="4" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button4"]
+texture = ExtResource("9_u4r53")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(198, 0, 66, 23)
+script = ExtResource("47_ulxfv")
+
+[node name="Button4Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button4/4"]
+libraries = {
+"": SubResource("AnimationLibrary_k7d3l")
+}
+
+[node name="Button5" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 241.0
+offset_top = 200.0
+offset_right = 263.0
+offset_bottom = 222.0
+
+[node name="5" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button5"]
+texture = ExtResource("9_u4r53")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(264, 0, 66, 23)
+script = ExtResource("48_obeg6")
+
+[node name="Button5Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button5/5"]
+libraries = {
+"": SubResource("AnimationLibrary_c4l4q")
+}
+
+[node name="Button6" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 263.0
+offset_top = 200.0
+offset_right = 285.0
+offset_bottom = 222.0
+
+[node name="6" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button6"]
+texture = ExtResource("9_u4r53")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(330, 0, 66, 23)
+script = ExtResource("49_ch6xd")
+
+[node name="Button6Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button6/6"]
+libraries = {
+"": SubResource("AnimationLibrary_lkmxk")
+}
+
+[node name="Button7" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 285.0
+offset_top = 200.0
+offset_right = 307.0
+offset_bottom = 222.0
+
+[node name="7" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button7"]
+texture = ExtResource("9_u4r53")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(396, 0, 66, 23)
+script = ExtResource("50_lj7tu")
+
+[node name="Button7Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button7/7"]
+libraries = {
+"": SubResource("AnimationLibrary_kvcdq")
+}
+
+[node name="Button8" type="TextureButton" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 307.0
+offset_top = 200.0
+offset_right = 329.0
+offset_bottom = 222.0
+
+[node name="8" type="Sprite2D" parent="Buttons/HairColorButton/Hair Color/HairColor/Button8"]
+texture = ExtResource("9_u4r53")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(462, 0, 66, 23)
+script = ExtResource("51_dervg")
+
+[node name="Button8Animation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color/HairColor/Button8/8"]
+libraries = {
+"": SubResource("AnimationLibrary_egepr")
+}
 
 [node name="HairColorButtonAnimation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color"]
 libraries = {
@@ -2153,12 +4096,13 @@ libraries = {
 }
 
 [node name="TopButton" type="TextureButton" parent="Buttons"]
-offset_left = 259.0
+offset_left = 258.5
 offset_top = 160.0
-offset_right = 297.0
+offset_right = 296.5
 offset_bottom = 187.0
 
 [node name="Top" type="Sprite2D" parent="Buttons/TopButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -2172,13 +4116,197 @@ libraries = {
 "": SubResource("AnimationLibrary_nac88")
 }
 
+[node name="Top" type="Node2D" parent="Buttons/TopButton/Top"]
+visible = false
+
+[node name="Button1" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = -95.0
+offset_top = 40.0
+offset_right = -73.0
+offset_bottom = 62.0
+
+[node name="1" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button1"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("63_5a628")
+
+[node name="Top1" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button1/1"]
+position = Vector2(-2.5, -6.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Animation1" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button1/1"]
+libraries = {
+"": SubResource("AnimationLibrary_18yc5")
+}
+
+[node name="Button2" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = -73.0
+offset_top = 40.0
+offset_right = -51.0
+offset_bottom = 62.0
+
+[node name="2" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button2"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("65_5ysgv")
+
+[node name="Top2" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button2/2"]
+position = Vector2(-4, -8.5)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="Animation2" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button2/2"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_rmwrt")
+}
+
+[node name="Button3" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = -51.0
+offset_top = 40.0
+offset_right = -29.0
+offset_bottom = 62.0
+
+[node name="3" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button3"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("66_g51r1")
+
+[node name="Top3" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button3/3"]
+position = Vector2(-2.5, -6.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="Animation3" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button3/3"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_eirwk")
+}
+
+[node name="Button4" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = -29.0
+offset_top = 40.0
+offset_right = -7.0
+offset_bottom = 62.0
+
+[node name="4" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button4"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("67_pftkp")
+
+[node name="Top4" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button4/4"]
+position = Vector2(-2.5, -5.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 32, 32)
+
+[node name="Animation4" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button4/4"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_00qc8")
+}
+
+[node name="Button5" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = -7.0
+offset_top = 40.0
+offset_right = 15.0
+offset_bottom = 62.0
+
+[node name="5" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button5"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("68_gcm3i")
+
+[node name="Top5" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button5/5"]
+position = Vector2(-2.5, -6.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 128, 32, 32)
+
+[node name="Animation5" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button5/5"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_50btu")
+}
+
+[node name="Button6" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = 15.0
+offset_top = 40.0
+offset_right = 37.0
+offset_bottom = 62.0
+
+[node name="6" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button6"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("69_8j5gp")
+
+[node name="Top6" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button6/6"]
+position = Vector2(-2.5, -6.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 160, 32, 32)
+
+[node name="Animation6" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button6/6"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_hag6f")
+}
+
+[node name="Button7" type="TextureButton" parent="Buttons/TopButton/Top/Top"]
+offset_left = 37.0
+offset_top = 40.0
+offset_right = 59.0
+offset_bottom = 62.0
+
+[node name="7" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button7"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("70_muc02")
+
+[node name="Top7" type="Sprite2D" parent="Buttons/TopButton/Top/Top/Button7/7"]
+position = Vector2(-2.5, -6.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("63_hnr23")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 192, 32, 32)
+
+[node name="Animation7" type="AnimationPlayer" parent="Buttons/TopButton/Top/Top/Button7/7"]
+root_node = NodePath("../../../Button1/1")
+libraries = {
+"": SubResource("AnimationLibrary_fk2up")
+}
+
 [node name="BottomButton" type="TextureButton" parent="Buttons"]
-offset_left = 297.0
+offset_left = 296.5
 offset_top = 160.0
-offset_right = 335.0
+offset_right = 334.5
 offset_bottom = 187.0
 
 [node name="Bottom" type="Sprite2D" parent="Buttons/BottomButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -2192,13 +4320,91 @@ libraries = {
 "": SubResource("AnimationLibrary_ya0iy")
 }
 
+[node name="Bottom" type="Node2D" parent="Buttons/BottomButton/Bottom"]
+visible = false
+
+[node name="Button1" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
+offset_left = -89.0
+offset_top = 40.0
+offset_right = -67.0
+offset_bottom = 62.0
+
+[node name="1" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button1"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+frame = 1
+script = ExtResource("72_e0fwd")
+
+[node name="Bottom1" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button1/1"]
+position = Vector2(-4, -14)
+texture = ExtResource("73_06w3x")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Animation1" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button1/1"]
+libraries = {
+"": SubResource("AnimationLibrary_xxits")
+}
+
+[node name="Button2" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
+offset_left = -67.0
+offset_top = 40.0
+offset_right = -45.0
+offset_bottom = 62.0
+
+[node name="2" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button2"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+frame = 1
+script = ExtResource("74_a8xqp")
+
+[node name="Bottom2" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button2/2"]
+position = Vector2(-4, -14)
+texture = ExtResource("73_06w3x")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="Animation2" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button2/2"]
+libraries = {
+"": SubResource("AnimationLibrary_pytxs")
+}
+
+[node name="Button3" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
+offset_left = -45.0
+offset_top = 40.0
+offset_right = -23.0
+offset_bottom = 62.0
+
+[node name="3" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button3"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("75_2jy73")
+
+[node name="Bottom3" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button3/3"]
+position = Vector2(-4, -14)
+texture = ExtResource("73_06w3x")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="Animation3" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button3/3"]
+libraries = {
+"": SubResource("AnimationLibrary_tt5k6")
+}
+
 [node name="BootsButton" type="TextureButton" parent="Buttons"]
-offset_left = 335.0
+offset_left = 334.5
 offset_top = 160.0
-offset_right = 373.0
+offset_right = 372.5
 offset_bottom = 187.0
 
 [node name="Boots" type="Sprite2D" parent="Buttons/BootsButton"]
+position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
@@ -2212,9 +4418,190 @@ libraries = {
 "": SubResource("AnimationLibrary_pftr0")
 }
 
+[node name="Boots" type="Node2D" parent="Buttons/BootsButton/Boots"]
+visible = false
+
+[node name="Button1" type="TextureButton" parent="Buttons/BootsButton/Boots/Boots"]
+offset_left = -126.5
+offset_top = 40.0
+offset_right = -104.5
+offset_bottom = 62.0
+
+[node name="1" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button1"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("77_qvbts")
+
+[node name="Boots1" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button1/1"]
+position = Vector2(-4, -18)
+texture = ExtResource("78_prg0d")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Animation1" type="AnimationPlayer" parent="Buttons/BootsButton/Boots/Boots/Button1/1"]
+root_node = NodePath("../Boots1")
+libraries = {
+"": SubResource("AnimationLibrary_bhaic")
+}
+
+[node name="Button2" type="TextureButton" parent="Buttons/BootsButton/Boots/Boots"]
+offset_left = -104.5
+offset_top = 40.0
+offset_right = -82.5
+offset_bottom = 62.0
+
+[node name="2" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button2"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+frame = 1
+script = ExtResource("81_ojbt4")
+
+[node name="Boots2" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button2/2"]
+position = Vector2(-4, -18)
+texture = ExtResource("78_prg0d")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="Animation2" type="AnimationPlayer" parent="Buttons/BootsButton/Boots/Boots/Button2/2"]
+libraries = {
+"": SubResource("AnimationLibrary_7nujk")
+}
+
+[node name="Button3" type="TextureButton" parent="Buttons/BootsButton/Boots/Boots"]
+offset_left = -82.5
+offset_top = 40.0
+offset_right = -60.5
+offset_bottom = 62.0
+
+[node name="3" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button3"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("82_pkna6")
+
+[node name="Boots3" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button3/3"]
+position = Vector2(-4, -18)
+texture = ExtResource("78_prg0d")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="Animation3" type="AnimationPlayer" parent="Buttons/BootsButton/Boots/Boots/Button3/3"]
+libraries = {
+"": SubResource("AnimationLibrary_tbau8")
+}
+
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="Background" type="Sprite2D" parent="Character"]
+position = Vector2(126, 100)
+texture = ExtResource("79_7gybr")
+centered = false
+
+[node name="Body" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("80_u7t71")
+centered = false
+hframes = 4
+vframes = 9
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 288)
+script = ExtResource("81_t4b88")
+
+[node name="Bottom" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("73_06w3x")
+centered = false
+hframes = 4
+vframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 96)
+script = ExtResource("82_oacoe")
+
+[node name="Top" type="Sprite2D" parent="Character"]
+position = Vector2(147, 126)
+texture = ExtResource("63_hnr23")
+hframes = 4
+vframes = 7
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 224)
+script = ExtResource("84_6lqbe")
+
+[node name="Boots" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("78_prg0d")
+centered = false
+hframes = 4
+vframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 96)
+script = ExtResource("83_uvcm7")
+
+[node name="Hair" type="Sprite2D" parent="Character"]
+position = Vector2(147, 126)
+texture = ExtResource("36_0rlt0")
+hframes = 4
+vframes = 80
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 2560)
+script = ExtResource("85_20vsd")
+
+[node name="Eyes" type="Sprite2D" parent="Character"]
+position = Vector2(147, 126)
+texture = ExtResource("81_laxar")
+hframes = 4
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 256)
+script = ExtResource("87_s0sil")
+
+[node name="LarrowButton" type="TextureButton" parent="Character"]
+offset_left = 112.0
+offset_top = 122.0
+offset_right = 123.0
+offset_bottom = 132.0
+
+[node name="Larrow" type="Sprite2D" parent="Character/LarrowButton"]
+texture = ExtResource("88_k6m2o")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 22, 11)
+script = ExtResource("89_3yqbp")
+
+[node name="Animation" type="AnimationPlayer" parent="Character/LarrowButton/Larrow"]
+libraries = {
+"": SubResource("AnimationLibrary_gapk3")
+}
+
+[node name="RarrowButton" type="TextureButton" parent="Character"]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 180.0
+offset_bottom = 132.0
+
+[node name="Rarrow" type="Sprite2D" parent="Character/RarrowButton"]
+texture = ExtResource("88_k6m2o")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(22, 0, 22, 11)
+script = ExtResource("90_jds8b")
+
+[node name="Animation" type="AnimationPlayer" parent="Character/RarrowButton/Rarrow"]
+libraries = {
+"": SubResource("AnimationLibrary_fxvev")
+}
+
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
 [connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
+[connection signal="pressed" from="NextButton" to="NextButton/Next" method="_on_next_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton" to="Buttons/BodyButton/Body" method="_on_body_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button" to="Buttons/BodyButton/Body/Body/Button/1" method="_on_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button2" to="Buttons/BodyButton/Body/Body/Button2/2" method="_on_button_2_pressed"]
@@ -2235,7 +4622,41 @@ libraries = {
 [connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button7" to="Buttons/EyesButton/Eyes/Eyes/Button7/7" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button8" to="Buttons/EyesButton/Eyes/Eyes/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/HairButton" to="Buttons/HairButton/Hair" method="_on_hair_button_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button1" to="Buttons/HairButton/Hair/Hair/Button1/1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button1" to="Buttons/HairButton/Hair/Hair/Button1/1/Hair1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button2" to="Buttons/HairButton/Hair/Hair/Button2/2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button3" to="Buttons/HairButton/Hair/Hair/Button3/3" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button4" to="Buttons/HairButton/Hair/Hair/Button4/4" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button5" to="Buttons/HairButton/Hair/Hair/Button5/5" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button6" to="Buttons/HairButton/Hair/Hair/Button6/6" method="_on_button_6_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button7" to="Buttons/HairButton/Hair/Hair/Button7/7" method="_on_button_7_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button8" to="Buttons/HairButton/Hair/Hair/Button8/8" method="_on_button_8_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button9" to="Buttons/HairButton/Hair/Hair/Button9/9" method="_on_button_9_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button10" to="Buttons/HairButton/Hair/Hair/Button10/10" method="_on_button_10_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton" to="Buttons/HairColorButton/Hair Color" method="_on_hair_color_button_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button1" to="Buttons/HairColorButton/Hair Color/HairColor/Button1/1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button2" to="Buttons/HairColorButton/Hair Color/HairColor/Button2/2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button3" to="Buttons/HairColorButton/Hair Color/HairColor/Button3/3" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button4" to="Buttons/HairColorButton/Hair Color/HairColor/Button4/4" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button5" to="Buttons/HairColorButton/Hair Color/HairColor/Button5/5" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button6" to="Buttons/HairColorButton/Hair Color/HairColor/Button6/6" method="_on_button_6_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button7" to="Buttons/HairColorButton/Hair Color/HairColor/Button7/7" method="_on_button_7_pressed"]
+[connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button8" to="Buttons/HairColorButton/Hair Color/HairColor/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/TopButton" to="Buttons/TopButton/Top" method="_on_top_button_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button1" to="Buttons/TopButton/Top/Top/Button1/1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button2" to="Buttons/TopButton/Top/Top/Button2/2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button3" to="Buttons/TopButton/Top/Top/Button3/3" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button4" to="Buttons/TopButton/Top/Top/Button4/4" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button5" to="Buttons/TopButton/Top/Top/Button5/5" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button6" to="Buttons/TopButton/Top/Top/Button6/6" method="_on_button_6_pressed"]
+[connection signal="pressed" from="Buttons/TopButton/Top/Top/Button7" to="Buttons/TopButton/Top/Top/Button7/7" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Buttons/BottomButton" to="Buttons/BottomButton/Bottom" method="_on_bottom_button_pressed"]
+[connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button1" to="Buttons/BottomButton/Bottom/Bottom/Button1/1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button2" to="Buttons/BottomButton/Bottom/Bottom/Button2/2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button3" to="Buttons/BottomButton/Bottom/Bottom/Button3/3" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton" to="Buttons/BootsButton/Boots" method="_on_boots_button_pressed"]
+[connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button1" to="Buttons/BootsButton/Boots/Boots/Button1/1" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button2" to="Buttons/BootsButton/Boots/Boots/Button2/2" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button3" to="Buttons/BootsButton/Boots/Boots/Button3/3" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Character/LarrowButton" to="Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
+[connection signal="pressed" from="Character/RarrowButton" to="Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
