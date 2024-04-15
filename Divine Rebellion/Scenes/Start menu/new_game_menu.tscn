@@ -1,4 +1,4 @@
-[gd_scene load_steps=312 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=321 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -94,6 +94,11 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Rarrow.gd" id="90_jds8b"]
 [ext_resource type="Texture2D" uid="uid://bobadpnp6evql" path="res://Art/Tech/Сhoosing character menu/cc 4.png" id="91_rb4w1"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/NextButton.gd" id="92_lmva8"]
+[ext_resource type="Texture2D" uid="uid://cvuxis6pmsgu3" path="res://Art/Tech/Сhoosing character menu/cc 3.png" id="95_gledc"]
+[ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="96_u3hgn"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://new_theme.tres" id="97_ckmij"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CheckBox.gd" id="97_xjxo3"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="98_i7e3k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dbdm"]
 atlas = ExtResource("1_krpgh")
@@ -148,6 +153,21 @@ _data = {
 "pressed": SubResource("Animation_68d4i")
 }
 
+[sub_resource type="Animation" id="Animation_dh1q0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_ps66s"]
 resource_name = "idle"
 length = 0.1
@@ -179,21 +199,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_dh1q0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxmlf"]
@@ -2887,6 +2892,21 @@ _data = {
 "pressed": SubResource("Animation_sdisd")
 }
 
+[sub_resource type="Animation" id="Animation_udwpx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_l60em"]
 resource_name = "idle"
 length = 0.1
@@ -2920,26 +2940,38 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_udwpx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nujk"]
+_data = {
+"RESET": SubResource("Animation_udwpx"),
+"idle": SubResource("Animation_l60em"),
+"pressed": SubResource("Animation_3wm5q")
+}
+
+[sub_resource type="Animation" id="Animation_5m5at"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath(".:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [Vector2i(1, 0)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nujk"]
-_data = {
-"RESET": SubResource("Animation_udwpx"),
-"idle": SubResource("Animation_l60em"),
-"pressed": SubResource("Animation_3wm5q")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_45bds"]
@@ -2973,33 +3005,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2i(1, 0), Vector2i(2, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_5m5at"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tbau8"]
@@ -3119,7 +3124,63 @@ _data = {
 "pressed": SubResource("Animation_aghgw")
 }
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id="Animation_dp0c7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_pcpuj"]
+resource_name = "off"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lxlag"]
+resource_name = "on"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5aq02"]
+_data = {
+"RESET": SubResource("Animation_dp0c7"),
+"off": SubResource("Animation_pcpuj"),
+"on": SubResource("Animation_lxlag")
+}
+
+[node name="New Game" type="Node2D"]
 
 [node name="Camera and BG" type="Node2D" parent="."]
 
@@ -3183,7 +3244,7 @@ zoom = Vector2(0.5, 0.5)
 drag_top_margin = 0.29
 
 [node name="AU menu" type="Sprite2D" parent="."]
-position = Vector2(79, 67)
+position = Vector2(81, 67)
 texture = ExtResource("4_s0ib8")
 centered = false
 region_enabled = true
@@ -4598,6 +4659,93 @@ libraries = {
 "": SubResource("AnimationLibrary_fxvev")
 }
 
+[node name="Inv" type="Node2D" parent="."]
+
+[node name="1" type="Sprite2D" parent="Inv"]
+position = Vector2(194, 110)
+rotation = 0.00797702
+texture = ExtResource("95_gledc")
+hframes = 6
+
+[node name="2" type="Sprite2D" parent="Inv"]
+position = Vector2(210, 110)
+texture = ExtResource("95_gledc")
+hframes = 6
+frame = 1
+
+[node name="3" type="Sprite2D" parent="Inv"]
+position = Vector2(194, 126)
+texture = ExtResource("95_gledc")
+hframes = 6
+frame = 2
+
+[node name="4" type="Sprite2D" parent="Inv"]
+position = Vector2(194, 142)
+texture = ExtResource("95_gledc")
+hframes = 6
+frame = 3
+
+[node name="5" type="Sprite2D" parent="Inv"]
+position = Vector2(210, 126)
+texture = ExtResource("95_gledc")
+hframes = 6
+frame = 4
+
+[node name="6" type="Sprite2D" parent="Inv"]
+position = Vector2(210, 142)
+texture = ExtResource("95_gledc")
+hframes = 6
+frame = 5
+
+[node name="DYWTSI" type="Sprite2D" parent="Inv"]
+position = Vector2(247, 138)
+texture = ExtResource("96_u3hgn")
+centered = false
+region_enabled = true
+region_rect = Rect2(22, 5, 111, 7)
+
+[node name="Name" type="Sprite2D" parent="Inv"]
+position = Vector2(234, 112)
+texture = ExtResource("96_u3hgn")
+centered = false
+region_enabled = true
+region_rect = Rect2(133, 1, 30, 13)
+
+[node name="CheckBoxButton" type="TextureButton" parent="Inv"]
+offset_left = 234.0
+offset_top = 136.0
+offset_right = 245.0
+offset_bottom = 147.0
+
+[node name="CheckBox" type="Sprite2D" parent="Inv/CheckBoxButton"]
+texture = ExtResource("96_u3hgn")
+centered = false
+hframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2(0, 3, 22, 11)
+script = ExtResource("97_xjxo3")
+
+[node name="Animation" type="AnimationPlayer" parent="Inv/CheckBoxButton/CheckBox"]
+libraries = {
+"": SubResource("AnimationLibrary_5aq02")
+}
+
+[node name="Text" type="LineEdit" parent="."]
+offset_left = 266.0
+offset_top = 114.0
+offset_right = 346.0
+offset_bottom = 125.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("97_ckmij")
+alignment = 1
+max_length = 15
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+script = ExtResource("98_i7e3k")
+
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
 [connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
@@ -4660,3 +4808,5 @@ libraries = {
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button3" to="Buttons/BootsButton/Boots/Boots/Button3/3" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Character/LarrowButton" to="Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
 [connection signal="pressed" from="Character/RarrowButton" to="Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
+[connection signal="pressed" from="Inv/CheckBoxButton" to="Inv/CheckBoxButton/CheckBox" method="_on_check_box_button_pressed"]
+[connection signal="text_changed" from="Text" to="Text" method="_on_text_changed"]
