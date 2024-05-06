@@ -1,4 +1,4 @@
-[gd_scene load_steps=321 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=331 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -73,12 +73,14 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton6.gd" id="69_8j5gp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton7.gd" id="70_muc02"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton1.gd" id="72_e0fwd"]
-[ext_resource type="Texture2D" uid="uid://cdak1l7d5htmc" path="res://Art/Character/clothes/bottomall.png" id="73_06w3x"]
+[ext_resource type="Texture2D" uid="uid://gymh3gybyi7n" path="res://Art/Character/clothes/bottomall.png" id="73_06w3x"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton2.gd" id="74_a8xqp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton3.gd" id="75_2jy73"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton1.gd" id="77_qvbts"]
-[ext_resource type="Texture2D" uid="uid://s6eegporp6q2" path="res://Art/Character/clothes/boots.png" id="78_prg0d"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton4.gd" id="78_77hwm"]
 [ext_resource type="Texture2D" uid="uid://cpmoyy0i87xbt" path="res://Art/Tech/Сhoosing character menu/cc 1.png" id="79_7gybr"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton5.gd" id="79_j1gmm"]
+[ext_resource type="Texture2D" uid="uid://drtyre1m2n6ib" path="res://Art/Character/clothes/bootsall.png" id="80_j53j8"]
 [ext_resource type="Texture2D" uid="uid://bt0s6lykn0bu8" path="res://Art/Character/body/body.png" id="80_u7t71"]
 [ext_resource type="Texture2D" uid="uid://3me8v0yj15ij" path="res://Art/Character/eyes/eyesall.png" id="81_laxar"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton2.gd" id="81_ojbt4"]
@@ -98,7 +100,7 @@
 [ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="96_u3hgn"]
 [ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://new_theme.tres" id="97_ckmij"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CheckBox.gd" id="97_xjxo3"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="98_i7e3k"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="101_c3nwx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dbdm"]
 atlas = ExtResource("1_krpgh")
@@ -2746,6 +2748,116 @@ _data = {
 "pressed": SubResource("Animation_hqdkw")
 }
 
+[sub_resource type="Animation" id="Animation_0m2m2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ahjnh"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4y2j8"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4fif"]
+_data = {
+"RESET": SubResource("Animation_0m2m2"),
+"idle": SubResource("Animation_ahjnh"),
+"pressed": SubResource("Animation_4y2j8")
+}
+
+[sub_resource type="Animation" id="Animation_8ncsv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vhmdw"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nxc70"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tfyno"]
+_data = {
+"RESET": SubResource("Animation_8ncsv"),
+"idle": SubResource("Animation_vhmdw"),
+"pressed": SubResource("Animation_nxc70")
+}
+
 [sub_resource type="Animation" id="Animation_74ol3"]
 length = 0.001
 tracks/0/type = "value"
@@ -3136,7 +3248,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_pcpuj"]
@@ -3705,13 +3817,13 @@ libraries = {
 }
 
 [node name="Hair" type="Node2D" parent="Buttons/HairButton/Hair"]
-visible = false
 
 [node name="Button1" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = -54.0
-offset_top = 40.0
-offset_right = -32.0
-offset_bottom = 62.0
+offset_left = -52.5
+offset_top = 30.0
+offset_right = -30.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="1" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button1"]
 texture = ExtResource("35_2ktqx")
@@ -3735,10 +3847,11 @@ region_rect = Rect2(0, 0, 32, 256)
 script = ExtResource("33_e300j")
 
 [node name="Button2" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = -32.0
-offset_top = 40.0
-offset_right = -10.0
-offset_bottom = 62.0
+offset_left = -30.5
+offset_top = 30.0
+offset_right = -8.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="2" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button2"]
 texture = ExtResource("35_2ktqx")
@@ -3762,10 +3875,11 @@ region_rect = Rect2(0, 256, 32, 256)
 script = ExtResource("35_qb1yn")
 
 [node name="Button3" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = -10.0
-offset_top = 40.0
-offset_right = 12.0
-offset_bottom = 62.0
+offset_left = -8.5
+offset_top = 30.0
+offset_right = 13.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="3" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button3"]
 texture = ExtResource("35_2ktqx")
@@ -3789,10 +3903,11 @@ region_rect = Rect2(0, 512, 32, 256)
 script = ExtResource("37_g8v8m")
 
 [node name="Button4" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 12.0
-offset_top = 40.0
-offset_right = 34.0
-offset_bottom = 62.0
+offset_left = 13.5
+offset_top = 30.0
+offset_right = 35.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4"]
 texture = ExtResource("35_2ktqx")
@@ -3816,10 +3931,11 @@ region_rect = Rect2(0, 768, 32, 256)
 script = ExtResource("39_k3moy")
 
 [node name="Button5" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 34.0
-offset_top = 40.0
-offset_right = 56.0
-offset_bottom = 62.0
+offset_left = 35.5
+offset_top = 30.0
+offset_right = 57.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button5"]
 texture = ExtResource("35_2ktqx")
@@ -3843,10 +3959,11 @@ region_rect = Rect2(0, 1024, 32, 256)
 script = ExtResource("41_pr4yq")
 
 [node name="Button6" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 56.0
-offset_top = 40.0
-offset_right = 78.0
-offset_bottom = 62.0
+offset_left = 57.5
+offset_top = 30.0
+offset_right = 79.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button6"]
 texture = ExtResource("35_2ktqx")
@@ -3870,10 +3987,11 @@ region_rect = Rect2(0, 1280, 32, 256)
 script = ExtResource("43_ibnt3")
 
 [node name="Button7" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 78.0
-offset_top = 40.0
-offset_right = 100.0
-offset_bottom = 62.0
+offset_left = 79.5
+offset_top = 30.0
+offset_right = 101.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button7"]
 texture = ExtResource("35_2ktqx")
@@ -3897,10 +4015,11 @@ region_rect = Rect2(0, 1536, 32, 256)
 script = ExtResource("45_navgn")
 
 [node name="Button8" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 100.0
-offset_top = 40.0
-offset_right = 122.0
-offset_bottom = 62.0
+offset_left = 101.5
+offset_top = 30.0
+offset_right = 123.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button8"]
 texture = ExtResource("35_2ktqx")
@@ -3924,10 +4043,11 @@ region_rect = Rect2(0, 1792, 32, 256)
 script = ExtResource("47_ks5o5")
 
 [node name="Button9" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 122.0
-offset_top = 40.0
-offset_right = 144.0
-offset_bottom = 62.0
+offset_left = 123.5
+offset_top = 30.0
+offset_right = 145.5
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button9"]
 texture = ExtResource("35_2ktqx")
@@ -3951,10 +4071,11 @@ region_rect = Rect2(0, 2048, 32, 256)
 script = ExtResource("49_11wpy")
 
 [node name="Button10" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 144.0
-offset_top = 40.0
-offset_right = 167.0
-offset_bottom = 62.0
+offset_left = 145.5
+offset_top = 30.0
+offset_right = 154.5
+offset_bottom = 34.0
+metadata/_edit_use_anchors_ = true
 
 [node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10"]
 texture = ExtResource("35_2ktqx")
@@ -3968,6 +4089,222 @@ libraries = {
 }
 
 [node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button15" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = -30.5
+offset_top = 52.0
+offset_right = -21.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button15"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button15/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button15/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button16" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = -9.5
+offset_top = 52.0
+offset_right = -0.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button16"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button16/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button16/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button17" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 12.5
+offset_top = 52.0
+offset_right = 21.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button17"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button17/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button17/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button18" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 35.5
+offset_top = 52.0
+offset_right = 44.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button18"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button18/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button18/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button19" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 57.5
+offset_top = 52.0
+offset_right = 66.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button19"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button19/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button19/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button20" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 79.5
+offset_top = 52.0
+offset_right = 88.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button20"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button20/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button20/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button21" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 101.5
+offset_top = 52.0
+offset_right = 110.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button21"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button21/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button21/10"]
+position = Vector2(0.5, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("36_0rlt0")
+centered = false
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 2304, 32, 256)
+script = ExtResource("51_ldol4")
+
+[node name="Button22" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+offset_left = 124.5
+offset_top = 52.0
+offset_right = 133.5
+offset_bottom = 56.0
+
+[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button22"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("41_8rivi")
+
+[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button22/10"]
+libraries = {
+"": SubResource("AnimationLibrary_v4hs0")
+}
+
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button22/10"]
 position = Vector2(0.5, 6)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
@@ -4385,9 +4722,9 @@ libraries = {
 visible = false
 
 [node name="Button1" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
-offset_left = -89.0
+offset_left = -111.5
 offset_top = 40.0
-offset_right = -67.0
+offset_right = -89.5
 offset_bottom = 62.0
 
 [node name="1" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button1"]
@@ -4410,9 +4747,9 @@ libraries = {
 }
 
 [node name="Button2" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
-offset_left = -67.0
+offset_left = -89.5
 offset_top = 40.0
-offset_right = -45.0
+offset_right = -67.5
 offset_bottom = 62.0
 
 [node name="2" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button2"]
@@ -4435,9 +4772,9 @@ libraries = {
 }
 
 [node name="Button3" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
-offset_left = -45.0
+offset_left = -67.5
 offset_top = 40.0
-offset_right = -23.0
+offset_right = -45.5
 offset_bottom = 62.0
 
 [node name="3" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button3"]
@@ -4456,6 +4793,54 @@ region_rect = Rect2(0, 64, 32, 32)
 [node name="Animation3" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button3/3"]
 libraries = {
 "": SubResource("AnimationLibrary_tt5k6")
+}
+
+[node name="Button4" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
+offset_left = -45.5
+offset_top = 40.0
+offset_right = -23.5
+offset_bottom = 62.0
+
+[node name="4" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button4"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("78_77hwm")
+
+[node name="Bottom4" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button4/4"]
+position = Vector2(-4, -13)
+texture = ExtResource("73_06w3x")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 32, 32)
+
+[node name="Animation4" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button4/4"]
+libraries = {
+"": SubResource("AnimationLibrary_h4fif")
+}
+
+[node name="Button5" type="TextureButton" parent="Buttons/BottomButton/Bottom/Bottom"]
+offset_left = -23.5
+offset_top = 40.0
+offset_right = -1.5
+offset_bottom = 62.0
+
+[node name="5" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button5"]
+texture = ExtResource("35_2ktqx")
+centered = false
+hframes = 3
+script = ExtResource("79_j1gmm")
+
+[node name="Bottom5" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button5/5"]
+position = Vector2(-4, -13)
+texture = ExtResource("73_06w3x")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 128, 32, 32)
+
+[node name="Animation5" type="AnimationPlayer" parent="Buttons/BottomButton/Bottom/Bottom/Button5/5"]
+libraries = {
+"": SubResource("AnimationLibrary_tfyno")
 }
 
 [node name="BootsButton" type="TextureButton" parent="Buttons"]
@@ -4496,7 +4881,7 @@ script = ExtResource("77_qvbts")
 
 [node name="Boots1" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button1/1"]
 position = Vector2(-4, -18)
-texture = ExtResource("78_prg0d")
+texture = ExtResource("80_j53j8")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
@@ -4522,7 +4907,7 @@ script = ExtResource("81_ojbt4")
 
 [node name="Boots2" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button2/2"]
 position = Vector2(-4, -18)
-texture = ExtResource("78_prg0d")
+texture = ExtResource("80_j53j8")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
@@ -4546,7 +4931,7 @@ script = ExtResource("82_pkna6")
 
 [node name="Boots3" type="Sprite2D" parent="Buttons/BootsButton/Boots/Boots/Button3/3"]
 position = Vector2(-4, -18)
-texture = ExtResource("78_prg0d")
+texture = ExtResource("80_j53j8")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 64, 32, 32)
@@ -4579,9 +4964,9 @@ position = Vector2(131, 110)
 texture = ExtResource("73_06w3x")
 centered = false
 hframes = 4
-vframes = 3
+vframes = 5
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 96)
+region_rect = Rect2(0, 0, 128, 160)
 script = ExtResource("82_oacoe")
 
 [node name="Top" type="Sprite2D" parent="Character"]
@@ -4595,7 +4980,7 @@ script = ExtResource("84_6lqbe")
 
 [node name="Boots" type="Sprite2D" parent="Character"]
 position = Vector2(131, 110)
-texture = ExtResource("78_prg0d")
+texture = ExtResource("80_j53j8")
 centered = false
 hframes = 4
 vframes = 3
@@ -4721,7 +5106,6 @@ offset_bottom = 147.0
 texture = ExtResource("96_u3hgn")
 centered = false
 hframes = 2
-frame = 1
 region_enabled = true
 region_rect = Rect2(0, 3, 22, 11)
 script = ExtResource("97_xjxo3")
@@ -4744,7 +5128,9 @@ max_length = 15
 expand_to_text_length = true
 context_menu_enabled = false
 virtual_keyboard_enabled = false
-script = ExtResource("98_i7e3k")
+caret_blink = true
+caret_blink_interval = 0.5
+script = ExtResource("101_c3nwx")
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
@@ -4781,6 +5167,14 @@ script = ExtResource("98_i7e3k")
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button8" to="Buttons/HairButton/Hair/Hair/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button9" to="Buttons/HairButton/Hair/Hair/Button9/9" method="_on_button_9_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button10" to="Buttons/HairButton/Hair/Hair/Button10/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button15" to="Buttons/HairButton/Hair/Hair/Button15/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button16" to="Buttons/HairButton/Hair/Hair/Button16/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button17" to="Buttons/HairButton/Hair/Hair/Button17/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button18" to="Buttons/HairButton/Hair/Hair/Button18/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button19" to="Buttons/HairButton/Hair/Hair/Button19/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button20" to="Buttons/HairButton/Hair/Hair/Button20/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button21" to="Buttons/HairButton/Hair/Hair/Button21/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button22" to="Buttons/HairButton/Hair/Hair/Button22/10" method="_on_button_10_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton" to="Buttons/HairColorButton/Hair Color" method="_on_hair_color_button_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button1" to="Buttons/HairColorButton/Hair Color/HairColor/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button2" to="Buttons/HairColorButton/Hair Color/HairColor/Button2/2" method="_on_button_2_pressed"]
@@ -4802,6 +5196,8 @@ script = ExtResource("98_i7e3k")
 [connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button1" to="Buttons/BottomButton/Bottom/Bottom/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button2" to="Buttons/BottomButton/Bottom/Bottom/Button2/2" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button3" to="Buttons/BottomButton/Bottom/Bottom/Button3/3" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button4" to="Buttons/BottomButton/Bottom/Bottom/Button4/4" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Buttons/BottomButton/Bottom/Bottom/Button5" to="Buttons/BottomButton/Bottom/Bottom/Button5/5" method="_on_button_5_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton" to="Buttons/BootsButton/Boots" method="_on_boots_button_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button1" to="Buttons/BootsButton/Boots/Boots/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button2" to="Buttons/BootsButton/Boots/Boots/Button2/2" method="_on_button_2_pressed"]

@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://b78i1nbh81d5p"]
 
 [ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="2_0g4w4"]
-[ext_resource type="FontFile" uid="uid://sl5jw4gkqwgl" path="res://Divine Rebellion Font.ttf" id="2_kwd08"]
+[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="2_kwd08"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_spbbk"]
 region_rect = Rect2(184, 0, 184, 6)
@@ -24,6 +24,8 @@ region_rect = Rect2(478, 3, 3, 11)
 HSlider/icons/tick = null
 HSlider/styles/slider = SubResource("StyleBoxTexture_spbbk")
 Label/colors/font_color = Color(1, 1, 1, 1)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
 Label/font_sizes/font_size = 41
 Label/fonts/font = ExtResource("2_kwd08")
 LineEdit/colors/caret_color = Color(0.0705882, 0.027451, 0.192157, 1)
