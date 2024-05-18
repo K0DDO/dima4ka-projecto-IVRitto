@@ -5132,6 +5132,15 @@ caret_blink = true
 caret_blink_interval = 0.5
 script = ExtResource("101_c3nwx")
 
+[node name="ColorPicker" type="ColorPicker" parent="."]
+visible = false
+offset_left = 117.0
+offset_top = 81.0
+offset_right = 415.0
+offset_bottom = 353.0
+scale = Vector2(0.5, 0.5)
+picker_shape = 1
+
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
 [connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
