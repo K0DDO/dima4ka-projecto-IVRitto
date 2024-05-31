@@ -3,6 +3,10 @@ extends Sprite2D
 @onready var animation = $Animation
 var speed = 0
 
+func _ready():
+	await get_tree().create_timer(0.35).timeout
+	ani()
+
 func _process(delta):
 	if position.x > 96:
 		speed -= 5 * delta
@@ -10,7 +14,6 @@ func _process(delta):
 		speed += 5 * delta
 	else:
 		speed = 0
-		ani()
 	position.x += speed
 
 func ani():

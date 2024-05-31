@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dov3okl2daogb"]
+[gd_scene load_steps=21 format=3 uid="uid://dov3okl2daogb"]
 
+[ext_resource type="Script" path="res://Scripts/Start Scene/StartSceneScript.gd" id="1_51r51"]
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_p2p52"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/BGTreesScript.gd" id="2_7mqhg"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="3_go6uo"]
@@ -35,7 +36,70 @@ region = Rect2(480, -1, 480, 541)
 atlas = ExtResource("1_p2p52")
 region = Rect2(0, 0, 480, 540)
 
+[sub_resource type="Animation" id="Animation_pu53i"]
+resource_name = "fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dnkwi"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6oh1"]
+_data = {
+"fade_in": SubResource("Animation_dnkwi"),
+"fade_out": SubResource("Animation_pu53i")
+}
+
 [node name="Start Scene" type="Node2D"]
+script = ExtResource("1_51r51")
 
 [node name="Camera and BG" type="Node2D" parent="."]
 
@@ -108,6 +172,19 @@ script = ExtResource("10_tbcsj")
 wait_time = 14.0
 one_shot = true
 autostart = true
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t6oh1")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+self_modulate = Color(1, 1, 1, 0.983726)
+offset_left = -49.0
+offset_top = -57.0
+offset_right = 670.0
+offset_bottom = 634.0
+color = Color(1, 0.917647, 0.941176, 1)
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="timeout" from="Camera and BG/Name/Timer" to="Camera and BG/Name" method="_on_timer_timeout"]

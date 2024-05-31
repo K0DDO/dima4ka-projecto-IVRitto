@@ -14,6 +14,7 @@ func _on_settings_button_mouse_entered():
 
 func _on_settings_button_mouse_exited():
 	animations.play("idle")
-	
+
 func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://Scenes/Main menu/settings_scene.tscn")
+

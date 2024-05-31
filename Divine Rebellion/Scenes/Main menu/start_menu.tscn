@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://bfc18rm2lpdqp"]
+[gd_scene load_steps=22 format=3 uid="uid://bfc18rm2lpdqp"]
 
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/StartMenuScript.gd" id="1_5n0f7"]
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_15lfv"]
 [ext_resource type="Texture2D" uid="uid://ciyapp3o28d4p" path="res://Art/Tech/new game_load game.png" id="1_a63rn"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_v1nxd"]
@@ -171,6 +172,7 @@ _data = {
 }
 
 [node name="Start" type="Node2D"]
+script = ExtResource("1_5n0f7")
 
 [node name="Camera and BG" type="Node2D" parent="."]
 

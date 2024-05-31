@@ -3405,7 +3405,6 @@ libraries = {
 }
 
 [node name="Buttons" type="Node2D" parent="."]
-position = Vector2(0.5, 0)
 
 [node name="BodyButton" type="TextureButton" parent="Buttons"]
 offset_left = 106.5
@@ -3903,16 +3902,14 @@ region_rect = Rect2(0, 512, 32, 256)
 script = ExtResource("37_g8v8m")
 
 [node name="Button4" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_left = 13.5
-offset_top = 30.0
-offset_right = 35.5
-offset_bottom = 52.0
+offset_right = 22.0
+offset_bottom = 22.0
 metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4"]
 texture = ExtResource("35_2ktqx")
 centered = false
-hframes = 3
+region_rect = Rect2(0, 0, 66, 23)
 script = ExtResource("35_ocwe1")
 
 [node name="Button4Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button4/4"]
@@ -5099,7 +5096,7 @@ region_rect = Rect2(133, 1, 30, 13)
 [node name="CheckBoxButton" type="TextureButton" parent="Inv"]
 offset_left = 234.0
 offset_top = 136.0
-offset_right = 245.0
+offset_right = 358.0
 offset_bottom = 147.0
 
 [node name="CheckBox" type="Sprite2D" parent="Inv/CheckBoxButton"]
