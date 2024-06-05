@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimationPlayer
-var speed : int = 35
+var speed : int = 50
 var direction = "Down"
 
 func handleInput():

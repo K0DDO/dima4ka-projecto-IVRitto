@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var transition = $Transition
-@onready var main_menu = preload("res://Scenes/start_scene.tscn")
+@onready var main_menu = preload("res://Scenes/start_scene.tscn")	
 
 func _ready():
 	await get_tree().create_timer(3.35).timeout
