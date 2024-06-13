@@ -6,8 +6,7 @@ func _ready():
 	animations.play("focused")
 
 func _process(_delta):
-	if Global.haircolorbutton != 0:
-		animations.play("idle")
+	pass
 
 func _on_button_1_pressed():
 	animations.play("pressed")

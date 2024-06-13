@@ -8,13 +8,15 @@ func _ready():
 	animations.play("idle")
 
 func _process(_delta):
-	if Global.topbutton != 6:
+	if Global.topbutton != 5:
 		animations.play("idle")
+	else:
+		animations.play("focused")
 
 func _on_button_6_pressed():
 	if pressed == false:
 		pressed = true
-		Global.topbutton = 6
+		Global.topbutton = 5
 		animations.play("pressed")
 		child.set_position(Vector2(-2.5, -5.5))
 		await get_tree().create_timer(0.1).timeout

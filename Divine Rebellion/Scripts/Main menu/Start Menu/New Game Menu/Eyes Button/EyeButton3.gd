@@ -6,9 +6,11 @@ func _ready():
 	animations.play("idle")
 
 func _physics_process(_delta):
-	if Global.eyebutton != 3:
+	if Global.eyebutton != 2:
 		animations.play("idle")
+	else:
+		animations.play("focused")
 
 func _on_button_3_pressed():
 	animations.play("pressed")
-	Global.eyebutton = 3
+	Global.eyebutton = 2

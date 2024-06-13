@@ -1,4 +1,4 @@
-[gd_scene load_steps=331 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=375 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BottomButton.gd" id="16_vi8fj"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton8.gd" id="17_cdp0j"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BootsButton.gd" id="17_j66ga"]
+[ext_resource type="Shader" path="res://Shaders/hair.gdshader" id="18_5xjfr"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton9.gd" id="18_hucel"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton1.gd" id="21_yxnt7"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton2.gd" id="22_mwbp6"]
@@ -36,34 +37,24 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton8.gd" id="28_en4s8"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton1.gd" id="31_5lse8"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton2.gd" id="33_boih0"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair1.gd" id="33_e300j"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton3.gd" id="34_2vo2u"]
 [ext_resource type="Texture2D" uid="uid://cowjv2vy7ctx0" path="res://Art/Tech/Сhoosing character menu/hair_top_bottom_boots.png" id="35_2ktqx"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton4.gd" id="35_ocwe1"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair2.gd" id="35_qb1yn"]
 [ext_resource type="Texture2D" uid="uid://pvle4qtu7xa8" path="res://Art/Character/hair/hairall.png" id="36_0rlt0"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton5.gd" id="36_64bl7"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton6.gd" id="37_4264q"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair3.gd" id="37_g8v8m"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton7.gd" id="38_i8oug"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton8.gd" id="39_boyee"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair4.gd" id="39_k3moy"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton9.gd" id="40_64olb"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton10.gd" id="41_8rivi"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair5.gd" id="41_pr4yq"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair6.gd" id="43_ibnt3"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton1.gd" id="44_e01fr"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair7.gd" id="45_navgn"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton2.gd" id="45_t8wpp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton3.gd" id="46_8p57e"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair8.gd" id="47_ks5o5"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton4.gd" id="47_ulxfv"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton5.gd" id="48_obeg6"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair9.gd" id="49_11wpy"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton6.gd" id="49_ch6xd"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton7.gd" id="50_lj7tu"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Color Button/HairColorButton8.gd" id="51_dervg"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/Hair10.gd" id="51_ldol4"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton1.gd" id="63_5a628"]
 [ext_resource type="Texture2D" uid="uid://cqobb38o16ffy" path="res://Art/Character/clothes/topall.png" id="63_hnr23"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton2.gd" id="65_5ysgv"]
@@ -71,11 +62,19 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton4.gd" id="67_pftkp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton5.gd" id="68_gcm3i"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton6.gd" id="69_8j5gp"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton11.gd" id="70_jb1ki"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton7.gd" id="70_muc02"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton12.gd" id="71_6ldat"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton1.gd" id="72_e0fwd"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton13.gd" id="72_tto85"]
 [ext_resource type="Texture2D" uid="uid://gymh3gybyi7n" path="res://Art/Character/clothes/bottomall.png" id="73_06w3x"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton14.gd" id="73_ky5yn"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton15.gd" id="74_3xunc"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton2.gd" id="74_a8xqp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton3.gd" id="75_2jy73"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton16.gd" id="75_msmpj"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton17.gd" id="76_gtj8t"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton18.gd" id="77_itqen"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton1.gd" id="77_qvbts"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton4.gd" id="78_77hwm"]
 [ext_resource type="Texture2D" uid="uid://cpmoyy0i87xbt" path="res://Art/Tech/Сhoosing character menu/cc 1.png" id="79_7gybr"]
@@ -101,6 +100,14 @@
 [ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://new_theme.tres" id="97_ckmij"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CheckBox.gd" id="97_xjxo3"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="101_c3nwx"]
+[ext_resource type="Texture2D" uid="uid://crty5iewvb3m7" path="res://Art/Tech/Сhoosing character menu/miniicons.png" id="107_a4xsl"]
+[ext_resource type="Texture2D" uid="uid://iqllj7hsmeq7" path="res://Art/Tech/Сhoosing character menu/cc 7.png" id="109_owopy"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Male.gd" id="110_jrbgs"]
+[ext_resource type="Texture2D" uid="uid://b06760hyu1fdi" path="res://Art/Tech/Сhoosing character menu/cc skill.png" id="110_r7wom"]
+[ext_resource type="Texture2D" uid="uid://c4a7t4n2k28e" path="res://Art/Tech/Сhoosing character menu/random.png" id="111_eahp7"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Female.gd" id="111_jyfju"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Random.gd" id="114_hfp4q"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Skill.gd" id="115_xaxu4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dbdm"]
 atlas = ExtResource("1_krpgh")
@@ -208,6 +215,121 @@ _data = {
 "RESET": SubResource("Animation_dh1q0"),
 "idle": SubResource("Animation_ps66s"),
 "pressed": SubResource("Animation_7loch")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnuqj"]
+shader = ExtResource("18_5xjfr")
+shader_parameter/new_color1 = Color(0.349, 0.196, 0.141, 1)
+shader_parameter/new_color2 = Color(1, 0.49, 0.983, 1)
+
+[sub_resource type="Animation" id="Animation_f76gl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dk6oi"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_c5231"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gapk3"]
+_data = {
+"RESET": SubResource("Animation_f76gl"),
+"idle": SubResource("Animation_dk6oi"),
+"pressed": SubResource("Animation_c5231")
+}
+
+[sub_resource type="Animation" id="Animation_1m7cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_urqvf"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aghgw"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxvev"]
+_data = {
+"RESET": SubResource("Animation_1m7cu"),
+"idle": SubResource("Animation_urqvf"),
+"pressed": SubResource("Animation_aghgw")
 }
 
 [sub_resource type="Animation" id="Animation_mavnd"]
@@ -405,9 +527,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_taged"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j21w2"]
 _data = {
 "RESET": SubResource("Animation_u75pt"),
+"focused": SubResource("Animation_taged"),
 "idle": SubResource("Animation_70d1p"),
 "pressed": SubResource("Animation_rb2e8")
 }
@@ -460,9 +598,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_knrb8"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nksvf"]
 _data = {
 "RESET": SubResource("Animation_aql5k"),
+"focused": SubResource("Animation_knrb8"),
 "idle": SubResource("Animation_wkfjb"),
 "pressed": SubResource("Animation_e482k")
 }
@@ -515,9 +669,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_ouq1u"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gh75p"]
 _data = {
 "RESET": SubResource("Animation_04fvn"),
+"focused": SubResource("Animation_ouq1u"),
 "idle": SubResource("Animation_eoqme"),
 "pressed": SubResource("Animation_0xg82")
 }
@@ -570,9 +740,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_dv8tg"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kn4so"]
 _data = {
 "RESET": SubResource("Animation_o3us7"),
+"focused": SubResource("Animation_dv8tg"),
 "idle": SubResource("Animation_vf2hs"),
 "pressed": SubResource("Animation_11fxk")
 }
@@ -625,9 +811,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_t62j1"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_23ccv"]
 _data = {
 "RESET": SubResource("Animation_7uooj"),
+"focused": SubResource("Animation_t62j1"),
 "idle": SubResource("Animation_24i5e"),
 "pressed": SubResource("Animation_xrrbf")
 }
@@ -680,9 +882,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_xujnv"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xk4f8"]
 _data = {
 "RESET": SubResource("Animation_ri2vj"),
+"focused": SubResource("Animation_xujnv"),
 "idle": SubResource("Animation_1wyj7"),
 "pressed": SubResource("Animation_m7b2r")
 }
@@ -735,9 +953,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_j5vv2"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button8/8:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x3u5p"]
 _data = {
 "RESET": SubResource("Animation_8mrsv"),
+"focused": SubResource("Animation_j5vv2"),
 "idle": SubResource("Animation_bu2nf"),
 "pressed": SubResource("Animation_xb86x")
 }
@@ -790,9 +1024,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_x324b"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button9/9:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w5hao"]
 _data = {
 "RESET": SubResource("Animation_cn7ao"),
+"focused": SubResource("Animation_x324b"),
 "idle": SubResource("Animation_imuwy"),
 "pressed": SubResource("Animation_t5yg6")
 }
@@ -809,7 +1059,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_1iinm"]
@@ -991,9 +1241,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_fgx2l"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkj3g"]
 _data = {
 "RESET": SubResource("Animation_iw3x6"),
+"focused": SubResource("Animation_fgx2l"),
 "idle": SubResource("Animation_e1xg5"),
 "pressed": SubResource("Animation_6tcpg")
 }
@@ -1046,9 +1312,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_oempk"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osvej"]
 _data = {
 "RESET": SubResource("Animation_m03kk"),
+"focused": SubResource("Animation_oempk"),
 "idle": SubResource("Animation_4tnka"),
 "pressed": SubResource("Animation_t7jym")
 }
@@ -1101,9 +1383,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_rk4xq"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6e6pb"]
 _data = {
 "RESET": SubResource("Animation_02m15"),
+"focused": SubResource("Animation_rk4xq"),
 "idle": SubResource("Animation_oslp3"),
 "pressed": SubResource("Animation_xs4ei")
 }
@@ -1156,9 +1454,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_fckj6"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_akslk"]
 _data = {
 "RESET": SubResource("Animation_6oxay"),
+"focused": SubResource("Animation_fckj6"),
 "idle": SubResource("Animation_sppvo"),
 "pressed": SubResource("Animation_lhamn")
 }
@@ -1211,9 +1525,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_46gu7"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idek7"]
 _data = {
 "RESET": SubResource("Animation_j8aui"),
+"focused": SubResource("Animation_46gu7"),
 "idle": SubResource("Animation_xlf8s"),
 "pressed": SubResource("Animation_xvsq4")
 }
@@ -1266,9 +1596,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_8w306"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2xpah"]
 _data = {
 "RESET": SubResource("Animation_nc708"),
+"focused": SubResource("Animation_8w306"),
 "idle": SubResource("Animation_sjrs3"),
 "pressed": SubResource("Animation_ir0c1")
 }
@@ -1321,9 +1667,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_tybt6"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button8/8:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ouhmn"]
 _data = {
 "RESET": SubResource("Animation_x1wte"),
+"focused": SubResource("Animation_tybt6"),
 "idle": SubResource("Animation_qi1d7"),
 "pressed": SubResource("Animation_eq4m7")
 }
@@ -1340,7 +1702,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_ifo8k"]
@@ -1400,6 +1762,11 @@ _data = {
 "idle": SubResource("Animation_ep4i7"),
 "pressed": SubResource("Animation_6dci5")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrom"]
+shader = ExtResource("18_5xjfr")
+shader_parameter/new_color1 = Color(0.349, 0.196, 0.141, 1)
+shader_parameter/new_color2 = Color(1, 0.49, 0.983, 1)
 
 [sub_resource type="Animation" id="Animation_a138h"]
 length = 0.001
@@ -1956,7 +2323,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_wdlgq"]
@@ -2029,7 +2396,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_tgfr5"]
@@ -2211,9 +2578,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_ig8yf"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button2/2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rmwrt"]
 _data = {
 "RESET": SubResource("Animation_plo2p"),
+"focused": SubResource("Animation_ig8yf"),
 "idle": SubResource("Animation_pm1gl"),
 "pressed": SubResource("Animation_asp0i")
 }
@@ -2265,9 +2648,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_tbykc"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button3/3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eirwk"]
 _data = {
 "RESET": SubResource("Animation_yvjyu"),
+"focused": SubResource("Animation_tbykc"),
 "idle": SubResource("Animation_8mcv5"),
 "pressed": SubResource("Animation_8ycx5")
 }
@@ -2320,9 +2719,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_ly7ms"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button4/4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00qc8"]
 _data = {
 "RESET": SubResource("Animation_lqodj"),
+"focused": SubResource("Animation_ly7ms"),
 "idle": SubResource("Animation_fd1x2"),
 "pressed": SubResource("Animation_ka2b0")
 }
@@ -2375,9 +2790,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_vfu02"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button5/5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_50btu"]
 _data = {
 "RESET": SubResource("Animation_2hhjl"),
+"focused": SubResource("Animation_vfu02"),
 "idle": SubResource("Animation_2icn4"),
 "pressed": SubResource("Animation_nyihj")
 }
@@ -2430,9 +2861,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_5qx5q"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button6/6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hag6f"]
 _data = {
 "RESET": SubResource("Animation_pvm03"),
+"focused": SubResource("Animation_5qx5q"),
 "idle": SubResource("Animation_7q2wf"),
 "pressed": SubResource("Animation_nqa41")
 }
@@ -2485,9 +2932,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_w3bet"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button7/7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fk2up"]
 _data = {
 "RESET": SubResource("Animation_ar56w"),
+"focused": SubResource("Animation_w3bet"),
 "idle": SubResource("Animation_rbfnl"),
 "pressed": SubResource("Animation_0swp1")
 }
@@ -2504,7 +2967,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_10x3h"]
@@ -2577,7 +3040,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_tjitp"]
@@ -2650,7 +3113,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_um4ro"]
@@ -2686,9 +3149,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_ta5yg"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pytxs"]
 _data = {
 "RESET": SubResource("Animation_6ymsb"),
+"focused": SubResource("Animation_ta5yg"),
 "idle": SubResource("Animation_um4ro"),
 "pressed": SubResource("Animation_b2fyo")
 }
@@ -2741,9 +3220,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_hqwqa"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tt5k6"]
 _data = {
 "RESET": SubResource("Animation_bxqqs"),
+"focused": SubResource("Animation_hqwqa"),
 "idle": SubResource("Animation_glpn2"),
 "pressed": SubResource("Animation_hqdkw")
 }
@@ -2796,9 +3291,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_1ee1d"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4fif"]
 _data = {
 "RESET": SubResource("Animation_0m2m2"),
+"focused": SubResource("Animation_1ee1d"),
 "idle": SubResource("Animation_ahjnh"),
 "pressed": SubResource("Animation_4y2j8")
 }
@@ -2851,9 +3362,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_fah7p"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tfyno"]
 _data = {
 "RESET": SubResource("Animation_8ncsv"),
+"focused": SubResource("Animation_fah7p"),
 "idle": SubResource("Animation_vhmdw"),
 "pressed": SubResource("Animation_nxc70")
 }
@@ -2870,7 +3397,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_cgnc3"]
@@ -3052,9 +3579,25 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_j4ogb"]
+resource_name = "focused"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7nujk"]
 _data = {
 "RESET": SubResource("Animation_udwpx"),
+"focused": SubResource("Animation_j4ogb"),
 "idle": SubResource("Animation_l60em"),
 "pressed": SubResource("Animation_3wm5q")
 }
@@ -3064,22 +3607,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -3119,121 +3650,28 @@ tracks/0/keys = {
 "values": [Vector2i(1, 0), Vector2i(2, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2flab"]
+resource_name = "focused"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tbau8"]
 _data = {
 "RESET": SubResource("Animation_5m5at"),
+"focused": SubResource("Animation_2flab"),
 "idle": SubResource("Animation_45bds"),
 "pressed": SubResource("Animation_kcmgx")
-}
-
-[sub_resource type="Animation" id="Animation_f76gl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_dk6oi"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_c5231"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gapk3"]
-_data = {
-"RESET": SubResource("Animation_f76gl"),
-"idle": SubResource("Animation_dk6oi"),
-"pressed": SubResource("Animation_c5231")
-}
-
-[sub_resource type="Animation" id="Animation_1m7cu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_urqvf"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_aghgw"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxvev"]
-_data = {
-"RESET": SubResource("Animation_1m7cu"),
-"idle": SubResource("Animation_urqvf"),
-"pressed": SubResource("Animation_aghgw")
 }
 
 [sub_resource type="Animation" id="Animation_dp0c7"]
@@ -3290,6 +3728,111 @@ _data = {
 "RESET": SubResource("Animation_dp0c7"),
 "off": SubResource("Animation_pcpuj"),
 "on": SubResource("Animation_lxlag")
+}
+
+[sub_resource type="Animation" id="Animation_1mdlc"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Male:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iv1up"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Male:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ph462"]
+resource_name = "pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Male:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5n8h2"]
+_data = {
+"RESET": SubResource("Animation_iv1up"),
+"idle": SubResource("Animation_1mdlc"),
+"pressed": SubResource("Animation_ph462")
+}
+
+[sub_resource type="Animation" id="Animation_wq364"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Female:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j3x1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Female:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_78lbc"]
+resource_name = "pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Female:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyfbv"]
+_data = {
+"RESET": SubResource("Animation_j3x1v"),
+"idle": SubResource("Animation_wq364"),
+"pressed": SubResource("Animation_78lbc")
 }
 
 [node name="New Game" type="Node2D"]
@@ -3404,7 +3947,112 @@ libraries = {
 "": SubResource("AnimationLibrary_sxmlf")
 }
 
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="Background" type="Sprite2D" parent="Character"]
+position = Vector2(126, 100)
+texture = ExtResource("79_7gybr")
+centered = false
+
+[node name="Body" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("80_u7t71")
+centered = false
+hframes = 4
+vframes = 9
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 288)
+script = ExtResource("81_t4b88")
+
+[node name="Bottom" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("73_06w3x")
+centered = false
+hframes = 4
+vframes = 5
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 160)
+script = ExtResource("82_oacoe")
+
+[node name="Top" type="Sprite2D" parent="Character"]
+position = Vector2(147, 126)
+texture = ExtResource("63_hnr23")
+hframes = 4
+vframes = 7
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 224)
+script = ExtResource("84_6lqbe")
+
+[node name="Boots" type="Sprite2D" parent="Character"]
+position = Vector2(131, 110)
+texture = ExtResource("80_j53j8")
+centered = false
+hframes = 4
+vframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 96)
+script = ExtResource("83_uvcm7")
+
+[node name="Hair" type="Sprite2D" parent="Character"]
+material = SubResource("ShaderMaterial_mnuqj")
+position = Vector2(147, 126)
+texture = ExtResource("36_0rlt0")
+hframes = 4
+vframes = 80
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 2560)
+script = ExtResource("85_20vsd")
+
+[node name="Eyes" type="Sprite2D" parent="Character"]
+position = Vector2(147, 126)
+texture = ExtResource("81_laxar")
+hframes = 4
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 256)
+script = ExtResource("87_s0sil")
+
+[node name="LarrowButton" type="TextureButton" parent="Character"]
+offset_left = 112.0
+offset_top = 122.0
+offset_right = 123.0
+offset_bottom = 132.0
+
+[node name="Larrow" type="Sprite2D" parent="Character/LarrowButton"]
+texture = ExtResource("88_k6m2o")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 22, 11)
+script = ExtResource("89_3yqbp")
+
+[node name="Animation" type="AnimationPlayer" parent="Character/LarrowButton/Larrow"]
+libraries = {
+"": SubResource("AnimationLibrary_gapk3")
+}
+
+[node name="RarrowButton" type="TextureButton" parent="Character"]
+offset_left = 169.0
+offset_top = 122.0
+offset_right = 180.0
+offset_bottom = 132.0
+
+[node name="Rarrow" type="Sprite2D" parent="Character/RarrowButton"]
+texture = ExtResource("88_k6m2o")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(22, 0, 22, 11)
+script = ExtResource("90_jds8b")
+
+[node name="Animation" type="AnimationPlayer" parent="Character/RarrowButton/Rarrow"]
+libraries = {
+"": SubResource("AnimationLibrary_fxvev")
+}
+
 [node name="Buttons" type="Node2D" parent="."]
+position = Vector2(0, 4)
 
 [node name="BodyButton" type="TextureButton" parent="Buttons"]
 offset_left = 106.5
@@ -3621,7 +4269,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(114, 0, 114, 28)
 script = ExtResource("12_lduir")
@@ -3805,7 +4452,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(228, 0, 114, 28)
 script = ExtResource("13_acffi")
@@ -3816,6 +4462,7 @@ libraries = {
 }
 
 [node name="Hair" type="Node2D" parent="Buttons/HairButton/Hair"]
+material = SubResource("ShaderMaterial_fjrom")
 
 [node name="Button1" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = -52.5
@@ -3835,15 +4482,15 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair1" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button1/1"]
-position = Vector2(0.5, 4)
+[node name="Hair1" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(-53.5, 34)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
 vframes = 8
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 256)
-script = ExtResource("33_e300j")
 
 [node name="Button2" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = -30.5
@@ -3863,15 +4510,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair2" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button2/2"]
-position = Vector2(0.5, 2)
+[node name="Hair2" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(-30.5, 32)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 1
 region_enabled = true
-region_rect = Rect2(0, 256, 32, 256)
-script = ExtResource("35_qb1yn")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button3" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = -8.5
@@ -3891,24 +4539,30 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair3" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button3/3"]
-position = Vector2(0.5, 4)
+[node name="Hair3" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(-8.5, 34.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 2
 region_enabled = true
-region_rect = Rect2(0, 512, 32, 256)
-script = ExtResource("37_g8v8m")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button4" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
-offset_right = 22.0
-offset_bottom = 22.0
+offset_left = 13.5
+offset_top = 30.0
+offset_right = 35.5
+offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
+hframes = 3
+region_enabled = true
 region_rect = Rect2(0, 0, 66, 23)
 script = ExtResource("35_ocwe1")
 
@@ -3917,15 +4571,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button4/4"]
-position = Vector2(0.500015, 3.00002)
+[node name="Hair4" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(13.5, 33)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 3
 region_enabled = true
-region_rect = Rect2(0, 768, 32, 256)
-script = ExtResource("39_k3moy")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button5" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 35.5
@@ -3935,6 +4590,7 @@ offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button5"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -3945,15 +4601,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button5/5"]
-position = Vector2(0.500015, 3.00002)
-scale = Vector2(0.7, 0.7)
+[node name="Hair5" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(38, 33)
+scale = Vector2(0.55, 0.55)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 4
 region_enabled = true
-region_rect = Rect2(0, 1024, 32, 256)
-script = ExtResource("41_pr4yq")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button6" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 57.5
@@ -3963,6 +4620,7 @@ offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button6"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -3973,15 +4631,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button6/6"]
-position = Vector2(0.500015, 4.00002)
+[node name="Hair6" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(57.5, 34)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 5
 region_enabled = true
-region_rect = Rect2(0, 1280, 32, 256)
-script = ExtResource("43_ibnt3")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button7" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 79.5
@@ -3991,6 +4650,7 @@ offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button7"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -4001,15 +4661,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button7/7"]
-position = Vector2(1, 3.5)
+[node name="Hair7" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(80, 33.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 6
 region_enabled = true
-region_rect = Rect2(0, 1536, 32, 256)
-script = ExtResource("45_navgn")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button8" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 101.5
@@ -4019,6 +4680,7 @@ offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button8"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -4029,15 +4691,16 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button8/8"]
-position = Vector2(2, 3)
+[node name="Hair8" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(103, 33)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 7
 region_enabled = true
-region_rect = Rect2(0, 1792, 32, 256)
-script = ExtResource("47_ks5o5")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button9" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 123.5
@@ -4047,6 +4710,7 @@ offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button9"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -4057,24 +4721,26 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button9/9"]
-position = Vector2(0.5, 5.00002)
+[node name="Hair9" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(123.5, 35)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 8
 region_enabled = true
-region_rect = Rect2(0, 2048, 32, 256)
-script = ExtResource("49_11wpy")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Button10" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 145.5
 offset_top = 30.0
-offset_right = 154.5
-offset_bottom = 34.0
+offset_right = 167.5
+offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
@@ -4085,231 +4751,246 @@ libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button10/10"]
-position = Vector2(0.5, 6)
+[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(145.5, 36)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 9
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button15" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button11" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = -30.5
 offset_top = 52.0
-offset_right = -21.5
-offset_bottom = 56.0
+offset_right = -8.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button15"]
+[node name="11" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button11"]
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("70_jb1ki")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button15/10"]
+[node name="Button11Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button11/11"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button15/10"]
-position = Vector2(0.5, 6)
+[node name="Hair11" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(-30.5, 55)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 10
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button16" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button12" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = -9.5
 offset_top = 52.0
-offset_right = -0.5
-offset_bottom = 56.0
+offset_right = 12.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button16"]
+[node name="12" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button12"]
+position = Vector2(1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("71_6ldat")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button16/10"]
+[node name="Button12Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button12/12"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button16/10"]
-position = Vector2(0.5, 6)
-scale = Vector2(0.7, 0.7)
+[node name="Hair12" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(-7, 56)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 11
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button17" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button13" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 12.5
 offset_top = 52.0
-offset_right = 21.5
-offset_bottom = 56.0
+offset_right = 34.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button17"]
+[node name="13" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button13"]
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("72_tto85")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button17/10"]
+[node name="Button13Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button13/13"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button17/10"]
-position = Vector2(0.5, 6)
-scale = Vector2(0.7, 0.7)
+[node name="Hair13" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(16, 55)
+scale = Vector2(0.55, 0.55)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 12
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button18" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button14" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 35.5
 offset_top = 52.0
-offset_right = 44.5
-offset_bottom = 56.0
+offset_right = 57.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button18"]
+[node name="14" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button14"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("73_ky5yn")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button18/10"]
+[node name="Button14Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button14/14"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button18/10"]
-position = Vector2(0.5, 6)
-scale = Vector2(0.7, 0.7)
+[node name="Hair14" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(36, 57)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 13
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button19" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button15" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 57.5
 offset_top = 52.0
-offset_right = 66.5
-offset_bottom = 56.0
+offset_right = 79.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button19"]
+[node name="15" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button15"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("74_3xunc")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button19/10"]
+[node name="Button15Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button15/15"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button19/10"]
-position = Vector2(0.5, 6)
+[node name="Hair15" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(57.5, 55)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 14
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button20" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button16" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 79.5
 offset_top = 52.0
-offset_right = 88.5
-offset_bottom = 56.0
+offset_right = 101.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button20"]
+[node name="16" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button16"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("75_msmpj")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button20/10"]
+[node name="Button16Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button16/16"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button20/10"]
-position = Vector2(0.5, 6)
+[node name="Hair16" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(79.5, 55.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 15
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button21" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button17" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 101.5
 offset_top = 52.0
-offset_right = 110.5
-offset_bottom = 56.0
+offset_right = 123.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button21"]
+[node name="17" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button17"]
+position = Vector2(-1, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("76_gtj8t")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button21/10"]
+[node name="Button17Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button17/17"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button21/10"]
-position = Vector2(0.5, 6)
+[node name="Hair17" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(102, 56.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 16
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Button22" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
+[node name="Button18" type="TextureButton" parent="Buttons/HairButton/Hair/Hair"]
 offset_left = 124.5
 offset_top = 52.0
-offset_right = 133.5
-offset_bottom = 56.0
+offset_right = 146.5
+offset_bottom = 74.0
 
-[node name="10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button22"]
+[node name="18" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button18"]
+position = Vector2(-2, 0)
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-script = ExtResource("41_8rivi")
+script = ExtResource("77_itqen")
 
-[node name="Button10Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button22/10"]
+[node name="Button18Animation" type="AnimationPlayer" parent="Buttons/HairButton/Hair/Hair/Button18/18"]
 libraries = {
 "": SubResource("AnimationLibrary_v4hs0")
 }
 
-[node name="Hair10" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair/Button22/10"]
-position = Vector2(0.5, 6)
+[node name="Hair18" type="Sprite2D" parent="Buttons/HairButton/Hair/Hair"]
+use_parent_material = true
+position = Vector2(123.5, 55)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("36_0rlt0")
 centered = false
-vframes = 8
+vframes = 18
+frame = 17
 region_enabled = true
-region_rect = Rect2(0, 2304, 32, 256)
-script = ExtResource("51_ldol4")
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="HairColorButton" type="TextureButton" parent="Buttons"]
 offset_left = 220.5
@@ -4322,7 +5003,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(342, 0, 114, 28)
 script = ExtResource("14_84l6b")
@@ -4501,7 +5181,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(456, 0, 114, 28)
 script = ExtResource("15_1ch47")
@@ -4705,7 +5384,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(570, 0, 114, 28)
 script = ExtResource("16_vi8fj")
@@ -4728,7 +5406,6 @@ offset_bottom = 62.0
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-frame = 1
 script = ExtResource("72_e0fwd")
 
 [node name="Bottom1" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button1/1"]
@@ -4753,7 +5430,6 @@ offset_bottom = 62.0
 texture = ExtResource("35_2ktqx")
 centered = false
 hframes = 3
-frame = 1
 script = ExtResource("74_a8xqp")
 
 [node name="Bottom2" type="Sprite2D" parent="Buttons/BottomButton/Bottom/Bottom/Button2/2"]
@@ -4851,7 +5527,6 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("8_o485b")
 centered = false
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2(684, 0, 114, 28)
 script = ExtResource("17_j66ga")
@@ -4938,110 +5613,8 @@ libraries = {
 "": SubResource("AnimationLibrary_tbau8")
 }
 
-[node name="Character" type="Node2D" parent="."]
-position = Vector2(-1, 0)
-
-[node name="Background" type="Sprite2D" parent="Character"]
-position = Vector2(126, 100)
-texture = ExtResource("79_7gybr")
-centered = false
-
-[node name="Body" type="Sprite2D" parent="Character"]
-position = Vector2(131, 110)
-texture = ExtResource("80_u7t71")
-centered = false
-hframes = 4
-vframes = 9
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 288)
-script = ExtResource("81_t4b88")
-
-[node name="Bottom" type="Sprite2D" parent="Character"]
-position = Vector2(131, 110)
-texture = ExtResource("73_06w3x")
-centered = false
-hframes = 4
-vframes = 5
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 160)
-script = ExtResource("82_oacoe")
-
-[node name="Top" type="Sprite2D" parent="Character"]
-position = Vector2(147, 126)
-texture = ExtResource("63_hnr23")
-hframes = 4
-vframes = 7
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 224)
-script = ExtResource("84_6lqbe")
-
-[node name="Boots" type="Sprite2D" parent="Character"]
-position = Vector2(131, 110)
-texture = ExtResource("80_j53j8")
-centered = false
-hframes = 4
-vframes = 3
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 96)
-script = ExtResource("83_uvcm7")
-
-[node name="Hair" type="Sprite2D" parent="Character"]
-position = Vector2(147, 126)
-texture = ExtResource("36_0rlt0")
-hframes = 4
-vframes = 80
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 2560)
-script = ExtResource("85_20vsd")
-
-[node name="Eyes" type="Sprite2D" parent="Character"]
-position = Vector2(147, 126)
-texture = ExtResource("81_laxar")
-hframes = 4
-vframes = 8
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 256)
-script = ExtResource("87_s0sil")
-
-[node name="LarrowButton" type="TextureButton" parent="Character"]
-offset_left = 112.0
-offset_top = 122.0
-offset_right = 123.0
-offset_bottom = 132.0
-
-[node name="Larrow" type="Sprite2D" parent="Character/LarrowButton"]
-texture = ExtResource("88_k6m2o")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(0, 0, 22, 11)
-script = ExtResource("89_3yqbp")
-
-[node name="Animation" type="AnimationPlayer" parent="Character/LarrowButton/Larrow"]
-libraries = {
-"": SubResource("AnimationLibrary_gapk3")
-}
-
-[node name="RarrowButton" type="TextureButton" parent="Character"]
-offset_left = 169.0
-offset_top = 122.0
-offset_right = 180.0
-offset_bottom = 132.0
-
-[node name="Rarrow" type="Sprite2D" parent="Character/RarrowButton"]
-texture = ExtResource("88_k6m2o")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(22, 0, 22, 11)
-script = ExtResource("90_jds8b")
-
-[node name="Animation" type="AnimationPlayer" parent="Character/RarrowButton/Rarrow"]
-libraries = {
-"": SubResource("AnimationLibrary_fxvev")
-}
-
 [node name="Inv" type="Node2D" parent="."]
+position = Vector2(0, -5)
 
 [node name="1" type="Sprite2D" parent="Inv"]
 position = Vector2(194, 110)
@@ -5055,23 +5628,19 @@ texture = ExtResource("95_gledc")
 hframes = 6
 frame = 1
 
-[node name="3" type="Sprite2D" parent="Inv"]
+[node name="Top" type="Sprite2D" parent="Inv"]
 position = Vector2(194, 126)
-texture = ExtResource("95_gledc")
-hframes = 6
-frame = 2
+texture = ExtResource("107_a4xsl")
+hframes = 7
+region_enabled = true
+region_rect = Rect2(128, 0, 112, 16)
 
-[node name="4" type="Sprite2D" parent="Inv"]
+[node name="Boots" type="Sprite2D" parent="Inv"]
 position = Vector2(194, 142)
-texture = ExtResource("95_gledc")
-hframes = 6
-frame = 3
-
-[node name="5" type="Sprite2D" parent="Inv"]
-position = Vector2(210, 126)
-texture = ExtResource("95_gledc")
-hframes = 6
-frame = 4
+texture = ExtResource("107_a4xsl")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 16)
 
 [node name="6" type="Sprite2D" parent="Inv"]
 position = Vector2(210, 142)
@@ -5080,24 +5649,30 @@ hframes = 6
 frame = 5
 
 [node name="DYWTSI" type="Sprite2D" parent="Inv"]
-position = Vector2(247, 138)
+position = Vector2(247, 145)
 texture = ExtResource("96_u3hgn")
 centered = false
 region_enabled = true
 region_rect = Rect2(22, 5, 111, 7)
 
+[node name="FS" type="Sprite2D" parent="Inv"]
+position = Vector2(268.5, 131)
+texture = ExtResource("110_r7wom")
+region_enabled = true
+region_rect = Rect2(0, 0, 69, 16)
+
 [node name="Name" type="Sprite2D" parent="Inv"]
-position = Vector2(234, 112)
+position = Vector2(230, 108)
 texture = ExtResource("96_u3hgn")
 centered = false
 region_enabled = true
 region_rect = Rect2(133, 1, 30, 13)
 
 [node name="CheckBoxButton" type="TextureButton" parent="Inv"]
-offset_left = 234.0
-offset_top = 136.0
+offset_left = 233.0
+offset_top = 143.0
 offset_right = 358.0
-offset_bottom = 147.0
+offset_bottom = 154.0
 
 [node name="CheckBox" type="Sprite2D" parent="Inv/CheckBoxButton"]
 texture = ExtResource("96_u3hgn")
@@ -5112,11 +5687,78 @@ libraries = {
 "": SubResource("AnimationLibrary_5aq02")
 }
 
+[node name="Male" type="TextureButton" parent="Inv"]
+offset_left = 131.0
+offset_top = 153.0
+offset_right = 146.0
+offset_bottom = 168.0
+
+[node name="Male" type="Sprite2D" parent="Inv/Male"]
+texture = ExtResource("109_owopy")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(30, 0, 30, 15)
+script = ExtResource("110_jrbgs")
+
+[node name="Animation" type="AnimationPlayer" parent="Inv/Male/Male"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5n8h2")
+}
+
+[node name="Female" type="TextureButton" parent="Inv"]
+offset_left = 146.0
+offset_top = 153.0
+offset_right = 161.0
+offset_bottom = 168.0
+
+[node name="Female" type="Sprite2D" parent="Inv/Female"]
+texture = ExtResource("109_owopy")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 30, 15)
+script = ExtResource("111_jyfju")
+
+[node name="Animation" type="AnimationPlayer" parent="Inv/Female/Female"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_dyfbv")
+}
+
+[node name="Random" type="TextureButton" parent="Inv"]
+offset_left = 194.5
+offset_top = 151.0
+offset_right = 209.8
+offset_bottom = 167.2
+script = ExtResource("114_hfp4q")
+
+[node name="Random" type="Sprite2D" parent="Inv/Random"]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("111_eahp7")
+centered = false
+
+[node name="Skill" type="TextureButton" parent="Inv"]
+offset_left = 306.0
+offset_top = 123.0
+offset_right = 323.0
+offset_bottom = 139.0
+
+[node name="Skill" type="Sprite2D" parent="Inv/Skill"]
+texture = ExtResource("110_r7wom")
+centered = false
+hframes = 6
+region_enabled = true
+region_rect = Rect2(69, 0, 102, 16)
+script = ExtResource("115_xaxu4")
+
 [node name="Text" type="LineEdit" parent="."]
-offset_left = 266.0
-offset_top = 114.0
-offset_right = 346.0
-offset_bottom = 125.0
+offset_left = 260.0
+offset_top = 105.0
+offset_right = 340.0
+offset_bottom = 116.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("97_ckmij")
@@ -5131,17 +5773,26 @@ script = ExtResource("101_c3nwx")
 
 [node name="ColorPicker" type="ColorPicker" parent="."]
 visible = false
-offset_left = 117.0
-offset_top = 81.0
-offset_right = 415.0
-offset_bottom = 353.0
+offset_left = 7.0
+offset_top = 39.0
+offset_right = 305.0
+offset_bottom = 615.0
 scale = Vector2(0.5, 0.5)
 picker_shape = 1
+
+[node name="Miniicons" type="Sprite2D" parent="."]
+position = Vector2(210, 121)
+texture = ExtResource("107_a4xsl")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(48, 0, 80, 16)
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
 [connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
 [connection signal="pressed" from="NextButton" to="NextButton/Next" method="_on_next_button_pressed"]
+[connection signal="pressed" from="Character/LarrowButton" to="Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
+[connection signal="pressed" from="Character/RarrowButton" to="Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton" to="Buttons/BodyButton/Body" method="_on_body_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button" to="Buttons/BodyButton/Body/Body/Button/1" method="_on_button_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button2" to="Buttons/BodyButton/Body/Body/Button2/2" method="_on_button_2_pressed"]
@@ -5163,7 +5814,6 @@ picker_shape = 1
 [connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button8" to="Buttons/EyesButton/Eyes/Eyes/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/HairButton" to="Buttons/HairButton/Hair" method="_on_hair_button_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button1" to="Buttons/HairButton/Hair/Hair/Button1/1" method="_on_button_1_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button1" to="Buttons/HairButton/Hair/Hair/Button1/1/Hair1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button2" to="Buttons/HairButton/Hair/Hair/Button2/2" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button3" to="Buttons/HairButton/Hair/Hair/Button3/3" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button4" to="Buttons/HairButton/Hair/Hair/Button4/4" method="_on_button_4_pressed"]
@@ -5173,14 +5823,14 @@ picker_shape = 1
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button8" to="Buttons/HairButton/Hair/Hair/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button9" to="Buttons/HairButton/Hair/Hair/Button9/9" method="_on_button_9_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button10" to="Buttons/HairButton/Hair/Hair/Button10/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button15" to="Buttons/HairButton/Hair/Hair/Button15/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button16" to="Buttons/HairButton/Hair/Hair/Button16/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button17" to="Buttons/HairButton/Hair/Hair/Button17/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button18" to="Buttons/HairButton/Hair/Hair/Button18/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button19" to="Buttons/HairButton/Hair/Hair/Button19/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button20" to="Buttons/HairButton/Hair/Hair/Button20/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button21" to="Buttons/HairButton/Hair/Hair/Button21/10" method="_on_button_10_pressed"]
-[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button22" to="Buttons/HairButton/Hair/Hair/Button22/10" method="_on_button_10_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button11" to="Buttons/HairButton/Hair/Hair/Button11/11" method="_on_button_11_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button12" to="Buttons/HairButton/Hair/Hair/Button12/12" method="_on_button_12_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button13" to="Buttons/HairButton/Hair/Hair/Button13/13" method="_on_button_13_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button14" to="Buttons/HairButton/Hair/Hair/Button14/14" method="_on_button_14_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button15" to="Buttons/HairButton/Hair/Hair/Button15/15" method="_on_button_15_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button16" to="Buttons/HairButton/Hair/Hair/Button16/16" method="_on_button_16_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button17" to="Buttons/HairButton/Hair/Hair/Button17/17" method="_on_button_17_pressed"]
+[connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button18" to="Buttons/HairButton/Hair/Hair/Button18/18" method="_on_button_18_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton" to="Buttons/HairColorButton/Hair Color" method="_on_hair_color_button_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button1" to="Buttons/HairColorButton/Hair Color/HairColor/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/HairColorButton/Hair Color/HairColor/Button2" to="Buttons/HairColorButton/Hair Color/HairColor/Button2/2" method="_on_button_2_pressed"]
@@ -5208,7 +5858,8 @@ picker_shape = 1
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button1" to="Buttons/BootsButton/Boots/Boots/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button2" to="Buttons/BootsButton/Boots/Boots/Button2/2" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Buttons/BootsButton/Boots/Boots/Button3" to="Buttons/BootsButton/Boots/Boots/Button3/3" method="_on_button_3_pressed"]
-[connection signal="pressed" from="Character/LarrowButton" to="Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
-[connection signal="pressed" from="Character/RarrowButton" to="Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
 [connection signal="pressed" from="Inv/CheckBoxButton" to="Inv/CheckBoxButton/CheckBox" method="_on_check_box_button_pressed"]
+[connection signal="pressed" from="Inv/Male" to="Inv/Male/Male" method="_on_male_pressed"]
+[connection signal="pressed" from="Inv/Female" to="Inv/Female/Female" method="_on_female_pressed"]
+[connection signal="pressed" from="Inv/Skill" to="Inv/Skill/Skill" method="_on_skill_pressed"]
 [connection signal="text_changed" from="Text" to="Text" method="_on_text_changed"]

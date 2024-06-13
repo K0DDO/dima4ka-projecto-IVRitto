@@ -9,7 +9,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	if Global.tab != "body":
-		body.set_visible(false) 
+		body.set_visible(false)
 		animations.play("idle")
 
 func _on_body_button_pressed():
