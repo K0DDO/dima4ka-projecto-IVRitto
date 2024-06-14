@@ -9,11 +9,15 @@ func _on_back_button_pressed():
 func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	Global.tab = "body"
-	Global.bodybutton = 1
-	Global.eyebutton = 1
-	Global.hairbutton = 1
-	Global.haircolorbutton = 1
-	Global.topbutton = 1
-	Global.bottombutton = 1
-	Global.bootsbutton = 1
+	Global.bodybutton = 0
+	Global.eyebutton = 0
+	Global.hairbutton = 0
+	Global.topbutton = 0
+	Global.bottombutton = 0
+	Global.bootsbutton = 0
 	Global.num = 0
+	Global.playername = ""
+	Global.haircolor = Color(0.349, 0.196, 0.141, 1.0)
+	Global.acccolor = Color(1.0, 0.49, 0.984, 1.0)
+	Global.gender = 0
+	Global.skill = 0

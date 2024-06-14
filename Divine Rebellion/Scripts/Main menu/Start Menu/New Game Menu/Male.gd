@@ -8,6 +8,9 @@ func _ready():
 func _on_male_pressed():
 	animation.play("pressed")
 	Global.gender = 0
+	position.y += 1
+	await get_tree().create_timer(0.1).timeout
+	position.y -= 1
 	
 func _process(_delta):
 	if Global.gender != 0:

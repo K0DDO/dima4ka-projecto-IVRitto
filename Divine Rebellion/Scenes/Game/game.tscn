@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=11 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
 [ext_resource type="Texture2D" uid="uid://cpleau8elxqct" path="res://Art/Backgrounds/trees.png" id="2_sw245"]
 [ext_resource type="Texture2D" uid="uid://dt4a3j6o35pfu" path="res://Art/Backgrounds/bushes.png" id="3_qkamp"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="5_bnck5"]
+[ext_resource type="Script" path="res://asdas.gd" id="6_1rrwi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofqas"]
 texture = ExtResource("2_sw245")
@@ -1617,3 +1618,10 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.1
 script = ExtResource("5_bnck5")
 tilemap = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 242.0
+offset_top = 149.0
+offset_right = 282.0
+offset_bottom = 172.0
+script = ExtResource("6_1rrwi")

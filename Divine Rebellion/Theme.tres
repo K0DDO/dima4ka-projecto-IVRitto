@@ -1,40 +1,46 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://b78i1nbh81d5p"]
 
-[ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="2_0g4w4"]
-[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="2_kwd08"]
+[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="1_g1flr"]
+[ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="2_jmgqm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_spbbk"]
 region_rect = Rect2(184, 0, 184, 6)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr1fk"]
-texture = ExtResource("2_0g4w4")
+texture = ExtResource("2_jmgqm")
 texture_margin_left = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 region_rect = Rect2(478, 3, 3, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrrm6"]
-texture = ExtResource("2_0g4w4")
+texture = ExtResource("2_jmgqm")
 texture_margin_left = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 region_rect = Rect2(478, 3, 3, 11)
 
 [resource]
+default_base_scale = 0.49
+default_font = ExtResource("1_g1flr")
+default_font_size = 8
+ColorPicker/constants/label_width = 10
 HSlider/icons/tick = null
 HSlider/styles/slider = SubResource("StyleBoxTexture_spbbk")
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/constants/shadow_offset_x = 1
+Label/colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
+Label/colors/font_shadow_color = Color(0.85098, 0.392157, 0.596078, 1)
+Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 1
-Label/font_sizes/font_size = 41
-Label/fonts/font = ExtResource("2_kwd08")
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_g1flr")
 LineEdit/colors/caret_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/colors/font_outline_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_selected_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/constants/minimum_character_width = 13
 LineEdit/font_sizes/font_size = 8
-LineEdit/fonts/font = ExtResource("2_kwd08")
+LineEdit/fonts/font = ExtResource("1_g1flr")
 LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource("StyleBoxTexture_qr1fk")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_nrrm6")
@@ -50,8 +56,8 @@ TextEdit/colors/search_result_border_color = Color(0.301961, 0.301961, 0.301961,
 TextEdit/colors/search_result_color = Color(0.301961, 0.301961, 0.301961, 0)
 TextEdit/colors/selection_color = Color(0.501961, 0.501961, 0.501961, 0)
 TextEdit/colors/word_highlighted_color = Color(0.501961, 0.501961, 0.501961, 0)
-TextEdit/font_sizes/font_size = 3
-TextEdit/fonts/font = ExtResource("2_kwd08")
+TextEdit/font_sizes/font_size = 10
+TextEdit/fonts/font = ExtResource("1_g1flr")
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
 TextEdit/styles/focus = null

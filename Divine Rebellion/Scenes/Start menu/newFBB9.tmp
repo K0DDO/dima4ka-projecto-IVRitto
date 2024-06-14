@@ -1,4 +1,4 @@
-[gd_scene load_steps=339 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=336 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -53,11 +53,8 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton4.gd" id="67_pftkp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton5.gd" id="68_gcm3i"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton6.gd" id="69_8j5gp"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/HairColor.gd" id="69_njqit"]
-[ext_resource type="Theme" uid="uid://xiuxlcxvw8ag" path="res://new_game_menu.tres" id="70_4n5g8"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton11.gd" id="70_jb1ki"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton7.gd" id="70_muc02"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/AccColor.gd" id="70_n5cfo"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton12.gd" id="71_6ldat"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton1.gd" id="72_e0fwd"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton13.gd" id="72_tto85"]
@@ -87,16 +84,16 @@
 [ext_resource type="Texture2D" uid="uid://c8s31reof8l0p" path="res://Art/Tech/Сhoosing character menu/cc 2.png" id="88_k6m2o"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Larrow.gd" id="89_3yqbp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Rarrow.gd" id="90_jds8b"]
+[ext_resource type="Texture2D" uid="uid://bobadpnp6evql" path="res://Art/Tech/Сhoosing character menu/cc 4.png" id="91_rb4w1"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/NextButton.gd" id="92_lmva8"]
 [ext_resource type="Texture2D" uid="uid://cvuxis6pmsgu3" path="res://Art/Tech/Сhoosing character menu/cc 3.png" id="95_gledc"]
 [ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="96_u3hgn"]
-[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="97_ckmij"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://new_theme.tres" id="97_ckmij"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CheckBox.gd" id="97_xjxo3"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top.gd" id="98_v30nq"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots.gd" id="99_pqtrq"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom.gd" id="100_6gu5a"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="101_c3nwx"]
-[ext_resource type="Texture2D" uid="uid://dssfjevr8iabb" path="res://Art/Tech/Сhoosing character menu/skilldescription.png" id="105_5ihpq"]
 [ext_resource type="Texture2D" uid="uid://crty5iewvb3m7" path="res://Art/Tech/Сhoosing character menu/miniicons.png" id="107_a4xsl"]
 [ext_resource type="Texture2D" uid="uid://iqllj7hsmeq7" path="res://Art/Tech/Сhoosing character menu/cc 7.png" id="109_owopy"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Male.gd" id="110_jrbgs"]
@@ -417,18 +414,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_2fir0"]
 resource_name = "focused"
@@ -470,14 +455,14 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 1), Vector2(0, 0)]
+"update": 1,
+"values": [1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rborv"]
@@ -3474,7 +3459,7 @@ offset_right = 385.0
 offset_bottom = 248.0
 
 [node name="Next" type="Sprite2D" parent="NextButton"]
-texture = ExtResource("5_2u2pp")
+texture = ExtResource("91_rb4w1")
 centered = false
 hframes = 2
 region_enabled = true
@@ -4532,58 +4517,6 @@ frame = 17
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 576)
 
-[node name="Control" type="Control" parent="Buttons"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("69_njqit")
-
-[node name="HairColor" type="ColorPicker" parent="Buttons/Control"]
-offset_left = 159.0
-offset_top = 196.0
-offset_right = 428.0
-offset_bottom = 292.0
-scale = Vector2(0.3, 0.3)
-auto_translate = false
-localize_numeral_system = false
-theme = ExtResource("70_4n5g8")
-alignment = 1
-color = Color(0.34902, 0.196078, 0.141176, 1)
-edit_alpha = false
-color_mode = 1
-picker_shape = 4
-sampler_visible = false
-color_modes_visible = false
-hex_visible = false
-presets_visible = false
-
-[node name="Control2" type="Control" parent="Buttons"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("70_n5cfo")
-
-[node name="AccColor" type="ColorPicker" parent="Buttons/Control2"]
-offset_left = 291.0
-offset_top = 196.0
-offset_right = 560.0
-offset_bottom = 292.0
-scale = Vector2(0.3, 0.3)
-auto_translate = false
-localize_numeral_system = false
-theme = ExtResource("70_4n5g8")
-alignment = 1
-color = Color(1, 0.490196, 0.984314, 1)
-edit_alpha = false
-color_mode = 1
-picker_shape = 4
-sampler_visible = false
-color_modes_visible = false
-hex_visible = false
-presets_visible = false
-
 [node name="HairColorButton" type="TextureButton" parent="Buttons"]
 offset_left = 220.5
 offset_top = 160.0
@@ -4602,25 +4535,26 @@ script = ExtResource("14_84l6b")
 [node name="HairColor" type="Node2D" parent="Buttons/HairColorButton/Hair Color"]
 position = Vector2(-221, -160)
 
-[node name="HairColorMain" type="Label" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-offset_left = 115.0
-offset_top = 206.0
-offset_right = 155.0
+[node name="Label2" type="Label" parent="Buttons/HairColorButton/Hair Color/HairColor"]
+offset_left = 129.0
+offset_top = 205.0
+offset_right = 179.0
 offset_bottom = 217.0
+theme_override_colors/font_color = Color(1, 0.74902, 0.796078, 1)
+theme_override_font_sizes/font_size = 8
+text = "Hair color"
+
+[node name="Label" type="Label" parent="Buttons/HairColorButton/Hair Color/HairColor/Label2"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 51.0
+offset_bottom = 12.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
 theme_override_colors/font_shadow_color = Color(0.85098, 0.392157, 0.596078, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_font_sizes/font_size = 8
 text = "Hair color"
-
-[node name="AccColor Main" type="Label" parent="Buttons/HairColorButton/Hair Color/HairColor"]
-offset_left = 250.0
-offset_top = 206.0
-offset_right = 288.0
-offset_bottom = 214.0
-theme = ExtResource("97_ckmij")
-text = "Acc. color"
 
 [node name="HairColorButtonAnimation" type="AnimationPlayer" parent="Buttons/HairColorButton/Hair Color"]
 libraries = {
@@ -5238,173 +5172,14 @@ caret_blink = true
 caret_blink_interval = 0.5
 script = ExtResource("101_c3nwx")
 
-[node name="Friendship" type="Sprite2D" parent="."]
+[node name="ColorPicker" type="ColorPicker" parent="."]
 visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Friendship" type="Label" parent="Friendship"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Friendship"
-
-[node name="Text" type="Label" parent="Friendship"]
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 41.0
-offset_bottom = 28.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "повышенная общительность с людьми"
-autowrap_mode = 2
-
-[node name="Combating" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Combating" type="Label" parent="Combating"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Combating"
-
-[node name="Text" type="Label" parent="Combating"]
-offset_left = 3.0
-offset_top = 11.0
-offset_right = 45.0
-offset_bottom = 22.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "+ к урону ваще хайп кароч"
-autowrap_mode = 3
-
-[node name="Fishing" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Fishing" type="Label" parent="Fishing"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Fishing"
-
-[node name="Text" type="Label" parent="Fishing"]
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 49.0
-offset_bottom = 30.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "более редкий дроп с ловли рыб"
-autowrap_mode = 3
-
-[node name="Farming" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Farming" type="Label" parent="Farming"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Farming"
-
-[node name="Text" type="Label" parent="Farming"]
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 49.0
-offset_bottom = 30.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "бонус к земледелию, более редкий дроп, выпадает больше плодов"
-autowrap_mode = 3
-
-[node name="Collecting" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Collecting" type="Label" parent="Collecting"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Collecting"
-
-[node name="Text" type="Label" parent="Collecting"]
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 45.0
-offset_bottom = 22.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "выпадают артефакты, которые что-то дают, хз"
-autowrap_mode = 3
-
-[node name="Magic" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(327, 118)
-texture = ExtResource("105_5ihpq")
-centered = false
-
-[node name="Magic" type="Label" parent="Magic"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 25.0
-offset_bottom = 6.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 6
-text = "Magic"
-
-[node name="Text" type="Label" parent="Magic"]
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 47.0
-offset_bottom = 26.0
-theme = ExtResource("97_ckmij")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 4
-text = "повышенное количество эфира, открываются новые приёмы"
-autowrap_mode = 3
+offset_left = 7.0
+offset_top = 39.0
+offset_right = 305.0
+offset_bottom = 615.0
+scale = Vector2(0.5, 0.5)
+picker_shape = 1
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
@@ -5450,8 +5225,6 @@ autowrap_mode = 3
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button16" to="Buttons/HairButton/Hair/Hair/Button16/16" method="_on_button_16_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button17" to="Buttons/HairButton/Hair/Hair/Button17/17" method="_on_button_17_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button18" to="Buttons/HairButton/Hair/Hair/Button18/18" method="_on_button_18_pressed"]
-[connection signal="color_changed" from="Buttons/Control/HairColor" to="Buttons/Control" method="_on_hair_color_color_changed"]
-[connection signal="color_changed" from="Buttons/Control2/AccColor" to="Buttons/Control2" method="_on_acc_color_color_changed"]
 [connection signal="pressed" from="Buttons/HairColorButton" to="Buttons/HairColorButton/Hair Color" method="_on_hair_color_button_pressed"]
 [connection signal="pressed" from="Buttons/TopButton" to="Buttons/TopButton/Top" method="_on_top_button_pressed"]
 [connection signal="pressed" from="Buttons/TopButton/Top/Top/Button1" to="Buttons/TopButton/Top/Top/Button1/1" method="_on_button_1_pressed"]
@@ -5474,7 +5247,5 @@ autowrap_mode = 3
 [connection signal="pressed" from="Inv/CheckBoxButton" to="Inv/CheckBoxButton/CheckBox" method="_on_check_box_button_pressed"]
 [connection signal="pressed" from="Inv/Male" to="Inv/Male/Male" method="_on_male_pressed"]
 [connection signal="pressed" from="Inv/Female" to="Inv/Female/Female" method="_on_female_pressed"]
-[connection signal="mouse_entered" from="Inv/Skill" to="Inv/Skill/Skill" method="_on_skill_mouse_entered"]
-[connection signal="mouse_exited" from="Inv/Skill" to="Inv/Skill/Skill" method="_on_skill_mouse_exited"]
 [connection signal="pressed" from="Inv/Skill" to="Inv/Skill/Skill" method="_on_skill_pressed"]
 [connection signal="text_changed" from="Text" to="Text" method="_on_text_changed"]

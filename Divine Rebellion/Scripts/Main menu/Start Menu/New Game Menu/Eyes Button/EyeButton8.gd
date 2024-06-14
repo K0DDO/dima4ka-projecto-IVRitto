@@ -12,5 +12,7 @@ func _physics_process(_delta):
 		animations.play("focused")
 
 func _on_button_8_pressed():
-	animations.play("pressed")
 	Global.eyebutton = 7
+	position.y += 1
+	await get_tree().create_timer(0.1).timeout
+	position.y -= 1

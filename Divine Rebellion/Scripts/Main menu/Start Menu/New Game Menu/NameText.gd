@@ -11,4 +11,4 @@ func _on_text_changed(new_text):
 		word += valid_character.get_string()
 	self.set_text(word)
 	self.caret_column = old_caret_position
-	 
+	Global.playername = word
