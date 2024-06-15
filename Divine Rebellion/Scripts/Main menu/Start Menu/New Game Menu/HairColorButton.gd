@@ -2,8 +2,8 @@ extends Sprite2D
 
 @onready var animations = $HairColorButtonAnimation
 @onready var haircolor = $HairColor
-@onready var acc = $"../../Control2/AccColor"
-@onready var hair = $"../../Control/HairColor"
+@onready var acc = $"../../Control2"
+@onready var hair = $"../../Control"
 
 func _ready():
 	animations.play("idle")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=339 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=340 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -52,6 +52,7 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton3.gd" id="66_g51r1"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton4.gd" id="67_pftkp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton5.gd" id="68_gcm3i"]
+[ext_resource type="Texture2D" uid="uid://bxyssl6eebvj2" path="res://Art/Tech/Сhoosing character menu/colorpickerslider.png" id="68_ssbow"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top Button/TopButton6.gd" id="69_8j5gp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/HairColor.gd" id="69_njqit"]
 [ext_resource type="Theme" uid="uid://xiuxlcxvw8ag" path="res://new_game_menu.tres" id="70_4n5g8"]
@@ -4539,7 +4540,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("69_njqit")
 
+[node name="Slider" type="Sprite2D" parent="Buttons/Control"]
+position = Vector2(192.3, 204.4)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider2" type="Sprite2D" parent="Buttons/Control"]
+position = Vector2(192.3, 211)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider3" type="Sprite2D" parent="Buttons/Control"]
+position = Vector2(192.3, 217.6)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
 [node name="HairColor" type="ColorPicker" parent="Buttons/Control"]
+layout_mode = 0
 offset_left = 159.0
 offset_top = 196.0
 offset_right = 428.0
@@ -4565,7 +4582,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("70_n5cfo")
 
+[node name="Slider4" type="Sprite2D" parent="Buttons/Control2"]
+position = Vector2(324.3, 204.4)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider5" type="Sprite2D" parent="Buttons/Control2"]
+position = Vector2(324.3, 211)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider6" type="Sprite2D" parent="Buttons/Control2"]
+position = Vector2(324.3, 217.6)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
 [node name="AccColor" type="ColorPicker" parent="Buttons/Control2"]
+layout_mode = 0
 offset_left = 291.0
 offset_top = 196.0
 offset_right = 560.0
@@ -5256,14 +5289,15 @@ text = "Friendship"
 
 [node name="Text" type="Label" parent="Friendship"]
 offset_left = 3.0
-offset_top = 10.0
-offset_right = 41.0
-offset_bottom = 28.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "повышенная общительность с людьми"
+text = "- Friendship level increases faster
+- Exclusive dialogues with the villagers"
 autowrap_mode = 2
 
 [node name="Combating" type="Sprite2D" parent="."]
@@ -5284,14 +5318,15 @@ text = "Combating"
 
 [node name="Text" type="Label" parent="Combating"]
 offset_left = 3.0
-offset_top = 11.0
-offset_right = 45.0
-offset_bottom = 22.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "+ к урону ваще хайп кароч"
+text = "- More damage
+- Rarer drops in dungeons and from mobs"
 autowrap_mode = 3
 
 [node name="Fishing" type="Sprite2D" parent="."]
@@ -5312,14 +5347,15 @@ text = "Fishing"
 
 [node name="Text" type="Label" parent="Fishing"]
 offset_left = 3.0
-offset_top = 10.0
-offset_right = 49.0
-offset_bottom = 30.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "более редкий дроп с ловли рыб"
+text = "- Rarer drops from fishing
+- Easier to catch fish"
 autowrap_mode = 3
 
 [node name="Farming" type="Sprite2D" parent="."]
@@ -5340,14 +5376,15 @@ text = "Farming"
 
 [node name="Text" type="Label" parent="Farming"]
 offset_left = 3.0
-offset_top = 10.0
-offset_right = 49.0
-offset_bottom = 30.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "бонус к земледелию, более редкий дроп, выпадает больше плодов"
+text = "- More crops from a single tile
+- Additional seeds when purchasing"
 autowrap_mode = 3
 
 [node name="Collecting" type="Sprite2D" parent="."]
@@ -5368,14 +5405,15 @@ text = "Collecting"
 
 [node name="Text" type="Label" parent="Collecting"]
 offset_left = 3.0
-offset_top = 10.0
-offset_right = 45.0
-offset_bottom = 22.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "выпадают артефакты, которые что-то дают, хз"
+text = "- Chance of dropping a rare artifact
+- Exclusive items"
 autowrap_mode = 3
 
 [node name="Magic" type="Sprite2D" parent="."]
@@ -5396,14 +5434,15 @@ text = "Magic"
 
 [node name="Text" type="Label" parent="Magic"]
 offset_left = 3.0
-offset_top = 10.0
-offset_right = 47.0
-offset_bottom = 26.0
+offset_top = 12.0
+offset_right = 46.0
+offset_bottom = 29.0
 theme = ExtResource("97_ckmij")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
-text = "повышенное количество эфира, открываются новые приёмы"
+text = "- Increased ether amount
+- Unlocks new abilities"
 autowrap_mode = 3
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
