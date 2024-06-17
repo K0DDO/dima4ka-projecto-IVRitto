@@ -1,13 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmpc38bjmsiel"]
+[gd_scene load_steps=23 format=3 uid="uid://bmpc38bjmsiel"]
 
 [ext_resource type="Texture2D" uid="uid://bt0s6lykn0bu8" path="res://Art/Character/body/body.png" id="1_nb0ve"]
 [ext_resource type="Script" path="res://Scripts/PlayerScript.gd" id="1_vtnf7"]
+[ext_resource type="Texture2D" uid="uid://b14w73mpyf3u6" path="res://Art/Character/eyes/eyesall.png" id="2_8uu31"]
+[ext_resource type="Shader" path="res://Shaders/eyes.gdshader" id="2_rn5h2"]
 [ext_resource type="Texture2D" uid="uid://drtyre1m2n6ib" path="res://Art/Character/clothes/bootsall.png" id="3_5a3dq"]
 [ext_resource type="Shader" path="res://Shaders/hair.gdshader" id="3_n8856"]
 [ext_resource type="Texture2D" uid="uid://pvle4qtu7xa8" path="res://Art/Character/hair/hairall.png" id="4_1ujg6"]
 [ext_resource type="Texture2D" uid="uid://gymh3gybyi7n" path="res://Art/Character/clothes/bottomall.png" id="4_jajn8"]
-[ext_resource type="Script" path="res://asdfsd.gd" id="5_l6806"]
 [ext_resource type="Texture2D" uid="uid://cqobb38o16ffy" path="res://Art/Character/clothes/topall.png" id="7_1jxp8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjtl6"]
+shader = ExtResource("2_rn5h2")
+shader_parameter/new_color = Color(0.470588, 0.45098, 0.45098, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjef5"]
 shader = ExtResource("3_n8856")
@@ -31,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Bootsall:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +48,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Bottomall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -55,7 +60,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Hair:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -67,10 +72,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Topall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -95,19 +112,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2i(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -119,22 +136,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2i(0, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -159,19 +188,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2i(1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -183,22 +212,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2i(1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -223,19 +264,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2i(3, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -247,22 +288,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2i(3, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(3, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -287,19 +340,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2i(2, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -311,22 +364,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2i(2, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -353,7 +418,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bootsall:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -365,7 +430,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bottomall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -377,7 +442,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hair:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -389,10 +454,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Topall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(4, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -419,7 +496,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hair:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -431,7 +508,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Topall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -443,7 +520,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Bottomall:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -455,10 +532,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bootsall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(13, 0), Vector2i(14, 0), Vector2i(15, 0), Vector2i(12, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -485,7 +574,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hair:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -497,7 +586,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Topall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -509,7 +598,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Bottomall:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -521,10 +610,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bootsall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(17, 0), Vector2i(18, 0), Vector2i(19, 0), Vector2i(16, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -551,7 +652,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hair:frame_coords")
+tracks/1/path = NodePath("Body/Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -563,7 +664,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Topall:frame_coords")
+tracks/2/path = NodePath("Body/Topall:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -575,7 +676,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Bottomall:frame_coords")
+tracks/3/path = NodePath("Body/Bottomall:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -587,10 +688,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Bootsall:frame_coords")
+tracks/4/path = NodePath("Body/Bootsall:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(9, 0), Vector2i(10, 0), Vector2i(11, 0), Vector2i(8, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Eyes:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -616,7 +729,6 @@ size = Vector2(12.0851, 4)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(50, 69)
 script = ExtResource("1_vtnf7")
 
 [node name="Body" type="Sprite2D" parent="."]
@@ -626,39 +738,40 @@ hframes = 36
 vframes = 9
 region_rect = Rect2(0, -2, 1152, 290)
 
-[node name="Hair" type="Sprite2D" parent="."]
-z_index = 3
-material = SubResource("ShaderMaterial_qjef5")
+[node name="Bootsall" type="Sprite2D" parent="Body"]
 position = Vector2(-16, -32)
-texture = ExtResource("4_1ujg6")
+texture = ExtResource("3_5a3dq")
 centered = false
 hframes = 36
-vframes = 18
-script = ExtResource("5_l6806")
+vframes = 3
 
-[node name="Topall" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-16, -32)
-texture = ExtResource("7_1jxp8")
-centered = false
-hframes = 36
-vframes = 7
-
-[node name="Bottomall" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Bottomall" type="Sprite2D" parent="Body"]
 position = Vector2(-16, -32)
 texture = ExtResource("4_jajn8")
 centered = false
 hframes = 36
 vframes = 5
 
-[node name="Bootsall" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Topall" type="Sprite2D" parent="Body"]
 position = Vector2(-16, -32)
-texture = ExtResource("3_5a3dq")
+texture = ExtResource("7_1jxp8")
 centered = false
 hframes = 36
-vframes = 3
+vframes = 7
+
+[node name="Eyes" type="Sprite2D" parent="Body"]
+material = SubResource("ShaderMaterial_vjtl6")
+position = Vector2(0, -16)
+texture = ExtResource("2_8uu31")
+hframes = 36
+
+[node name="Hair" type="Sprite2D" parent="Body"]
+material = SubResource("ShaderMaterial_qjef5")
+position = Vector2(-16, -32)
+texture = ExtResource("4_1ujg6")
+centered = false
+hframes = 36
+vframes = 18
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -666,6 +779,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -3)
 scale = Vector2(0.992961, 1)
 shape = SubResource("RectangleShape2D_g2120")

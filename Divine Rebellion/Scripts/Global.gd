@@ -13,7 +13,7 @@ var playername = ""
 var bodybutton = 0
 
 # выбор цвета глаз
-var eyebutton = 0
+var eyescolor : Color = Color(0.369, 0.357, 0.357, 1.0)
 
 # выбор типа волос
 var hairbutton = 0

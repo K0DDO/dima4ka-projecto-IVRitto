@@ -1,4 +1,4 @@
-[gd_scene load_steps=340 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=294 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ds3nvmoip4oe8" path="res://Art/Tech/back_forward.png" id="5_2u2pp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CCBackButton.gd" id="6_oif6a"]
 [ext_resource type="Texture2D" uid="uid://bi0q3qh6k8qc7" path="res://Art/Tech/Сhoosing character menu/cc body.png" id="7_xxlvf"]
-[ext_resource type="Texture2D" uid="uid://b635f6vn51k6t" path="res://Art/Tech/Сhoosing character menu/cc eyes.png" id="8_iy3r5"]
 [ext_resource type="Texture2D" uid="uid://xq7e3cr2p2v" path="res://Art/Tech/Сhoosing character menu/cc buttons.png" id="8_o485b"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton1.gd" id="10_4a4mt"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton2.gd" id="11_8t477"]
@@ -26,14 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/BootsButton.gd" id="17_j66ga"]
 [ext_resource type="Shader" path="res://Shaders/hair.gdshader" id="18_5xjfr"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Body Button/BodyButton9.gd" id="18_hucel"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton1.gd" id="21_yxnt7"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton2.gd" id="22_mwbp6"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton3.gd" id="23_mtne2"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton4.gd" id="24_inmxx"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton5.gd" id="25_cv63i"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton6.gd" id="26_dhpye"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton7.gd" id="27_0m5ta"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Eyes Button/EyeButton8.gd" id="28_en4s8"]
+[ext_resource type="Shader" path="res://Shaders/eyes.gdshader" id="20_8qi7u"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton1.gd" id="31_5lse8"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton2.gd" id="33_boih0"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton3.gd" id="34_2vo2u"]
@@ -42,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://pvle4qtu7xa8" path="res://Art/Character/hair/hairall.png" id="36_0rlt0"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton5.gd" id="36_64bl7"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton6.gd" id="37_4264q"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/EyesColor.gd" id="38_2nuc3"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton7.gd" id="38_i8oug"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton8.gd" id="39_boyee"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Hair Button/HairButton9.gd" id="40_64olb"]
@@ -76,7 +69,7 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom Button/BottomButton5.gd" id="79_j1gmm"]
 [ext_resource type="Texture2D" uid="uid://drtyre1m2n6ib" path="res://Art/Character/clothes/bootsall.png" id="80_j53j8"]
 [ext_resource type="Texture2D" uid="uid://bt0s6lykn0bu8" path="res://Art/Character/body/body.png" id="80_u7t71"]
-[ext_resource type="Texture2D" uid="uid://3me8v0yj15ij" path="res://Art/Character/eyes/eyesall.png" id="81_laxar"]
+[ext_resource type="Texture2D" uid="uid://b14w73mpyf3u6" path="res://Art/Character/eyes/eyesall.png" id="81_laxar"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots Button/BootsButton2.gd" id="81_ojbt4"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Body.gd" id="81_t4b88"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Bottom.gd" id="82_oacoe"]
@@ -219,6 +212,10 @@ _data = {
 shader = ExtResource("18_5xjfr")
 shader_parameter/new_color1 = Color(0.349, 0.196, 0.141, 1)
 shader_parameter/new_color2 = Color(1, 0.49, 0.983, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1rd1"]
+shader = ExtResource("20_8qi7u")
+shader_parameter/new_color = Color(0.369, 0.357, 0.357, 1)
 
 [sub_resource type="Animation" id="Animation_f76gl"]
 length = 0.001
@@ -1128,576 +1125,6 @@ _data = {
 "focused": SubResource("Animation_1iinm"),
 "idle": SubResource("Animation_c37b8"),
 "pressed": SubResource("Animation_ygwg3")
-}
-
-[sub_resource type="Animation" id="Animation_c8igm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ek1ke"]
-resource_name = "focused"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_560r2"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_43hm7"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c2ava"]
-_data = {
-"RESET": SubResource("Animation_c8igm"),
-"focused": SubResource("Animation_ek1ke"),
-"idle": SubResource("Animation_560r2"),
-"pressed": SubResource("Animation_43hm7")
-}
-
-[sub_resource type="Animation" id="Animation_iw3x6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button2/2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_fgx2l"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button2/2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_e1xg5"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button2/2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_6tcpg"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button2/2:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkj3g"]
-_data = {
-"RESET": SubResource("Animation_iw3x6"),
-"focused": SubResource("Animation_fgx2l"),
-"idle": SubResource("Animation_e1xg5"),
-"pressed": SubResource("Animation_6tcpg")
-}
-
-[sub_resource type="Animation" id="Animation_m03kk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button3/3:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_oempk"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button3/3:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_4tnka"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button3/3:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_t7jym"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button3/3:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_osvej"]
-_data = {
-"RESET": SubResource("Animation_m03kk"),
-"focused": SubResource("Animation_oempk"),
-"idle": SubResource("Animation_4tnka"),
-"pressed": SubResource("Animation_t7jym")
-}
-
-[sub_resource type="Animation" id="Animation_02m15"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button4/4:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_rk4xq"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button4/4:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_oslp3"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button4/4:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_xs4ei"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button4/4:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6e6pb"]
-_data = {
-"RESET": SubResource("Animation_02m15"),
-"focused": SubResource("Animation_rk4xq"),
-"idle": SubResource("Animation_oslp3"),
-"pressed": SubResource("Animation_xs4ei")
-}
-
-[sub_resource type="Animation" id="Animation_6oxay"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button5/5:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_fckj6"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button5/5:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_sppvo"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button5/5:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_lhamn"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button5/5:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_akslk"]
-_data = {
-"RESET": SubResource("Animation_6oxay"),
-"focused": SubResource("Animation_fckj6"),
-"idle": SubResource("Animation_sppvo"),
-"pressed": SubResource("Animation_lhamn")
-}
-
-[sub_resource type="Animation" id="Animation_j8aui"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button6/6:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_46gu7"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button6/6:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_xlf8s"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button6/6:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_xvsq4"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button6/6:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_idek7"]
-_data = {
-"RESET": SubResource("Animation_j8aui"),
-"focused": SubResource("Animation_46gu7"),
-"idle": SubResource("Animation_xlf8s"),
-"pressed": SubResource("Animation_xvsq4")
-}
-
-[sub_resource type="Animation" id="Animation_nc708"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button7/7:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_8w306"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button7/7:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_sjrs3"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button7/7:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ir0c1"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button7/7:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xpah"]
-_data = {
-"RESET": SubResource("Animation_nc708"),
-"focused": SubResource("Animation_8w306"),
-"idle": SubResource("Animation_sjrs3"),
-"pressed": SubResource("Animation_ir0c1")
-}
-
-[sub_resource type="Animation" id="Animation_x1wte"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button8/8:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_tybt6"]
-resource_name = "focused"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button8/8:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_qi1d7"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button8/8:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_eq4m7"]
-resource_name = "pressed"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Button8/8:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouhmn"]
-_data = {
-"RESET": SubResource("Animation_x1wte"),
-"focused": SubResource("Animation_tybt6"),
-"idle": SubResource("Animation_qi1d7"),
-"pressed": SubResource("Animation_eq4m7")
 }
 
 [sub_resource type="Animation" id="Animation_oi12j"]
@@ -3545,12 +2972,12 @@ region_rect = Rect2(0, 0, 128, 2560)
 script = ExtResource("85_20vsd")
 
 [node name="Eyes" type="Sprite2D" parent="Character"]
+material = SubResource("ShaderMaterial_p1rd1")
 position = Vector2(147, 126)
 texture = ExtResource("81_laxar")
 hframes = 4
-vframes = 8
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 256)
+region_rect = Rect2(0, 0, 128, 32)
 script = ExtResource("87_s0sil")
 
 [node name="LarrowButton" type="TextureButton" parent="Character"]
@@ -3798,6 +3225,50 @@ libraries = {
 "": SubResource("AnimationLibrary_w5hao")
 }
 
+[node name="Control3" type="Control" parent="Buttons"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.0
+offset_right = 108.0
+offset_bottom = 40.0
+script = ExtResource("38_2nuc3")
+
+[node name="Slider" type="Sprite2D" parent="Buttons/Control3"]
+position = Vector2(192.3, 204.4)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider2" type="Sprite2D" parent="Buttons/Control3"]
+position = Vector2(192.3, 211)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="Slider3" type="Sprite2D" parent="Buttons/Control3"]
+position = Vector2(192.3, 217.6)
+scale = Vector2(0.992, 1.2)
+texture = ExtResource("68_ssbow")
+
+[node name="EyesColor" type="ColorPicker" parent="Buttons/Control3"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 196.0
+offset_right = 428.0
+offset_bottom = 292.0
+scale = Vector2(0.3, 0.3)
+auto_translate = false
+localize_numeral_system = false
+theme = ExtResource("70_4n5g8")
+alignment = 1
+color = Color(0.368627, 0.356863, 0.356863, 1)
+edit_alpha = false
+color_mode = 1
+picker_shape = 4
+sampler_visible = false
+color_modes_visible = false
+hex_visible = false
+presets_visible = false
+
 [node name="EyesButton" type="TextureButton" parent="Buttons"]
 offset_left = 144.5
 offset_top = 160.0
@@ -3822,164 +3293,17 @@ libraries = {
 visible = false
 position = Vector2(-145, -160)
 
-[node name="Button1" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 153.0
-offset_top = 200.0
-offset_right = 175.0
-offset_bottom = 222.0
-
-[node name="1" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button1"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(0, 0, 66, 23)
-script = ExtResource("21_yxnt7")
-
-[node name="Button1Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button1/1"]
-libraries = {
-"": SubResource("AnimationLibrary_c2ava")
-}
-
-[node name="Button2" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 175.0
-offset_top = 200.0
-offset_right = 197.0
-offset_bottom = 222.0
-
-[node name="2" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button2"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(66, 0, 66, 23)
-script = ExtResource("22_mwbp6")
-
-[node name="Button2Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button2/2"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_gkj3g")
-}
-
-[node name="Button3" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 197.0
-offset_top = 200.0
-offset_right = 219.0
-offset_bottom = 222.0
-
-[node name="3" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button3"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(132, 0, 66, 23)
-script = ExtResource("23_mtne2")
-
-[node name="Button3Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button3/3"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_osvej")
-}
-
-[node name="Button4" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 219.0
-offset_top = 200.0
-offset_right = 241.0
-offset_bottom = 222.0
-
-[node name="4" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button4"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(198, 0, 66, 23)
-script = ExtResource("24_inmxx")
-
-[node name="Button4Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button4/4"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_6e6pb")
-}
-
-[node name="Button5" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 241.0
-offset_top = 200.0
-offset_right = 263.0
-offset_bottom = 222.0
-
-[node name="5" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button5"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(264, 0, 66, 23)
-script = ExtResource("25_cv63i")
-
-[node name="Button5Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button5/5"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_akslk")
-}
-
-[node name="Button6" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 263.0
-offset_top = 200.0
-offset_right = 285.0
-offset_bottom = 222.0
-
-[node name="6" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button6"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(330, 0, 66, 23)
-script = ExtResource("26_dhpye")
-
-[node name="Button6Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button6/6"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_idek7")
-}
-
-[node name="Button7" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 285.0
-offset_top = 200.0
-offset_right = 307.0
-offset_bottom = 222.0
-
-[node name="7" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button7"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(396, 0, 66, 23)
-script = ExtResource("27_0m5ta")
-
-[node name="Button7Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button7/7"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_2xpah")
-}
-
-[node name="Button8" type="TextureButton" parent="Buttons/EyesButton/Eyes/Eyes"]
-offset_left = 307.0
-offset_top = 200.0
-offset_right = 329.0
-offset_bottom = 222.0
-
-[node name="8" type="Sprite2D" parent="Buttons/EyesButton/Eyes/Eyes/Button8"]
-texture = ExtResource("8_iy3r5")
-centered = false
-hframes = 3
-region_enabled = true
-region_rect = Rect2(462, 0, 66, 23)
-script = ExtResource("28_en4s8")
-
-[node name="Button8Animation" type="AnimationPlayer" parent="Buttons/EyesButton/Eyes/Eyes/Button8/8"]
-root_node = NodePath("../../../Button1/1")
-libraries = {
-"": SubResource("AnimationLibrary_ouhmn")
-}
+[node name="EyesColorMain" type="Label" parent="Buttons/EyesButton/Eyes/Eyes"]
+offset_left = 184.0
+offset_top = 205.0
+offset_right = 226.0
+offset_bottom = 216.0
+theme = ExtResource("97_ckmij")
+theme_override_colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
+theme_override_colors/font_shadow_color = Color(0.85098, 0.392157, 0.596078, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_font_sizes/font_size = 8
+text = "Eyes color"
 
 [node name="HairButton" type="TextureButton" parent="Buttons"]
 offset_left = 182.5
@@ -4534,6 +3858,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 576)
 
 [node name="Control" type="Control" parent="Buttons"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -4576,6 +3901,7 @@ hex_visible = false
 presets_visible = false
 
 [node name="Control2" type="Control" parent="Buttons"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -4633,6 +3959,7 @@ region_rect = Rect2(342, 0, 114, 28)
 script = ExtResource("14_84l6b")
 
 [node name="HairColor" type="Node2D" parent="Buttons/HairColorButton/Hair Color"]
+visible = false
 position = Vector2(-221, -160)
 
 [node name="HairColorMain" type="Label" parent="Buttons/HairColorButton/Hair Color/HairColor"]
@@ -5326,7 +4653,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 4
 text = "- More damage
-- Rarer drops in dungeons and from mobs"
+- Rarer drops in dungeons and from mobsv"
 autowrap_mode = 3
 
 [node name="Fishing" type="Sprite2D" parent="."]
@@ -5461,15 +4788,8 @@ autowrap_mode = 3
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button7" to="Buttons/BodyButton/Body/Body/Button7/7" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button8" to="Buttons/BodyButton/Body/Body/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/BodyButton/Body/Body/Button9" to="Buttons/BodyButton/Body/Body/Button9/9" method="_on_button_9_pressed"]
+[connection signal="color_changed" from="Buttons/Control3/EyesColor" to="Buttons/Control3" method="_on_eyes_color_color_changed"]
 [connection signal="pressed" from="Buttons/EyesButton" to="Buttons/EyesButton/Eyes" method="_on_eyes_button_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button1" to="Buttons/EyesButton/Eyes/Eyes/Button1/1" method="_on_button_1_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button2" to="Buttons/EyesButton/Eyes/Eyes/Button2/2" method="_on_button_2_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button3" to="Buttons/EyesButton/Eyes/Eyes/Button3/3" method="_on_button_3_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button4" to="Buttons/EyesButton/Eyes/Eyes/Button4/4" method="_on_button_4_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button5" to="Buttons/EyesButton/Eyes/Eyes/Button5/5" method="_on_button_5_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button6" to="Buttons/EyesButton/Eyes/Eyes/Button6/6" method="_on_button_6_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button7" to="Buttons/EyesButton/Eyes/Eyes/Button7/7" method="_on_button_7_pressed"]
-[connection signal="pressed" from="Buttons/EyesButton/Eyes/Eyes/Button8" to="Buttons/EyesButton/Eyes/Eyes/Button8/8" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Buttons/HairButton" to="Buttons/HairButton/Hair" method="_on_hair_button_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button1" to="Buttons/HairButton/Hair/Hair/Button1/1" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Buttons/HairButton/Hair/Hair/Button2" to="Buttons/HairButton/Hair/Hair/Button2/2" method="_on_button_2_pressed"]

@@ -7,4 +7,4 @@ func _ready():
 	var tileSize = tilemap.cell_quadrant_size
 	var worldSizeInPixels = mapRect.size * tileSize
 	limit_right = worldSizeInPixels.x
-	limit_bottom = worldSizeInPixels.y
+	limit_bottom = worldSizeInPixels.y - tileSize * 3

@@ -2,7 +2,7 @@ extends TextureButton
 
 func _pressed():
 	Global.bodybutton = randi() % 9
-	Global.eyebutton = randi() % 8
+	Global.eyescolor = Color(randf(), randf(), randf(), 1.0)
 	Global.hairbutton = randi() % 18
 	Global.haircolor = Color(randf(), randf(), randf(), 1.0)
 	Global.acccolor = Color(randf(), randf(), randf(), 1.0)
