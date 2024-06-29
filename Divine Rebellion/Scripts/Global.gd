@@ -6,6 +6,9 @@ var coords : Vector2 = Vector2(213, 0)
 # выбор вкладки меню
 var tab = "body"
 
+# выбор вкладки в инвентаре
+var tabinv = "combat"
+
 # имя игрока
 var playername = ""
 
@@ -41,3 +44,27 @@ var gender = 0
 
 # улучшение (усилние / скилл, 0 - "Friendship", 1 - "Combat", 2 - "Fishing", 3 - "Farming", 4 - "Collecting", 5 - "Enhanced aura")
 var skill = 0
+
+# общее кол-во денег
+var totalwealth = 0
+
+# сколько денег сейчас есть
+var currentmoney = 0
+
+# уровень дружбы
+var friendship = 0
+
+# уровень борьбы
+var combating = 0
+
+# уровень рыбачества
+var fishing = 0
+
+# уровень фермерства
+var farming = 0
+
+# уровень собирательства
+var collecting = 0
+
+# уровень магии
+var magic = 0

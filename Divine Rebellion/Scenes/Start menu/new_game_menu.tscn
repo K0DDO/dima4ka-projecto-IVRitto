@@ -2923,7 +2923,7 @@ texture = ExtResource("79_7gybr")
 centered = false
 
 [node name="Body" type="Sprite2D" parent="Character"]
-position = Vector2(131, 110)
+position = Vector2(131, 112)
 texture = ExtResource("80_u7t71")
 centered = false
 hframes = 4

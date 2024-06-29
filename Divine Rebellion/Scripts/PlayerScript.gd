@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-@onready var hair = $Body/Hair
+@onready var hair = $Hair
 @onready var body = $Body
 @onready var animation = $Animation
-@onready var eyes = $Body/Eyes
+@onready var eyes = $Eyes
 
+@export var knockbackPower: int = 500
+@export var maxHealth = 3
 var speed : int = 70
 var direction = "Down"
+var currentHealth : int = maxHealth
+
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
@@ -22,9 +26,15 @@ func updateAnimation():
 
 		animation.play("walk" + direction)
 
+func handleCollison():
+	for i in get_slide_collision_count():
+		var collisoin = get_slide_collision(i)
+		var collider = collisoin.get_collider()
+		print_debug(collider.name)
 func _physics_process(_delta):
 	handleInput()
 	move_and_slide()
+	handleCollison()
 	updateAnimation()
 
 func _ready():
@@ -135,3 +145,16 @@ func _ready():
 	animation.get_animation("walkRight").track_set_key_value(4, 1,Vector2(18, Global.bootsbutton))
 	animation.get_animation("walkRight").track_set_key_value(4, 2,Vector2(19, Global.bootsbutton))
 	animation.get_animation("walkRight").track_set_key_value(4, 3,Vector2(16, Global.bootsbutton))
+
+func _on_hit_box_area_entered(area):
+	if area.name == "hitBox":
+		currentHealth -= 1
+		if currentHealth < 0:
+			currentHealth = maxHealth
+		print_debug(currentHealth)
+		#knockback(area.get_parent().velocity)
+
+func knockback(enemyVelocity):
+	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
+	velocity = knockbackDirection
+	move_and_slide()

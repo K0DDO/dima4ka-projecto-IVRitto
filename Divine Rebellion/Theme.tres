@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b78i1nbh81d5p"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b78i1nbh81d5p"]
 
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="1_g1flr"]
 [ext_resource type="Texture2D" uid="uid://dtvsbraxrbbln" path="res://Art/Tech/Сhoosing character menu/cc 6.png" id="2_jmgqm"]
@@ -20,6 +20,14 @@ texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 region_rect = Rect2(478, 3, 3, 11)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsw84"]
+texture = ExtResource("2_jmgqm")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+expand_margin_bottom = 2.0
+region_rect = Rect2(478, 3, 3, 11)
+
 [resource]
 default_base_scale = 0.49
 default_font = ExtResource("1_g1flr")
@@ -38,12 +46,14 @@ LineEdit/colors/caret_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/colors/font_outline_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_selected_color = Color(0.0705882, 0.027451, 0.192157, 1)
+LineEdit/colors/font_uneditable_color = Color(0.0705882, 0.027451, 0.192157, 1)
 LineEdit/constants/minimum_character_width = 13
 LineEdit/font_sizes/font_size = 8
 LineEdit/fonts/font = ExtResource("1_g1flr")
 LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource("StyleBoxTexture_qr1fk")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_nrrm6")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_fsw84")
 TextEdit/colors/caret_background_color = Color(0, 0, 0, 0)
 TextEdit/colors/caret_color = Color(0.87451, 0.87451, 0.87451, 0)
 TextEdit/colors/current_line_color = Color(0.25098, 0.25098, 0.258824, 0)
