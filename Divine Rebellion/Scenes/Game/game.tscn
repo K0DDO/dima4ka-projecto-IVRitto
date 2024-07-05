@@ -1,8 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=27 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
+[ext_resource type="Script" path="res://Scripts/Game/World.gd" id="1_whbl1"]
+[ext_resource type="PackedScene" uid="uid://b8lxk7y07o3kp" path="res://Scenes/Game/Collectables/Log.tscn" id="2_24dvj"]
 [ext_resource type="Texture2D" uid="uid://cpleau8elxqct" path="res://Art/Backgrounds/trees.png" id="2_sw245"]
+[ext_resource type="PackedScene" uid="uid://cd7wy6jc67e83" path="res://Scenes/Game/Collectables/WoodenAxe.tscn" id="3_5wmn4"]
 [ext_resource type="Texture2D" uid="uid://dt4a3j6o35pfu" path="res://Art/Backgrounds/bushes.png" id="3_qkamp"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="5_bnck5"]
 [ext_resource type="PackedScene" uid="uid://cmu7u5tkjem55" path="res://enemy/slime.tscn" id="5_rlskb"]
@@ -11,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://d1yjtmy47yj7d" path="res://Art/Backgrounds/torch.png" id="7_lhu6m"]
 [ext_resource type="Script" path="res://Scripts/Game/Torch.gd" id="8_xoesk"]
 [ext_resource type="PackedScene" uid="uid://dcx3hnmtijbt1" path="res://Scenes/Game/fog.tscn" id="9_vw48i"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g7uye"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("2_24dvj")
+scenes/2/scene = ExtResource("3_5wmn4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofqas"]
 texture = ExtResource("2_sw245")
@@ -1904,6 +1912,7 @@ terrain_set_0/terrain_9/color = Color(1, 0.313726, 0.584314, 1)
 sources/1 = SubResource("TileSetAtlasSource_ofqas")
 sources/2 = SubResource("TileSetAtlasSource_h8ayg")
 sources/3 = SubResource("TileSetAtlasSource_s3xxy")
+sources/0 = SubResource("TileSetScenesCollectionSource_g7uye")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nah3d"]
 size = Vector2(8, 3.5)
@@ -1962,6 +1971,7 @@ glow_enabled = true
 glow_blend_mode = 1
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_whbl1")
 
 [node name="fog" parent="." instance=ExtResource("9_vw48i")]
 layer = 2
@@ -1982,6 +1992,8 @@ layer_3/name = "Bushes"
 layer_3/y_sort_enabled = true
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1507340, 3, 131072, 1048602, 589827, 0, 196628, 589827, 131072, 196641, 589827, 131072, 196658, 589827, 0, 1179696, 589827, 131072, 131133, 589827, 131072, 1310793, 589827, 131072, 1507412, 589827, 0, 262234, 589827, 0, 1179727, 393219, 131072, 393303, 393219, 131072, 393272, 393219, 0, 1179689, 393219, 131072, 12, 393219, 0, 2, 393219, 0, 1245203, 786435, 0, 1441795, 786435, 131072, 786436, 786435, 131072, 131087, 786435, 0, 65536, 786435, 0, 131100, 786435, 131072, 1179678, 786435, 131072, 1441833, 786435, 0, 1048621, 786435, 0, 589879, 786435, 0, 262186, 786435, 131072, 65593, 786435, 131072, 131138, 786435, 131072, 65612, 786435, 0, 86, 786435, 0, 1441872, 786435, 131072, 1048644, 786435, 0, 1507392, 786435, 131072, 1048650, 3, 131072, 393267, 3, 0, 196614, 589827, 131072, 65574, 3, 131072, 1310778, 589827, 0, 1572953, 196611, 131072, 589835, 393219, 131072, 458758, 3, 0, 1572909, 3, 0, 65560, 196611, 0, 131152, 196611, 0, 1376278, 196611, 131072, 917505, 589827, 131072)
+layer_4/name = "Collectables"
+layer_4/tile_data = PackedInt32Array(524311, 0, 65536, 589848, 0, 65536, 524312, 0, 65536, 458775, 0, 65536, 458776, 0, 65536, 458774, 0, 65536, 393238, 0, 65536, 393239, 0, 65536, 393240, 0, 65536, 393241, 0, 65536, 458777, 0, 65536, 655385, 0, 65536, 655384, 0, 65536, 589847, 0, 65536, 655378, 0, 131072)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_f7wh0")]
 position = Vector2(340, 184)
@@ -2006,6 +2018,7 @@ script = ExtResource("5_bnck5")
 tilemap = NodePath("../..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
+process_mode = 3
 layer = 3
 
 [node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_5o7x3")]
@@ -2019,6 +2032,7 @@ endPoint = NodePath("Marker2D")
 position = Vector2(-62, 56)
 
 [node name="Torch1" type="StaticBody2D" parent="TileMap"]
+process_mode = 3
 position = Vector2(125, 254.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Torch1"]
@@ -2041,6 +2055,7 @@ color = Color(1, 0.752941, 0.537255, 1)
 texture = SubResource("GradientTexture2D_aq6tr")
 
 [node name="Torch2" type="StaticBody2D" parent="TileMap"]
+process_mode = 3
 position = Vector2(612, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Torch2"]
@@ -2068,6 +2083,7 @@ color = Color(1, 0.752941, 0.537255, 1)
 texture = SubResource("GradientTexture2D_aq6tr")
 
 [node name="Torch3" type="StaticBody2D" parent="TileMap"]
+process_mode = 3
 position = Vector2(946, 273)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Torch3"]
@@ -2095,6 +2111,7 @@ color = Color(1, 0.752941, 0.537255, 1)
 texture = SubResource("GradientTexture2D_aq6tr")
 
 [node name="Torch4" type="StaticBody2D" parent="TileMap"]
+process_mode = 3
 position = Vector2(1134, 93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Torch4"]
@@ -2122,6 +2139,7 @@ color = Color(1, 0.752941, 0.537255, 1)
 texture = SubResource("GradientTexture2D_aq6tr")
 
 [node name="Torch5" type="StaticBody2D" parent="TileMap"]
+process_mode = 3
 position = Vector2(1427, 190)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Torch5"]
@@ -2164,3 +2182,6 @@ polygon = PackedVector2Array(1472, 235, 1472, 384, 0, 384, 0, 22, 1473, 22, 1472
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7rid")
+
+[connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]

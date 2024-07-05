@@ -1,5 +1,7 @@
 extends Control
 
+signal opened
+signal closed
 var is_open = true
 
 func _ready():
@@ -16,7 +18,9 @@ func _process(_delta):
 func open():
 	visible = true
 	is_open = true
+	opened.emit()
 
 func close():
 	visible = false
 	is_open = false
+	closed.emit()

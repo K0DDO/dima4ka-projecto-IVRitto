@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://qkdc0ioyjnov"]
+
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_jb02f"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(22, 22)
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jb02f")
+centered = false
+region_enabled = true
+region_rect = Rect2(501, 0, 22, 22)

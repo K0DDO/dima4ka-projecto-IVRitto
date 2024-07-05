@@ -4,12 +4,16 @@ extends CharacterBody2D
 @onready var body = $Body
 @onready var animation = $Animation
 @onready var eyes = $Eyes
+@onready var effects = $Effects
+@onready var hurtBox = $hurtBox
+
 
 @export var knockbackPower: int = 500
 @export var maxHealth = 3
 var speed : int = 70
 var direction = "Down"
 var currentHealth : int = maxHealth
+var isHurt : bool = false
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -31,13 +35,19 @@ func handleCollison():
 		var collisoin = get_slide_collision(i)
 		var collider = collisoin.get_collider()
 		print_debug(collider.name)
+
 func _physics_process(_delta):
 	handleInput()
 	move_and_slide()
 	handleCollison()
 	updateAnimation()
+	if !isHurt:
+		for area in hurtBox.get_overlapping_areas():
+			if area.name == "hitBox":
+				hurtByEnemy(area)
 
 func _ready():
+	effects.play("RESET")
 	hair.material.set("shader_parameter/new_color1", Global.haircolor)
 	hair.material.set("shader_parameter/new_color2", Global.acccolor)
 	eyes.material.set("shader_parameter/new_color", Global.eyescolor)
@@ -146,15 +156,26 @@ func _ready():
 	animation.get_animation("walkRight").track_set_key_value(4, 2,Vector2(19, Global.bootsbutton))
 	animation.get_animation("walkRight").track_set_key_value(4, 3,Vector2(16, Global.bootsbutton))
 
+func hurtByEnemy(_area):
+	currentHealth -= 1
+	if currentHealth < 0:
+		currentHealth = maxHealth
+	isHurt = true
+	effects.play("hurtBlink")
+	await get_tree().create_timer(1).timeout
+	effects.play("RESET")
+	isHurt = false
+	#knockback(area.get_parent().velocity)
+	
 func _on_hit_box_area_entered(area):
-	if area.name == "hitBox":
-		currentHealth -= 1
-		if currentHealth < 0:
-			currentHealth = maxHealth
-		print_debug(currentHealth)
-		#knockback(area.get_parent().velocity)
-
+	if area.has_method("collect"):
+		area.collect()
+	
 func knockback(enemyVelocity):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
 	velocity = knockbackDirection
 	move_and_slide()
+
+
+func _on_hurt_box_area_exited(_area):
+	pass

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8lxk7y07o3kp"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_2v6fm"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_ti0sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yjk5"]
+resource_local_to_scene = true
+size = Vector2(12, 11)
+
+[node name="Log" instance=ExtResource("1_2v6fm")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5yjk5")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ti0sp")
+region_enabled = true
+region_rect = Rect2(0, 0, 14, 14)
