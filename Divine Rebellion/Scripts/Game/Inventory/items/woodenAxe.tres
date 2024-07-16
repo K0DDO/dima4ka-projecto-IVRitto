@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bwtsasq8oufo3"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_2h8w5"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_y1b3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f23pu"]
+atlas = ExtResource("2_y1b3n")
+region = Rect2(24, 0, 14, 14)
+
+[resource]
+script = ExtResource("1_2h8w5")
+name = "Wooden Axe"
+texture = SubResource("AtlasTexture_f23pu")

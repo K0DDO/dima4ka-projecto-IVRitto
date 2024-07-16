@@ -2,9 +2,19 @@ extends Control
 
 signal opened
 signal closed
+
 var is_open = true
 
+@onready var inventory: Inventory = preload("res://Scripts/Game/Inventory/playerInventory.tres")
+@onready var slots: Array = $Combat/GridContainer.get_children()
+
+func update():
+	for i in range(min(inventory.items.size(), slots.size())):
+		slots[i].update(inventory.items[i])
+
 func _ready():
+	inventory.updated.connect(update)
+	update()
 	close()
 
 func _process(_delta):

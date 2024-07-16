@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://pmpehghy0lng"]
+
+[ext_resource type="Resource" uid="uid://bwtsasq8oufo3" path="res://Scripts/Game/Inventory/items/woodenAxe.tres" id="1_epn7r"]
+[ext_resource type="Resource" uid="uid://bmuoqe54l4mui" path="res://Scripts/Game/Inventory/items/log.tres" id="1_x21or"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventory.gd" id="3_t6d4x"]
+
+[resource]
+script = ExtResource("3_t6d4x")
+items = Array[Resource("res://Scripts/Game/Inventory/inventoryItem.gd")]([null, null, null, ExtResource("1_epn7r"), null, null, null, null, ExtResource("1_x21or"), ExtResource("1_x21or"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

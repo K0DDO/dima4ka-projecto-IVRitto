@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bmuoqe54l4mui"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_ojtny"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_383ty"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls07r"]
+atlas = ExtResource("2_383ty")
+region = Rect2(14, 1, 10, 10)
+
+[resource]
+script = ExtResource("1_ojtny")
+name = "Log"
+texture = SubResource("AtlasTexture_ls07r")

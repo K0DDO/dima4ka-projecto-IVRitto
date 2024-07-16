@@ -10,6 +10,9 @@ extends CharacterBody2D
 
 @export var knockbackPower: int = 500
 @export var maxHealth = 3
+
+@export var inventory: Inventory
+
 var speed : int = 70
 var direction = "Down"
 var currentHealth : int = maxHealth
@@ -169,7 +172,7 @@ func hurtByEnemy(_area):
 	
 func _on_hit_box_area_entered(area):
 	if area.has_method("collect"):
-		area.collect()
+		area.collect(inventory)
 	
 func knockback(enemyVelocity):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
