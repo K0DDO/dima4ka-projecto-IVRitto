@@ -9,8 +9,8 @@ var is_open = true
 @onready var slots: Array = $Combat/GridContainer.get_children()
 
 func update():
-	for i in range(min(inventory.items.size(), slots.size())):
-		slots[i].update(inventory.items[i])
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].update(inventory.slots[i])
 
 func _ready():
 	inventory.updated.connect(update)

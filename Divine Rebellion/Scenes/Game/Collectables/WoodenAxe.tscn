@@ -8,7 +8,7 @@
 resource_local_to_scene = true
 size = Vector2(12, 12)
 
-[node name="Collectable" instance=ExtResource("1_xs0yi")]
+[node name="WoodenAxe" instance=ExtResource("1_xs0yi")]
 itemRes = ExtResource("2_i7yht")
 
 [node name="CollisionShape2D" parent="." index="0"]

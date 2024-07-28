@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bbl8x8sdvjayl"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_sdmfv"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_e4r1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qycr"]
+atlas = ExtResource("2_e4r1x")
+region = Rect2(52, 0, 14, 14)
+
+[resource]
+script = ExtResource("1_sdmfv")
+name = "Blackberry"
+texture = SubResource("AtlasTexture_7qycr")
+stackSize = 99

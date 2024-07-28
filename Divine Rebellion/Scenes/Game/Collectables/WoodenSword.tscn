@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://oxx5ddsfbuxd"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_m3f4d"]
+[ext_resource type="Resource" uid="uid://laphndqoukn7" path="res://Scripts/Game/Inventory/items/woodenSword.tres" id="2_c8xsa"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_pu65e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wepof"]
+resource_local_to_scene = true
+size = Vector2(12, 12)
+
+[node name="WoodenSword" instance=ExtResource("1_m3f4d")]
+itemRes = ExtResource("2_c8xsa")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_wepof")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_pu65e")
+region_enabled = true
+region_rect = Rect2(38, 0, 14, 14)

@@ -11,3 +11,4 @@ region = Rect2(14, 1, 10, 10)
 script = ExtResource("1_ojtny")
 name = "Log"
 texture = SubResource("AtlasTexture_ls07r")
+stackSize = 99

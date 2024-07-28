@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://fc8u2mm3q1yf"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_51k7t"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_3r4x4"]
+[ext_resource type="Resource" uid="uid://bbl8x8sdvjayl" path="res://Scripts/Game/Inventory/items/blackberry.tres" id="2_irpwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yq6o"]
+resource_local_to_scene = true
+size = Vector2(12, 12)
+
+[node name="Blackberry" instance=ExtResource("1_51k7t")]
+itemRes = ExtResource("2_irpwk")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_5yq6o")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_3r4x4")
+region_enabled = true
+region_rect = Rect2(52, 0, 14, 14)
