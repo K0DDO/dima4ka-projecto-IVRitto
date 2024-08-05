@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qkdc0ioyjnov"]
+[gd_scene load_steps=3 format=3 uid="uid://qkdc0ioyjnov"]
 
 [ext_resource type="Script" path="res://Scripts/Game/slotGui.gd" id="1_et0ge"]
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_jb02f"]
-[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="3_rqddq"]
 
-[node name="Slot" type="Panel"]
+[node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(22, 22)
 offset_right = 22.0
@@ -22,24 +21,3 @@ custom_minimum_size = Vector2(22, 22)
 layout_mode = 0
 offset_right = 22.0
 offset_bottom = 22.0
-
-[node name="Panel" type="Panel" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
-
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
-custom_minimum_size = Vector2(10, 8)
-layout_mode = 0
-offset_left = -1.0
-offset_right = 9.0
-offset_bottom = 8.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.866667, 0.329412, 0.541176, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_rqddq")
-theme_override_font_sizes/font_size = 8
-text = "99"
-horizontal_alignment = 2

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ql4jbccf8bc"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/itemsStackGui.gd" id="1_aacwb"]
+[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="1_x5ug7"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_aacwb")
+
+[node name="item" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 8)
+layout_mode = 0
+offset_left = -1.0
+offset_right = 9.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.866667, 0.329412, 0.541176, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("1_x5ug7")
+theme_override_font_sizes/font_size = 8
+text = "99"
+horizontal_alignment = 2
