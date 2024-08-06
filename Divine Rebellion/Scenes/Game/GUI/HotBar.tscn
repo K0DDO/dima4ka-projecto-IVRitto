@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpmem86b5cfc6"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/HotBar.gd" id="1_nhfoe"]
+[ext_resource type="PackedScene" uid="uid://dy2tlxcrklg6h" path="res://Scenes/Game/GUI/hotBar_slot.tscn" id="1_ol3sf"]
+
+[node name="HotBar" type="HBoxContainer"]
+offset_right = 220.0
+offset_bottom = 22.0
+theme_override_constants/separation = 0
+script = ExtResource("1_nhfoe")
+
+[node name="Slot" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot6" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot7" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot8" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot9" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2
+
+[node name="Slot10" parent="." instance=ExtResource("1_ol3sf")]
+layout_mode = 2

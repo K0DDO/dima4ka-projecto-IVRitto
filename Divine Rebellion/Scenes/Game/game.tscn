@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=30 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d1yjtmy47yj7d" path="res://Art/Backgrounds/torch.png" id="7_lhu6m"]
 [ext_resource type="Script" path="res://Scripts/Game/Torch.gd" id="8_xoesk"]
 [ext_resource type="PackedScene" uid="uid://dcx3hnmtijbt1" path="res://Scenes/Game/fog.tscn" id="9_vw48i"]
+[ext_resource type="PackedScene" uid="uid://cpmem86b5cfc6" path="res://Scenes/Game/GUI/HotBar.tscn" id="13_e7dqw"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g7uye"]
 resource_name = "Collectables"
@@ -2027,6 +2028,20 @@ layer = 3
 
 [node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_5o7x3")]
 metadata/_edit_use_anchors_ = true
+
+[node name="HotBar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("13_e7dqw")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -10.0
+offset_right = 176.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
 
 [node name="slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_rlskb")]
 position = Vector2(1403, 166)
