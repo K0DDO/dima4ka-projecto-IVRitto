@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4hl7jk72yokj"]
+[gd_scene load_steps=52 format=3 uid="uid://b4hl7jk72yokj"]
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_30aun"]
 [ext_resource type="Script" path="res://Scripts/Game/Gui.gd" id="1_uakf1"]
@@ -38,6 +38,9 @@
 [ext_resource type="Script" path="res://Scripts/Game/FarmingSkill.gd" id="32_ff8qd"]
 [ext_resource type="Script" path="res://Scripts/Game/CollectingSkill.gd" id="33_x0rmy"]
 [ext_resource type="Script" path="res://Scripts/Game/MagicSkill.gd" id="34_w46fr"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/Date.gd" id="36_e3nwf"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/Year.gd" id="37_aa14d"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/DaysSpend.gd" id="38_anyb5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_amcb2"]
 shader = ExtResource("12_isl8t")
@@ -498,7 +501,6 @@ visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Profile" type="Node2D" parent="."]
-visible = false
 position = Vector2(-121, -67.5)
 
 [node name="Money" type="Sprite2D" parent="Profile"]
@@ -1282,6 +1284,7 @@ offset_right = 20.0
 offset_bottom = 3.0
 theme = ExtResource("26_c11qf")
 text = "19"
+script = ExtResource("36_e3nwf")
 
 [node name="Year" type="Sprite2D" parent="Profile/Character"]
 position = Vector2(110, 175)
@@ -1298,6 +1301,7 @@ offset_right = 23.0
 offset_bottom = 3.00001
 theme = ExtResource("26_c11qf")
 text = "3"
+script = ExtResource("37_aa14d")
 
 [node name="DaysSpent" type="Sprite2D" parent="Profile/Character"]
 position = Vector2(122.5, 183.75)
@@ -1311,7 +1315,8 @@ offset_top = -5.0
 offset_right = 35.0
 offset_bottom = 3.0
 theme = ExtResource("26_c11qf")
-text = "167"
+text = "1"
+script = ExtResource("38_anyb5")
 
 [node name="FavouriteSkill" type="Sprite2D" parent="Profile/Character"]
 position = Vector2(132.5, 193.75)
@@ -1466,7 +1471,7 @@ offset_bottom = 55.0
 scale = Vector2(0.4, 0.4)
 
 [node name="Mapmini2" type="Sprite2D" parent="Tabs"]
-position = Vector2(193.6, 50)
+position = Vector2(192.8, 50)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_30aun")
 vframes = 5
@@ -1483,7 +1488,7 @@ scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 
 [node name="Profilemini2" type="Sprite2D" parent="Tabs"]
-position = Vector2(193.6, 65)
+position = Vector2(192.8, 65)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_30aun")
 vframes = 5
@@ -1500,7 +1505,7 @@ scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 
 [node name="Bookmini2" type="Sprite2D" parent="Tabs"]
-position = Vector2(193.6, 80)
+position = Vector2(192.8, 80)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_30aun")
 vframes = 5
@@ -1517,7 +1522,7 @@ scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 
 [node name="Settingsmini2" type="Sprite2D" parent="Tabs"]
-position = Vector2(193.6, 95)
+position = Vector2(192.8, 95)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_30aun")
 vframes = 5

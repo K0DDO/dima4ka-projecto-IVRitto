@@ -68,3 +68,22 @@ var collecting = 0
 
 # уровень магии
 var magic = 0
+
+# минуты
+var minute = 0
+
+# часы
+var hour = 0
+
+# день
+var day = 1
+
+# сезон
+var season = 1
+
+# год
+var year = 1
+
+#
+#
+

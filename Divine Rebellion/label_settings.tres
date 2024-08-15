@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cnurjasiglaqp"]
+
+[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="1_l7w55"]
+
+[resource]
+font = ExtResource("1_l7w55")
+font_size = 8
+font_color = Color(0.0705882, 0.027451, 0.192157, 1)
+shadow_size = 0
+shadow_color = Color(0.85098, 0.392157, 0.596078, 1)
+shadow_offset = Vector2(0, 1)

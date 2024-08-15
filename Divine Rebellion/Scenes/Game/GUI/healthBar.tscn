@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://qscievevij3g"]
+
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_kbfh6"]
+
+[node name="HealthBar" type="Control"]
+custom_minimum_size = Vector2(63, 26)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 63.0
+offset_bottom = 26.0
+
+[node name="Gui" type="Sprite2D" parent="."]
+texture = ExtResource("1_kbfh6")
+centered = false
+region_enabled = true
+region_rect = Rect2(494, 61, 63, 26)
+
+[node name="heaalth" type="Sprite2D" parent="."]
+position = Vector2(4, 5)
+texture = ExtResource("1_kbfh6")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 243, 7, 7)
+
+[node name="healthBar" type="Sprite2D" parent="."]
+position = Vector2(11, 4)
+texture = ExtResource("1_kbfh6")
+centered = false
+region_enabled = true
+region_rect = Rect2(134, 269, 48, 9)
+
+[node name="magic" type="Sprite2D" parent="."]
+position = Vector2(4, 14)
+texture = ExtResource("1_kbfh6")
+centered = false
+region_enabled = true
+region_rect = Rect2(127, 261, 7, 7)
+
+[node name="magicbar" type="Sprite2D" parent="."]
+position = Vector2(11, 13)
+texture = ExtResource("1_kbfh6")
+centered = false
+region_enabled = true
+region_rect = Rect2(134, 269, 48, 9)

@@ -17,6 +17,7 @@ var speed : int = 70
 var direction = "Down"
 var currentHealth : int = maxHealth
 var isHurt : bool = false
+var knockback = Vector2.ZERO
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -40,6 +41,7 @@ func handleCollison():
 		print_debug(collider.name)
 
 func _physics_process(_delta):
+
 	handleInput()
 	move_and_slide()
 	handleCollison()
@@ -173,11 +175,6 @@ func hurtByEnemy(_area):
 func _on_hit_box_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
-	
-func knockback(enemyVelocity):
-	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
-	velocity = knockbackDirection
-	move_and_slide()
 
 
 func _on_hurt_box_area_exited(_area):

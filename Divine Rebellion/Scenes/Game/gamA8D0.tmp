@@ -1983,9 +1983,10 @@ script = ExtResource("21_31uff")
 seconds = 0
 minutes = 0
 hours = 0
-days = 1
-season = 1
-years = 1
+days = 0
+week = 0
+season = 0
+years = 0
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_whbl1")
@@ -2238,7 +2239,6 @@ environment = SubResource("Environment_m7rid")
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("20_65bw0")
 date_time = SubResource("Resource_vathl")
-ticks_pr_second = 10000
 
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
