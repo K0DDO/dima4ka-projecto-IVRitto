@@ -501,6 +501,7 @@ visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Profile" type="Node2D" parent="."]
+visible = false
 position = Vector2(-121, -67.5)
 
 [node name="Money" type="Sprite2D" parent="Profile"]

@@ -1983,8 +1983,8 @@ script = ExtResource("21_31uff")
 seconds = 0
 minutes = 0
 hours = 0
-days = 1
-season = 1
+days = 0
+season = 0
 years = 1
 
 [node name="world" type="Node2D"]
@@ -2056,14 +2056,14 @@ grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 
 [node name="Time" parent="TileMap/Player/CanvasLayer" instance=ExtResource("15_lhpc1")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -15.0
-offset_right = 66.0
-offset_bottom = 13.0
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 30.0
+grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 
 [node name="HealthBar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("15_f05b0")]
@@ -2238,7 +2238,7 @@ environment = SubResource("Environment_m7rid")
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("20_65bw0")
 date_time = SubResource("Resource_vathl")
-ticks_pr_second = 10000
+ticks_pr_second = 100
 
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]

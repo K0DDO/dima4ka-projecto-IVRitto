@@ -1,11 +1,11 @@
 extends Label
 
-func _process(delta):
+func _process(_delta):
 	text = ""
 	if Global.day < 10:
-		text += "0" + str(Global.day) + "." + "0" + str(Global.season) + "." 
+		text += "0" + str(Global.day) + "." + "0" + str(Global.season + 1) + "." 
 	else:
-		text += "0" + str(Global.day) + "." + "0" + str(Global.season) + "." 
+		text += str(Global.day) + "." + "0" + str(Global.season + 1) + "." 
 	if Global.year < 10:
 		text += "0" + str(Global.year)
 	else:

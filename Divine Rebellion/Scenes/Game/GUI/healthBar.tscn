@@ -10,35 +10,106 @@ offset_right = 63.0
 offset_bottom = 26.0
 
 [node name="Gui" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_kbfh6")
 centered = false
 region_enabled = true
 region_rect = Rect2(494, 61, 63, 26)
 
-[node name="heaalth" type="Sprite2D" parent="."]
-position = Vector2(4, 5)
+[node name="Magic Bar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 22.0
+
+[node name="magic" type="Sprite2D" parent="Magic Bar"]
+position = Vector2(0, 10)
 texture = ExtResource("1_kbfh6")
 centered = false
+hframes = 2
 region_enabled = true
-region_rect = Rect2(127, 243, 7, 7)
+region_rect = Rect2(127, 261, 14, 7)
 
-[node name="healthBar" type="Sprite2D" parent="."]
-position = Vector2(11, 4)
+[node name="magicbar" type="Sprite2D" parent="Magic Bar"]
+position = Vector2(7, 9)
 texture = ExtResource("1_kbfh6")
 centered = false
 region_enabled = true
 region_rect = Rect2(134, 269, 48, 9)
 
-[node name="magic" type="Sprite2D" parent="."]
-position = Vector2(4, 14)
+[node name="NinePatchRect" type="NinePatchRect" parent="Magic Bar"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 54.0
+offset_bottom = 17.0
+texture = ExtResource("1_kbfh6")
+region_rect = Rect2(134, 308, 47, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Magic Bar"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 54.0
+offset_bottom = 17.0
+texture = ExtResource("1_kbfh6")
+region_rect = Rect2(134, 280, 47, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Health Bar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 22.0
+
+[node name="health" type="Sprite2D" parent="Health Bar"]
+position = Vector2(0, 1)
 texture = ExtResource("1_kbfh6")
 centered = false
+hframes = 2
 region_enabled = true
-region_rect = Rect2(127, 261, 7, 7)
+region_rect = Rect2(127, 243, 14, 7)
 
-[node name="magicbar" type="Sprite2D" parent="."]
-position = Vector2(11, 13)
+[node name="healthBar" type="Sprite2D" parent="Health Bar"]
+position = Vector2(7, 0)
 texture = ExtResource("1_kbfh6")
 centered = false
 region_enabled = true
 region_rect = Rect2(134, 269, 48, 9)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Health Bar"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 8.0
+texture = ExtResource("1_kbfh6")
+region_rect = Rect2(134, 294, 47, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Health Bar"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 8.0
+texture = ExtResource("1_kbfh6")
+region_rect = Rect2(134, 280, 47, 7)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2

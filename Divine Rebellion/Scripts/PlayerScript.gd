@@ -5,51 +5,61 @@ extends CharacterBody2D
 @onready var animation = $Animation
 @onready var eyes = $Eyes
 @onready var effects = $Effects
-@onready var hurtBox = $hurtBox
+@onready var hurtBox = $hitbox
 
 
 @export var knockbackPower: int = 500
-@export var maxHealth = 3
+@export var maxHealth = 100
 
 @export var inventory: Inventory
 
 var speed : int = 70
 var direction = "Down"
+
 var currentHealth : int = maxHealth
+
 var isHurt : bool = false
 var knockback = Vector2.ZERO
+var enemy_inattack_range : bool = false
+var enemy_attack_cooldown = true
+var player_alive = true
+var attack_ip = false
+
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
 
 func updateAnimation():
-	if velocity.length() == 0:
-		animation.play("idle" + direction)
-	else:
-		direction = "Down"
-		if velocity.x < 0: direction = "Left"
-		elif velocity.x > 0: direction = "Right"
-		elif velocity.y < 0: direction = "Up"
+	if !attack_ip:
+		if velocity.length() == 0:
+			animation.play("idle" + direction)
+		else:
+			direction = "Down"
+			if velocity.x < 0: direction = "Left"
+			elif velocity.x > 0: direction = "Right"
+			elif velocity.y < 0: direction = "Up"
 
-		animation.play("walk" + direction)
+			animation.play("walk" + direction)
 
 func handleCollison():
 	for i in get_slide_collision_count():
 		var collisoin = get_slide_collision(i)
 		var collider = collisoin.get_collider()
-		print_debug(collider.name)
 
 func _physics_process(_delta):
-
+	enemy_attack()
 	handleInput()
-	move_and_slide()
+	attack()
+	if !attack_ip:
+		move_and_slide()
 	handleCollison()
 	updateAnimation()
 	if !isHurt:
 		for area in hurtBox.get_overlapping_areas():
 			if area.name == "hitBox":
 				hurtByEnemy(area)
+		
 
 func _ready():
 	effects.play("RESET")
@@ -162,20 +172,40 @@ func _ready():
 	animation.get_animation("walkRight").track_set_key_value(4, 3,Vector2(16, Global.bootsbutton))
 
 func hurtByEnemy(_area):
-	currentHealth -= 1
-	if currentHealth < 0:
-		currentHealth = maxHealth
 	isHurt = true
 	effects.play("hurtBlink")
 	await get_tree().create_timer(1).timeout
 	effects.play("RESET")
 	isHurt = false
 	#knockback(area.get_parent().velocity)
-	
-func _on_hit_box_area_entered(area):
+
+func _on_collecting_area_entered(area):
 	if area.has_method("collect"):
-		area.collect(inventory)
+			area.collect(inventory)
 
+func _on_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
 
-func _on_hurt_box_area_exited(_area):
+func _on_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+		
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown:
+		currentHealth -= 5
+		enemy_attack_cooldown = false
+		await get_tree().create_timer(0.5).timeout
+		enemy_attack_cooldown = true
+
+func player():
 	pass
+
+func attack():
+	if Input.is_action_just_pressed("attack") and !attack_ip:
+		Global.player_current_atack = true
+		attack_ip = true
+		animation.play("attack" + direction)
+		await get_tree().create_timer(0.5).timeout
+		Global.player_current_atack = false
+		attack_ip = false

@@ -1,5 +1,8 @@
 extends Node
 
+#
+var player_current_atack: bool = false
+
 # перемещение облаков
 var coords : Vector2 = Vector2(213, 0)
 
@@ -76,13 +79,13 @@ var minute = 0
 var hour = 0
 
 # день
-var day = 1
+var day = 0
 
 # сезон
-var season = 1
+var season = 0
 
 # год
-var year = 1
+var year = 0
 
 #
 #

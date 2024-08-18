@@ -4,11 +4,13 @@ extends Control
 @onready var minutes_label = $Time/minutes
 @onready var day_label = $Date/Day
 @onready var day_of_the_week_label = $Date/Day2
+@onready var year_label = $Year/Count
 
 func _on_time_system_update(date_time: DateTime) -> void:
 	update_label(hours_label, date_time.hours)
 	update_label(minutes_label, date_time.minutes)
-	update_label(day_label, date_time.days)
+	update_label(day_label, date_time.days+1)
+	update_label(year_label, date_time.years, false)
 	update_text_label(day_of_the_week_label, date_time.days)
 
 func add_leading_zero(label: Label, value: int) -> void:

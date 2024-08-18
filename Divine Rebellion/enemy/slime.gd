@@ -7,6 +7,9 @@ var player = null
 var direction = "Down"
 var ani = "idle"
 
+var health = 15
+var player_inattack_zone = false
+
 @onready var animation = $Animation
 	
 func updateAnimation():
@@ -26,6 +29,9 @@ func updateAnimation():
 	animation.play(pl)
 
 func _physics_process(_delta):
+	
+	deal_with_damage()
+	
 	velocity = Vector2.ZERO
 	if player_chase:
 		velocity = position.direction_to(player.position) * speed * 2
@@ -43,4 +49,21 @@ func _on_detaction_area_body_exited(_body):
 	player = null
 	player_chase = false
 	
+func enemy():
+	pass
 
+
+func _on_hit_box_body_entered(body):
+	if body.has_method("player"):
+		player_inattack_zone = true
+
+
+func _on_hit_box_body_exited(body):
+	if body.has_method("player"):
+		player_inattack_zone = false
+
+func deal_with_damage():
+	if player_inattack_zone and Global.player_current_atack:
+		health = health - 10
+		if health <= 0:
+			self.queue_free()
