@@ -23,14 +23,6 @@ offset_top = 4.0
 offset_right = 59.0
 offset_bottom = 22.0
 
-[node name="magic" type="Sprite2D" parent="Magic Bar"]
-position = Vector2(0, 10)
-texture = ExtResource("1_kbfh6")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(127, 261, 14, 7)
-
 [node name="magicbar" type="Sprite2D" parent="Magic Bar"]
 position = Vector2(7, 9)
 texture = ExtResource("1_kbfh6")
@@ -71,14 +63,6 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 59.0
 offset_bottom = 22.0
-
-[node name="health" type="Sprite2D" parent="Health Bar"]
-position = Vector2(0, 1)
-texture = ExtResource("1_kbfh6")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(127, 243, 14, 7)
 
 [node name="healthBar" type="Sprite2D" parent="Health Bar"]
 position = Vector2(7, 0)

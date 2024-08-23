@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+class_name Player
+signal healthChanged
+
 @onready var hair = $Hair
 @onready var body = $Body
 @onready var animation = $Animation
@@ -171,13 +174,45 @@ func _ready():
 	animation.get_animation("walkRight").track_set_key_value(4, 2,Vector2(19, Global.bootsbutton))
 	animation.get_animation("walkRight").track_set_key_value(4, 3,Vector2(16, Global.bootsbutton))
 
-func hurtByEnemy(_area):
-	isHurt = true
-	effects.play("hurtBlink")
-	await get_tree().create_timer(1).timeout
-	effects.play("RESET")
-	isHurt = false
-	#knockback(area.get_parent().velocity)
+func hurtByEnemy(area):
+	if !isHurt:
+		isHurt = true
+		currentHealth -= 5
+		healthChanged.emit()
+		print("Current Health: ", currentHealth)
+		effects.play("hurtBlink")
+		
+		var enemy_position = area.global_position
+		var direction_to_enemy = global_position.direction_to(enemy_position)
+		var knockback_strength = knockbackPower
+		var knockback_direction = -direction_to_enemy * knockback_strength
+
+		var knockback_duration = 0.3
+		var elapsed_time = 0.0
+
+		if abs(knockback_direction.y) > abs(knockback_direction.x):
+			while elapsed_time < knockback_duration:
+				var t = elapsed_time / knockback_duration
+				velocity = knockback_direction * (1.0 - t)
+				move_and_slide()
+				await get_tree().create_timer(0.01).timeout
+				elapsed_time += 0.01
+		else:
+			while elapsed_time < knockback_duration:
+				var t = elapsed_time / knockback_duration
+				var horizontal_knockback = knockback_direction * (1.0 - t)
+				var vertical_knockback = Vector2(0, 1.5 * knockback_strength * t * (1.0 - t))
+
+				velocity = horizontal_knockback + vertical_knockback
+				move_and_slide()
+				await get_tree().create_timer(0.01).timeout
+				elapsed_time += 0.01
+
+		velocity = Vector2.ZERO
+		await get_tree().create_timer(0.5).timeout
+		isHurt = false
+		effects.play("RESET")
+
 
 func _on_collecting_area_entered(area):
 	if area.has_method("collect"):
@@ -190,22 +225,20 @@ func _on_hitbox_body_entered(body):
 func _on_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
-		
-func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown:
-		currentHealth -= 5
-		enemy_attack_cooldown = false
-		await get_tree().create_timer(0.5).timeout
-		enemy_attack_cooldown = true
 
 func player():
 	pass
 
 func attack():
-	if Input.is_action_just_pressed("attack") and !attack_ip:
-		Global.player_current_atack = true
+	if Input.is_action_just_pressed("attack"):
 		attack_ip = true
 		animation.play("attack" + direction)
-		await get_tree().create_timer(0.5).timeout
-		Global.player_current_atack = false
+		await animation.animation_finished
 		attack_ip = false
+
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown:
+		hurtByEnemy(hurtBox)
+		enemy_attack_cooldown = false
+		await get_tree().create_timer(2).timeout
+		enemy_attack_cooldown = true
