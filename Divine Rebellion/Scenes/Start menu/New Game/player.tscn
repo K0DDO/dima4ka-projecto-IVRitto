@@ -1565,7 +1565,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cm4o"]
-size = Vector2(18, 34)
+size = Vector2(18, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2120"]
 size = Vector2(12.0851, 4)
@@ -1841,7 +1841,7 @@ libraries = {
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -15)
+position = Vector2(-1, -5)
 shape = SubResource("RectangleShape2D_2cm4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

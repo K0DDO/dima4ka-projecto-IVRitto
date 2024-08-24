@@ -6,21 +6,33 @@ signal updated
 
 @export var slots: Array[InventorySlot]
 
-func insert(item: InventoryItem):
+func insert(item: InventoryItem) -> bool:
 	for slot in slots:
 		if slot.item == item:
-			if slot.amount >= slot.item.stackSize:
-				continue
-			slot.amount += 1
-			updated.emit()
-			return
+			if slot.amount < slot.item.stackSize:
+				slot.amount += 1
+				updated.emit()
+				return true
 	
 	for i in range(slots.size()):
 		if !slots[i].item:
 			slots[i].item = item
 			slots[i].amount = 1
 			updated.emit()
-			return
+			return true
+	
+	return false
+
+func can_insert_item(item: InventoryItem) -> bool:
+	for slot in slots:
+		if slot.item == item and slot.amount < slot.item.stackSize:
+			return true
+	
+	for i in range(slots.size()):
+		if !slots[i].item:
+			return true
+	
+	return false
 
 func removeSlot(inventorySlot: InventorySlot):
 	var index  = slots.find(inventorySlot)
