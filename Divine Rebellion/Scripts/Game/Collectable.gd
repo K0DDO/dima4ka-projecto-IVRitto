@@ -10,8 +10,6 @@ func collect(inventory: Inventory):
 	if inventory.can_insert_item(itemRes):
 		inventory.insert(itemRes)
 		queue_free()
-	else:
-		print("Inventory is full or item stacks are full! Can't pick up item.")
 
 func _physics_process(delta: float) -> void:
 	if is_flying and target:

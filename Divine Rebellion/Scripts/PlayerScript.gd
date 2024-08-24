@@ -179,7 +179,6 @@ func hurtByEnemy(area):
 		isHurt = true
 		currentHealth -= 5
 		healthChanged.emit()
-		print("Current Health: ", currentHealth)
 		effects.play("hurtBlink")
 		
 		var enemy_position = area.global_position

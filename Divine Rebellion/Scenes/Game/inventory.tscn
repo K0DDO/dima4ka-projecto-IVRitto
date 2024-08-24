@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b4hl7jk72yokj"]
+[gd_scene load_steps=53 format=3 uid="uid://b4hl7jk72yokj"]
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_30aun"]
 [ext_resource type="Script" path="res://Scripts/Game/Gui.gd" id="1_uakf1"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/TotalWealth.gd" id="29_errmd"]
 [ext_resource type="Script" path="res://Scripts/Game/FriendshipSkill.gd" id="29_l6hgq"]
 [ext_resource type="PackedScene" uid="uid://qkdc0ioyjnov" path="res://Scenes/Game/GUI/SlotGUI.tscn" id="29_m3wa3"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/trashCan.gd" id="30_m5kvu"]
 [ext_resource type="Script" path="res://Scripts/Game/CombatingSkill.gd" id="30_wyokd"]
 [ext_resource type="Script" path="res://Scripts/Game/FishingSkill.gd" id="31_tim2m"]
 [ext_resource type="Script" path="res://Scripts/Game/FarmingSkill.gd" id="32_ff8qd"]
@@ -489,12 +490,20 @@ layout_mode = 2
 [node name="Slot30" parent="Combat/GridContainer" instance=ExtResource("29_m3wa3")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Combat"]
-position = Vector2(174, 36)
+[node name="trashCan" type="TextureButton" parent="Combat"]
+offset_left = 168.0
+offset_top = 32.0
+offset_right = 183.0
+offset_bottom = 52.0
 scale = Vector2(0.4, 0.4)
+script = ExtResource("30_m5kvu")
+
+[node name="trashCanSprite" type="Sprite2D" parent="Combat/trashCan"]
 texture = ExtResource("1_30aun")
+centered = false
+hframes = 2
 region_enabled = true
-region_rect = Rect2(523, 0, 15, 18)
+region_rect = Rect2(568, 80, 30, 19)
 
 [node name="Map" type="Node2D" parent="."]
 visible = false
@@ -1541,6 +1550,9 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Combat/Character/LarrowButton" to="Combat/Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
 [connection signal="pressed" from="Combat/Character/RarrowButton" to="Combat/Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
+[connection signal="mouse_entered" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_exited"]
+[connection signal="pressed" from="Combat/trashCan" to="Combat/trashCan" method="_on_pressed"]
 [connection signal="pressed" from="Tabs/Combatmini/Button" to="Tabs" method="_on_button1_pressed"]
 [connection signal="pressed" from="Tabs/Mapmini/Button" to="Tabs" method="_on_button2_pressed"]
 [connection signal="pressed" from="Tabs/Profilemini/Button" to="Tabs" method="_on_button3_pressed"]
