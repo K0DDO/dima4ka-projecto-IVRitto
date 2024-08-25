@@ -4,7 +4,6 @@ class_name Player
 signal healthChanged
 
 @onready var hair = $Hair
-@onready var body = $Body
 @onready var animation = $Animation
 @onready var eyes = $Eyes
 @onready var effects = $Effects
@@ -45,18 +44,12 @@ func updateAnimation():
 
 			animation.play("walk" + direction)
 
-func handleCollison():
-	for i in get_slide_collision_count():
-		var collisoin = get_slide_collision(i)
-		var collider = collisoin.get_collider()
-
 func _physics_process(_delta):
 	enemy_attack()
 	handleInput()
 	attack()
 	if !attack_ip:
 		move_and_slide()
-	handleCollison()
 	updateAnimation()
 	if !isHurt:
 		for area in hurtBox.get_overlapping_areas():

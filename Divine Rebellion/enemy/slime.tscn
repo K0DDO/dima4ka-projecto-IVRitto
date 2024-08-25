@@ -1,7 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmu7u5tkjem55"]
+[gd_scene load_steps=19 format=3 uid="uid://cmu7u5tkjem55"]
 
 [ext_resource type="Script" path="res://enemy/slime.gd" id="1_14yho"]
 [ext_resource type="Texture2D" uid="uid://cn66q7w77bybi" path="res://Art/Mobs/water mob.png" id="2_8r1k3"]
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="3_jqeq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q4om"]
+atlas = ExtResource("3_jqeq3")
+region = Rect2(143, 234, 4, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qfqy"]
+atlas = ExtResource("3_jqeq3")
+region = Rect2(148, 234, 4, 4)
 
 [sub_resource type="Animation" id="Animation_ky7b7"]
 length = 0.001
@@ -364,11 +373,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dchlt"]
-size = Vector2(31, 22)
+size = Vector2(27, 7)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_alg74"]
-radius = 13.0
-height = 36.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m26j"]
+size = Vector2(18, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qye1h"]
 radius = 98.0051
@@ -384,6 +392,21 @@ offset = Vector2(0, -12)
 hframes = 17
 frame = 8
 
+[node name="health" type="TextureProgressBar" parent="Sprite"]
+offset_left = -8.0
+offset_top = -26.0
+offset_right = 7.0
+offset_bottom = -22.0
+max_value = 15.0
+value = 5.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = SubResource("AtlasTexture_0q4om")
+texture_progress = SubResource("AtlasTexture_0qfqy")
+
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q14pb")
@@ -391,7 +414,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-0.5, -9)
+position = Vector2(-0.5, -3.5)
 shape = SubResource("RectangleShape2D_dchlt")
 
 [node name="hitBox" type="Area2D" parent="."]
@@ -399,7 +422,7 @@ shape = SubResource("RectangleShape2D_dchlt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(-1, -8)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_alg74")
+shape = SubResource("RectangleShape2D_8m26j")
 
 [node name="Detaction Area" type="Area2D" parent="."]
 collision_layer = 2
