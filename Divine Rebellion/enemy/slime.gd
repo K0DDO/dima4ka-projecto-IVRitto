@@ -13,7 +13,16 @@ var maxHealth = 15
 var player_inattack_zone = false
 var currentHealth = maxHealth
 
+# Добавленные переменные
+var original_position: Vector2
+var target_position: Vector2
+@export var wander_radius = 50  # Радиус, в котором враг может блуждать
+@export var wander_time = 5  # Время в секундах, через которое враг будет менять направление
+var wander_timer = 0.0
+
 func _ready():
+	original_position = global_position
+	set_new_wander_target()
 	update()
 
 func updateAnimation():
@@ -32,10 +41,9 @@ func updateAnimation():
 	var pl = ani + direction
 	animation.play(pl)
 
-func _physics_process(_delta):
-	
+func _physics_process(delta):
 	deal_with_damage()
-	
+
 	velocity = Vector2.ZERO
 	if player_chase:
 		var pos = position
@@ -44,8 +52,22 @@ func _physics_process(_delta):
 			move_and_slide()
 		else:
 			position = pos
+	else:
+		wander_timer -= delta
+		if wander_timer <= 0.0:
+			set_new_wander_target()
+		
+		if global_position.distance_to(target_position) > 5:
+			velocity = global_position.direction_to(target_position) * speed
+			move_and_slide()
+
 	updateAnimation()
 
+func set_new_wander_target():
+	# Устанавливаем новую случайную цель в пределах радиуса блуждания
+	var random_offset = Vector2(randf_range(-wander_radius, wander_radius), randf_range(-wander_radius, wander_radius))
+	target_position = original_position + random_offset
+	wander_timer = wander_time
 
 func _on_detaction_area_body_entered(body):
 	player = body
@@ -74,4 +96,5 @@ func deal_with_damage():
 			
 func update():
 	health_bar.value = currentHealth
+
 
