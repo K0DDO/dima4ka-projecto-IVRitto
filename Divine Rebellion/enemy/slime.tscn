@@ -376,7 +376,7 @@ _data = {
 size = Vector2(27, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m26j"]
-size = Vector2(18, 29)
+size = Vector2(20, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qye1h"]
 radius = 98.0051
@@ -388,15 +388,15 @@ script = ExtResource("1_14yho")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_8r1k3")
-offset = Vector2(0, -12)
+offset = Vector2(0, -10)
 hframes = 17
 frame = 8
 
 [node name="health" type="TextureProgressBar" parent="Sprite"]
 offset_left = -8.0
-offset_top = -26.0
+offset_top = -25.0
 offset_right = 7.0
-offset_bottom = -22.0
+offset_bottom = -21.0
 max_value = 15.0
 value = 5.0
 nine_patch_stretch = true
@@ -414,7 +414,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-0.5, -3.5)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_dchlt")
 
 [node name="hitBox" type="Area2D" parent="."]

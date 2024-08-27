@@ -13,11 +13,10 @@ var maxHealth = 15
 var player_inattack_zone = false
 var currentHealth = maxHealth
 
-# Добавленные переменные
 var original_position: Vector2
 var target_position: Vector2
-@export var wander_radius = 50  # Радиус, в котором враг может блуждать
-@export var wander_time = 5  # Время в секундах, через которое враг будет менять направление
+@export var wander_radius = 50
+@export var wander_time = 5
 var wander_timer = 0.0
 
 func _ready():
@@ -64,7 +63,6 @@ func _physics_process(delta):
 	updateAnimation()
 
 func set_new_wander_target():
-	# Устанавливаем новую случайную цель в пределах радиуса блуждания
 	var random_offset = Vector2(randf_range(-wander_radius, wander_radius), randf_range(-wander_radius, wander_radius))
 	target_position = original_position + random_offset
 	wander_timer = wander_time

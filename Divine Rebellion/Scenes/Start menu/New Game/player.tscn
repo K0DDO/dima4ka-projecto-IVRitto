@@ -105,7 +105,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_sg5oc"]
@@ -1565,10 +1565,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cm4o"]
-size = Vector2(18, 13)
+size = Vector2(18, 25.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2120"]
-size = Vector2(12.0851, 4)
+size = Vector2(12.0851, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssbbb"]
 size = Vector2(12, 9)
@@ -1841,11 +1841,11 @@ libraries = {
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-1, -5)
+position = Vector2(-1, -11.25)
 shape = SubResource("RectangleShape2D_2cm4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -3)
+position = Vector2(-1, -6)
 scale = Vector2(0.992961, 1)
 shape = SubResource("RectangleShape2D_g2120")
 
@@ -1863,6 +1863,7 @@ libraries = {
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="WoodenSword" type="Sprite2D" parent="Weapons"]
+visible = false
 position = Vector2(0, -14)
 texture = ExtResource("11_by6au")
 hframes = 8
@@ -1871,9 +1872,9 @@ region_enabled = true
 region_rect = Rect2(0, 32, 256, 32)
 
 [node name="Tools" type="Node2D" parent="."]
-visible = false
 
 [node name="WoodenAxe" type="Sprite2D" parent="Tools"]
+visible = false
 z_index = -1
 position = Vector2(-16, -30)
 texture = ExtResource("11_by6au")

@@ -503,7 +503,7 @@ texture = ExtResource("1_30aun")
 centered = false
 hframes = 2
 region_enabled = true
-region_rect = Rect2(568, 80, 30, 19)
+region_rect = Rect2(568, 79, 30, 20)
 
 [node name="Map" type="Node2D" parent="."]
 visible = false
