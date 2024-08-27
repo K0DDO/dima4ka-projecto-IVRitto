@@ -5,12 +5,13 @@ signal healthChanged
 
 @onready var hair = $Hair
 @onready var animation = $Animation
+@onready var animation_in_hand = $AnimationInHand
 @onready var eyes = $Eyes
 @onready var effects = $Effects
 @onready var hurtBox = $hitbox
+@onready var plr = $"."
 
-
-@export var knockbackPower: int = 500
+@export var knockbackPower: int = 200
 @export var maxHealth = 100
 
 @export var inventory: Inventory
@@ -25,15 +26,16 @@ var knockback = Vector2.ZERO
 var enemy_inattack_range : bool = false
 var enemy_attack_cooldown = true
 var player_alive = true
-var attack_ip = false
 
+var attack_ip = false
+var usingTools_ip = false
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
 
 func updateAnimation():
-	if !attack_ip:
+	if !attack_ip and !usingTools_ip:
 		if velocity.length() == 0:
 			animation.play("idle" + direction)
 		else:
@@ -48,7 +50,7 @@ func _physics_process(_delta):
 	enemy_attack()
 	handleInput()
 	attack()
-	if !attack_ip:
+	if !attack_ip and !usingTools_ip:
 		move_and_slide()
 	updateAnimation()
 	if !isHurt:
@@ -222,11 +224,18 @@ func player():
 	pass
 
 func attack():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and Global.weapon_equip and !attack_ip and !usingTools_ip:
 		attack_ip = true
 		animation.play("attack" + direction)
+		animation_in_hand.play("attack" + direction + str(Global.weapon))
 		await animation.animation_finished
 		attack_ip = false
+	if Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip:
+		usingTools_ip = true
+		animation.play("usingTools" + direction)
+		animation_in_hand.play("usingTools" + direction  + str(Global.tool))
+		await animation.animation_finished
+		usingTools_ip = false
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
@@ -234,3 +243,8 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		await get_tree().create_timer(2).timeout
 		enemy_attack_cooldown = true
+
+func _on_deal_damage_zone_body_entered(body):
+	if body.has_method("enemy") and attack_ip:
+		print_debug("attack")
+		body.hurtByPlayer(plr)

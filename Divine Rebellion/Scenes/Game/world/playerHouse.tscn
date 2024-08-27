@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://wari0d0wx4t5"]
+[gd_scene load_steps=7 format=3 uid="uid://wari0d0wx4t5"]
 
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_bfi1r"]
 [ext_resource type="PackedScene" uid="uid://cmu7u5tkjem55" path="res://enemy/slime.tscn" id="2_hyeyo"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="3_s87h7"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="4_a5an6"]
+[ext_resource type="PackedScene" uid="uid://oxx5ddsfbuxd" path="res://Scenes/Game/Collectables/WoodenSword.tscn" id="5_eukje"]
+[ext_resource type="PackedScene" uid="uid://cd7wy6jc67e83" path="res://Scenes/Game/Collectables/WoodenAxe.tscn" id="6_bsclo"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,3 +37,9 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.1
 script = ExtResource("4_a5an6")
 tilemap = NodePath("../..")
+
+[node name="WoodenSword" parent="." instance=ExtResource("5_eukje")]
+position = Vector2(269, 326)
+
+[node name="WoodenAxe" parent="." instance=ExtResource("6_bsclo")]
+position = Vector2(308, 292)

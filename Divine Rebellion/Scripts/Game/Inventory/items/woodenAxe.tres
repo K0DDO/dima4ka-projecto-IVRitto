@@ -12,3 +12,4 @@ script = ExtResource("1_2h8w5")
 name = "Wooden Axe"
 texture = SubResource("AtlasTexture_f23pu")
 stackSize = 1
+itemType = "tool"

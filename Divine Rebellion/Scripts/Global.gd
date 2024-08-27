@@ -1,8 +1,5 @@
 extends Node
 
-#
-var player_current_atack: bool = false
-
 # перемещение облаков
 var coords : Vector2 = Vector2(213, 0)
 
@@ -49,10 +46,10 @@ var gender = 0
 var skill = 0
 
 # общее кол-во денег
-var totalwealth = 0
+var totalwealth = 500
 
 # сколько денег сейчас есть
-var currentmoney = 0
+var currentmoney = 500
 
 # уровень дружбы
 var friendship = 0
@@ -87,6 +84,10 @@ var season = 0
 # год
 var year = 0
 
-#
-#
+# экипировано ли оружие и какое
+var weapon_equip: bool = false
+var weapon: int = 0
 
+# экипирован инструмент и какой
+var tool_equip: bool = false
+var tool: int = 0

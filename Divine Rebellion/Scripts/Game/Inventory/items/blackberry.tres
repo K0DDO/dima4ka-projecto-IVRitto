@@ -12,3 +12,4 @@ script = ExtResource("1_sdmfv")
 name = "Blackberry"
 texture = SubResource("AtlasTexture_7qycr")
 stackSize = 99
+itemType = ""

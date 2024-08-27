@@ -159,3 +159,4 @@ func _input(_event):
 	if itemInHand && !locked && Input.is_action_just_pressed("rightClick"):
 		putItemBack()
 	updateItemInHand()
+
