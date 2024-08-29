@@ -182,6 +182,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 373, 233)
 
 [node name="Combat" type="Node2D" parent="."]
+visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Character" type="Node2D" parent="Combat"]
@@ -1389,8 +1390,136 @@ script = ExtResource("29_errmd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Book" type="Node2D" parent="."]
-visible = false
 position = Vector2(-120, -67.5)
+
+[node name="Gui" type="Sprite2D" parent="Book"]
+position = Vector2(156, 36)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_30aun")
+region_enabled = true
+region_rect = Rect2(544, 0, 44, 5)
+
+[node name="GridContainer" type="GridContainer" parent="Book"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 132.0
+offset_top = 41.0
+offset_right = 250.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="Slot" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot2" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot3" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot4" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot5" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot6" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot7" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot8" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot9" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot10" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot11" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot12" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot13" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot14" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot15" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot16" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot17" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot18" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot19" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot20" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot21" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot22" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot23" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot24" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot25" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot26" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot27" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot28" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot29" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="Slot30" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
+layout_mode = 2
+
+[node name="trashCan" type="TextureButton" parent="Book"]
+offset_left = 168.0
+offset_top = 32.0
+offset_right = 183.0
+offset_bottom = 52.0
+scale = Vector2(0.4, 0.4)
+script = ExtResource("30_m5kvu")
+
+[node name="trashCanSprite" type="Sprite2D" parent="Book/trashCan"]
+texture = ExtResource("1_30aun")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(568, 79, 30, 20)
 
 [node name="Settings" type="Node2D" parent="."]
 visible = false
@@ -1553,6 +1682,9 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_entered" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_exited"]
 [connection signal="pressed" from="Combat/trashCan" to="Combat/trashCan" method="_on_pressed"]
+[connection signal="mouse_entered" from="Book/trashCan" to="Book/trashCan" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Book/trashCan" to="Book/trashCan" method="_on_mouse_exited"]
+[connection signal="pressed" from="Book/trashCan" to="Book/trashCan" method="_on_pressed"]
 [connection signal="pressed" from="Tabs/Combatmini/Button" to="Tabs" method="_on_button1_pressed"]
 [connection signal="pressed" from="Tabs/Mapmini/Button" to="Tabs" method="_on_button2_pressed"]
 [connection signal="pressed" from="Tabs/Profilemini/Button" to="Tabs" method="_on_button3_pressed"]

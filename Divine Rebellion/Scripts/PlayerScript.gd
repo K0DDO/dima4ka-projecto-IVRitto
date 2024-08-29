@@ -248,3 +248,8 @@ func _on_deal_damage_zone_body_entered(body):
 	if body.has_method("enemy") and attack_ip:
 		print_debug("attack")
 		body.hurtByPlayer(plr)
+
+func _on_area_2d_area_entered(area):
+	if area.get_parent().has_method("breakableWithAxe"):
+		print("usingAxe")
+		area.get_parent().damaged()

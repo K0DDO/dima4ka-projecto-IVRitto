@@ -8,6 +8,7 @@ var is_open = true
 @onready var inventory: Inventory = preload("res://Scripts/Game/Inventory/playerInventory.tres")
 @onready var ItemStackGuiClass = preload("res://Scenes/Game/GUI/itemsStackGui.tscn")
 @onready var slots: Array = $Combat/GridContainer.get_children()
+@onready var slots2: Array = $Book/GridContainer.get_children()
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
@@ -28,7 +29,21 @@ func update():
 		
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
-
+	for i in range(min(inventory.slots.size(), slots2.size())):
+		var inventorySlot: InventorySlot = inventory.slots[i]
+		
+		if !inventorySlot.item:
+			slots2[i].clear()
+			continue
+		
+		var itemStackGui: ItemStackGui = slots2[i].itemStackGui
+		if !itemStackGui:
+			itemStackGui = ItemStackGuiClass.instantiate()
+			slots2[i].insert(itemStackGui)
+		
+		itemStackGui.inventorySlot = inventorySlot
+		itemStackGui.update()
+	
 func _ready():
 	connectSlots()
 	inventory.updated.connect(update)

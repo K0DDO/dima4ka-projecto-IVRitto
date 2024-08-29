@@ -6,3 +6,5 @@ class_name InventoryItem
 @export var texture : Texture2D
 @export var stackSize: int
 @export var itemType: String = ""
+
+@export var description: String = ""
