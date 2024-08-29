@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://oxx5ddsfbuxd" path="res://Scenes/Game/Collectables/WoodenSword.tscn" id="5_4xqx7"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="5_bnck5"]
 [ext_resource type="PackedScene" uid="uid://cmu7u5tkjem55" path="res://enemy/slime.tscn" id="5_rlskb"]
-[ext_resource type="Texture2D" uid="uid://cenv5rcbj8ryf" path="res://Art/Backgrounds/stump.png" id="6_aewe3"]
 [ext_resource type="PackedScene" uid="uid://fc8u2mm3q1yf" path="res://Scenes/Game/Collectables/Blackberry.tscn" id="6_glsfc"]
 [ext_resource type="PackedScene" uid="uid://b4hl7jk72yokj" path="res://Scenes/Game/inventory.tscn" id="7_5o7x3"]
 [ext_resource type="Texture2D" uid="uid://d1yjtmy47yj7d" path="res://Art/Backgrounds/torch.png" id="7_lhu6m"]
@@ -22,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="16_cdt0a"]
 [ext_resource type="PackedScene" uid="uid://b8effrw35tibj" path="res://Scenes/Game/resources/die_effect.tscn" id="18_6jbmv"]
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="20_65bw0"]
+[ext_resource type="PackedScene" uid="uid://6mhxpasma6c1" path="res://Scenes/Game/items/stump.tscn" id="21_3msbk"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="21_31uff"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g7uye"]
@@ -2139,7 +2139,7 @@ region_enabled = true
 region_rect = Rect2(127, 243, 14, 7)
 
 [node name="slime" parent="TileMap" instance=ExtResource("5_rlskb")]
-position = Vector2(226, 241)
+position = Vector2(1425, 216)
 EFFECT_DIED = ExtResource("18_6jbmv")
 
 [node name="Torch1" type="StaticBody2D" parent="TileMap"]
@@ -2277,9 +2277,8 @@ scale = Vector2(1.25, 1.25)
 color = Color(1, 0.752941, 0.537255, 1)
 texture = SubResource("GradientTexture2D_aq6tr")
 
-[node name="Stump" type="Sprite2D" parent="."]
-position = Vector2(771, 123)
-texture = ExtResource("6_aewe3")
+[node name="Stump" parent="TileMap" instance=ExtResource("21_3msbk")]
+position = Vector2(774, 146)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.85
@@ -2300,13 +2299,10 @@ date_time = SubResource("Resource_vathl")
 ticks_pr_second = 100
 
 [node name="WoodenAxe" parent="." instance=ExtResource("3_5wmn4")]
-position = Vector2(786, 138)
+position = Vector2(293, 198)
 
-[node name="WoodenAxe2" parent="." instance=ExtResource("3_5wmn4")]
-position = Vector2(374, 125)
-
-[node name="WoodenSword" parent="." instance=ExtResource("5_4xqx7")]
-position = Vector2(405, 172)
+[node name="Log" parent="." instance=ExtResource("2_24dvj")]
+position = Vector2(371, 187)
 
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
