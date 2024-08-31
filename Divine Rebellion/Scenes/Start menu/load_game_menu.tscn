@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://33h1djjvcru4"]
+[gd_scene load_steps=11 format=3 uid="uid://33h1djjvcru4"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_i7jfy"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_1h8eh"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_tp0ng"]
 [ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="4_dwt3d"]
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="4_lw5sl"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="6_srw5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvky8"]
 atlas = ExtResource("1_i7jfy")
@@ -105,5 +106,7 @@ offset_right = 335.0
 offset_bottom = 115.0
 theme = ExtResource("4_dwt3d")
 text = "Divine Rebellion"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_srw5d")]
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]

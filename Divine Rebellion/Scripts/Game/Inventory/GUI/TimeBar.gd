@@ -8,7 +8,7 @@ extends Control
 
 func _on_time_system_update(date_time: DateTime) -> void:
 	update_label(hours_label, date_time.hours)
-	update_label(minutes_label, date_time.minutes)
+	update_tens_of_minutes(minutes_label, date_time.minutes)
 	update_label(day_label, date_time.days+1)
 	update_label(year_label, date_time.years, false)
 	update_text_label(day_of_the_week_label, date_time.days)
@@ -24,6 +24,10 @@ func update_label(label: Label, value: int, should_have_zero: bool = true) -> vo
 		add_leading_zero(label, value)
 	
 	label.text += str(value)
+
+func update_tens_of_minutes(label: Label, value: int) -> void:
+	label.text = str(value / 10) + "0"
+
 
 func update_text_label(label: Label, value: int) -> void:
 	if value % 7 == 1:

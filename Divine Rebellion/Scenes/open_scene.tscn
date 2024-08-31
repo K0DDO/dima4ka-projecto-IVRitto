@@ -272,4 +272,7 @@ offset_bottom = 172.0
 color = Color(1, 0.917647, 0.941176, 1)
 metadata/_edit_use_anchors_ = true
 
+[connection signal="start_of_animation" from="." to="WL" method="_on_open_start_of_animation"]
+[connection signal="start_of_animation" from="." to="AD" method="_on_open_start_of_animation"]
+[connection signal="start_of_animation" from="." to="Pict" method="_on_open_start_of_animation"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

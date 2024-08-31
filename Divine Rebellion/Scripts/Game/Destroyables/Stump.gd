@@ -20,7 +20,7 @@ func breakableWithAxe():
 func spawn_effect(EFFECT: PackedScene, effect_position: Vector2 = global_position):
 	if EFFECT:
 		var effect = EFFECT.instantiate()
-		get_tree().current_scene.add_child(effect)
+		get_tree().current_scene.call_deferred("add_child", effect)
 		effect.global_position = effect_position
 		effect.global_position.y = effect_position.y - 5
 		return effect

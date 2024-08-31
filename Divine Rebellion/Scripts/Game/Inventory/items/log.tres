@@ -13,3 +13,4 @@ name = "Log"
 texture = SubResource("AtlasTexture_ls07r")
 stackSize = 99
 itemType = "item"
+description = ""

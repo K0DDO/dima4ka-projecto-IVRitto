@@ -1,4 +1,4 @@
-[gd_scene load_steps=294 format=3 uid="uid://f3cdd1jkusqx"]
+[gd_scene load_steps=295 format=3 uid="uid://f3cdd1jkusqx"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_krpgh"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_7h763"]
@@ -88,6 +88,7 @@
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/CheckBox.gd" id="97_xjxo3"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Top.gd" id="98_v30nq"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Boots.gd" id="99_pqtrq"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="100_5bjim"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Bottom.gd" id="100_6gu5a"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/NameText.gd" id="101_c3nwx"]
 [ext_resource type="Texture2D" uid="uid://dssfjevr8iabb" path="res://Art/Tech/Сhoosing character menu/skilldescription.png" id="105_5ihpq"]
@@ -4771,6 +4772,8 @@ theme_override_font_sizes/font_size = 4
 text = "- Increased ether amount
 - Unlocks new abilities"
 autowrap_mode = 3
+
+[node name="CanvasLayer" parent="." instance=ExtResource("100_5bjim")]
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]

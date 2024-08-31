@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bfc18rm2lpdqp"]
+[gd_scene load_steps=23 format=3 uid="uid://bfc18rm2lpdqp"]
 
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/StartMenuScript.gd" id="1_5n0f7"]
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_15lfv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_loiqn"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/NewGameButtonScript.gd" id="5_kwmmx"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/LoadGameScript.gd" id="6_up2dq"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="8_feug2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh8vy"]
 atlas = ExtResource("1_15lfv")
@@ -281,6 +282,8 @@ libraries = {
 [node name="Timer" type="Timer" parent="LoadGameButton/LoadGame"]
 wait_time = 0.2
 one_shot = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_feug2")]
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="mouse_entered" from="NewGameButton" to="NewGameButton/NewGame" method="_on_new_game_button_mouse_entered"]

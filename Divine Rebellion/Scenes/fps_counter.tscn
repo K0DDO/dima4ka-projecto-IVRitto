@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://1cr6veqtiy1q"]
+
+[ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="1_ovypv"]
+[ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="1_tta15"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_ovypv")
+theme_override_font_sizes/font_size = 5
+text = "12"
+script = ExtResource("1_tta15")

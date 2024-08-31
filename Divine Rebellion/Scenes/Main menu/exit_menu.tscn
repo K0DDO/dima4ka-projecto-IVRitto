@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wutt2s1q5j3w"]
+[gd_scene load_steps=23 format=3 uid="uid://wutt2s1q5j3w"]
 
 [ext_resource type="Texture2D" uid="uid://dxx44k0ove1mr" path="res://Art/Tech/exit.png" id="1_no3by"]
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="2_wd7me"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="4_1hhk0"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Exit menu/YesButtonScript.gd" id="5_qehiv"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Exit menu/NoButtonScript.gd" id="6_kj4wo"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="7_hu63s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb1x1"]
 atlas = ExtResource("2_wd7me")
@@ -292,6 +293,8 @@ libraries = {
 [node name="Timer" type="Timer" parent="Exit Menu/NoButton/No"]
 wait_time = 0.15
 one_shot = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_hu63s")]
 
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="mouse_entered" from="Exit Menu/YesButton" to="Exit Menu/YesButton/Yes" method="_on_yes_button_mouse_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b4hl7jk72yokj"]
+[gd_scene load_steps=55 format=3 uid="uid://b4hl7jk72yokj"]
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_30aun"]
 [ext_resource type="Script" path="res://Scripts/Game/Gui.gd" id="1_uakf1"]
@@ -42,6 +42,8 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/Date.gd" id="36_e3nwf"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/Year.gd" id="37_aa14d"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/DaysSpend.gd" id="38_anyb5"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/VideoSettings.gd" id="42_omenf"]
+[ext_resource type="LabelSettings" uid="uid://cnurjasiglaqp" path="res://label_settings.tres" id="43_n0tkt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_amcb2"]
 shader = ExtResource("12_isl8t")
@@ -1390,6 +1392,7 @@ script = ExtResource("29_errmd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Book" type="Node2D" parent="."]
+visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Gui" type="Sprite2D" parent="Book"]
@@ -1506,24 +1509,153 @@ layout_mode = 2
 [node name="Slot30" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
 layout_mode = 2
 
-[node name="trashCan" type="TextureButton" parent="Book"]
-offset_left = 168.0
-offset_top = 32.0
-offset_right = 183.0
-offset_bottom = 52.0
-scale = Vector2(0.4, 0.4)
-script = ExtResource("30_m5kvu")
-
-[node name="trashCanSprite" type="Sprite2D" parent="Book/trashCan"]
-texture = ExtResource("1_30aun")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(568, 79, 30, 20)
-
 [node name="Settings" type="Node2D" parent="."]
 visible = false
 position = Vector2(-120, -67.5)
+
+[node name="Video" type="Control" parent="Settings"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("42_omenf")
+
+[node name="GridContainer" type="GridContainer" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 36.0
+offset_right = 205.0
+offset_bottom = 108.0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/h_separation = 53
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Label" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "Fullscreen"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="Label2" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "Resolution"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="Label3" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "Display FPS"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="Label6" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "V-sync"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="Label4" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "Max FPS"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="Label5" type="Label" parent="Settings/Video/GridContainer"]
+layout_mode = 2
+text = "Brightness"
+label_settings = ExtResource("43_n0tkt")
+
+[node name="CheckBox1" type="CheckBox" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 44.0
+offset_right = 79.0
+offset_bottom = 60.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("26_c11qf")
+theme_override_constants/check_v_offset = 2
+flat = true
+
+[node name="Resolution" type="OptionButton" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 44.0
+offset_right = 180.0
+offset_bottom = 58.0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("26_c11qf")
+
+[node name="CheckBox" type="CheckBox" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 64.0
+offset_right = 79.0
+offset_bottom = 80.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("26_c11qf")
+theme_override_constants/check_v_offset = 2
+flat = true
+
+[node name="CheckBox2" type="CheckBox" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 64.0
+offset_right = 148.0
+offset_bottom = 80.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("26_c11qf")
+theme_override_constants/check_v_offset = 2
+flat = true
+
+[node name="maxFPSSlider" type="HSlider" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 82.0
+offset_right = 134.0
+offset_bottom = 98.0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("26_c11qf")
+min_value = 30.0
+max_value = 120.0
+value = 120.0
+
+[node name="maxFPS" type="Label" parent="Settings/Video/maxFPSSlider"]
+layout_mode = 0
+offset_left = 76.6667
+offset_top = 3.33333
+offset_right = 89.6667
+offset_bottom = 11.3333
+text = "120"
+
+[node name="brightnessSlider" type="HSlider" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 82.0
+offset_right = 204.0
+offset_bottom = 98.0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("26_c11qf")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="brightness" type="Label" parent="Settings/Video/brightnessSlider"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 3.0
+offset_right = 82.0
+offset_bottom = 11.0
+text = "0"
+
+[node name="Gui" type="Sprite2D" parent="Settings"]
+position = Vector2(156, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_30aun")
+region_enabled = true
+region_rect = Rect2(573, 55, 36, 5)
+
+[node name="Gui2" type="Sprite2D" parent="Settings"]
+position = Vector2(86, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_30aun")
+region_enabled = true
+region_rect = Rect2(573, 55, 36, 5)
 
 [node name="Tabs" type="Node2D" parent="."]
 position = Vector2(-120, -67.5)
@@ -1682,9 +1814,12 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_entered" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_exited"]
 [connection signal="pressed" from="Combat/trashCan" to="Combat/trashCan" method="_on_pressed"]
-[connection signal="mouse_entered" from="Book/trashCan" to="Book/trashCan" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Book/trashCan" to="Book/trashCan" method="_on_mouse_exited"]
-[connection signal="pressed" from="Book/trashCan" to="Book/trashCan" method="_on_pressed"]
+[connection signal="pressed" from="Settings/Video/CheckBox1" to="Settings/Video" method="_on_check_box_1_pressed"]
+[connection signal="item_selected" from="Settings/Video/Resolution" to="Settings/Video" method="_on_resolution_item_selected"]
+[connection signal="pressed" from="Settings/Video/CheckBox" to="Settings/Video" method="_on_check_box_pressed"]
+[connection signal="pressed" from="Settings/Video/CheckBox2" to="Settings/Video" method="_on_check_box_2_pressed"]
+[connection signal="value_changed" from="Settings/Video/maxFPSSlider" to="Settings/Video" method="_on_max_fps_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Video/brightnessSlider" to="Settings/Video" method="_on_brightness_slider_value_changed"]
 [connection signal="pressed" from="Tabs/Combatmini/Button" to="Tabs" method="_on_button1_pressed"]
 [connection signal="pressed" from="Tabs/Mapmini/Button" to="Tabs" method="_on_button2_pressed"]
 [connection signal="pressed" from="Tabs/Profilemini/Button" to="Tabs" method="_on_button3_pressed"]

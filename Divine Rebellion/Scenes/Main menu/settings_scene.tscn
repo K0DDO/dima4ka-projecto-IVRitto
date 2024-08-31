@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://be2rg58qym27h"]
+[gd_scene load_steps=18 format=3 uid="uid://be2rg58qym27h"]
 
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_x5tmf"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_etkdn"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b1sjd5teia0q" path="res://Art/Tech/Сhoosing character menu/cc menu.png" id="4_djynw"]
 [ext_resource type="Texture2D" uid="uid://ds3nvmoip4oe8" path="res://Art/Tech/back_forward.png" id="5_146tl"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/BackButtonScript.gd" id="6_m2t0e"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="7_f256s"]
+[ext_resource type="LabelSettings" uid="uid://cnurjasiglaqp" path="res://label_settings.tres" id="7_jrvry"]
+[ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/VideoSettings.gd" id="7_r4lep"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_w8bkl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwr4j"]
 atlas = ExtResource("1_x5tmf")
@@ -153,6 +157,147 @@ libraries = {
 [node name="Timer" type="Timer" parent="BackButton/Back"]
 wait_time = 0.2
 
+[node name="Video" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_r4lep")
+
+[node name="CheckBox1" type="CheckBox" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 115.0
+offset_right = 212.0
+offset_bottom = 131.0
+theme = ExtResource("7_f256s")
+theme_override_constants/check_v_offset = 2
+button_pressed = true
+flat = true
+
+[node name="Label" type="Label" parent="Video"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 94.0
+offset_right = 135.0
+offset_bottom = 102.0
+scale = Vector2(2, 2)
+text = "Video:"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Resolution" type="OptionButton" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 134.0
+offset_right = 246.0
+offset_bottom = 148.0
+theme = ExtResource("7_f256s")
+
+[node name="CheckBox" type="CheckBox" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 151.0
+offset_right = 212.0
+offset_bottom = 167.0
+theme = ExtResource("7_f256s")
+theme_override_constants/check_v_offset = 2
+flat = true
+
+[node name="CheckBox2" type="CheckBox" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 170.0
+offset_right = 212.0
+offset_bottom = 186.0
+theme = ExtResource("7_f256s")
+theme_override_constants/check_v_offset = 2
+flat = true
+
+[node name="maxFPSSlider" type="HSlider" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 185.0
+offset_right = 271.0
+offset_bottom = 201.0
+theme = ExtResource("7_f256s")
+min_value = 30.0
+max_value = 120.0
+value = 120.0
+
+[node name="maxFPS" type="Label" parent="Video/maxFPSSlider"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 3.0
+offset_right = 90.0
+offset_bottom = 11.0
+text = "120"
+
+[node name="brightnessSlider" type="HSlider" parent="Video"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 205.0
+offset_right = 271.0
+offset_bottom = 221.0
+theme = ExtResource("7_f256s")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="brightness" type="Label" parent="Video/brightnessSlider"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 3.0
+offset_right = 82.0
+offset_bottom = 11.0
+text = "0"
+
+[node name="GridContainer" type="GridContainer" parent="Video"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 115.0
+offset_right = 165.0
+offset_bottom = 183.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/h_separation = 62
+
+[node name="Label" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "Fullscreen"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Label2" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "Resolution"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Label3" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "Display FPS"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Label6" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "V-sync"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Label4" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "Max FPS"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Label5" type="Label" parent="Video/GridContainer"]
+layout_mode = 2
+text = "Brightness"
+label_settings = ExtResource("7_jrvry")
+
+[node name="Control" parent="." instance=ExtResource("10_w8bkl")]
+
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
 [connection signal="pressed" from="BackButton" to="BackButton/Back" method="_on_back_button_pressed"]
 [connection signal="timeout" from="BackButton/Back/Timer" to="BackButton/Back" method="_on_timer_timeout"]
+[connection signal="pressed" from="Video/CheckBox1" to="Video" method="_on_check_box_1_pressed"]
+[connection signal="item_selected" from="Video/Resolution" to="Video" method="_on_resolution_item_selected"]
+[connection signal="pressed" from="Video/CheckBox" to="Video" method="_on_check_box_pressed"]
+[connection signal="pressed" from="Video/CheckBox2" to="Video" method="_on_check_box_2_pressed"]
+[connection signal="value_changed" from="Video/maxFPSSlider" to="Video" method="_on_max_fps_slider_value_changed"]
+[connection signal="value_changed" from="Video/brightnessSlider" to="Video" method="_on_brightness_slider_value_changed"]

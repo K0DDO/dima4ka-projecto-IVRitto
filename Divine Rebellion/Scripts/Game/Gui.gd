@@ -168,8 +168,12 @@ func _input(_event):
 		Global.tabinv = "combat"
 	
 	if Input.is_action_just_pressed("esc"):
-		close()
-		Global.tabinv = "combat"
+		if is_open:
+			close()
+			Global.tabinv = "combat"
+		else:
+			Global.tabinv = "settings"
+			open()
 		
 	if itemInHand && !locked && Input.is_action_just_pressed("rightClick"):
 		putItemBack()

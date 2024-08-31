@@ -13,3 +13,4 @@ name = "WoodenSword"
 texture = SubResource("AtlasTexture_skwgj")
 stackSize = 1
 itemType = "weapon"
+description = ""
