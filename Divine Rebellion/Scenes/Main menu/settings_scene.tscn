@@ -173,7 +173,6 @@ offset_bottom = 131.0
 theme = ExtResource("7_f256s")
 theme_override_constants/check_v_offset = 2
 button_pressed = true
-flat = true
 
 [node name="Label" type="Label" parent="Video"]
 layout_mode = 0
@@ -192,6 +191,19 @@ offset_top = 134.0
 offset_right = 246.0
 offset_bottom = 148.0
 theme = ExtResource("7_f256s")
+theme_override_colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
+alignment = 1
+item_count = 4
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "854x480"
+popup/item_3/id = 3
 
 [node name="CheckBox" type="CheckBox" parent="Video"]
 layout_mode = 0

@@ -17,7 +17,6 @@ func _ready():
 	fullScreenButton.button_pressed = SaveSettingsData.full_screen
 	display_fps.button_pressed = SaveSettingsData.show_fps
 	v_sync.button_pressed = SaveSettingsData.vsync
-	add_items()
 
 func add_items():
 	resolution.add_item("1920x1080")
@@ -31,11 +30,11 @@ func _on_resolution_item_selected(index):
 	if current_selected == 0:
 		DisplayServer.window_set_size(Vector2i(1920, 1080))
 	elif current_selected == 1:
-		DisplayServer.window_set_size(Vector2i(1280, 720))
-	elif current_selected == 2:
 		DisplayServer.window_set_size(Vector2i(1600, 900))
+	elif current_selected == 2:
+		DisplayServer.window_set_size(Vector2i(1280, 720))
 	elif current_selected == 3:
-		DisplayServer.window_set_size(Vector2i(1920, 1080))
+		DisplayServer.window_set_size(Vector2i(854, 480))
 
 func _on_check_box_pressed():
 	SaveSettingsData.show_fps = !SaveSettingsData.show_fps

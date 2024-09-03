@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cmu7u5tkjem55"]
+[gd_scene load_steps=22 format=3 uid="uid://cmu7u5tkjem55"]
 
 [ext_resource type="Script" path="res://enemy/slime.gd" id="1_14yho"]
+[ext_resource type="PackedScene" uid="uid://b8effrw35tibj" path="res://Scenes/Game/resources/die_effect.tscn" id="2_1o5j4"]
 [ext_resource type="Texture2D" uid="uid://cn66q7w77bybi" path="res://Art/Mobs/water mob.png" id="2_8r1k3"]
+[ext_resource type="PackedScene" uid="uid://b2d1ap6g1fkmq" path="res://Scenes/Game/Collectables/SlimeDrop.tscn" id="3_6fo4w"]
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="3_jqeq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0q4om"]
@@ -498,6 +500,8 @@ radius = 98.0051
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_14yho")
+EFFECT_DIED = ExtResource("2_1o5j4")
+slime_drop = ExtResource("3_6fo4w")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_8r1k3")

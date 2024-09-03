@@ -10,6 +10,7 @@ const indicator_damage = preload("res://Scenes/Game/resources/damage_indicator.t
 @export var wander_time = 5
 @export var knockbackPower = 100
 @export var EFFECT_DIED: PackedScene = null
+@export var slime_drop: PackedScene = null
 
 var player_chase = false
 var player = null
@@ -104,6 +105,7 @@ func hurtByPlayer(character):
 			animation.stop()
 			animation.play("die")
 			await animation.animation_finished
+			spawn_drop(slime_drop)
 			spawn_effect(EFFECT_DIED)
 			queue_free()
 
@@ -130,6 +132,14 @@ func spawn_effect(EFFECT: PackedScene, effect_position: Vector2 = global_positio
 		var effect = EFFECT.instantiate()
 		get_tree().current_scene.add_child(effect)
 		effect.global_position = effect_position
+		return effect
+
+func spawn_drop(EFFECT: PackedScene, effect_position: Vector2 = global_position):
+	if EFFECT:
+		var effect = EFFECT.instantiate()
+		get_tree().current_scene.call_deferred("add_child", effect)
+		effect.global_position = effect_position
+		effect.global_position.y = effect_position.y - 5
 		return effect
 
 func spawn_dmgindicator(damage: int):

@@ -2665,7 +2665,7 @@ disabled = true
 
 [node name="Sword" type="Sprite2D" parent="Weapons/WoodenSword"]
 visible = false
-self_modulate = Color(2, 2, 2, 1)
+self_modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = -1
 texture = ExtResource("12_dhse7")
 hframes = 4

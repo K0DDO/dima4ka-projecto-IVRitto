@@ -1510,7 +1510,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Settings" type="Node2D" parent="."]
-visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Video" type="Control" parent="Settings"]
@@ -1571,15 +1570,6 @@ scale = Vector2(0.7, 0.7)
 theme = ExtResource("26_c11qf")
 theme_override_constants/check_v_offset = 2
 flat = true
-
-[node name="Resolution" type="OptionButton" parent="Settings/Video"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 44.0
-offset_right = 180.0
-offset_bottom = 58.0
-scale = Vector2(0.6, 0.6)
-theme = ExtResource("26_c11qf")
 
 [node name="CheckBox" type="CheckBox" parent="Settings/Video"]
 layout_mode = 0
@@ -1642,6 +1632,28 @@ offset_top = 3.0
 offset_right = 82.0
 offset_bottom = 11.0
 text = "0"
+
+[node name="Resolution" type="OptionButton" parent="Settings/Video"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 44.0
+offset_right = 193.0
+offset_bottom = 58.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("26_c11qf")
+theme_override_colors/font_color = Color(0.0705882, 0.027451, 0.192157, 1)
+alignment = 1
+item_count = 4
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "854x480"
+popup/item_3/id = 3
 
 [node name="Gui" type="Sprite2D" parent="Settings"]
 position = Vector2(156, 34)
@@ -1815,11 +1827,11 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_exited" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_exited"]
 [connection signal="pressed" from="Combat/trashCan" to="Combat/trashCan" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Video/CheckBox1" to="Settings/Video" method="_on_check_box_1_pressed"]
-[connection signal="item_selected" from="Settings/Video/Resolution" to="Settings/Video" method="_on_resolution_item_selected"]
 [connection signal="pressed" from="Settings/Video/CheckBox" to="Settings/Video" method="_on_check_box_pressed"]
 [connection signal="pressed" from="Settings/Video/CheckBox2" to="Settings/Video" method="_on_check_box_2_pressed"]
 [connection signal="value_changed" from="Settings/Video/maxFPSSlider" to="Settings/Video" method="_on_max_fps_slider_value_changed"]
 [connection signal="value_changed" from="Settings/Video/brightnessSlider" to="Settings/Video" method="_on_brightness_slider_value_changed"]
+[connection signal="item_selected" from="Settings/Video/Resolution" to="Settings/Video" method="_on_resolution_item_selected"]
 [connection signal="pressed" from="Tabs/Combatmini/Button" to="Tabs" method="_on_button1_pressed"]
 [connection signal="pressed" from="Tabs/Mapmini/Button" to="Tabs" method="_on_button2_pressed"]
 [connection signal="pressed" from="Tabs/Profilemini/Button" to="Tabs" method="_on_button3_pressed"]
