@@ -15,3 +15,5 @@ func _on_male_pressed():
 func _process(_delta):
 	if Global.gender != 0:
 		animation.play("idle")
+	else:
+		animation.play("pressed")

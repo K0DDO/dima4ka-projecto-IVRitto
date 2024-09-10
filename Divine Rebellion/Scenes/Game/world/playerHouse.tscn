@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://wari0d0wx4t5"]
+[gd_scene load_steps=17 format=3 uid="uid://wari0d0wx4t5"]
 
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_bfi1r"]
 [ext_resource type="PackedScene" uid="uid://cmu7u5tkjem55" path="res://enemy/slime.tscn" id="2_hyeyo"]
@@ -6,6 +6,28 @@
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="4_a5an6"]
 [ext_resource type="PackedScene" uid="uid://oxx5ddsfbuxd" path="res://Scenes/Game/Collectables/WoodenSword.tscn" id="5_eukje"]
 [ext_resource type="PackedScene" uid="uid://cd7wy6jc67e83" path="res://Scenes/Game/Collectables/WoodenAxe.tscn" id="6_bsclo"]
+[ext_resource type="PackedScene" uid="uid://l51cxh44e8v4" path="res://Scenes/Game/GUI/timeBar.tscn" id="7_fker3"]
+[ext_resource type="PackedScene" uid="uid://b4hl7jk72yokj" path="res://Scenes/Game/inventory.tscn" id="7_fkmvu"]
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="8_a1g4h"]
+[ext_resource type="PackedScene" uid="uid://cpmem86b5cfc6" path="res://Scenes/Game/GUI/HotBar.tscn" id="8_xmjcm"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="9_1odha"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_vwjtl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0n8j"]
+atlas = ExtResource("8_a1g4h")
+region = Rect2(134, 269, 48, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqtmt"]
+atlas = ExtResource("8_a1g4h")
+region = Rect2(134, 294, 47, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qv2s"]
+atlas = ExtResource("8_a1g4h")
+region = Rect2(134, 269, 48, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sc17"]
+atlas = ExtResource("8_a1g4h")
+region = Rect2(134, 308, 47, 7)
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,6 +59,95 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.1
 script = ExtResource("4_a5an6")
 tilemap = NodePath("../..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
+process_mode = 3
+layer = 3
+
+[node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_fkmvu")]
+metadata/_edit_use_anchors_ = true
+
+[node name="HotBar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("8_xmjcm")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -12.0
+offset_right = 165.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="Time" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_fker3")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 30.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="Bar" type="Control" parent="TileMap/Player/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -12.0
+offset_right = 25.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="healthbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 47.0
+offset_bottom = 9.0
+stretch_margin_left = 2
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = SubResource("AtlasTexture_t0n8j")
+texture_progress = SubResource("AtlasTexture_wqtmt")
+texture_progress_offset = Vector2(0, 1)
+script = ExtResource("9_1odha")
+player = NodePath("../../..")
+
+[node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 55.0
+offset_bottom = 18.0
+texture_under = SubResource("AtlasTexture_2qv2s")
+texture_progress = SubResource("AtlasTexture_3sc17")
+
+[node name="magic" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
+position = Vector2(0, 10)
+texture = ExtResource("8_a1g4h")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(127, 261, 14, 7)
+
+[node name="health" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
+position = Vector2(0, 1)
+texture = ExtResource("8_a1g4h")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(127, 243, 14, 7)
+
+[node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("10_vwjtl")]
 
 [node name="WoodenSword" parent="." instance=ExtResource("5_eukje")]
 position = Vector2(269, 326)

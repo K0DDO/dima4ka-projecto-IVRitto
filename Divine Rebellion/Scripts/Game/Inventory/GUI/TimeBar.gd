@@ -9,7 +9,7 @@ extends Control
 func _on_time_system_update(date_time: DateTime) -> void:
 	update_label(hours_label, date_time.hours)
 	update_tens_of_minutes(minutes_label, date_time.minutes)
-	update_label(day_label, date_time.days+1)
+	update_label(day_label, date_time.days)
 	update_label(year_label, date_time.years, false)
 	update_text_label(day_of_the_week_label, date_time.days)
 

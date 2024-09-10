@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=43 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="21_31uff"]
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="24_kbr8x"]
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="25_lu6gc"]
+[ext_resource type="Script" path="res://Scripts/Game/LabelScript.gd" id="26_qq5cf"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g7uye"]
 resource_name = "Collectables"
@@ -1998,8 +1999,8 @@ script = ExtResource("21_31uff")
 seconds = 0
 minutes = 0
 hours = 0
-days = 0
-season = 0
+days = 1
+season = 1
 years = 1
 
 [node name="world" type="Node2D"]
@@ -2173,7 +2174,7 @@ position = Vector2(612, 210)
 shape = SubResource("RectangleShape2D_nah3d")
 
 [node name="Torch" type="Sprite2D" parent="TileMap/Torch2"]
-self_modulate = Color(2, 2, 2, 1)
+modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -0.75)
@@ -2298,30 +2299,95 @@ date_time = SubResource("Resource_vathl")
 ticks_pr_second = 100
 
 [node name="WoodenAxe" parent="." instance=ExtResource("3_5wmn4")]
-position = Vector2(580, 88)
-
-[node name="WoodenSword" parent="." instance=ExtResource("5_4xqx7")]
-position = Vector2(367, 176)
+position = Vector2(574, 95)
 
 [node name="Blackberry" parent="." instance=ExtResource("6_glsfc")]
-position = Vector2(1039, 100)
+position = Vector2(1057, 95)
 
-[node name="Label2" type="Label" parent="."]
-self_modulate = Color(4, 4, 4, 1)
+[node name="To pick up an item, simply walk up to it" type="Label" parent="." node_paths=PackedStringArray("player")]
+self_modulate = Color(5, 5, 5, 1)
 clip_children = 2
-offset_left = 439.0
-offset_top = 90.0
-offset_right = 547.0
-offset_bottom = 197.0
+offset_left = 502.0
+offset_top = 97.0
+offset_right = 574.0
+offset_bottom = 115.0
+pivot_offset = Vector2(36, 9)
 theme_override_fonts/font = ExtResource("25_lu6gc")
 theme_override_font_sizes/font_size = 6
-text = "func spawn_effect(EFFECT: PackedScene, effect_position: Vector2 = global_position):
-	if EFFECT:
-		var effect = EFFECT.instantiate()
-		get_tree().current_scene.add_child(effect)
-		effect.global_position = effect_position
-		return effect"
+text = "To pick up an item, simply walk up to it"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("26_qq5cf")
+player = NodePath("../TileMap/Player")
+
+[node name="To break the stump, select an axe and use the left mouse button" type="Label" parent="." node_paths=PackedStringArray("player")]
+self_modulate = Color(5, 5, 5, 1)
+clip_children = 2
+offset_left = 681.0
+offset_top = 134.0
+offset_right = 753.0
+offset_bottom = 162.0
+pivot_offset = Vector2(36, 14)
+theme_override_fonts/font = ExtResource("25_lu6gc")
+theme_override_font_sizes/font_size = 6
+text = "To break the stump, select an axe and use the left mouse button"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("26_qq5cf")
+player = NodePath("../TileMap/Player")
+
+[node name="Pick up a berry" type="Label" parent="." node_paths=PackedStringArray("player")]
+self_modulate = Color(5, 5, 5, 1)
+clip_children = 2
+offset_left = 1021.0
+offset_top = 108.0
+offset_right = 1093.0
+offset_bottom = 116.0
+pivot_offset = Vector2(36, 4)
+theme_override_fonts/font = ExtResource("25_lu6gc")
+theme_override_font_sizes/font_size = 6
+text = "Pick up a blackberry"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("26_qq5cf")
+player = NodePath("../TileMap/Player")
+
+[node name="To open the inventory, press \'E\'" type="Label" parent="." node_paths=PackedStringArray("player")]
+self_modulate = Color(5, 5, 5, 1)
+clip_children = 2
+offset_left = 1193.0
+offset_top = 121.0
+offset_right = 1265.0
+offset_bottom = 139.0
+pivot_offset = Vector2(36, 9)
+theme_override_fonts/font = ExtResource("25_lu6gc")
+theme_override_font_sizes/font_size = 6
+text = "To open the inventory, press 'E'"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("26_qq5cf")
+player = NodePath("../TileMap/Player")
+
+[node name="Kill the slime" type="Label" parent="." node_paths=PackedStringArray("player")]
+self_modulate = Color(5, 5, 5, 1)
+clip_children = 2
+offset_left = 1254.0
+offset_top = 229.0
+offset_right = 1326.0
+offset_bottom = 247.0
+pivot_offset = Vector2(36, 9)
+theme_override_fonts/font = ExtResource("25_lu6gc")
+theme_override_font_sizes/font_size = 6
+text = "Kill the slime"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("26_qq5cf")
+player = NodePath("../TileMap/Player")
 
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]

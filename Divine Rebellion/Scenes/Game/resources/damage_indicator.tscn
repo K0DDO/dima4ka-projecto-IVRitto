@@ -82,6 +82,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_bw1l7")
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(2, 2, 2, 1)
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_5w0g1")

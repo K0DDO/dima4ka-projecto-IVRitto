@@ -5,8 +5,6 @@ background_mode = 3
 glow_enabled = true
 glow_intensity = 1.0
 glow_blend_mode = 0
-glow_hdr_threshold = 0.5
-adjustment_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource("Environment_cytkd")

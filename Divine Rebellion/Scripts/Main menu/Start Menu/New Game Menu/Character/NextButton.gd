@@ -17,7 +17,9 @@ func _on_next_button_pressed():
 	elif Global.skill == 5:
 		Global.magic = 1
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Scenes/Game/game.tscn")
+	if Global.playername != "":
+		var loadingScreen = load("res://Scenes/loading_screen.tscn")
+		get_tree().change_scene_to_packed(loadingScreen)
 
 
 

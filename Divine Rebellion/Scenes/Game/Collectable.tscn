@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf35fpt4g6r46"]
+[gd_scene load_steps=6 format=3 uid="uid://cf35fpt4g6r46"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Collectable.gd" id="1_j4us1"]
 
@@ -7,6 +7,15 @@ resource_local_to_scene = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fw63r"]
 radius = 26.0192
+
+[sub_resource type="Gradient" id="Gradient_so0pw"]
+offsets = PackedFloat32Array(0, 0.776204)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2vhxy"]
+gradient = SubResource("Gradient_so0pw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Collectable" type="Area2D"]
 script = ExtResource("1_j4us1")
@@ -20,6 +29,11 @@ shape = SubResource("RectangleShape2D_up1mt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="flyToThePlayer"]
 shape = SubResource("CircleShape2D_fw63r")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.421875, 0.421875)
+energy = 0.1
+texture = SubResource("GradientTexture2D_2vhxy")
 
 [connection signal="body_entered" from="flyToThePlayer" to="." method="_on_fly_to_the_player_body_entered"]
 [connection signal="body_exited" from="flyToThePlayer" to="." method="_on_fly_to_the_player_body_exited"]

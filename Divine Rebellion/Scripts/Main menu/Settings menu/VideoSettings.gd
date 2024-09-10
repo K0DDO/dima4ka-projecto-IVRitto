@@ -63,3 +63,8 @@ func _on_brightness_slider_value_changed(value):
 	Brightness.environment.adjustment_brightness = value
 	SaveSettingsData.brightness = value
 	brightness.text = str(SaveSettingsData.brightness)
+
+func _on_button_pressed():
+	get_tree().paused = false
+	Global.save_game()
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
