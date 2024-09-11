@@ -13,4 +13,6 @@ name = "Wooden Axe"
 texture = SubResource("AtlasTexture_f23pu")
 stackSize = 1
 itemType = "tool"
+recipe = Array[ExtResource("1_2h8w5")]([])
+type = "Material"
 description = ""

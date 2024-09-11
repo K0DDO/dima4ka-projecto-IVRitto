@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2aqjp17aoejo"]
+
+[ext_resource type="PackedScene" uid="uid://c751uw451sh0v" path="res://Scenes/Game/GUI/recipe_slot.tscn" id="1_xisaf"]
+
+[node name="Recipe" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeSlot" parent="." instance=ExtResource("1_xisaf")]
+layout_mode = 2
+
+[node name="RecipeSlot2" parent="." instance=ExtResource("1_xisaf")]
+layout_mode = 2
+
+[node name="craft" type="Button" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+disabled = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="craft"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "craft"

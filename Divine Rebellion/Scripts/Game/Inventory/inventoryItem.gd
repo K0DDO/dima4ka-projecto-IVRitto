@@ -7,4 +7,9 @@ class_name InventoryItem
 @export var stackSize: int
 @export var itemType: String = ""
 
-@export var description: String = ""
+@export var recipe: Array[InventoryItem]
+ 
+@export_enum("Weapon", "Material") 
+var type = "Material"
+ 
+@export_multiline var description: String

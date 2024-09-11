@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://laphndqoukn7"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://laphndqoukn7"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_cigpt"]
+[ext_resource type="Resource" uid="uid://bmuoqe54l4mui" path="res://Scripts/Game/Inventory/items/log.tres" id="1_prjsx"]
 [ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_4bfhe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skwgj"]
@@ -13,4 +14,6 @@ name = "WoodenSword"
 texture = SubResource("AtlasTexture_skwgj")
 stackSize = 1
 itemType = "weapon"
-description = ""
+recipe = Array[ExtResource("1_cigpt")]([ExtResource("1_prjsx"), ExtResource("1_prjsx")])
+type = "Material"
+description = "Weapon used in combat"
