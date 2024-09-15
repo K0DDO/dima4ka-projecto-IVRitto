@@ -105,6 +105,16 @@ var starts_n = 0
 # количество запусков игры
 var saves_n = 0
 
+enum EntryPoint {
+	DOOR,
+	STAIRS_FIRST_FLOOR,
+	STAIRS_BASEMENT
+}
+
+var entry_point: int = EntryPoint.DOOR
+
+
+
 func _ready():
 	print("Global автоматически загружен!")
 	load_game()
