@@ -14,35 +14,26 @@ var itemInHand: ItemStackGui
 var oldIndex: int = -1
 var locked: bool = false
 
+func update_slots(slots_array: Array):
+	for i in range(min(inventory.slots.size(), slots_array.size())):
+		var inventorySlot: InventorySlot = inventory.slots[i]
+		
+		if !inventorySlot.item:
+			slots_array[i].clear()
+			continue
+		
+		var itemStackGui: ItemStackGui = slots_array[i].itemStackGui
+		if !itemStackGui:
+			itemStackGui = ItemStackGuiClass.instantiate()
+			slots_array[i].insert(itemStackGui)
+		
+		itemStackGui.inventorySlot = inventorySlot
+		itemStackGui.update()
+
 func update():
-	for i in range(min(inventory.slots.size(), slots.size())):
-		var inventorySlot: InventorySlot = inventory.slots[i]
-		
-		if !inventorySlot.item:
-			slots[i].clear()
-			continue
-		
-		var itemStackGui: ItemStackGui = slots[i].itemStackGui
-		if !itemStackGui:
-			itemStackGui = ItemStackGuiClass.instantiate()
-			slots[i].insert(itemStackGui)
-		
-		itemStackGui.inventorySlot = inventorySlot
-		itemStackGui.update()
-	for i in range(min(inventory.slots.size(), slots2.size())):
-		var inventorySlot: InventorySlot = inventory.slots[i]
-		
-		if !inventorySlot.item:
-			slots2[i].clear()
-			continue
-		
-		var itemStackGui: ItemStackGui = slots2[i].itemStackGui
-		if !itemStackGui:
-			itemStackGui = ItemStackGuiClass.instantiate()
-			slots2[i].insert(itemStackGui)
-		
-		itemStackGui.inventorySlot = inventorySlot
-		itemStackGui.update()
+	update_slots(slots)
+	update_slots(slots2)
+
 	
 func _ready():
 	connectSlots()
@@ -73,20 +64,22 @@ func close():
 func onSlotClicked(slot):
 	if locked: return
 	if slot.isEmpty():
-		if !itemInHand: return
-		
+		handle_empty_slot(slot)
+	else:
+		handle_filled_slot(slot)
+
+func handle_empty_slot(slot):
+	if itemInHand:
 		insertItemInSlot(slot)
-		return
-		
+
+func handle_filled_slot(slot):
 	if !itemInHand:
 		takeItemFromSlot(slot)
-		return
-	
-	if slot.itemStackGui.inventorySlot.item.name == itemInHand.inventorySlot.item.name:
+	elif slot.itemStackGui.inventorySlot.item.name == itemInHand.inventorySlot.item.name:
 		stackItems(slot)
-		return
-		
-	swapItems(slot)
+	else:
+		swapItems(slot)
+
 	
 func takeItemFromSlot(slot):
 	itemInHand  = slot.takeItem()
@@ -154,11 +147,12 @@ func putItemBack():
 	var targetPosition = targetSlot.global_position + targetSlot.size / 2 * 0.4
 	tween.tween_property(itemInHand, "global_position", targetPosition, 0.2)
 
-	await tween.finished
-	
-	insertItemInSlot(targetSlot)
+	tween.finished.connect(on_put_back_finished)
+
+func on_put_back_finished():
+	insertItemInSlot(slots[oldIndex])
 	locked = false
-	
+
 func _input(_event):
 	if Input.is_action_just_pressed("e"):
 		if is_open:
@@ -179,3 +173,10 @@ func _input(_event):
 		putItemBack()
 	updateItemInHand()
 
+func reduce_item(index: int, amount: int):
+	var slot = slots[index]
+	if slot.itemStackGui and slot.itemStackGui.inventorySlot:
+		slot.itemStackGui.inventorySlot.amount -= amount
+		if slot.itemStackGui.inventorySlot.amount <= 0:
+			inventory.slots[index].item = null
+		update_slots(slots)

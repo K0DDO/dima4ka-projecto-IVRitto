@@ -60,7 +60,12 @@ func update_equipped_item():
 				Global.tool = 2
 			elif item.name == "Wooden Watering Can":
 				Global.tool = 3
-			
+		else:
+			Global.weapon_equip = false
+			Global.tool_equip = false
+	else:
+		item = null
+
 func _input(_event):
 	if Input.is_key_pressed(KEY_1):
 		currently_selected = 0
