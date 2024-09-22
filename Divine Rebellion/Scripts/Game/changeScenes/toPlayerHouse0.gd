@@ -17,5 +17,5 @@ func _process(_delta):
 			Global.entry_point = Global.EntryPoint.STAIRS_BASEMENT
 			animation.play("fade_out")
 			await animation.animation_finished
-			get_tree().change_scene_to_file("res://Scenes/Game/world/playerHouse/player_house_inside_first_floor.tscn")
+			$"../TimeSystem".change_scene("res://Scenes/Game/world/playerHouse/player_house_inside_first_floor.tscn")
 

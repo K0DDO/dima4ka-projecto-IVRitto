@@ -5,6 +5,7 @@ extends Panel
 @onready var selector: Sprite2D = $Selector
 
 var currently_selected: int = 0
+var item = null
 
 func _ready():
 	update()
@@ -43,12 +44,22 @@ func update_equipped_item():
 	Global.tool_equip = false
 
 	if selected_slot.item:
-		var item = selected_slot.item
+		item = selected_slot.item
 		
 		if item.itemType == "weapon":
 			Global.weapon_equip = true
+			if item.name == "Wooden Sword":
+				Global.weapon = 0
 		elif item.itemType == "tool":
 			Global.tool_equip = true
+			if item.name == "Wooden Axe":
+				Global.tool = 0
+			elif item.name == "Wooden Pickaxe":
+				Global.tool = 1
+			elif item.name == "Wooden Shovel":
+				Global.tool = 2
+			elif item.name == "Wooden Watering Can":
+				Global.tool = 3
 			
 func _input(_event):
 	if Input.is_key_pressed(KEY_1):

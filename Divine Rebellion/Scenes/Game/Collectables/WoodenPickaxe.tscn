@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://biqih3lf6xlig"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_u6ahx"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_h3e7s"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="2_yj4cj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pbht"]
+atlas = ExtResource("2_h3e7s")
+region = Rect2(80, 0, 14, 14)
+
+[sub_resource type="Resource" id="Resource_bq8cn"]
+script = ExtResource("2_yj4cj")
+name = "Pickaxe"
+texture = SubResource("AtlasTexture_7pbht")
+stackSize = 1
+itemType = "tool"
+recipe = Array[ExtResource("2_yj4cj")]([])
+type = "Material"
+description = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxfov"]
+resource_local_to_scene = true
+
+[node name="Pickaxe" instance=ExtResource("1_u6ahx")]
+itemRes = SubResource("Resource_bq8cn")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_qxfov")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_h3e7s")
+region_enabled = true
+region_rect = Rect2(80, 0, 14, 14)

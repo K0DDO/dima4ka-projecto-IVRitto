@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://buvoohpwujq8t"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_4tix1"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="2_h1awl"]
+[ext_resource type="Texture2D" uid="uid://c03yl1ctjwiqd" path="res://Art/Items/fertilizer.png" id="3_7xift"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btqv5"]
+atlas = ExtResource("3_7xift")
+region = Rect2(130, 1, 10, 12)
+
+[sub_resource type="Resource" id="Resource_y7d7b"]
+script = ExtResource("2_h1awl")
+name = "Fertilizer"
+texture = SubResource("AtlasTexture_btqv5")
+stackSize = 99
+itemType = "fertilizer"
+recipe = Array[ExtResource("2_h1awl")]([])
+type = "Material"
+description = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dafdp"]
+resource_local_to_scene = true
+
+[node name="Fertilizer" instance=ExtResource("1_4tix1")]
+itemRes = SubResource("Resource_y7d7b")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_dafdp")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_7xift")
+region_enabled = true
+region_rect = Rect2(130, 1, 10, 12)

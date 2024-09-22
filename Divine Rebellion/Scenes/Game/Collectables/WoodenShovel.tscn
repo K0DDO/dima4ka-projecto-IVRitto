@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://388f1umvb0fb"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_y03dc"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="2_0afk8"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="3_l2jli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly42d"]
+atlas = ExtResource("3_l2jli")
+region = Rect2(66, 0, 14, 14)
+
+[sub_resource type="Resource" id="Resource_yb816"]
+script = ExtResource("2_0afk8")
+name = "Wooden Shovel"
+texture = SubResource("AtlasTexture_ly42d")
+stackSize = 1
+itemType = "tool"
+recipe = Array[ExtResource("2_0afk8")]([])
+type = "Material"
+description = ""
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cxob"]
+resource_local_to_scene = true
+
+[node name="Wooden Shovel" instance=ExtResource("1_y03dc")]
+itemRes = SubResource("Resource_yb816")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_8cxob")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_l2jli")
+region_enabled = true
+region_rect = Rect2(66, 0, 14, 14)

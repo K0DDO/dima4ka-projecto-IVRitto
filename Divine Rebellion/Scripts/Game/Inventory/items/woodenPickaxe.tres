@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://r1da3amb7tsx"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_y7a7v"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_v0mhb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pbht"]
+atlas = ExtResource("2_v0mhb")
+region = Rect2(80, 0, 14, 14)
+
+[resource]
+script = ExtResource("1_y7a7v")
+name = "Wooden Pickaxe"
+texture = SubResource("AtlasTexture_7pbht")
+stackSize = 1
+itemType = "tool"
+recipe = Array[ExtResource("1_y7a7v")]([])
+type = "Material"
+description = ""

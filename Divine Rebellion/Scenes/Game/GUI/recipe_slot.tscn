@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c751uw451sh0v"]
+[gd_scene load_steps=2 format=3 uid="uid://4vvu4playojd"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/crafting_slot.gd" id="1_boeib"]
 

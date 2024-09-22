@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_kuigt"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/TimeBar.gd" id="1_lq3jh"]
-[ext_resource type="LabelSettings" uid="uid://cnurjasiglaqp" path="res://label_settings.tres" id="2_st7bn"]
-[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/Season.gd" id="4_brs1n"]
-[ext_resource type="Script" path="res://Scripts/Game/CurrentMoney.gd" id="5_jqjpj"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="3_46yni"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/Season.gd" id="4_yd714"]
+[ext_resource type="Script" path="res://Scripts/Game/CurrentMoney.gd" id="5_7iq8u"]
 
 [node name="Time" type="Control"]
 custom_minimum_size = Vector2(65, 28)
@@ -26,8 +26,8 @@ offset_left = 23.0
 offset_top = 3.0
 offset_right = 34.0
 offset_bottom = 12.0
+theme = ExtResource("3_46yni")
 text = "22"
-label_settings = ExtResource("2_st7bn")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -35,13 +35,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Day2" type="Label" parent="Date"]
 offset_left = 4.0
 offset_top = 3.0
-offset_right = 20.0
-offset_bottom = 12.0
-text = "MON."
-label_settings = ExtResource("2_st7bn")
+offset_right = 22.0
+offset_bottom = 11.0
+theme = ExtResource("3_46yni")
+text = "Mon."
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Time" type="Sprite2D" parent="."]
 texture = ExtResource("1_kuigt")
@@ -50,34 +49,49 @@ region_enabled = true
 region_rect = Rect2(436, 0, 29, 15)
 
 [node name="Hours" type="Label" parent="Time"]
-offset_left = 3.0
+offset_left = 4.0
 offset_top = 3.0
-offset_right = 15.0
-offset_bottom = 12.0
-text = "22
-"
-label_settings = ExtResource("2_st7bn")
+offset_right = 14.0
+offset_bottom = 11.0
+theme = ExtResource("3_46yni")
+text = "23"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="space" type="Label" parent="Time"]
-offset_left = 14.0
-offset_top = 2.0
-offset_right = 16.0
-offset_bottom = 12.0
-text = ":"
-label_settings = ExtResource("2_st7bn")
-metadata/_edit_use_anchors_ = true
 
 [node name="minutes" type="Label" parent="Time"]
 offset_left = 16.0
 offset_top = 3.0
 offset_right = 26.0
 offset_bottom = 11.0
-text = "55"
-label_settings = ExtResource("2_st7bn")
-metadata/_edit_use_anchors_ = true
+theme = ExtResource("3_46yni")
+text = "59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Time"]
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 10.0
+theme = ExtResource("3_46yni")
+text = ":"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 15)
+texture = ExtResource("1_kuigt")
+centered = false
+hframes = 4
+region_enabled = true
+region_rect = Rect2(494, 102, 68, 13)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(48, 15)
+texture = ExtResource("1_kuigt")
+centered = false
+hframes = 4
+region_enabled = true
+region_rect = Rect2(494, 115, 68, 13)
+script = ExtResource("4_yd714")
 
 [node name="Year" type="Sprite2D" parent="."]
 position = Vector2(17, 15)
@@ -86,58 +100,38 @@ centered = false
 region_enabled = true
 region_rect = Rect2(557, 61, 31, 13)
 
-[node name="Year" type="Label" parent="Year"]
+[node name="Label" type="Label" parent="Year"]
 offset_left = 5.0
-offset_top = 1.0
+offset_top = 2.0
 offset_right = 18.0
-offset_bottom = 9.0
-text = "yr."
-label_settings = ExtResource("2_st7bn")
-metadata/_edit_use_anchors_ = true
+offset_bottom = 12.0
+theme = ExtResource("3_46yni")
+text = "Yr."
 
 [node name="Count" type="Label" parent="Year"]
 offset_left = 17.0
 offset_top = 2.0
-offset_right = 27.0
+offset_right = 29.0
 offset_bottom = 10.0
-text = "99"
-label_settings = ExtResource("2_st7bn")
+theme = ExtResource("3_46yni")
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Weather" type="Sprite2D" parent="."]
-position = Vector2(0, 15)
-texture = ExtResource("1_kuigt")
-centered = false
-hframes = 4
-region_enabled = true
-region_rect = Rect2(494, 102, 68, 13)
-
-[node name="Season" type="Sprite2D" parent="."]
-position = Vector2(48, 15)
-texture = ExtResource("1_kuigt")
-centered = false
-hframes = 4
-region_enabled = true
-region_rect = Rect2(494, 115, 68, 13)
-script = ExtResource("4_brs1n")
-
-[node name="Money" type="Sprite2D" parent="."]
+[node name="money" type="Sprite2D" parent="."]
 position = Vector2(0, 28)
 texture = ExtResource("1_kuigt")
 centered = false
 region_enabled = true
 region_rect = Rect2(436, 46, 65, 15)
 
-[node name="Label" type="Label" parent="Money"]
-offset_left = 16.0
+[node name="Label" type="Label" parent="money"]
+offset_left = 13.0
 offset_top = 3.0
-offset_right = 61.0
+offset_right = 64.0
 offset_bottom = 11.0
+theme = ExtResource("3_46yni")
 text = "999999999"
-label_settings = ExtResource("2_st7bn")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_jqjpj")
-metadata/_edit_use_anchors_ = true
+script = ExtResource("5_7iq8u")

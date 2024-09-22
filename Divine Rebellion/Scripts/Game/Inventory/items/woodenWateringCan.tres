@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://cenelnrlvrxvf"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_28f7o"]
+[ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_lfnx3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l8m5"]
+atlas = ExtResource("2_lfnx3")
+region = Rect2(94, 0, 14, 14)
+
+[resource]
+script = ExtResource("1_28f7o")
+name = "Wooden Watering Can"
+texture = SubResource("AtlasTexture_2l8m5")
+stackSize = 1
+itemType = "tool"
+recipe = Array[ExtResource("1_28f7o")]([])
+type = "Material"
+description = ""

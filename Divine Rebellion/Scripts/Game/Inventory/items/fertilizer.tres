@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://it1teuoer64d"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_lnb2f"]
+[ext_resource type="Texture2D" uid="uid://c03yl1ctjwiqd" path="res://Art/Items/fertilizer.png" id="2_fbao3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_338tv"]
+atlas = ExtResource("2_fbao3")
+region = Rect2(130, 1, 10, 12)
+
+[resource]
+script = ExtResource("1_lnb2f")
+name = "Fertilizer"
+texture = SubResource("AtlasTexture_338tv")
+stackSize = 99
+itemType = "Fertilizer"
+recipe = Array[ExtResource("1_lnb2f")]([])
+type = "Material"
+description = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://23qfuqbefbp1"]
+[gd_scene load_steps=39 format=3 uid="uid://23qfuqbefbp1"]
 
 [ext_resource type="Texture2D" uid="uid://b3t25irmxml7u" path="res://Art/Backgrounds/houses/inside/house in1.png" id="1_6iaqm"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/ControlScript.gd" id="1_28nt0"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/toWorldPlayer.gd" id="12_nqape"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/firstFloorLadder.gd" id="13_7hpmr"]
 [ext_resource type="Texture2D" uid="uid://c8s31reof8l0p" path="res://Art/Tech/Сhoosing character menu/cc 2.png" id="13_8rg71"]
+[ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="16_hu6vj"]
+[ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="17_qopb0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nnwe5"]
 atlas = ExtResource("8_6vb8s")
@@ -31,6 +33,33 @@ region = Rect2(134, 269, 48, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu0y3"]
 atlas = ExtResource("8_6vb8s")
 region = Rect2(134, 308, 47, 7)
+
+[sub_resource type="Animation" id="Animation_kmx4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7of4c"]
 resource_name = "fade_in"
@@ -59,33 +88,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_kmx4j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.054902, 0.00392157, 0.0862745, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_vdh7b"]
@@ -148,6 +150,15 @@ size = Vector2(20.5, 18.5)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bupi6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xysi"]
+
+[sub_resource type="Resource" id="Resource_dyeu7"]
+script = ExtResource("17_qopb0")
+seconds = 0
+minutes = 0
+hours = 0
+days = 1
+season = 1
+years = 1
 
 [node name="playerHouseInsideFirstFloor" type="Node2D" node_paths=PackedStringArray("player")]
 y_sort_enabled = true
@@ -403,6 +414,11 @@ position = Vector2(211, 114)
 [node name="StairsBasementSpawnPosition" type="Marker2D" parent="."]
 position = Vector2(211, 114)
 
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("16_hu6vj")
+date_time = SubResource("Resource_dyeu7")
+ticks_pr_second = 100
+
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
@@ -410,3 +426,4 @@ position = Vector2(211, 114)
 [connection signal="show" from="Area2D" to="Area2D" method="_on_show"]
 [connection signal="pressed" from="Up/Button" to="Area2D" method="_on_button_up_pressed"]
 [connection signal="pressed" from="Down/Button" to="Area2D" method="_on_button_down_pressed"]
+[connection signal="update" from="TimeSystem" to="Player/CanvasLayer/Time" method="_on_time_system_update"]

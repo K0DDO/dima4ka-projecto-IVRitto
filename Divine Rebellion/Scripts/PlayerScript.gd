@@ -92,14 +92,18 @@ func _ready():
 	animation.get_animation("attackUp").track_set_key_value(0, 1,Vector2(33, Global.bodybutton))
 	animation.get_animation("attackRight").track_set_key_value(0, 0,Vector2(34, Global.bodybutton))
 	animation.get_animation("attackRight").track_set_key_value(0, 1,Vector2(35, Global.bodybutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(0, 0,Vector2(20, Global.bodybutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(0, 1,Vector2(21, Global.bodybutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(0, 0,Vector2(22, Global.bodybutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(0, 1,Vector2(23, Global.bodybutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(0, 0,Vector2(24, Global.bodybutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(0, 1,Vector2(25, Global.bodybutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(0, 0,Vector2(26, Global.bodybutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(0, 1,Vector2(27, Global.bodybutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(0, 0,Vector2(20, Global.bodybutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(0, 1,Vector2(21, Global.bodybutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(0, 0,Vector2(22, Global.bodybutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(0, 1,Vector2(23, Global.bodybutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(0, 0,Vector2(24, Global.bodybutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(0, 1,Vector2(25, Global.bodybutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(0, 0,Vector2(26, Global.bodybutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(0, 1,Vector2(27, Global.bodybutton))
+	animation.get_animation("usingToolsDown1").track_set_key_value(0, 0,Vector2(21, Global.bodybutton))
+	animation.get_animation("usingToolsLeft1").track_set_key_value(0, 0,Vector2(23, Global.bodybutton))
+	animation.get_animation("usingToolsUp1").track_set_key_value(0, 0,Vector2(25, Global.bodybutton))
+	animation.get_animation("usingToolsRight1").track_set_key_value(0, 0,Vector2(27, Global.bodybutton))
 	
 	animation.get_animation("idleDown").track_set_key_value(1, 0,Vector2(0, Global.hairbutton))
 	animation.get_animation("idleLeft").track_set_key_value(1, 0,Vector2(1, Global.hairbutton))
@@ -129,14 +133,19 @@ func _ready():
 	animation.get_animation("attackUp").track_set_key_value(1, 1,Vector2(33, Global.hairbutton))
 	animation.get_animation("attackRight").track_set_key_value(1, 0,Vector2(34, Global.hairbutton))
 	animation.get_animation("attackRight").track_set_key_value(1, 1,Vector2(35, Global.hairbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(1, 0,Vector2(20, Global.hairbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(1, 1,Vector2(21, Global.hairbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(1, 0,Vector2(22, Global.hairbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(1, 1,Vector2(23, Global.hairbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(1, 0,Vector2(24, Global.hairbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(1, 1,Vector2(25, Global.hairbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(1, 0,Vector2(26, Global.hairbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(1, 1,Vector2(27, Global.hairbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(1, 0,Vector2(20, Global.hairbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(1, 1,Vector2(21, Global.hairbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(1, 0,Vector2(22, Global.hairbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(1, 1,Vector2(23, Global.hairbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(1, 0,Vector2(24, Global.hairbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(1, 1,Vector2(25, Global.hairbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(1, 0,Vector2(26, Global.hairbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(1, 1,Vector2(27, Global.hairbutton))
+	animation.get_animation("usingToolsDown1").track_set_key_value(1, 0,Vector2(21, Global.hairbutton))
+	animation.get_animation("usingToolsLeft1").track_set_key_value(1, 0,Vector2(23, Global.hairbutton))
+	animation.get_animation("usingToolsUp1").track_set_key_value(1, 0,Vector2(25, Global.hairbutton))
+	animation.get_animation("usingToolsRight1").track_set_key_value(1, 0,Vector2(27, Global.hairbutton))
+	
 	
 	animation.get_animation("idleDown").track_set_key_value(2, 0,Vector2(0, Global.topbutton))
 	animation.get_animation("idleLeft").track_set_key_value(2, 0,Vector2(1, Global.topbutton))
@@ -166,14 +175,18 @@ func _ready():
 	animation.get_animation("attackUp").track_set_key_value(2, 1,Vector2(33, Global.topbutton))
 	animation.get_animation("attackRight").track_set_key_value(2, 0,Vector2(34, Global.topbutton))
 	animation.get_animation("attackRight").track_set_key_value(2, 1,Vector2(35, Global.topbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(2, 0,Vector2(20, Global.topbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(2, 1,Vector2(21, Global.topbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(2, 0,Vector2(22, Global.topbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(2, 1,Vector2(23, Global.topbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(2, 0,Vector2(24, Global.topbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(2, 1,Vector2(25, Global.topbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(2, 0,Vector2(26, Global.topbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(2, 1,Vector2(27, Global.topbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(2, 0,Vector2(20, Global.topbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(2, 1,Vector2(21, Global.topbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(2, 0,Vector2(22, Global.topbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(2, 1,Vector2(23, Global.topbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(2, 0,Vector2(24, Global.topbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(2, 1,Vector2(25, Global.topbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(2, 0,Vector2(26, Global.topbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(2, 1,Vector2(27, Global.topbutton))
+	animation.get_animation("usingToolsDown1").track_set_key_value(2, 0,Vector2(21, Global.topbutton))
+	animation.get_animation("usingToolsLeft1").track_set_key_value(2, 0,Vector2(23, Global.topbutton))
+	animation.get_animation("usingToolsUp1").track_set_key_value(2, 0,Vector2(25, Global.topbutton))
+	animation.get_animation("usingToolsRight1").track_set_key_value(2, 0,Vector2(27, Global.topbutton))
 	
 	animation.get_animation("idleDown").track_set_key_value(3, 0,Vector2(0, Global.bottombutton))
 	animation.get_animation("idleLeft").track_set_key_value(3, 0,Vector2(1, Global.bottombutton))
@@ -203,14 +216,18 @@ func _ready():
 	animation.get_animation("attackUp").track_set_key_value(3, 1,Vector2(33, Global.bottombutton))
 	animation.get_animation("attackRight").track_set_key_value(3, 0,Vector2(34, Global.bottombutton))
 	animation.get_animation("attackRight").track_set_key_value(3, 1,Vector2(35, Global.bottombutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(3, 0,Vector2(20, Global.bottombutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(3, 1,Vector2(21, Global.bottombutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(3, 0,Vector2(22, Global.bottombutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(3, 1,Vector2(23, Global.bottombutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(3, 0,Vector2(24, Global.bottombutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(3, 1,Vector2(25, Global.bottombutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(3, 0,Vector2(26, Global.bottombutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(3, 1,Vector2(27, Global.bottombutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(3, 0,Vector2(20, Global.bottombutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(3, 1,Vector2(21, Global.bottombutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(3, 0,Vector2(22, Global.bottombutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(3, 1,Vector2(23, Global.bottombutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(3, 0,Vector2(24, Global.bottombutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(3, 1,Vector2(25, Global.bottombutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(3, 0,Vector2(26, Global.bottombutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(3, 1,Vector2(27, Global.bottombutton))
+	animation.get_animation("usingToolsDown1").track_set_key_value(3, 0,Vector2(21, Global.bottombutton))
+	animation.get_animation("usingToolsLeft1").track_set_key_value(3, 0,Vector2(23, Global.bottombutton))
+	animation.get_animation("usingToolsUp1").track_set_key_value(3, 0,Vector2(25, Global.bottombutton))
+	animation.get_animation("usingToolsRight1").track_set_key_value(3, 0,Vector2(27, Global.bottombutton))
 	
 	animation.get_animation("idleDown").track_set_key_value(4, 0,Vector2(0, Global.bootsbutton))
 	animation.get_animation("idleLeft").track_set_key_value(4, 0,Vector2(1, Global.bootsbutton))
@@ -240,14 +257,18 @@ func _ready():
 	animation.get_animation("attackUp").track_set_key_value(4, 1,Vector2(33, Global.bootsbutton))
 	animation.get_animation("attackRight").track_set_key_value(4, 0,Vector2(34, Global.bootsbutton))
 	animation.get_animation("attackRight").track_set_key_value(4, 1,Vector2(35, Global.bootsbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(4, 0,Vector2(20, Global.bootsbutton))
-	animation.get_animation("usingToolsDown").track_set_key_value(4, 1,Vector2(21, Global.bootsbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(4, 0,Vector2(22, Global.bootsbutton))
-	animation.get_animation("usingToolsLeft").track_set_key_value(4, 1,Vector2(23, Global.bootsbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(4, 0,Vector2(24, Global.bootsbutton))
-	animation.get_animation("usingToolsUp").track_set_key_value(4, 1,Vector2(25, Global.bootsbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(4, 0,Vector2(26, Global.bootsbutton))
-	animation.get_animation("usingToolsRight").track_set_key_value(4, 1,Vector2(27, Global.bootsbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(4, 0,Vector2(20, Global.bootsbutton))
+	animation.get_animation("usingToolsDown0").track_set_key_value(4, 1,Vector2(21, Global.bootsbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(4, 0,Vector2(22, Global.bootsbutton))
+	animation.get_animation("usingToolsLeft0").track_set_key_value(4, 1,Vector2(23, Global.bootsbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(4, 0,Vector2(24, Global.bootsbutton))
+	animation.get_animation("usingToolsUp0").track_set_key_value(4, 1,Vector2(25, Global.bootsbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(4, 0,Vector2(26, Global.bootsbutton))
+	animation.get_animation("usingToolsRight0").track_set_key_value(4, 1,Vector2(27, Global.bootsbutton))
+	animation.get_animation("usingToolsDown1").track_set_key_value(4, 0,Vector2(21, Global.bootsbutton))
+	animation.get_animation("usingToolsLeft1").track_set_key_value(4, 0,Vector2(23, Global.bootsbutton))
+	animation.get_animation("usingToolsUp1").track_set_key_value(4, 0,Vector2(25, Global.bootsbutton))
+	animation.get_animation("usingToolsRight1").track_set_key_value(4, 0,Vector2(27, Global.bootsbutton))
 
 func hurtByEnemy(area):
 	if !isHurt:
@@ -310,12 +331,19 @@ func attack():
 		animation_in_hand.play("attack" + direction + str(Global.weapon))
 		await animation.animation_finished
 		attack_ip = false
-	if Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip:
-		usingTools_ip = true
-		animation.play("usingTools" + direction)
-		animation_in_hand.play("usingTools" + direction  + str(Global.tool))
-		await animation.animation_finished
-		usingTools_ip = false
+	elif Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip:
+		if Global.tool == 3:
+			usingTools_ip = true
+			animation.play("usingTools" + direction + "1")
+			animation_in_hand.play("usingTools" + direction  + str(Global.tool))
+			await animation.animation_finished
+			usingTools_ip = false
+		else:
+			usingTools_ip = true
+			animation.play("usingTools" + direction + "0")
+			animation_in_hand.play("usingTools" + direction  + str(Global.tool))
+			await animation.animation_finished
+			usingTools_ip = false
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
