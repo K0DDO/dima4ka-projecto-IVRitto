@@ -39,7 +39,6 @@ func removeSlot(inventorySlot: InventorySlot):
 	if index < 0: return
 	
 	remove_at_index(index)
-
 	
 func remove_at_index(index: int) -> void:
 	slots[index] = InventorySlot.new()

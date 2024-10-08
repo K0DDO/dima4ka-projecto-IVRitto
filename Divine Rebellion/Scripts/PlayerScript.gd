@@ -12,7 +12,7 @@ signal healthChanged
 @onready var plr = $"."
 
 @export var knockbackPower: int = 200
-@export var maxHealth = 100
+@export var maxHealth = Global.maxHealth
 
 @export var inventory: Inventory
 
@@ -274,6 +274,7 @@ func hurtByEnemy(area):
 	if !isHurt:
 		isHurt = true
 		currentHealth -= 5
+		Global.currentHealth -= 5
 		healthChanged.emit()
 		effects.play("hurtBlink")
 		
@@ -332,13 +333,13 @@ func attack():
 		await animation.animation_finished
 		attack_ip = false
 	elif Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip:
-		if Global.tool == 3:
+		if Global.tool == 3 and Global.currentWaterLvl > 0:
 			usingTools_ip = true
 			animation.play("usingTools" + direction + "1")
 			animation_in_hand.play("usingTools" + direction  + str(Global.tool))
 			await animation.animation_finished
 			usingTools_ip = false
-		else:
+		elif Global.tool != 3:
 			usingTools_ip = true
 			animation.play("usingTools" + direction + "0")
 			animation_in_hand.play("usingTools" + direction  + str(Global.tool))

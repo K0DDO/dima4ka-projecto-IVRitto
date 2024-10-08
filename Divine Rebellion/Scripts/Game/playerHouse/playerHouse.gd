@@ -12,6 +12,7 @@ var crop_level = "crop_level"
 var can_be_fertilizered_custom_data1 = "can_be_fertilizered1"
 var can_be_fertilizered_custom_data2 = "can_be_fertilizered2"
 var can_be_fertilizered_custom_data3 = "can_be_fertilizered3"
+var contain_water_custom_data = "contain_water"
 var ground_layer = 0
 var environment_layer = 2
 var final_seed_level = 3
@@ -24,18 +25,22 @@ func _ready():
 func _input(_event):
 	# Логика полива (tool = 3)
 	if Input.is_action_just_pressed("attack") and Global.tool == 3 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip:
-		var player_pos: Vector2 = player.position
-		var tile_player_pos: Vector2i = tile_map.local_to_map(player_pos)
-		var mouse_pos: Vector2 = get_global_mouse_position()
-		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
-		var atlas_coord = Vector2i(14, 0)
-		var dig_zone = get_3x3_zone(tile_player_pos)
-		
-		if tile_mouse_pos in dig_zone:
-			if retrieving_custom_data(tile_mouse_pos, can_be_watered_custom_data, ground_layer):
-				var level = retrieving_custom_data(tile_mouse_pos, crop_level, ground_layer)
-				rotate_player_to(tile_mouse_pos)
-				water_tile(tile_mouse_pos, level, final_seed_level, atlas_coord)
+			var player_pos: Vector2 = player.position
+			var tile_player_pos: Vector2i = tile_map.local_to_map(player_pos)
+			var mouse_pos: Vector2 = get_global_mouse_position()
+			var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
+			var atlas_coord = Vector2i(14, 0)
+			var dig_zone = get_3x3_zone(tile_player_pos)
+			
+			if tile_mouse_pos in dig_zone:
+				if retrieving_custom_data(tile_mouse_pos, can_be_watered_custom_data, ground_layer) and Global.currentWaterLvl > 0:
+					var level = retrieving_custom_data(tile_mouse_pos, crop_level, ground_layer)
+					rotate_player_to(tile_mouse_pos)
+					Global.currentWaterLvl -= 1
+					water_tile(tile_mouse_pos, level, final_seed_level, atlas_coord)
+				if retrieving_custom_data(tile_mouse_pos, contain_water_custom_data, ground_layer) and Global.currentWaterLvl >= 0:   
+					rotate_player_to(tile_mouse_pos)
+					Global.currentWaterLvl = Global.maxWaterLvl
 	
 	elif Input.is_action_just_pressed("attack") and Global.tool == 2 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip:
 		var player_pos: Vector2 = player.position
@@ -92,7 +97,7 @@ func _input(_event):
 		hot_bar.update()
 
 
-func water_tile(tile_mouse_pos: Vector2i, level, final_seed_level, atlas_coord):
+func water_tile(tile_mouse_pos: Vector2i, level, _final_seed_level, atlas_coord):
 	var tile_data: TileData = tile_map.get_cell_tile_data(ground_layer, tile_mouse_pos)
 	var source_id = 2
 	if tile_data:
@@ -123,7 +128,7 @@ func dig_ground(tile_mouse_pos: Vector2i):
 func harvest_crop(tile_mouse_pos: Vector2i):
 	var tile_data: TileData = tile_map.get_cell_tile_data(environment_layer, tile_mouse_pos)
 	if tile_data:
-		var crop_level = tile_data.get_custom_data("crop_level")
+		crop_level = tile_data.get_custom_data("crop_level")
 		if crop_level == 3:
 			if !retrieving_custom_data(tile_mouse_pos, can_be_fertilizered_custom_data3, ground_layer):
 				add_carrots_to_inventory(tile_mouse_pos)
@@ -166,6 +171,6 @@ func rotate_player_to(tile_pos: Vector2i) -> void:
 		else:
 			player.direction = "Up"
 
-func plant_seed(tile_map_pos, level, atlas_coord, final_seed_level):
+func plant_seed(tile_map_pos, _level, _atlas_coord, _final_seed_level):
 	var source_id = 2
 	tile_map.set_cell(ground_layer, tile_map_pos, source_id, Vector2i(13, 0))

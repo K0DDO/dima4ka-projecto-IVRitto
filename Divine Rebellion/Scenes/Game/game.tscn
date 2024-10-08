@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=38 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
@@ -16,9 +16,8 @@
 [ext_resource type="Script" path="res://Scripts/Game/Torch.gd" id="8_xoesk"]
 [ext_resource type="PackedScene" uid="uid://dcx3hnmtijbt1" path="res://Scenes/Game/fog.tscn" id="9_vw48i"]
 [ext_resource type="PackedScene" uid="uid://cpmem86b5cfc6" path="res://Scenes/Game/GUI/HotBar.tscn" id="13_e7dqw"]
-[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="15_0rj7t"]
 [ext_resource type="PackedScene" uid="uid://l51cxh44e8v4" path="res://Scenes/Game/GUI/timeBar.tscn" id="15_lhpc1"]
-[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="16_cdt0a"]
+[ext_resource type="PackedScene" uid="uid://d3emvjn0oa4g7" path="res://Scenes/Game/GUI/Health&MagicBar.tscn" id="16_1edov"]
 [ext_resource type="PackedScene" uid="uid://b8effrw35tibj" path="res://Scenes/Game/resources/die_effect.tscn" id="18_6jbmv"]
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="20_65bw0"]
 [ext_resource type="PackedScene" uid="uid://6mhxpasma6c1" path="res://Scenes/Game/items/stump.tscn" id="21_3msbk"]
@@ -1927,22 +1926,6 @@ sources/2 = SubResource("TileSetAtlasSource_h8ayg")
 sources/3 = SubResource("TileSetAtlasSource_s3xxy")
 sources/0 = SubResource("TileSetScenesCollectionSource_g7uye")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kqo6f"]
-atlas = ExtResource("15_0rj7t")
-region = Rect2(134, 269, 48, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ko21"]
-atlas = ExtResource("15_0rj7t")
-region = Rect2(134, 294, 47, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0w2n"]
-atlas = ExtResource("15_0rj7t")
-region = Rect2(134, 269, 48, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eraw5"]
-atlas = ExtResource("15_0rj7t")
-region = Rect2(134, 308, 47, 7)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nah3d"]
 size = Vector2(8, 3.5)
 
@@ -2083,60 +2066,7 @@ offset_bottom = 30.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 
-[node name="Bar" type="Control" parent="TileMap/Player/CanvasLayer"]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -30.0
-offset_top = -12.0
-offset_right = 25.0
-offset_bottom = 6.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-
-[node name="healthbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
-layout_mode = 0
-offset_left = 7.0
-offset_right = 47.0
-offset_bottom = 9.0
-stretch_margin_left = 2
-stretch_margin_top = 3
-stretch_margin_right = 3
-stretch_margin_bottom = 3
-texture_under = SubResource("AtlasTexture_kqo6f")
-texture_progress = SubResource("AtlasTexture_4ko21")
-texture_progress_offset = Vector2(0, 1)
-script = ExtResource("16_cdt0a")
-player = NodePath("../../..")
-
-[node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 9.0
-offset_right = 55.0
-offset_bottom = 18.0
-texture_under = SubResource("AtlasTexture_n0w2n")
-texture_progress = SubResource("AtlasTexture_eraw5")
-
-[node name="magic" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
-position = Vector2(0, 10)
-texture = ExtResource("15_0rj7t")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(127, 261, 14, 7)
-
-[node name="health" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
-position = Vector2(0, 1)
-texture = ExtResource("15_0rj7t")
-centered = false
-hframes = 2
-region_enabled = true
-region_rect = Rect2(127, 243, 14, 7)
+[node name="Bar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("16_1edov")]
 
 [node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("24_kbr8x")]
 

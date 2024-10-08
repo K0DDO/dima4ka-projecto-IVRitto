@@ -12,7 +12,6 @@ func _ready():
 	inventory.updated.connect(update)
 	update_equipped_item()
 
-
 func update() -> void:
 	for i in range(slots.size()):
 		var inventory_slot: InventorySlot = inventory.slots[i]
