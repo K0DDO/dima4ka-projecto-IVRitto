@@ -222,6 +222,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="Time" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_fker3")]
 anchors_preset = 1
@@ -233,6 +234,7 @@ offset_right = 31.0
 offset_bottom = 30.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="Control" parent="TileMap/Player/CanvasLayer"]
 layout_mode = 3
@@ -248,6 +250,7 @@ offset_bottom = 6.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="healthbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
 layout_mode = 0
@@ -263,6 +266,7 @@ texture_progress = SubResource("AtlasTexture_wqtmt")
 texture_progress_offset = Vector2(0, 1)
 script = ExtResource("9_1odha")
 player = NodePath("../../..")
+metadata/_edit_use_anchors_ = true
 
 [node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar"]
 layout_mode = 0
@@ -272,6 +276,7 @@ offset_right = 55.0
 offset_bottom = 18.0
 texture_under = SubResource("AtlasTexture_2qv2s")
 texture_progress = SubResource("AtlasTexture_3sc17")
+metadata/_edit_use_anchors_ = true
 
 [node name="magic" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
 position = Vector2(0, 10)
