@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2aqjp17aoejo"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/CraftingSlot.gd" id="1_5vmtq"]
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="2_l3650"]
+
+[node name="CraftingSlot" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(22, 22)
+offset_right = 22.0
+offset_bottom = 22.0
+flat = true
+script = ExtResource("1_5vmtq")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_l3650")
+centered = false
+region_enabled = true
+region_rect = Rect2(501, 0, 22, 22)
+
+[node name="Choose" type="Sprite2D" parent="."]
+texture = ExtResource("2_l3650")
+centered = false
+region_enabled = true
+region_rect = Rect2(501, 31, 22, 22)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

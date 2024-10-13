@@ -2,6 +2,7 @@ extends Control
 
 signal opened
 signal closed
+signal inventory_updated
 
 var is_open = true
 
@@ -33,7 +34,7 @@ func update_slots(slots_array: Array):
 func update():
 	update_slots(slots)
 	update_slots(slots2)
-
+	inventory_updated.emit()
 	
 func _ready():
 	connectSlots()
@@ -49,7 +50,6 @@ func connectSlots():
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slot)
 		slot.pressed.connect(callable)
-
 
 func open():
 	visible = true
@@ -180,3 +180,34 @@ func reduce_item(index: int, amount: int):
 		if slot.itemStackGui.inventorySlot.amount <= 0:
 			inventory.slots[index].item = null
 		update_slots(slots)
+
+func has_item(item_name: String, amount: int) -> bool:
+	if not inventory:
+		return false
+
+	var total_amount = 0
+	for slot in inventory.slots:
+		if slot.item and slot.item.name == item_name:
+			total_amount += slot.amount
+
+	if total_amount >= amount:
+		return true
+	return false
+
+func remove_items(item_name: String, amount: int):
+	if not inventory:
+		return
+
+	for index in range(inventory.slots.size()):
+		var slot = inventory.slots[index]
+		if slot.item and slot.item.name == item_name:
+			if slot.amount <= amount:
+				amount -= slot.amount
+				slot.item = null  # Удаляем предмет
+				slot.amount = 0  # Устанавливаем количество на 0
+			else:
+				slot.amount -= amount
+				break
+	update()
+
+

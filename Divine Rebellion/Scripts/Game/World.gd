@@ -4,7 +4,7 @@ extends Node2D
 
 func _ready():
 	Global.hour = 0
-	
+	 
 func _process(delta):
 	pass
 

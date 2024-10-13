@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqc8fmgva7tes"]
+[gd_scene load_steps=32 format=3 uid="uid://cqc8fmgva7tes"]
 
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_sg8yk"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="2_84fqt"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://diujacbdk2o57" path="res://Art/Backgrounds/houses/outside/house5.png" id="13_u4061"]
 [ext_resource type="Texture2D" uid="uid://f2uo7phmgfva" path="res://Art/Backgrounds/cave outside.png" id="14_7u10x"]
 [ext_resource type="Texture2D" uid="uid://biw1j1nmby2s1" path="res://Art/Backgrounds/waterfall.png" id="15_0ceqv"]
+[ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="15_h03j0"]
+[ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="16_phfac"]
+[ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="17_gg50a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qks7s"]
 atlas = ExtResource("7_kf3tx")
@@ -160,6 +163,33 @@ _data = {
 "RESET": SubResource("Animation_axq3n"),
 "idle": SubResource("Animation_u8rrb")
 }
+
+[sub_resource type="Resource" id="Resource_wrrml"]
+script = ExtResource("16_phfac")
+seconds = 0
+minutes = 0
+hours = 0
+days = 1
+season = 1
+years = 1
+
+[sub_resource type="Resource" id="Resource_ujell"]
+script = ExtResource("16_phfac")
+seconds = 0
+minutes = 0
+hours = 6
+days = 1
+season = 1
+years = 1
+
+[sub_resource type="Resource" id="Resource_dnrwe"]
+script = ExtResource("16_phfac")
+seconds = 0
+minutes = 30
+hours = 22
+days = 1
+season = 1
+years = 1
 
 [node name="Forest" type="Node2D"]
 
@@ -355,3 +385,17 @@ libraries = {
 "": SubResource("AnimationLibrary_k4674")
 }
 autoplay = "idle"
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("15_h03j0")
+date_time = SubResource("Resource_wrrml")
+ticks_pr_second = 100
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." node_paths=PackedStringArray("time_system")]
+blend_mode = 2
+script = ExtResource("17_gg50a")
+day_color = Color(1, 1, 1, 1)
+night_color = Color(0.0352941, 0.0156863, 0.12549, 1)
+day_start = SubResource("Resource_ujell")
+night_start = SubResource("Resource_dnrwe")
+time_system = NodePath("")

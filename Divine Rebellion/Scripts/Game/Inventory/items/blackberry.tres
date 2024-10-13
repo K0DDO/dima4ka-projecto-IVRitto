@@ -14,5 +14,5 @@ texture = SubResource("AtlasTexture_7qycr")
 stackSize = 99
 itemType = ""
 recipe = Array[ExtResource("1_sdmfv")]([])
-type = "Material"
+type = "Food"
 description = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b4hl7jk72yokj"]
+[gd_scene load_steps=63 format=3 uid="uid://b4hl7jk72yokj"]
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_30aun"]
 [ext_resource type="Script" path="res://Scripts/Game/Gui.gd" id="1_uakf1"]
@@ -42,9 +42,16 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/Date.gd" id="36_e3nwf"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/Year.gd" id="37_aa14d"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/DaysSpend.gd" id="38_anyb5"]
+[ext_resource type="PackedScene" uid="uid://b2aqjp17aoejo" path="res://Scenes/Game/GUI/craftingSlot.tscn" id="42_1kayk"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Settings menu/VideoSettings.gd" id="42_omenf"]
 [ext_resource type="LabelSettings" uid="uid://cnurjasiglaqp" path="res://label_settings.tres" id="43_n0tkt"]
+[ext_resource type="Resource" uid="uid://laphndqoukn7" path="res://Scripts/Game/Inventory/items/woodenSword.tres" id="43_vej3j"]
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="44_grotw"]
+[ext_resource type="Resource" uid="uid://bwtsasq8oufo3" path="res://Scripts/Game/Inventory/items/woodenAxe.tres" id="44_vktdu"]
+[ext_resource type="Resource" uid="uid://r1da3amb7tsx" path="res://Scripts/Game/Inventory/items/woodenPickaxe.tres" id="45_ogakg"]
+[ext_resource type="Resource" uid="uid://fmjpbaeix188" path="res://Scripts/Game/Inventory/items/woodenShovel.tres" id="46_avc2b"]
+[ext_resource type="Resource" uid="uid://cenelnrlvrxvf" path="res://Scripts/Game/Inventory/items/woodenWateringCan.tres" id="47_swsbg"]
+[ext_resource type="Resource" uid="uid://cbvupheadgjje" path="res://Scripts/Game/Inventory/items/carrotSeeds.tres" id="48_tjm58"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_amcb2"]
 shader = ExtResource("12_isl8t")
@@ -185,6 +192,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 373, 233)
 
 [node name="Combat" type="Node2D" parent="."]
+visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Character" type="Node2D" parent="Combat"]
@@ -1392,7 +1400,6 @@ script = ExtResource("29_errmd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Book" type="Node2D" parent="."]
-visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Gui" type="Sprite2D" parent="Book"]
@@ -1508,6 +1515,40 @@ layout_mode = 2
 
 [node name="Slot30" parent="Book/GridContainer" instance=ExtResource("29_m3wa3")]
 layout_mode = 2
+
+[node name="CraftingSlot" type="GridContainer" parent="Book"]
+offset_left = 62.0
+offset_top = 41.0
+offset_right = 102.0
+offset_bottom = 118.0
+scale = Vector2(0.4, 0.4)
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="CraftingSlot" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("43_vej3j")
+
+[node name="CraftingSlot2" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("44_vktdu")
+
+[node name="CraftingSlot3" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("45_ogakg")
+
+[node name="CraftingSlot4" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("46_avc2b")
+
+[node name="CraftingSlot5" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("47_swsbg")
+
+[node name="CraftingSlot6" parent="Book/CraftingSlot" instance=ExtResource("42_1kayk")]
+layout_mode = 2
+item = ExtResource("48_tjm58")
 
 [node name="Settings" type="Node2D" parent="."]
 visible = false
@@ -1832,6 +1873,12 @@ offset_bottom = 55.0
 scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot" method="_on_inventory_inventory_updated"]
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot2" method="_on_inventory_inventory_updated"]
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot3" method="_on_inventory_inventory_updated"]
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot4" method="_on_inventory_inventory_updated"]
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot5" method="_on_inventory_inventory_updated"]
+[connection signal="inventory_updated" from="." to="Book/CraftingSlot/CraftingSlot6" method="_on_inventory_inventory_updated"]
 [connection signal="pressed" from="Combat/Character/LarrowButton" to="Combat/Character/LarrowButton/Larrow" method="_on_larrow_button_pressed"]
 [connection signal="pressed" from="Combat/Character/RarrowButton" to="Combat/Character/RarrowButton/Rarrow" method="_on_rarrow_button_pressed"]
 [connection signal="mouse_entered" from="Combat/trashCan" to="Combat/trashCan" method="_on_mouse_entered"]

@@ -57,7 +57,6 @@ func _physics_process(_delta):
 		for area in hurtBox.get_overlapping_areas():
 			if area.name == "hitBox":
 				hurtByEnemy(area)
-		
 
 func _ready():
 	effects.play("RESET")
@@ -308,7 +307,6 @@ func hurtByEnemy(area):
 		await get_tree().create_timer(0.5).timeout
 		isHurt = false
 		effects.play("RESET")
-
 
 func _on_collecting_area_entered(area):
 	if area.has_method("collect"):

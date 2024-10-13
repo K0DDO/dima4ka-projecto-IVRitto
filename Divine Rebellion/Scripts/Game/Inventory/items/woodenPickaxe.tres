@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://r1da3amb7tsx"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://r1da3amb7tsx"]
 
+[ext_resource type="Resource" uid="uid://bmuoqe54l4mui" path="res://Scripts/Game/Inventory/items/log.tres" id="1_o6yjo"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_y7a7v"]
 [ext_resource type="Texture2D" uid="uid://chodplarm1n7v" path="res://Art/Items/items intro.png" id="2_v0mhb"]
 
@@ -13,6 +14,8 @@ name = "Wooden Pickaxe"
 texture = SubResource("AtlasTexture_7pbht")
 stackSize = 1
 itemType = "tool"
-recipe = Array[ExtResource("1_y7a7v")]([])
+recipe_items = Array[ExtResource("1_y7a7v")]([ExtResource("1_o6yjo")])
+recipe_amounts = Array[int]([4])
+carft_amount = 1
 type = "Material"
 description = ""
