@@ -21,6 +21,19 @@ var carrot_scene = preload("res://Scenes/Game/Collectables/Carrot.tscn")
 
 func _ready():
 	Global.scene = "playerHouse"
+	match Global.entry_point:
+		Global.EntryPoint.fPtD:
+			player.position = Vector2(16, 148)
+		Global.EntryPoint.fDtP  :
+			player.position = Vector2(577, 214)
+		Global.EntryPoint.fFtD1:
+			player.position = Vector2(168, 22)
+		Global.EntryPoint.fFtD2:
+			player.position = Vector2(578, 22)
+		Global.EntryPoint.fDtF1:
+			player.position = Vector2(168, 644)
+		Global.EntryPoint.fDtF2:
+			player.position = Vector2(529, 648)
 
 func _input(_event):
 	# Логика полива (tool = 3)
@@ -95,7 +108,6 @@ func _input(_event):
 		
 		inventory.reduce_item(hot_bar.currently_selected, 1)
 		hot_bar.update()
-
 
 func water_tile(tile_mouse_pos: Vector2i, level, _final_seed_level, atlas_coord):
 	var tile_data: TileData = tile_map.get_cell_tile_data(ground_layer, tile_mouse_pos)
@@ -174,3 +186,9 @@ func rotate_player_to(tile_pos: Vector2i) -> void:
 func plant_seed(tile_map_pos, _level, _atlas_coord, _final_seed_level):
 	var source_id = 2
 	tile_map.set_cell(ground_layer, tile_map_pos, source_id, Vector2i(13, 0))
+	
+func _on_inventory_closed():
+	get_tree().paused = false
+
+func _on_inventory_opened():
+	get_tree().paused = true

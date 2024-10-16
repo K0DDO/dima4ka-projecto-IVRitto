@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bdj4vng1sy6"]
+
+[ext_resource type="Texture2D" uid="uid://ddp0juw1ixwft" path="res://Art/Backgrounds/houses/inside/house5 in1.png" id="1_5gy8b"]
+[ext_resource type="Texture2D" uid="uid://h5j7putsf13b" path="res://Art/Backgrounds/houses/inside/house5 in2.png" id="2_mw221"]
+
+[node name="Cafe" type="Node2D"]
+
+[node name="Basement" type="Sprite2D" parent="."]
+position = Vector2(197, 179)
+texture = ExtResource("1_5gy8b")
+region_rect = Rect2(0, -1, 232, 270)
+
+[node name="Smallpupupu" type="Sprite2D" parent="."]
+position = Vector2(494, 282.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 37)
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(534, 218.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(67, 0, 62, 67)
+
+[node name="Kaktus1" type="Sprite2D" parent="."]
+position = Vector2(572, 109.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(129, 0, 16, 34)
+
+[node name="Carpet" type="Sprite2D" parent="."]
+position = Vector2(500, 97.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(211, 0, 65, 55)
+
+[node name="Sofa" type="Sprite2D" parent="."]
+position = Vector2(508, 80.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(18, 0, 49, 36)
+
+[node name="pupupu" type="Sprite2D" parent="."]
+position = Vector2(618, 265.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(145, 0, 66, 40)
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(709, 121.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(276, 0, 22, 31)
+
+[node name="SmallCarpet" type="Sprite2D" parent="."]
+position = Vector2(509, 169.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(298, 0, 41, 19)
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(641, 112.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(0, 67, 23, 45)
+
+[node name="Kakaktus" type="Sprite2D" parent="."]
+position = Vector2(596, 101.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(23, 67, 18, 51)
+
+[node name="Flower2" type="Sprite2D" parent="."]
+position = Vector2(670, 111.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(41, 67, 22, 56)
+
+[node name="ChairUp" type="Sprite2D" parent="."]
+position = Vector2(600, 46.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(63, 67, 11, 27)
+
+[node name="ChairLeft" type="Sprite2D" parent="."]
+position = Vector2(666, 47.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(74, 67, 12, 27)
+
+[node name="Kitchen" type="Sprite2D" parent="."]
+position = Vector2(387, 195.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(86, 67, 104, 48)
+
+[node name="BarTable" type="Sprite2D" parent="."]
+position = Vector2(407, 256.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(190, 67, 106, 57)
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(687, 182.5)
+texture = ExtResource("2_mw221")
+region_enabled = true
+region_rect = Rect2(296, 67, 73, 53)
+
+[node name="Elbat" type="Sprite2D" parent="."]
+position = Vector2(605, 177.5)
+texture = ExtResource("2_mw221")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(296, 67, 73, 53)

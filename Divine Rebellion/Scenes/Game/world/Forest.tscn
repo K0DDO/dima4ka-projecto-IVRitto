@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://cqc8fmgva7tes"]
+[gd_scene load_steps=37 format=3 uid="uid://cqc8fmgva7tes"]
 
+[ext_resource type="Script" path="res://Scripts/Game/Forest/Forest.gd" id="1_bnqyc"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_sg8yk"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="2_84fqt"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="3_mjq0n"]
@@ -17,6 +18,8 @@
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="15_h03j0"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="16_phfac"]
 [ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="17_gg50a"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/fFtD2.gd" id="19_p6rfd"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/fFtD1.gd" id="20_qop0w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qks7s"]
 atlas = ExtResource("7_kf3tx")
@@ -191,7 +194,14 @@ days = 1
 season = 1
 years = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj5tf"]
+size = Vector2(52, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82mv6"]
+size = Vector2(36, 9)
+
 [node name="Forest" type="Node2D"]
+script = ExtResource("1_bnqyc")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -214,8 +224,7 @@ layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1900544, 917506, 5, 1966080, 1245186, 3, 2031616, 1245186, 3, 2097152, 1245186, 3, 2162688, 1245186, 3, 2228224, 1245186, 3, 2293760, 1245186, 3, 2359296, 786434, 5, 1835009, 1179650, 3, 1900545, 851970, 5, 2359297, 1048578, 3, 2359298, 983042, 5, 2424834, 786434, 5, 2424835, 1048578, 3, 2424836, 1048578, 3, 2424837, 983042, 3, 2490382, 917506, 3, 2490383, 1048578, 3, 2490384, 1048578, 3, 1703953, 917506, 3, 2490385, 1048578, 3, 1572882, 1179650, 3, 1638418, 1245186, 3, 1703954, 1179650, 5, 2490386, 1048578, 3, 1703955, 1048578, 3, 2490387, 1048578, 3, 1703956, 1048578, 3, 2490388, 1048578, 3, 1703957, 1048578, 3, 2424853, 917506, 5, 2490389, 851970, 5, 1703958, 983042, 5, 1769494, 786434, 5, 2359318, 917506, 5, 2424854, 851970, 5, 1769495, 983042, 5, 1835031, 786434, 5, 2359319, 1048578, 3, 1835032, 983042, 5, 1900568, 1245186, 3, 1966104, 1245186, 3, 2031640, 1245186, 3, 2097176, 1245186, 3, 2162712, 1245186, 3, 2228248, 1245186, 3, 2293784, 1245186, 3, 2359320, 983042, 5)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_84fqt")]
-visible = false
-position = Vector2(-227, -132)
+position = Vector2(529, 648)
 
 [node name="Folcam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(0.4, 0.4)
@@ -238,7 +247,6 @@ tilemap = NodePath("../..")
 [node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
 process_mode = 3
 layer = 3
-visible = false
 
 [node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("4_4a5h4")]
 metadata/_edit_use_anchors_ = true
@@ -398,4 +406,28 @@ day_color = Color(1, 1, 1, 1)
 night_color = Color(0.0352941, 0.0156863, 0.12549, 1)
 day_start = SubResource("Resource_ujell")
 night_start = SubResource("Resource_dnrwe")
-time_system = NodePath("")
+time_system = NodePath("../TimeSystem")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(519, 103, 1312, 0, 1312, 928, 1162, 928, 1162, 938, 1110, 938, 1110, 928, 794, 928, 794, 935, 758, 935, 758, 928, 0, 928, 0, 111, 348, 109, 348, 103, -10, 88, -8, 946, 1340, 955, 1356, -32, 519, 69, 349, 105, 373, 105, 373, 109, 451, 107, 458, 90, 500, 90, 507, 86, 507, 78, 519, 78)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("19_p6rfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1136, 934)
+shape = SubResource("RectangleShape2D_cj5tf")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("20_qop0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(776, 930.5)
+shape = SubResource("RectangleShape2D_82mv6")
+
+[connection signal="update" from="TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]
+[connection signal="update" from="TimeSystem" to="DirectionalLight2D" method="update"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

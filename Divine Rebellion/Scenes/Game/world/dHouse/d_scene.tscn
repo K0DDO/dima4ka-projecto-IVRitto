@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://x0bfe5pa6s41"]
+[gd_scene load_steps=32 format=3 uid="uid://x0bfe5pa6s41"]
 
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_7ledm"]
+[ext_resource type="Script" path="res://Scripts/Game/d_scene/d_scene.gd" id="1_moeoo"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="2_ihk01"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="3_6tt4o"]
 [ext_resource type="PackedScene" uid="uid://b4hl7jk72yokj" path="res://Scenes/Game/inventory.tscn" id="4_1ubvu"]
@@ -13,6 +14,9 @@
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="12_sgt20"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="13_fgxhe"]
 [ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="14_5l33n"]
+[ext_resource type="Script" path="res://Scripts/Game/d_scene/fDtP.gd" id="14_qv2qy"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/fDtF1.gd" id="16_gmxbb"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/fDtF2.gd" id="17_4e23y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjf1r"]
 atlas = ExtResource("7_0xhb5")
@@ -148,7 +152,24 @@ days = 1
 season = 1
 years = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2mj"]
+size = Vector2(15, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot4ks"]
+size = Vector2(36, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_biofa"]
+size = Vector2(52, 20)
+
 [node name="Dima\'sScene" type="Node2D"]
+script = ExtResource("1_moeoo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -276.0
+offset_top = -149.0
+offset_right = 880.0
+offset_bottom = 635.0
+color = Color(0.054902, 0.00392157, 0.0862745, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -170,7 +191,7 @@ layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1507333, 1048578, 3, 1507334, 1048578, 3, 1507335, 1048578, 3, 1507336, 851970, 5, 1441800, 917506, 5, 1441801, 1048578, 3, 1441802, 1048578, 3, 1441803, 1048578, 3, 1507332, 917506, 3, 1441804, 851970, 5, 1376268, 1179650, 3, 786443, 917506, 3, 786444, 983042, 3, 851982, 1179650, 3, 917518, 1245186, 3, 983054, 1245186, 3, 1048590, 1114114, 3)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_ihk01")]
-position = Vector2(21, 148)
+position = Vector2(578, 22)
 
 [node name="Folcam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(0.4, 0.4)
@@ -193,9 +214,9 @@ tilemap = NodePath("../..")
 [node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
 process_mode = 3
 layer = 3
-visible = false
 
 [node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("4_1ubvu")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="HotBar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("5_bn7jo")]
@@ -298,22 +319,66 @@ libraries = {
 }
 autoplay = "fade_in"
 
-[node name="House2" type="Sprite2D" parent="."]
-position = Vector2(86, 216)
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="House2" type="Sprite2D" parent="TileMap/StaticBody2D"]
+position = Vector2(86, 231)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("10_7nkmn")
+offset = Vector2(0, -15)
 region_enabled = true
 region_rect = Rect2(0, 0, 75, 88)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+position = Vector2(-187, 178)
+polygon = PackedVector2Array(229, 90, 317, 90, 317, 53, 229, 53)
 
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("12_sgt20")
 date_time = SubResource("Resource_c2o58")
 ticks_pr_second = 100
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." node_paths=PackedStringArray("time_system")]
 blend_mode = 2
 script = ExtResource("14_5l33n")
 day_color = Color(1, 1, 1, 1)
 night_color = Color(0.0352941, 0.0156863, 0.12549, 1)
 day_start = SubResource("Resource_pajxs")
 night_start = SubResource("Resource_03ive")
+time_system = NodePath("../TimeSystem")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(185, -14, 185, 0, 549, 0, 549, -10, 601, -10, 601, 0, 608, 0, 608, 480, 0, 480, 0, 169, -16, 169, -16, 116, 0, 116, 0, 0, 148, 0, 148, -14, 184, -14, 166, -67, -40, -60, -82, 58, -45, 299, -49, 501, 80, 521, 431, 512, 658, 497, 617, -61, 412, -65, 220, -40, 185, -14)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_qv2qy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.5, 142)
+shape = SubResource("RectangleShape2D_wx2mj")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("16_gmxbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(167, -8.5)
+shape = SubResource("RectangleShape2D_ot4ks")
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("17_4e23y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(575, -8)
+shape = SubResource("RectangleShape2D_biofa")
+
+[connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
+[connection signal="update" from="TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]
+[connection signal="update" from="TimeSystem" to="DirectionalLight2D" method="update"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]

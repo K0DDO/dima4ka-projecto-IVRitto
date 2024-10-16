@@ -16,5 +16,6 @@ stackSize = 1
 itemType = "tool"
 recipe_items = Array[ExtResource("1_nm6u1")]([ExtResource("1_b6gto")])
 recipe_amounts = Array[int]([1])
+carft_amount = 1
 type = "Material"
 description = ""

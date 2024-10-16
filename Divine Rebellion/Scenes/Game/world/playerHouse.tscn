@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://wari0d0wx4t5"]
+[gd_scene load_steps=30 format=3 uid="uid://wari0d0wx4t5"]
 
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_bfi1r"]
 [ext_resource type="Script" path="res://Scripts/Game/playerHouse/playerHouse.gd" id="1_uanwg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="13_ofokj"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="14_gvcex"]
 [ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="15_7f4ib"]
+[ext_resource type="Script" path="res://Scripts/Game/playerHouse/fPtoD.gd" id="16_guhme"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0n8j"]
 atlas = ExtResource("8_a1g4h")
@@ -152,6 +153,9 @@ hours = 22
 days = 1
 season = 1
 years = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr02e"]
+size = Vector2(20, 53.25)
 
 [node name="playerHouse" type="Node2D"]
 position = Vector2(176, 112)
@@ -326,11 +330,12 @@ vframes = 2
 script = ExtResource("11_ewea7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2/House/Area2D"]
+visible = false
 position = Vector2(7.69235, 0)
 shape = SubResource("CircleShape2D_jbxwo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D2"]
-polygon = PackedVector2Array(230, 97, 361, 97, 361, 94, 361, 88, 325, 88, 325, 57, 230, 57)
+polygon = PackedVector2Array(230, 97, 303, 97, 361, 97, 361, 94, 361, 88, 325, 88, 325, 57, 230, 57)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -351,9 +356,17 @@ day_start = SubResource("Resource_lr55f")
 night_start = SubResource("Resource_jeabk")
 time_system = NodePath("../TimeSystem")
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("16_guhme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(437, 127.625)
+shape = SubResource("RectangleShape2D_cr02e")
+
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
 [connection signal="body_entered" from="TileMap/StaticBody2D2/House/Area2D" to="TileMap/StaticBody2D2/House/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMap/StaticBody2D2/House/Area2D" to="TileMap/StaticBody2D2/House/Area2D" method="_on_body_exited"]
 [connection signal="update" from="TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]
 [connection signal="update" from="TimeSystem" to="DirectionalLight2D" method="update"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

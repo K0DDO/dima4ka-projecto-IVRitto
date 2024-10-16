@@ -15,5 +15,6 @@ stackSize = 99
 itemType = "Fertilizer"
 recipe_items = Array[ExtResource("1_lnb2f")]([])
 recipe_amounts = Array[int]([])
+carft_amount = 1
 type = "Material"
 description = ""

@@ -113,7 +113,13 @@ var date_time: DateTime = DateTime.new()
 enum EntryPoint {
 	DOOR,
 	STAIRS_FIRST_FLOOR,
-	STAIRS_BASEMENT
+	STAIRS_BASEMENT,
+	fPtD,
+	fDtP,
+	fDtF1,
+	fDtF2,
+	fFtD1,
+	fFtD2
 }
 
 var entry_point: int = EntryPoint.DOOR
