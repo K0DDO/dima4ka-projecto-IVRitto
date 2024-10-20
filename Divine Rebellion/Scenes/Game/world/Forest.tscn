@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cqc8fmgva7tes"]
+[gd_scene load_steps=41 format=3 uid="uid://cqc8fmgva7tes"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Forest/Forest.gd" id="1_bnqyc"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_sg8yk"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="7_kf3tx"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="8_stgn4"]
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="9_67jkl"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="10_abe0q"]
 [ext_resource type="Texture2D" uid="uid://b71hmiaw4h318" path="res://Art/Backgrounds/houses/outside/house3.png" id="11_v270s"]
+[ext_resource type="PackedScene" uid="uid://cc1ees1vwd6da" path="res://Scenes/Game/GUI/notifications.tscn" id="11_ymn05"]
 [ext_resource type="Texture2D" uid="uid://bgqnmxoyvkugu" path="res://Art/Backgrounds/houses/outside/house1.png" id="12_jyyd6"]
 [ext_resource type="Texture2D" uid="uid://diujacbdk2o57" path="res://Art/Backgrounds/houses/outside/house5.png" id="13_u4061"]
 [ext_resource type="Texture2D" uid="uid://f2uo7phmgfva" path="res://Art/Backgrounds/cave outside.png" id="14_7u10x"]
@@ -20,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="17_gg50a"]
 [ext_resource type="Script" path="res://Scripts/Game/Forest/fFtD2.gd" id="19_p6rfd"]
 [ext_resource type="Script" path="res://Scripts/Game/Forest/fFtD1.gd" id="20_qop0w"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/fFtC.gd" id="21_ld4mu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qks7s"]
 atlas = ExtResource("7_kf3tx")
@@ -29,11 +32,11 @@ region = Rect2(134, 269, 48, 9)
 atlas = ExtResource("7_kf3tx")
 region = Rect2(134, 294, 47, 7)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1boj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpvxx"]
 atlas = ExtResource("7_kf3tx")
 region = Rect2(134, 269, 48, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_omk2s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m20wx"]
 atlas = ExtResource("7_kf3tx")
 region = Rect2(134, 308, 47, 7)
 
@@ -200,7 +203,11 @@ size = Vector2(52, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82mv6"]
 size = Vector2(36, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nynvf"]
+size = Vector2(28.375, 10)
+
 [node name="Forest" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bnqyc")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -224,7 +231,7 @@ layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1900544, 917506, 5, 1966080, 1245186, 3, 2031616, 1245186, 3, 2097152, 1245186, 3, 2162688, 1245186, 3, 2228224, 1245186, 3, 2293760, 1245186, 3, 2359296, 786434, 5, 1835009, 1179650, 3, 1900545, 851970, 5, 2359297, 1048578, 3, 2359298, 983042, 5, 2424834, 786434, 5, 2424835, 1048578, 3, 2424836, 1048578, 3, 2424837, 983042, 3, 2490382, 917506, 3, 2490383, 1048578, 3, 2490384, 1048578, 3, 1703953, 917506, 3, 2490385, 1048578, 3, 1572882, 1179650, 3, 1638418, 1245186, 3, 1703954, 1179650, 5, 2490386, 1048578, 3, 1703955, 1048578, 3, 2490387, 1048578, 3, 1703956, 1048578, 3, 2490388, 1048578, 3, 1703957, 1048578, 3, 2424853, 917506, 5, 2490389, 851970, 5, 1703958, 983042, 5, 1769494, 786434, 5, 2359318, 917506, 5, 2424854, 851970, 5, 1769495, 983042, 5, 1835031, 786434, 5, 2359319, 1048578, 3, 1835032, 983042, 5, 1900568, 1245186, 3, 1966104, 1245186, 3, 2031640, 1245186, 3, 2097176, 1245186, 3, 2162712, 1245186, 3, 2228248, 1245186, 3, 2293784, 1245186, 3, 2359320, 983042, 5)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_84fqt")]
-position = Vector2(529, 648)
+position = Vector2(356, 208)
 
 [node name="Folcam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(0.4, 0.4)
@@ -310,14 +317,17 @@ script = ExtResource("8_stgn4")
 player = NodePath("../../..")
 metadata/_edit_use_anchors_ = true
 
-[node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar"]
+[node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 9.0
 offset_right = 55.0
 offset_bottom = 18.0
-texture_under = SubResource("AtlasTexture_c1boj")
-texture_progress = SubResource("AtlasTexture_omk2s")
+texture_under = SubResource("AtlasTexture_gpvxx")
+texture_progress = SubResource("AtlasTexture_m20wx")
+texture_progress_offset = Vector2(0, 1)
+script = ExtResource("10_abe0q")
+player = NodePath("../../..")
 metadata/_edit_use_anchors_ = true
 
 [node name="magic" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
@@ -336,6 +346,13 @@ hframes = 2
 region_enabled = true
 region_rect = Rect2(127, 243, 14, 7)
 
+[node name="Notifications" parent="TileMap/Player/CanvasLayer" instance=ExtResource("11_ymn05")]
+offset_left = 2.0
+offset_top = -13.0
+offset_right = 2.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+
 [node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("9_67jkl")]
 
 [node name="ColorRect" type="ColorRect" parent="TileMap/Player/CanvasLayer"]
@@ -351,55 +368,68 @@ libraries = {
 }
 autoplay = "fade_in"
 
-[node name="House3" type="Sprite2D" parent="."]
-position = Vector2(686, 751)
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-608, -272)
+
+[node name="House5" type="Sprite2D" parent="TileMap/StaticBody2D2"]
+y_sort_enabled = true
+position = Vector2(874, 464)
+texture = ExtResource("13_u4061")
+centered = false
+offset = Vector2(0, -110)
+hframes = 2
+vframes = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D2"]
+polygon = PackedVector2Array(941, 466, 941, 490, 946, 493, 948, 501, 948, 507, 948, 514, 884, 514, 881, 512, 877, 510, 876, 508, 874, 500, 874, 485, 874, 450, 877, 444, 884, 442, 894, 440, 1069, 440, 1070, 447, 1075, 452, 1078, 455, 1077, 463, 1077, 480, 1077, 509, 1073, 511, 1068, 515, 1060, 513, 998, 514, 993, 509, 992, 506, 993, 466, 990, 466, 988, 471, 979, 471, 978, 469, 977, 466)
+
+[node name="House3" type="Sprite2D" parent="TileMap"]
+position = Vector2(78, 479)
 texture = ExtResource("11_v270s")
 region_enabled = true
 region_rect = Rect2(0, 0, 92, 112)
 
-[node name="House1" type="Sprite2D" parent="."]
-position = Vector2(547, 526)
+[node name="House1" type="Sprite2D" parent="TileMap"]
+position = Vector2(-61, 254)
 texture = ExtResource("12_jyyd6")
 region_enabled = true
 region_rect = Rect2(0, 0, 73, 96)
 
-[node name="House5" type="Sprite2D" parent="."]
-position = Vector2(976, 435)
-texture = ExtResource("13_u4061")
-hframes = 2
-vframes = 2
-
-[node name="CaveOutside2" type="Sprite2D" parent="."]
+[node name="CaveOutside2" type="Sprite2D" parent="TileMap"]
 z_index = -1
+position = Vector2(-608, -272)
 texture = ExtResource("14_7u10x")
 centered = false
 region_enabled = true
 region_rect = Rect2(18, 0, 160, 128)
 
-[node name="CaveOutside" type="Sprite2D" parent="."]
+[node name="CaveOutside" type="Sprite2D" parent="TileMap"]
 z_index = -1
-position = Vector2(160, 0)
+position = Vector2(-448, -272)
 texture = ExtResource("14_7u10x")
 centered = false
 region_rect = Rect2(0, 0, 400, 128)
 
-[node name="Waterfall" type="Sprite2D" parent="."]
-position = Vector2(544, 56)
+[node name="Waterfall" type="Sprite2D" parent="TileMap"]
+position = Vector2(-64, -216)
 texture = ExtResource("15_0ceqv")
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Waterfall"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/Waterfall"]
 libraries = {
 "": SubResource("AnimationLibrary_k4674")
 }
 autoplay = "idle"
 
-[node name="TimeSystem" type="Node" parent="."]
+[node name="TimeSystem" type="Node" parent="TileMap"]
 script = ExtResource("15_h03j0")
 date_time = SubResource("Resource_wrrml")
 ticks_pr_second = 100
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." node_paths=PackedStringArray("time_system")]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="TileMap" node_paths=PackedStringArray("time_system")]
+position = Vector2(-608, -272)
 blend_mode = 2
 script = ExtResource("17_gg50a")
 day_color = Color(1, 1, 1, 1)
@@ -408,26 +438,41 @@ day_start = SubResource("Resource_ujell")
 night_start = SubResource("Resource_dnrwe")
 time_system = NodePath("../TimeSystem")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+position = Vector2(-608, -272)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 polygon = PackedVector2Array(519, 103, 1312, 0, 1312, 928, 1162, 928, 1162, 938, 1110, 938, 1110, 928, 794, 928, 794, 935, 758, 935, 758, 928, 0, 928, 0, 111, 348, 109, 348, 103, -10, 88, -8, 946, 1340, 955, 1356, -32, 519, 69, 349, 105, 373, 105, 373, 109, 451, 107, 458, 90, 500, 90, 507, 86, 507, 78, 519, 78)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="TileMap"]
+position = Vector2(-608, -272)
 script = ExtResource("19_p6rfd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
 position = Vector2(1136, 934)
 shape = SubResource("RectangleShape2D_cj5tf")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="TileMap"]
+position = Vector2(-608, -272)
 script = ExtResource("20_qop0w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2"]
 position = Vector2(776, 930.5)
 shape = SubResource("RectangleShape2D_82mv6")
 
-[connection signal="update" from="TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]
-[connection signal="update" from="TimeSystem" to="DirectionalLight2D" method="update"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[node name="Area2D3" type="Area2D" parent="TileMap"]
+position = Vector2(-608, -272)
+script = ExtResource("21_ld4mu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D3"]
+position = Vector2(963, 467)
+shape = SubResource("RectangleShape2D_nynvf")
+
+[connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
+[connection signal="update" from="TileMap/TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]
+[connection signal="update" from="TileMap/TimeSystem" to="TileMap/DirectionalLight2D" method="update"]
+[connection signal="body_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/Area2D2" to="TileMap/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/Area2D3" to="TileMap/Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/Area2D3" to="TileMap/Area2D3" method="_on_body_exited"]

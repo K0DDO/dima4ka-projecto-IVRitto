@@ -1,5 +1,7 @@
 extends Node2D
 
+signal waterChanged
+
 @onready var inventory = $TileMap/Player/CanvasLayer/inventory
 @onready var tile_map = $TileMap
 @onready var player = $TileMap/Player
@@ -37,11 +39,11 @@ func _ready():
 
 func _input(_event):
 	# Логика полива (tool = 3)
-	if Input.is_action_just_pressed("attack") and Global.tool == 3 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip:
+	if Input.is_action_just_pressed("attack") and Global.tool == 3 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip and Global.currentMana > 0:
 			var player_pos: Vector2 = player.position
 			var tile_player_pos: Vector2i = tile_map.local_to_map(player_pos)
 			var mouse_pos: Vector2 = get_global_mouse_position()
-			var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
+			var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos)
 			var atlas_coord = Vector2i(14, 0)
 			var dig_zone = get_3x3_zone(tile_player_pos)
 			
@@ -54,14 +56,14 @@ func _input(_event):
 				if retrieving_custom_data(tile_mouse_pos, contain_water_custom_data, ground_layer) and Global.currentWaterLvl >= 0:   
 					rotate_player_to(tile_mouse_pos)
 					Global.currentWaterLvl = Global.maxWaterLvl
+				waterChanged.emit()
 	
-	elif Input.is_action_just_pressed("attack") and Global.tool == 2 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip:
+	elif Input.is_action_just_pressed("attack") and Global.tool == 2 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip and Global.currentMana > 0:
 		var player_pos: Vector2 = player.position
 		var tile_player_pos: Vector2i = tile_map.local_to_map(player_pos)
 		
 		var mouse_pos: Vector2 = get_global_mouse_position()
-		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
-		
+		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos)
 		var dig_zone = get_3x3_zone(tile_player_pos)
 		
 		if tile_mouse_pos in dig_zone:
@@ -80,7 +82,7 @@ func _input(_event):
 						
 	elif Input.is_action_just_pressed("attack") and hot_bar.item and hot_bar.item.name == "Carrot Seeds":
 		var mouse_pos: Vector2 = get_global_mouse_position()
-		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
+		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos)
 		var atlas_coord: Vector2i = Vector2i(13, 0)
 
 		if retrieving_custom_data(tile_mouse_pos, can_plant_seed_custom_data, ground_layer):
@@ -92,7 +94,7 @@ func _input(_event):
 
 	elif Input.is_action_just_pressed("attack") and hot_bar.item and hot_bar.item.name == "Fertilizer":
 		var mouse_pos: Vector2 = get_global_mouse_position()
-		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos) - Vector2i(1, 2)
+		var tile_mouse_pos: Vector2i = tile_map.local_to_map(mouse_pos)
 		var source_id: int = 2
 		var atlas_coord: Vector2i = Vector2i.ZERO
 
@@ -112,25 +114,26 @@ func _input(_event):
 func water_tile(tile_mouse_pos: Vector2i, level, _final_seed_level, atlas_coord):
 	var tile_data: TileData = tile_map.get_cell_tile_data(ground_layer, tile_mouse_pos)
 	var source_id = 2
-	if tile_data:
-		if level == 0:
-			atlas_coord = Vector2i(14, 0)
-		if level == 1:
-			atlas_coord = Vector2i(16, 0)
-		if level == 2:
-			atlas_coord = Vector2i(18, 0)
-		tile_map.set_cell(ground_layer, tile_mouse_pos, source_id, atlas_coord)
+	if typeof(level) == TYPE_INT:
+		if tile_data:
+			if level == 0:
+				atlas_coord = Vector2i(14, 0)
+			if level == 1:
+				atlas_coord = Vector2i(16, 0)
+			if level == 2:
+				atlas_coord = Vector2i(18, 0)
+			tile_map.set_cell(ground_layer, tile_mouse_pos, source_id, atlas_coord)
 	
-	await get_tree().create_timer(5.0).timeout
-	
-	if level < final_seed_level:
-		level += 1
-		atlas_coord = atlas_coord + Vector2i(1, 0)
-		tile_map.set_cell(ground_layer, tile_mouse_pos, source_id, atlas_coord)
-		if level < 2:
-			tile_map.set_cell(environment_layer, tile_mouse_pos, source_id, atlas_coord + Vector2i(0, 2))
-		else:
-			tile_map.set_cell(environment_layer, tile_mouse_pos, source_id, atlas_coord + Vector2i(0, 1))
+		await get_tree().create_timer(5.0).timeout
+		
+		if level < final_seed_level:
+			level += 1
+			atlas_coord = atlas_coord + Vector2i(1, 0)
+			tile_map.set_cell(ground_layer, tile_mouse_pos, source_id, atlas_coord)
+			if level < 2:
+				tile_map.set_cell(environment_layer, tile_mouse_pos, source_id, atlas_coord + Vector2i(0, 2))
+			else:
+				tile_map.set_cell(environment_layer, tile_mouse_pos, source_id, atlas_coord + Vector2i(0, 1))
 
 func dig_ground(tile_mouse_pos: Vector2i):
 	var source_id: int = 2
@@ -142,21 +145,23 @@ func harvest_crop(tile_mouse_pos: Vector2i):
 	if tile_data:
 		crop_level = tile_data.get_custom_data("crop_level")
 		if crop_level == 3:
-			if !retrieving_custom_data(tile_mouse_pos, can_be_fertilizered_custom_data3, ground_layer):
+			if retrieving_custom_data(tile_mouse_pos, can_be_fertilizered_custom_data3, environment_layer-1):
 				add_carrots_to_inventory(tile_mouse_pos)
 			add_carrots_to_inventory(tile_mouse_pos)
-			tile_map.set_cell(environment_layer, tile_mouse_pos, 2)
-			tile_map.set_cell(environment_layer-1, tile_mouse_pos, 2)
+			tile_map.set_cell(environment_layer, tile_mouse_pos, -1)
+			tile_map.set_cell(environment_layer-1, tile_mouse_pos, -1)
 			tile_map.set_cell(ground_layer, tile_mouse_pos, 2, Vector2i(1, 7))
 
 func add_carrots_to_inventory(tile_mouse_pos: Vector2i):
 	var carrot_instance = carrot_scene.instantiate()
-	carrot_instance.position = tile_map.map_to_local(tile_mouse_pos - Vector2i(10, 5))
+	carrot_instance.position = tile_map.map_to_local(tile_mouse_pos)
 	get_tree().current_scene.add_child(carrot_instance)
 
 func retrieving_custom_data(tile_mouse_pos, custom_data_layer, layer):
 	var tile_data : TileData = tile_map.get_cell_tile_data(layer, tile_mouse_pos)
 	if tile_data:
+		if typeof(custom_data_layer) != TYPE_STRING:
+			return false
 		return tile_data.get_custom_data(custom_data_layer)
 	else:
 		return false

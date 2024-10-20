@@ -80,7 +80,6 @@ func handle_filled_slot(slot):
 	else:
 		swapItems(slot)
 
-	
 func takeItemFromSlot(slot):
 	itemInHand  = slot.takeItem()
 	add_child(itemInHand)
@@ -126,7 +125,6 @@ func stackItems(slot):
 	
 	slotItem.update()
 	if itemInHand: itemInHand.update()
-
 
 func updateItemInHand():
 	if !itemInHand: return

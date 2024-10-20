@@ -1,0 +1,268 @@
+[gd_scene load_steps=21 format=3 uid="uid://mv1mejym2w81"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Forest/Cave/Cave.gd" id="1_ml6ur"]
+[ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="2_231xt"]
+[ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="3_62mr7"]
+[ext_resource type="Texture2D" uid="uid://fajt8ma3edk8" path="res://Art/Backgrounds/Cave/cave1.png" id="3_m67we"]
+[ext_resource type="Script" path="res://Scripts/Game/Camera/Folcam.gd" id="4_rphfe"]
+[ext_resource type="PackedScene" uid="uid://b4hl7jk72yokj" path="res://Scenes/Game/inventory.tscn" id="5_wmgvt"]
+[ext_resource type="PackedScene" uid="uid://cpmem86b5cfc6" path="res://Scenes/Game/GUI/HotBar.tscn" id="6_c3wdf"]
+[ext_resource type="PackedScene" uid="uid://l51cxh44e8v4" path="res://Scenes/Game/GUI/timeBar.tscn" id="7_5jh1t"]
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="8_aviin"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="9_qwri0"]
+[ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_q3hhr"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="10_x54uw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tebif"]
+atlas = ExtResource("8_aviin")
+region = Rect2(134, 269, 48, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4kix"]
+atlas = ExtResource("8_aviin")
+region = Rect2(134, 294, 47, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teanw"]
+atlas = ExtResource("8_aviin")
+region = Rect2(134, 269, 48, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5etb"]
+atlas = ExtResource("8_aviin")
+region = Rect2(134, 308, 47, 7)
+
+[sub_resource type="Animation" id="Animation_kmx4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7of4c"]
+resource_name = "fade_in"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 1), Color(0.054902, 0.00392157, 0.0862745, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vdh7b"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 0), Color(0.054902, 0.00392157, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gim03"]
+_data = {
+"RESET": SubResource("Animation_kmx4j"),
+"fade_in": SubResource("Animation_7of4c"),
+"fade_out": SubResource("Animation_vdh7b")
+}
+
+[node name="Cave" type="Node2D"]
+script = ExtResource("1_ml6ur")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 551.0
+offset_bottom = 423.0
+color = Color(0.027451, 0.0235294, 0.0666667, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 15)
+tile_set = ExtResource("2_231xt")
+format = 2
+layer_0/tile_data = PackedInt32Array(589831, 2, 16, 524296, 65538, 16, 589832, 131074, 16, 655368, 262146, 16, 720904, 65538, 16, 720903, 65538, 16, 655367, 131074, 16, 655369, 196610, 16, 720905, 196610, 16, 786441, 65538, 16, 786442, 262146, 16, 786443, 262146, 16, 720908, 2, 16, 655373, 65538, 16, 589837, 65538, 16, 589836, 65538, 16, 524300, 262146, 16, 524299, 2, 16, 524298, 2, 16, 589834, 65538, 16, 720907, 262146, 16, 655372, 65538, 16, 524301, 196610, 16, 589833, 2, 16, 720906, 2, 16, 655371, 196610, 16, 589835, 2, 16, 655370, 196610, 16, 524297, 262146, 16, 786440, 65538, 16, 786439, 65538, 16, 851975, 196610, 16, 786438, 196610, 16, 851977, 2, 16, 851978, 2, 16, 917513, 196610, 16, 917514, 2, 16, 851979, 2, 16, 851976, 2, 16, 917512, 2, 16, 983047, 262146, 16, 983048, 65538, 16, 983049, 131074, 16, 917511, 2, 16, 1048585, 196610, 16, 1048586, 131074, 16, 983050, 262146, 16, 1048584, 2, 16, 1048587, 131074, 16, 1048588, 196610, 16, 983052, 131074, 16, 917516, 2, 16, 917515, 65538, 16, 983051, 196610, 16, 1048589, 65538, 16, 1048590, 2, 16, 983054, 65538, 16, 983053, 262146, 16, 1048591, 2, 16, 1048592, 2, 16, 983056, 2, 16, 983055, 65538, 16, 1048593, 2, 16, 983057, 65538, 16, 917521, 131074, 16, 917520, 65538, 16, 917519, 2, 16, 851983, 2, 16, 851982, 65538, 16, 917518, 262146, 16, 917517, 131074, 16, 851984, 65538, 16, 786447, 2, 16, 786446, 262146, 16, 786445, 262146, 16, 786444, 196610, 16, 851980, 65538, 16, 851981, 65538, 16, 720911, 2, 16, 720910, 65538, 16, 720909, 65538, 16, 720912, 196610, 16, 655376, 2, 16, 655375, 65538, 16, 589839, 65538, 16, 589838, 196610, 16, 655374, 65538, 16, 524303, 262146, 16, 524302, 131074, 16, 458767, 131074, 16, 458766, 131074, 16, 458765, 2, 16, 458764, 131074, 16, 458763, 131074, 16, 458762, 196610, 16, 393230, 262146, 16, 393229, 196610, 16, 458768, 196610, 16, 524304, 2, 16, 524305, 2, 16, 524306, 65538, 16, 458770, 196610, 16, 458769, 196610, 16, 589840, 196610, 16, 589841, 196610, 16, 589842, 262146, 16, 589843, 2, 16, 524307, 262146, 16, 655379, 131074, 16, 720915, 2, 16, 720914, 196610, 16, 786450, 196610, 16, 786449, 65538, 16, 720913, 131074, 16, 655378, 2, 16, 655377, 131074, 16, 786448, 2, 16, 786451, 65538, 16, 851985, 2, 16, 917522, 131074, 16, 917523, 65538, 16, 851987, 131074, 16, 851986, 262146, 16, 983058, 196610, 16, 983059, 131074, 16, 983060, 2, 16, 917524, 65538, 16, 851988, 196610, 16, 786452, 131074, 16, 720916, 196610, 16, 720917, 262146, 16, 786453, 2, 16, 786454, 65538, 16, 720918, 196610, 16, 720919, 131074, 16, 720920, 196610, 16, 786455, 2, 16, 786456, 262146, 16, 720921, 131074, 16, 851992, 65538, 16, 851993, 2, 16, 786457, 131074, 16, 851991, 262146, 16, 851994, 65538, 16, 917529, 65538, 16, 917530, 262146, 16, 917528, 262146, 16, 851995, 262146, 16, 917531, 131074, 16, 786459, 2, 16, 786458, 196610, 16, 720922, 196610, 16, 720923, 65538, 16, 655387, 196610, 16, 655386, 262146, 16, 655385, 131074, 16, 589850, 131074, 16, 589849, 2, 16, 589848, 262146, 16, 655384, 262146, 16, 983064, 262146, 16, 983065, 196610, 16, 983066, 2, 16, 983067, 196610, 16)
+
+[node name="Player" parent="TileMap" instance=ExtResource("3_62mr7")]
+position = Vector2(241, 224)
+
+[node name="Folcam" type="Camera2D" parent="TileMap/Player"]
+zoom = Vector2(0.4, 0.4)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 1.0
+drag_vertical_offset = 1.0
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.1
+script = ExtResource("4_rphfe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
+process_mode = 3
+layer = 3
+
+[node name="inventory" parent="TileMap/Player/CanvasLayer" instance=ExtResource("5_wmgvt")]
+metadata/_edit_use_anchors_ = true
+
+[node name="HotBar" parent="TileMap/Player/CanvasLayer" instance=ExtResource("6_c3wdf")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -12.0
+offset_right = 165.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" parent="TileMap/Player/CanvasLayer" instance=ExtResource("7_5jh1t")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 30.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Bar" type="Control" parent="TileMap/Player/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -12.0
+offset_right = 25.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="healthbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar"]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 47.0
+offset_bottom = 9.0
+stretch_margin_left = 2
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = SubResource("AtlasTexture_tebif")
+texture_progress = SubResource("AtlasTexture_j4kix")
+texture_progress_offset = Vector2(0, 1)
+script = ExtResource("9_qwri0")
+metadata/_edit_use_anchors_ = true
+
+[node name="magicbar" type="TextureProgressBar" parent="TileMap/Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 55.0
+offset_bottom = 18.0
+texture_under = SubResource("AtlasTexture_teanw")
+texture_progress = SubResource("AtlasTexture_t5etb")
+texture_progress_offset = Vector2(0, 1)
+script = ExtResource("10_x54uw")
+player = NodePath("../../..")
+metadata/_edit_use_anchors_ = true
+
+[node name="magic" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
+position = Vector2(0, 10)
+texture = ExtResource("8_aviin")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(127, 261, 14, 7)
+
+[node name="health" type="Sprite2D" parent="TileMap/Player/CanvasLayer/Bar"]
+position = Vector2(0, 1)
+texture = ExtResource("8_aviin")
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2(127, 243, 14, 7)
+
+[node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("10_q3hhr")]
+
+[node name="ColorRect" type="ColorRect" parent="TileMap/Player/CanvasLayer"]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 258.0
+offset_bottom = 148.0
+color = Color(0.054902, 0.00392157, 0.0862745, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/Player/CanvasLayer/ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_gim03")
+}
+autoplay = "fade_in"
+
+[node name="Cave1" type="Sprite2D" parent="."]
+position = Vector2(280, 191)
+texture = ExtResource("3_m67we")

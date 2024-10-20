@@ -16,6 +16,10 @@ func _ready():
 			player.position = Vector2(168, 644)
 		Global.EntryPoint.fDtF2:
 			player.position = Vector2(529, 648)
+		Global.EntryPoint.fFtC:
+			player.position = Vector2(400, 419)
+		Global.EntryPoint.fCtF:
+			player.position = Vector2(357, 215)
 
 func _on_inventory_closed():
 	get_tree().paused = false

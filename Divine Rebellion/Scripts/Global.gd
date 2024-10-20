@@ -119,15 +119,23 @@ enum EntryPoint {
 	fDtF1,
 	fDtF2,
 	fFtD1,
-	fFtD2
+	fFtD2,
+	fCtF,
+	fFtC,
+	fFtCave,
+	fCavetF
 }
 
 var entry_point: int = EntryPoint.DOOR
 
 var maxWaterLvl = 40
 
-var currentWaterLvl = 40
-
-var currentHealth = 0
+var currentWaterLvl = 0
 
 var maxHealth = 100
+
+var currentHealth = maxHealth
+
+var maxMana = 100
+
+var currentMana = maxMana

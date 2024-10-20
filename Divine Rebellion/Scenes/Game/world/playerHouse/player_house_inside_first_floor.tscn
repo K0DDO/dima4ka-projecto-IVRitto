@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://23qfuqbefbp1"]
+[gd_scene load_steps=40 format=3 uid="uid://23qfuqbefbp1"]
 
 [ext_resource type="Texture2D" uid="uid://b3t25irmxml7u" path="res://Art/Backgrounds/houses/inside/house in1.png" id="1_6iaqm"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/ControlScript.gd" id="1_28nt0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="8_6vb8s"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="9_8pvo3"]
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_pni5q"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="11_hnb7f"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/toWorldPlayer.gd" id="12_nqape"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/firstFloorLadder.gd" id="13_7hpmr"]
 [ext_resource type="Texture2D" uid="uid://c8s31reof8l0p" path="res://Art/Tech/Сhoosing character menu/cc 2.png" id="13_8rg71"]
@@ -26,11 +27,11 @@ region = Rect2(134, 269, 48, 9)
 atlas = ExtResource("8_6vb8s")
 region = Rect2(134, 294, 47, 7)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_msyu4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1xc0"]
 atlas = ExtResource("8_6vb8s")
 region = Rect2(134, 269, 48, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fu0y3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oi5q"]
 atlas = ExtResource("8_6vb8s")
 region = Rect2(134, 308, 47, 7)
 
@@ -290,14 +291,18 @@ texture_progress_offset = Vector2(0, 1)
 script = ExtResource("9_8pvo3")
 player = NodePath("../../..")
 
-[node name="magicbar" type="TextureProgressBar" parent="Player/CanvasLayer/Bar"]
+[node name="magicbar" type="TextureProgressBar" parent="Player/CanvasLayer/Bar" node_paths=PackedStringArray("player")]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 9.0
 offset_right = 55.0
 offset_bottom = 18.0
-texture_under = SubResource("AtlasTexture_msyu4")
-texture_progress = SubResource("AtlasTexture_fu0y3")
+texture_under = SubResource("AtlasTexture_k1xc0")
+texture_progress = SubResource("AtlasTexture_0oi5q")
+texture_progress_offset = Vector2(0, 1)
+script = ExtResource("11_hnb7f")
+player = NodePath("../../..")
+metadata/_edit_use_anchors_ = true
 
 [node name="magic" type="Sprite2D" parent="Player/CanvasLayer/Bar"]
 position = Vector2(0, 10)

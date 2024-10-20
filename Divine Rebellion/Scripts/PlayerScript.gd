@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 class_name Player
+
 signal healthChanged
+signal manaChanged
 
 @onready var hair = $Hair
 @onready var animation = $Animation
@@ -13,13 +15,14 @@ signal healthChanged
 
 @export var knockbackPower: int = 200
 @export var maxHealth = Global.maxHealth
-
+@export var maxMana = Global.maxMana
 @export var inventory: Inventory
 
 var speed : int = 70
 var direction = "Down"
 
-var currentHealth : int = maxHealth
+var currentHealth : int = Global.currentHealth
+var currentMana : int = Global.currentMana
 
 var isHurt : bool = false
 var knockback = Vector2.ZERO
@@ -330,19 +333,26 @@ func attack():
 		animation_in_hand.play("attack" + direction + str(Global.weapon))
 		await animation.animation_finished
 		attack_ip = false
-	elif Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip:
+	elif Input.is_action_just_pressed("attack") and Global.tool_equip and !attack_ip and !usingTools_ip and currentMana > 0:
 		if Global.tool == 3 and Global.currentWaterLvl > 0:
 			usingTools_ip = true
 			animation.play("usingTools" + direction + "1")
 			animation_in_hand.play("usingTools" + direction  + str(Global.tool))
 			await animation.animation_finished
 			usingTools_ip = false
+			currentMana -= 2
+			Global.currentMana -= 2
+			print(Global.currentMana)
 		elif Global.tool != 3:
 			usingTools_ip = true
 			animation.play("usingTools" + direction + "0")
 			animation_in_hand.play("usingTools" + direction  + str(Global.tool))
 			await animation.animation_finished
 			usingTools_ip = false
+			currentMana -= 2
+			Global.currentMana -= 2
+			print(Global.currentMana)
+		manaChanged.emit()
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
