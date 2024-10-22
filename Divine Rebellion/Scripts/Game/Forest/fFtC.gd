@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var animation = $"../TileMap/Player/CanvasLayer/ColorRect/AnimationPlayer"
+@onready var tile_map = $"../TileMap"
 
 var in_zone = false
 
@@ -8,6 +9,7 @@ func _input(_event):
 	if in_zone:
 		if Input.is_action_just_pressed("rightClick"):
 				Global.entry_point = Global.EntryPoint.fFtC
+				TileMapSave.save_tilemap(tile_map)
 				animation.play("fade_out")
 				await animation.animation_finished
 				$"../TimeSystem".change_scene("res://Scenes/Game/world/Forest/Cafe/cafe.tscn")

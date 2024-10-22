@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://biheoo0wf17oo"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_dcf5k"]
+[ext_resource type="Texture2D" uid="uid://canlef4hpuiq7" path="res://Art/Tech/Menu/food1.png" id="2_0i3yr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48tnc"]
+atlas = ExtResource("2_0i3yr")
+region = Rect2(42, 31, 14, 13)
+
+[resource]
+script = ExtResource("1_dcf5k")
+name = "Omelette"
+texture = SubResource("AtlasTexture_48tnc")
+stackSize = 99
+itemType = "food"
+recipe_items = Array[ExtResource("1_dcf5k")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 40
+type = "Food"
+description = ""

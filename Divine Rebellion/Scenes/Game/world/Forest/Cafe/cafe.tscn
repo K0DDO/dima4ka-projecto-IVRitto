@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://7bdj4vng1sy6"]
+[gd_scene load_steps=37 format=3 uid="uid://7bdj4vng1sy6"]
 
 [ext_resource type="Texture2D" uid="uid://ddp0juw1ixwft" path="res://Art/Backgrounds/houses/inside/house5 in1.png" id="1_5gy8b"]
 [ext_resource type="Script" path="res://Scripts/Game/Forest/cafe/Cafe.gd" id="1_34lv5"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/Day&NightCycle.gd" id="14_dd38a"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="14_isbbk"]
 [ext_resource type="PackedScene" uid="uid://cc1ees1vwd6da" path="res://Scenes/Game/GUI/notifications.tscn" id="15_xcu1k"]
+[ext_resource type="PackedScene" uid="uid://dmvq052l84i3" path="res://Scenes/Game/GUI/cafe_menu.tscn" id="17_vfisx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwbr8"]
 radius = 40.1123
@@ -231,7 +232,6 @@ y_sort_enabled = true
 position = Vector2(0, -1)
 
 [node name="BarTable" type="Sprite2D" parent="smth/BarTable"]
-visible = false
 position = Vector2(-54, 127)
 texture = ExtResource("2_mw221")
 centered = false
@@ -620,6 +620,7 @@ offset_bottom = -13.0
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("10_wnm1g")]
+process_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="TileMap/Player/CanvasLayer"]
 offset_left = -14.0
@@ -633,6 +634,9 @@ libraries = {
 "": SubResource("AnimationLibrary_gim03")
 }
 autoplay = "fade_in"
+
+[node name="CafeMenu" parent="TileMap/Player/CanvasLayer" instance=ExtResource("17_vfisx")]
+visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("11_1wphk")
@@ -689,6 +693,8 @@ offset = Vector2(0, -30)
 region_enabled = true
 region_rect = Rect2(276, 0, 22, 31)
 
+[connection signal="body_entered" from="smth/StaticBody2D/Area2D" to="smth/StaticBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="smth/StaticBody2D/Area2D" to="smth/StaticBody2D" method="_on_area_2d_body_exited"]
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

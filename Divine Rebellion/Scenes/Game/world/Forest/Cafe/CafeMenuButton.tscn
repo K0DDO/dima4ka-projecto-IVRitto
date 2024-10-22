@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnuclpsp6de6d"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/CafeMenuButton.gd" id="1_3t0a7"]
+[ext_resource type="Texture2D" uid="uid://b1c8y2r1e658e" path="res://Art/Tech/Menu/Cafe menu.png" id="2_mmy16"]
+[ext_resource type="Texture2D" uid="uid://canlef4hpuiq7" path="res://Art/Tech/Menu/food1.png" id="2_ul4kf"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="3_f6ubu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yosih"]
+atlas = ExtResource("2_ul4kf")
+region = Rect2(0, 0, 35, 30)
+
+[node name="CafeMenuButton" type="Button"]
+custom_minimum_size = Vector2(128, 42)
+anchors_preset = -1
+anchor_right = 0.267
+anchor_bottom = 0.156
+offset_right = 63.92
+offset_bottom = 20.94
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+flat = true
+script = ExtResource("1_3t0a7")
+
+[node name="Button" type="Sprite2D" parent="."]
+texture = ExtResource("2_mmy16")
+centered = false
+region_enabled = true
+region_rect = Rect2(169, 0, 128, 42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(6, 6)
+texture = SubResource("AtlasTexture_yosih")
+centered = false
+
+[node name="Name" type="Label" parent="Button"]
+offset_left = 48.0
+offset_top = 4.0
+offset_right = 125.0
+offset_bottom = 22.0
+theme = ExtResource("3_f6ubu")
+theme_override_font_sizes/font_size = 10
+text = "Pancake"
+vertical_alignment = 1
+
+[node name="Energy" type="Label" parent="Button"]
+offset_left = 55.0
+offset_top = 23.0
+offset_right = 68.0
+offset_bottom = 31.0
+theme = ExtResource("3_f6ubu")
+theme_override_font_sizes/font_size = 0
+text = "140"
+
+[node name="Money" type="Label" parent="Button"]
+offset_left = 95.0
+offset_top = 23.0
+offset_right = 108.0
+offset_bottom = 31.0
+theme = ExtResource("3_f6ubu")
+text = "100"
+horizontal_alignment = 2

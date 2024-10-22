@@ -22,6 +22,12 @@ var final_seed_level = 3
 var carrot_scene = preload("res://Scenes/Game/Collectables/Carrot.tscn")
 
 func _ready():
+	if !TileMapSave.tilemap_data:
+		TileMapSave.save_tilemap(tile_map)
+		print("сохранил")
+	else:
+		TileMapSave.load_tilemap(tile_map)
+		print("загрузил")
 	Global.scene = "playerHouse"
 	match Global.entry_point:
 		Global.EntryPoint.fPtD:

@@ -7,4 +7,4 @@ func _on_body_entered(body):
 		Global.entry_point = Global.EntryPoint.fCtF
 		animation.play("fade_out")
 		await animation.animation_finished
-		$"../TimeSystem".change_scene("res://Scenes/Game/world/Forest.tscn")
+		$"../TimeSystem".change_scene("res://Scenes/Game/world/playerHouse.tscn")

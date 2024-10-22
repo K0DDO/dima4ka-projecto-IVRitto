@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmvq052l84i3"]
+
+[ext_resource type="Texture2D" uid="uid://b1c8y2r1e658e" path="res://Art/Tech/Menu/Cafe menu.png" id="1_8dk7o"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/cafe_menu.gd" id="1_tnosg"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="2_23y8y"]
+[ext_resource type="PackedScene" uid="uid://dnuclpsp6de6d" path="res://Scenes/Game/world/Forest/Cafe/CafeMenuButton.tscn" id="3_2eekq"]
+[ext_resource type="LabelSettings" uid="uid://cnurjasiglaqp" path="res://label_settings.tres" id="4_06fs1"]
+[ext_resource type="Resource" uid="uid://bwa3udro862hx" path="res://Scripts/Game/Forest/cafe/breakfast.tres" id="4_efuyl"]
+[ext_resource type="Resource" uid="uid://bq8cbqx5lowp0" path="res://Scripts/Game/Forest/cafe/omelette.tres" id="5_7iu6a"]
+[ext_resource type="Script" path="res://Scripts/Game/CurrentMoney.gd" id="5_p1h5c"]
+[ext_resource type="Resource" uid="uid://crufy3ysa5sg6" path="res://Scripts/Game/Forest/cafe/pancake.tres" id="6_pgi8q"]
+[ext_resource type="Resource" uid="uid://dhccl7tm4ti7r" path="res://Scripts/Game/Forest/cafe/scrumbleeggs.tres" id="7_gyaas"]
+
+[node name="CafeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tnosg")
+
+[node name="CafeMenu" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8dk7o")
+region_enabled = true
+region_rect = Rect2(0, 0, 155, 229)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(128, 42)
+layout_mode = 0
+offset_left = -33.0
+offset_top = -21.0
+offset_right = 101.0
+offset_bottom = 124.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("2_23y8y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="CafeMenuButton" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_2eekq")]
+layout_mode = 2
+resource = ExtResource("4_efuyl")
+
+[node name="CafeMenuButton2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_2eekq")]
+layout_mode = 2
+resource = ExtResource("5_7iu6a")
+
+[node name="CafeMenuButton3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_2eekq")]
+layout_mode = 2
+resource = ExtResource("6_pgi8q")
+
+[node name="CafeMenuButton4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_2eekq")]
+layout_mode = 2
+resource = ExtResource("7_gyaas")
+
+[node name="CurrentMoney" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -36.5
+offset_right = 57.0
+offset_bottom = -28.5
+scale = Vector2(0.5, 0.5)
+text = "999999999"
+label_settings = ExtResource("4_06fs1")
+vertical_alignment = 1
+script = ExtResource("5_p1h5c")
+
+[node name="Energy" type="Label" parent="."]
+layout_mode = 0
+offset_left = -31.0
+offset_top = -37.0
+offset_right = -18.0
+offset_bottom = -29.0
+scale = Vector2(0.5, 0.5)
+text = "100"
+label_settings = ExtResource("4_06fs1")
+vertical_alignment = 1
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CafeMenuButton" to="." method="_on_cafe_menu_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CafeMenuButton2" to="." method="_on_cafe_menu_button_2_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CafeMenuButton3" to="." method="_on_cafe_menu_button_3_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CafeMenuButton4" to="." method="_on_cafe_menu_button_4_pressed"]

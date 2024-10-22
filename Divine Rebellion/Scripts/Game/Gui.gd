@@ -52,9 +52,10 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 func open():
-	visible = true
-	is_open = true
-	opened.emit()
+	if !Global.incafe:
+		visible = true
+		is_open = true
+		opened.emit()
 
 func close():
 	visible = false
@@ -152,14 +153,14 @@ func on_put_back_finished():
 	locked = false
 
 func _input(_event):
-	if Input.is_action_just_pressed("e"):
+	if Input.is_action_just_pressed("e") and !Global.incafe:
 		if is_open:
 			close()
 		else:
 			open()
 		Global.tabinv = "combat"
 	
-	if Input.is_action_just_pressed("esc"):
+	if Input.is_action_just_pressed("esc") and !Global.incafe:
 		if is_open:
 			close()
 			Global.tabinv = "combat"

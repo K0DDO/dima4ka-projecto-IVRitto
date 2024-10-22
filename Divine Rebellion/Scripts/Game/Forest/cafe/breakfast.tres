@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="food" load_steps=5 format=3 uid="uid://bwa3udro862hx"]
+
+[ext_resource type="Texture2D" uid="uid://canlef4hpuiq7" path="res://Art/Tech/Menu/food1.png" id="1_gp1n2"]
+[ext_resource type="Script" path="res://Scripts/Game/Forest/cafe/Food.gd" id="2_b5b8y"]
+[ext_resource type="Resource" uid="uid://ckmej4nua3gj0" path="res://Scripts/Game/Inventory/items/breakfast.tres" id="2_nmfd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gs1h"]
+atlas = ExtResource("1_gp1n2")
+region = Rect2(70, 0, 35, 30)
+
+[resource]
+script = ExtResource("2_b5b8y")
+big_pic = SubResource("AtlasTexture_4gs1h")
+cost = 250
+amount = 1
+item = ExtResource("2_nmfd2")

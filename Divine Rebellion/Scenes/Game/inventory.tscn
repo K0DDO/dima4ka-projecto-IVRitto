@@ -1400,6 +1400,7 @@ script = ExtResource("29_errmd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Book" type="Node2D" parent="."]
+visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Gui" type="Sprite2D" parent="Book"]

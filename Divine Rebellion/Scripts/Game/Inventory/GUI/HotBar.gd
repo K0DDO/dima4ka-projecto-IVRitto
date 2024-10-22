@@ -19,14 +19,16 @@ func update() -> void:
 		update_equipped_item()
 	
 func move_selector_left() -> void:
-	currently_selected = (currently_selected + 1) % slots.size()
-	selector.global_position = slots[currently_selected].global_position
-	update_equipped_item()
+	if !Global.incafe:
+		currently_selected = (currently_selected + 1) % slots.size()
+		selector.global_position = slots[currently_selected].global_position
+		update_equipped_item()
 
 func move_selector_right() -> void:
-	currently_selected = (currently_selected - 1) % slots.size()
-	selector.global_position = slots[currently_selected].global_position
-	update_equipped_item()
+	if !Global.incafe:
+		currently_selected = (currently_selected - 1) % slots.size()
+		selector.global_position = slots[currently_selected].global_position
+		update_equipped_item()
 
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("use_item"):
@@ -66,26 +68,27 @@ func update_equipped_item():
 		item = null
 
 func _input(_event):
-	if Input.is_key_pressed(KEY_1):
-		currently_selected = 0
-	if Input.is_key_pressed(KEY_2):
-		currently_selected = 1
-	if Input.is_key_pressed(KEY_3):
-		currently_selected = 2
-	if Input.is_key_pressed(KEY_4):
-		currently_selected = 3
-	if Input.is_key_pressed(KEY_5):
-		currently_selected = 4
-	if Input.is_key_pressed(KEY_6):
-		currently_selected = 5
-	if Input.is_key_pressed(KEY_7):
-		currently_selected = 6
-	if Input.is_key_pressed(KEY_8):
-		currently_selected = 7
-	if Input.is_key_pressed(KEY_9):
-		currently_selected = 8
-	if Input.is_key_pressed(KEY_0):
-		currently_selected = 9
-	selector.global_position = slots[currently_selected].global_position
-	update_equipped_item()
+	if !Global.incafe:
+		if Input.is_key_pressed(KEY_1):
+			currently_selected = 0
+		if Input.is_key_pressed(KEY_2):
+			currently_selected = 1
+		if Input.is_key_pressed(KEY_3):
+			currently_selected = 2
+		if Input.is_key_pressed(KEY_4):
+			currently_selected = 3
+		if Input.is_key_pressed(KEY_5):
+			currently_selected = 4
+		if Input.is_key_pressed(KEY_6):
+			currently_selected = 5
+		if Input.is_key_pressed(KEY_7):
+			currently_selected = 6
+		if Input.is_key_pressed(KEY_8):
+			currently_selected = 7
+		if Input.is_key_pressed(KEY_9):
+			currently_selected = 8
+		if Input.is_key_pressed(KEY_0):
+			currently_selected = 9
+		selector.global_position = slots[currently_selected].global_position
+		update_equipped_item()
 	

@@ -10,6 +10,7 @@ class_name InventoryItem
 @export var recipe_items: Array[InventoryItem] = []
 @export var recipe_amounts: Array[int] = []
 @export var carft_amount: int = 1
+@export var energy: int
 
 @export_enum("Weapon", "Material", "Food") 
 var type = "Material"

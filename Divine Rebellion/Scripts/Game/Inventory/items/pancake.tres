@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://dr2lgn1363a0k"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_51j7d"]
+[ext_resource type="Texture2D" uid="uid://canlef4hpuiq7" path="res://Art/Tech/Menu/food1.png" id="2_ju8ig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ejeq"]
+atlas = ExtResource("2_ju8ig")
+region = Rect2(0, 31, 14, 13)
+
+[resource]
+script = ExtResource("1_51j7d")
+name = "Pancake"
+texture = SubResource("AtlasTexture_1ejeq")
+stackSize = 99
+itemType = "food"
+recipe_items = Array[ExtResource("1_51j7d")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 45
+type = "Food"
+description = ""

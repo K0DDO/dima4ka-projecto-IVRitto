@@ -24,8 +24,9 @@ boot_splash/minimum_display_time=2000
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-SaveSettingsData="*res://Scripts/saveSettings.gd"
+TileMapSave="*res://Scripts/tileMapSaving.gd"
 Brightness="*res://Scenes/brightness.tscn"
+SaveSettingsData="*res://Scripts/save_settings_data.gd"
 
 [display]
 

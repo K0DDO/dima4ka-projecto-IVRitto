@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	match Global.entry_point:
 		Global.EntryPoint.fCtF:
-			player.position = Vector2(357, 215)
+			player.position = Vector2(972, 484)
 
 func _on_inventory_closed():
 	get_tree().paused = false

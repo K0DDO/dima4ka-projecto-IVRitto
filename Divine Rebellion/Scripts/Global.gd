@@ -139,3 +139,5 @@ var currentHealth = maxHealth
 var maxMana = 100
 
 var currentMana = maxMana
+
+var incafe: bool = false

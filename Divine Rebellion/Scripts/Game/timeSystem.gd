@@ -26,5 +26,6 @@ func save_current_time():
 	Global.year = date_time.years
 
 func change_scene(new_scene: String):
-	save_current_time()
-	get_tree().change_scene_to_file(new_scene)
+	if new_scene != null:
+		save_current_time()
+		get_tree().change_scene_to_file(new_scene)

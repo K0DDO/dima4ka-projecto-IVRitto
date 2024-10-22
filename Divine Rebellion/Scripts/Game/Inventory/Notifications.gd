@@ -3,12 +3,14 @@ extends Control
 @export var player : Player
 
 @onready var no_water = $"No Water"
-@onready var no_mana = $"No Mana"
+@onready var no_mana = $"No Energy"
+@onready var you_cannot_enter = $"You cannot enter"
 
 func _ready():
 	no_mana.visible = false
 	no_water.visible = false
-
+	you_cannot_enter.visible = false
+	
 func _on_player_mana_changed():
 	if Global.currentMana <= 0:
 		showNotification(no_mana)

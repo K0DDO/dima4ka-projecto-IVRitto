@@ -16,5 +16,6 @@ itemType = "food"
 recipe_items = Array[ExtResource("1_truml")]([])
 recipe_amounts = Array[int]([])
 carft_amount = 1
+energy = 5
 type = "Material"
 description = ""
