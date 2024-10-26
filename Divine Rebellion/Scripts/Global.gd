@@ -141,3 +141,5 @@ var maxMana = 100
 var currentMana = maxMana
 
 var incafe: bool = false
+
+var got_gold_key: bool = false

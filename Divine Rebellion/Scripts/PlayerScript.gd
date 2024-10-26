@@ -368,5 +368,10 @@ func _on_deal_damage_zone_body_entered(body):
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent().has_method("breakableWithAxe"):
-		print("usingAxe")
-		area.get_parent().damaged()
+		if Global.tool == 0:
+			print("usingAxe")
+			area.get_parent().damaged()
+	if area.get_parent().has_method("breakableWithPickaxe"):
+		if Global.tool == 1:
+			print("usingPickaxe")
+			area.get_parent().damaged()

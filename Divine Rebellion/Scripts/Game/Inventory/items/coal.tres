@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://dykym3iw1f47i"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_i70w2"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_ep6d1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcany"]
+atlas = ExtResource("2_ep6d1")
+region = Rect2(96, 0, 12, 10)
+
+[resource]
+script = ExtResource("1_i70w2")
+name = "Coal"
+texture = SubResource("AtlasTexture_dcany")
+stackSize = 99
+itemType = "material"
+recipe_items = Array[ExtResource("1_i70w2")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 0
+type = "Material"
+description = ""

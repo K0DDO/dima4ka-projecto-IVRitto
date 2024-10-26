@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cabcepa85ymut"]
+
+[ext_resource type="PackedScene" uid="uid://h13y28jepdpo" path="res://Scenes/Game/items/breakables.tscn" id="1_e4jg4"]
+[ext_resource type="PackedScene" uid="uid://nduwxvrkiov5" path="res://Scenes/Game/Collectables/Stone.tscn" id="2_eygj4"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_yevpn"]
+
+[node name="Stump" instance=ExtResource("1_e4jg4")]
+item = ExtResource("2_eygj4")
+
+[node name="CollisionShape" parent="." index="0"]
+y_sort_enabled = true
+
+[node name="Stump" parent="." index="1"]
+position = Vector2(0, -6)
+texture = ExtResource("2_yevpn")
+offset = Vector2(0, -5)
+region_rect = Rect2(1, 1, 15, 14)

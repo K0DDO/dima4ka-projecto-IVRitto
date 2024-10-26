@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bky6pxohn5txv"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_q5pbn"]
+[ext_resource type="Resource" uid="uid://3ondbrkweotp" path="res://Scripts/Game/Inventory/items/ironNugget.tres" id="2_rh42r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78klx"]
+resource_local_to_scene = true
+
+[node name="Collectable" instance=ExtResource("1_q5pbn")]
+itemRes = ExtResource("2_rh42r")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_78klx")

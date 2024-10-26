@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmwh4k32vkomr"]
+
+[ext_resource type="PackedScene" uid="uid://cf35fpt4g6r46" path="res://Scenes/Game/Collectable.tscn" id="1_68ev5"]
+[ext_resource type="Resource" uid="uid://dykym3iw1f47i" path="res://Scripts/Game/Inventory/items/coal.tres" id="2_kt66x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd68t"]
+resource_local_to_scene = true
+
+[node name="Collectable" instance=ExtResource("1_68ev5")]
+itemRes = ExtResource("2_kt66x")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_rd68t")

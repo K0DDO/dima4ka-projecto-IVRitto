@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvbnynpiefh1c"]
+
+[ext_resource type="PackedScene" uid="uid://h13y28jepdpo" path="res://Scenes/Game/items/breakables.tscn" id="1_ohvnc"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_6uivj"]
+[ext_resource type="PackedScene" uid="uid://nduwxvrkiov5" path="res://Scenes/Game/Collectables/Stone.tscn" id="2_esr2w"]
+
+[node name="Stump" instance=ExtResource("1_ohvnc")]
+item = ExtResource("2_esr2w")
+
+[node name="Stump" parent="." index="1"]
+texture = ExtResource("2_6uivj")
+offset = Vector2(0, -5)
+region_rect = Rect2(48, 1, 16, 14)

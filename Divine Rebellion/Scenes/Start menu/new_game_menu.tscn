@@ -3227,7 +3227,6 @@ libraries = {
 }
 
 [node name="Control3" type="Control" parent="Buttons"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 68.0

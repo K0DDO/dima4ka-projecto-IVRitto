@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://3ondbrkweotp"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_ktmyx"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_rtmjf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij3bt"]
+atlas = ExtResource("2_rtmjf")
+region = Rect2(124, 0, 11, 9)
+
+[resource]
+script = ExtResource("1_ktmyx")
+name = "Iron Nugget"
+texture = SubResource("AtlasTexture_ij3bt")
+stackSize = 99
+itemType = "material"
+recipe_items = Array[ExtResource("1_ktmyx")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 0
+type = "Material"
+description = ""

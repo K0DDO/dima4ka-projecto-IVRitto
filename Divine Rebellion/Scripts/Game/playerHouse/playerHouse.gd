@@ -30,18 +30,15 @@ func _ready():
 		print("загрузил")
 	Global.scene = "playerHouse"
 	match Global.entry_point:
-		Global.EntryPoint.fPtD:
-			player.position = Vector2(16, 148)
-		Global.EntryPoint.fDtP  :
-			player.position = Vector2(577, 214)
-		Global.EntryPoint.fFtD1:
-			player.position = Vector2(168, 22)
-		Global.EntryPoint.fFtD2:
-			player.position = Vector2(578, 22)
-		Global.EntryPoint.fDtF1:
-			player.position = Vector2(168, 644)
-		Global.EntryPoint.fDtF2:
-			player.position = Vector2(529, 648)
+		Global.EntryPoint.fCtF:
+			player.position = Vector2(972, 484)
+		Global.EntryPoint.fFtC:
+			player.position = Vector2(200, 278)
+		Global.EntryPoint.fFtCave:
+			player.position = Vector2(200, 278)
+		Global.EntryPoint.fCavetF:
+			player.position = Vector2(361, 118)
+
 
 func _input(_event):
 	# Логика полива (tool = 3)

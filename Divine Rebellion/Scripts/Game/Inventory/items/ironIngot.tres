@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://cjo4t0mxf8ydj"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_yfvt4"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_mhqjx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wmbr"]
+atlas = ExtResource("2_mhqjx")
+region = Rect2(138, 0, 13, 13)
+
+[resource]
+script = ExtResource("1_yfvt4")
+name = "Iron Ingot"
+texture = SubResource("AtlasTexture_6wmbr")
+stackSize = 99
+itemType = "material"
+recipe_items = Array[ExtResource("1_yfvt4")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 0
+type = "Material"
+description = ""

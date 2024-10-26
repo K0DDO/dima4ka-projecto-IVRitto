@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://h13y28jepdpo"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Destroyables/breakables.gd" id="1_4nh0v"]
+[ext_resource type="PackedScene" uid="uid://b8effrw35tibj" path="res://Scenes/Game/resources/die_effect.tscn" id="2_sti1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y878c"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh4bv"]
+size = Vector2(14, 14)
+
+[node name="Breakables" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_4nh0v")
+EFFECT_DIE = ExtResource("2_sti1o")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_y878c")
+
+[node name="Stump" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -5)
+offset = Vector2(0, -10)
+region_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["breakableWithAxe"]]
+
+[node name="BreakableShape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_dh4bv")

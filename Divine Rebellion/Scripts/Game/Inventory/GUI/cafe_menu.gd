@@ -20,7 +20,7 @@ func close():
 	await get_tree().create_timer(0.5).timeout
 	Global.incafe = false
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("e") or Input.is_action_just_pressed("esc"):
 		close()
 

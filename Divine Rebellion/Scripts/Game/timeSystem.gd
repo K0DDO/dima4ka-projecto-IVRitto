@@ -28,4 +28,9 @@ func save_current_time():
 func change_scene(new_scene: String):
 	if new_scene != null:
 		save_current_time()
-		get_tree().change_scene_to_file(new_scene)
+
+		var tree = get_tree()
+		if tree != null:
+			tree.change_scene_to_file(new_scene)
+		else:
+			print("Error: The scene tree is null.")

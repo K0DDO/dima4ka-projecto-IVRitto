@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://cw5ouovv7dtnq"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_6jg1x"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_j3k7m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdhyj"]
+atlas = ExtResource("2_j3k7m")
+region = Rect2(110, 0, 13, 10)
+
+[resource]
+script = ExtResource("1_6jg1x")
+name = "Stone"
+texture = SubResource("AtlasTexture_pdhyj")
+stackSize = 99
+itemType = "material"
+recipe_items = Array[ExtResource("1_6jg1x")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 0
+energy = 0
+type = "Material"
+description = ""

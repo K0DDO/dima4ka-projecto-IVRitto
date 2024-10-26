@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://du711f7cxhryg"]
+
+[ext_resource type="PackedScene" uid="uid://h13y28jepdpo" path="res://Scenes/Game/items/breakables.tscn" id="1_m7e8r"]
+[ext_resource type="PackedScene" uid="uid://bky6pxohn5txv" path="res://Scenes/Game/Collectables/IronNugget.tscn" id="2_17evm"]
+[ext_resource type="Texture2D" uid="uid://cwar6tyvvagoc" path="res://Art/Backgrounds/Cave/stone.png" id="2_iy87e"]
+
+[node name="Stump" instance=ExtResource("1_m7e8r")]
+item = ExtResource("2_17evm")
+
+[node name="Stump" parent="." index="1"]
+texture = ExtResource("2_iy87e")
+offset = Vector2(0, -6)
+region_rect = Rect2(64, 0, 16, 16)
