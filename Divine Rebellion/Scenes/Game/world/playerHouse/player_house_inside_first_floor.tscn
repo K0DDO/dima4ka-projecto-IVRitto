@@ -13,9 +13,9 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="9_8pvo3"]
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_pni5q"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="11_hnb7f"]
-[ext_resource type="Script" path="res://Scripts/Game/changeScenes/toWorldPlayer.gd" id="12_nqape"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/firstFloorLadder.gd" id="13_7hpmr"]
 [ext_resource type="Texture2D" uid="uid://c8s31reof8l0p" path="res://Art/Tech/Сhoosing character menu/cc 2.png" id="13_8rg71"]
+[ext_resource type="Script" path="res://Scripts/Game/playerHouse/fHtP.gd" id="14_50x0y"]
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="16_hu6vj"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="17_qopb0"]
 
@@ -348,7 +348,7 @@ region_rect = Rect2(0, 1, 88, 98)
 polygon = PackedVector2Array(154, 110, 154, 144, 193, 144, 193, 155, 214, 155, 214, 144, 220, 144, 220, 108, 204, 108, 204, 94, 170, 93, 170, 110, 156, 110, 160, 88, 189, 81, 237, 85, 243, 108, 240, 144, 235, 165, 216, 172, 182, 171, 162, 162, 147, 155, 137, 136, 141, 122, 147, 109)
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
-script = ExtResource("12_nqape")
+script = ExtResource("14_50x0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 position = Vector2(203.5, 154)

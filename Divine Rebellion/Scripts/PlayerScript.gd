@@ -5,6 +5,7 @@ class_name Player
 signal healthChanged
 signal manaChanged
 
+@onready var hot_bar = $CanvasLayer/HotBar
 @onready var hair = $Hair
 @onready var animation = $Animation
 @onready var animation_in_hand = $AnimationInHand
@@ -17,6 +18,7 @@ signal manaChanged
 @export var maxHealth = Global.maxHealth
 @export var maxMana = Global.maxMana
 @export var inventory: Inventory
+
 
 var speed : int = 70
 var direction = "Down"
@@ -375,3 +377,4 @@ func _on_area_2d_area_entered(area):
 		if Global.tool == 1:
 			print("usingPickaxe")
 			area.get_parent().damaged()
+

@@ -41,7 +41,6 @@ func _ready():
 
 
 func _input(_event):
-	# Логика полива (tool = 3)
 	if Input.is_action_just_pressed("attack") and Global.tool == 3 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip and Global.currentMana > 0:
 			var player_pos: Vector2 = player.position
 			var tile_player_pos: Vector2i = tile_map.local_to_map(player_pos)

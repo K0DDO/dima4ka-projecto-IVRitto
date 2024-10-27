@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b81bemprm60im"]
+[gd_scene load_steps=51 format=3 uid="uid://b81bemprm60im"]
 
 [ext_resource type="Texture2D" uid="uid://bvi87iprmpcuv" path="res://Art/Backgrounds/textures1.png" id="1_bbtx7"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="1_f7wh0"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="24_kbr8x"]
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="25_lu6gc"]
 [ext_resource type="Script" path="res://Scripts/Game/LabelScript.gd" id="26_qq5cf"]
+[ext_resource type="Script" path="res://Scripts/Game/changeScenes/toWorldPlayer.gd" id="29_f5c0e"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g7uye"]
 resource_name = "Collectables"
@@ -1929,6 +1930,9 @@ sources/2 = SubResource("TileSetAtlasSource_h8ayg")
 sources/3 = SubResource("TileSetAtlasSource_s3xxy")
 sources/0 = SubResource("TileSetScenesCollectionSource_g7uye")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dacxc"]
+size = Vector2(17, 40)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mwkx"]
 atlas = ExtResource("16_hhatn")
 region = Rect2(134, 269, 48, 9)
@@ -2120,6 +2124,15 @@ layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1507340, 3, 131072, 1048602, 589827, 0, 196628, 589827, 131072, 196641, 589827, 131072, 196658, 589827, 0, 1179696, 589827, 131072, 131133, 589827, 131072, 1310793, 589827, 131072, 1507412, 589827, 0, 262234, 589827, 0, 1179727, 393219, 131072, 393303, 393219, 131072, 393272, 393219, 0, 1179689, 393219, 131072, 12, 393219, 0, 2, 393219, 0, 1245203, 786435, 0, 1441795, 786435, 131072, 786436, 786435, 131072, 131087, 786435, 0, 65536, 786435, 0, 131100, 786435, 131072, 1179678, 786435, 131072, 1441833, 786435, 0, 1048621, 786435, 0, 589879, 786435, 0, 262186, 786435, 131072, 65593, 786435, 131072, 131138, 786435, 131072, 65612, 786435, 0, 86, 786435, 0, 1441872, 786435, 131072, 1048644, 786435, 0, 1507392, 786435, 131072, 1048650, 3, 131072, 393267, 3, 0, 196614, 589827, 131072, 65574, 3, 131072, 1310778, 589827, 0, 1572953, 196611, 131072, 589835, 393219, 131072, 458758, 3, 0, 1572909, 3, 0, 65560, 196611, 0, 131152, 196611, 0, 1376278, 196611, 131072, 917505, 589827, 131072)
 layer_4/name = "Collectables"
 layer_4/tile_data = PackedInt32Array()
+
+[node name="StaticBody2D2" type="Node2D" parent="TileMap"]
+
+[node name="Area2D" type="Area2D" parent="TileMap/StaticBody2D2"]
+script = ExtResource("29_f5c0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D2/Area2D"]
+position = Vector2(1487.5, 216)
+shape = SubResource("RectangleShape2D_dacxc")
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_f7wh0")]
 position = Vector2(335, 171)
@@ -2508,9 +2521,8 @@ autowrap_mode = 3
 script = ExtResource("26_qq5cf")
 player = NodePath("../TileMap/Player")
 
-[node name="Log" parent="." instance=ExtResource("2_24dvj")]
-position = Vector2(727, 121)
-
+[connection signal="body_entered" from="TileMap/StaticBody2D2/Area2D" to="TileMap/StaticBody2D2/Area2D" method="_on_body_entered"]
+[connection signal="manaChanged" from="TileMap/Player" to="TileMap/Player/CanvasLayer/Bar/magicbar" method="_on_player_mana_changed"]
+[connection signal="manaChanged" from="TileMap/Player" to="TileMap/Player/CanvasLayer/Notifications" method="_on_player_mana_changed"]
 [connection signal="closed" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="TileMap/Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
-[connection signal="update" from="TimeSystem" to="TileMap/Player/CanvasLayer/Time" method="_on_time_system_update"]

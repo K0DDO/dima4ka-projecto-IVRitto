@@ -28,7 +28,6 @@ func update_label(label: Label, value: int, should_have_zero: bool = true) -> vo
 func update_tens_of_minutes(label: Label, value: int) -> void:
 	label.text = str(value / 10) + "0"
 
-
 func update_text_label(label: Label, value: int) -> void:
 	if value % 7 == 1:
 		label.text = "Mon."

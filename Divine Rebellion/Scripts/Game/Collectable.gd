@@ -7,9 +7,6 @@ var target: Node2D = null
 var speed: float = 40.0
 var is_flying: bool = false
 
-func _ready():
-	sprite_2d.texture = itemRes.texture
-
 func collect(inventory: Inventory):
 	if inventory.can_insert_item(itemRes):
 		inventory.insert(itemRes)

@@ -3,6 +3,8 @@ extends Panel
 @onready var inventory: Inventory = preload("res://Scripts/Game/Inventory/playerInventory.tres")
 @onready var slots: Array = $Container.get_children()
 @onready var selector: Sprite2D = $Selector
+@onready var player = $"../.."
+@onready var inv = $"../inventory"
 
 var currently_selected: int = 0
 var item = null
@@ -31,12 +33,11 @@ func move_selector_right() -> void:
 		update_equipped_item()
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("use_item"):
-		inventory.use_item_at_index(currently_selected)
 	if event.is_action_pressed("move_selector_left"):
 		move_selector_left()
 	if event.is_action_pressed("move_selector_right"):
 		move_selector_right()
+
 
 func update_equipped_item():
 	var selected_slot = inventory.slots[currently_selected]
@@ -67,7 +68,7 @@ func update_equipped_item():
 	else:
 		item = null
 
-func _input(_event):
+func _input(event):
 	if !Global.incafe:
 		if Input.is_key_pressed(KEY_1):
 			currently_selected = 0
@@ -91,4 +92,19 @@ func _input(_event):
 			currently_selected = 9
 		selector.global_position = slots[currently_selected].global_position
 		update_equipped_item()
-	
+	if event.is_action_pressed("use_item"):
+		var selected_slot = inventory.slots[currently_selected]
+		if selected_slot:
+			if selected_slot.item and selected_slot.item.type == "Food":
+				if player.currentHealth < player.maxHealth or player.currentMana < player.maxMana:
+					player.currentHealth = min(player.maxHealth, player.currentHealth+selected_slot.item.health)
+					Global.currentHealth = min(player.maxHealth, player.currentHealth+selected_slot.item.health)
+					player.currentMana = min(player.maxMana, player.currentMana+selected_slot.item.energy)
+					Global.currentMana = min(player.maxMana, player.currentMana+selected_slot.item.energy)
+					player.manaChanged.emit()
+					player.healthChanged.emit()
+					inv.reduce_item(currently_selected, 1)
+					inv.update()
+					update()
+			else:
+				print("тяжело")

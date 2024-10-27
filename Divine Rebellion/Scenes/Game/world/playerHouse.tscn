@@ -212,6 +212,7 @@ size = Vector2(28, 8)
 script = ExtResource("1_uanwg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
 offset_left = -234.0
 offset_top = -270.0
 offset_right = 1576.0
