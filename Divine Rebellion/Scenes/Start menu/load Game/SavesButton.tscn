@@ -1,26 +1,16 @@
-[gd_scene load_steps=34 format=3 uid="uid://chedjufa1qntw"]
+[gd_scene load_steps=24 format=3 uid="uid://chedjufa1qntw"]
 
 [ext_resource type="Texture2D" uid="uid://bf5325xeao4fa" path="res://Art/Tech/Load game menu/lg button.png" id="1_lbcbp"]
 [ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/Load Game Menu/SavesScript.gd" id="2_j5u48"]
 [ext_resource type="Texture2D" uid="uid://bt0s6lykn0bu8" path="res://Art/Character/body/body.png" id="2_rxttx"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Body.gd" id="3_t0t1f"]
 [ext_resource type="Texture2D" uid="uid://gymh3gybyi7n" path="res://Art/Character/clothes/bottomall.png" id="4_7085b"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Bottom.gd" id="5_fl7xu"]
 [ext_resource type="Texture2D" uid="uid://cqobb38o16ffy" path="res://Art/Character/clothes/topall.png" id="6_oom04"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Top.gd" id="7_ja4a1"]
 [ext_resource type="Texture2D" uid="uid://drtyre1m2n6ib" path="res://Art/Character/clothes/bootsall.png" id="8_m73k5"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Boots.gd" id="9_86eyd"]
 [ext_resource type="Shader" path="res://Shaders/hair.gdshader" id="10_vksfj"]
 [ext_resource type="Texture2D" uid="uid://pvle4qtu7xa8" path="res://Art/Character/hair/hairall.png" id="11_7vgew"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Hair.gd" id="12_sjtgs"]
 [ext_resource type="Shader" path="res://Shaders/eyes.gdshader" id="13_kmx4u"]
 [ext_resource type="Texture2D" uid="uid://b14w73mpyf3u6" path="res://Art/Character/eyes/eyesall.png" id="14_876d0"]
-[ext_resource type="Script" path="res://Scripts/Main menu/Start Menu/New Game Menu/Character/Eyes.gd" id="15_5kc5x"]
 [ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="16_8vrow"]
-[ext_resource type="Script" path="res://Scripts/Game/Name.gd" id="17_nutjq"]
-[ext_resource type="Script" path="res://Scripts/Game/TotalWealth.gd" id="18_bhl1a"]
-[ext_resource type="Script" path="res://Scripts/Game/Inventory/Date.gd" id="19_4lvh1"]
-[ext_resource type="Script" path="res://Scripts/Game/Inventory/DaysSpend.gd" id="20_01bq2"]
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="21_0ob0j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y11qj"]
@@ -131,7 +121,6 @@ hframes = 4
 vframes = 9
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 288)
-script = ExtResource("3_t0t1f")
 
 [node name="Bottom" type="Sprite2D" parent="LgButton/Character"]
 position = Vector2(133.5, 110)
@@ -141,7 +130,6 @@ hframes = 4
 vframes = 5
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 160)
-script = ExtResource("5_fl7xu")
 
 [node name="Top" type="Sprite2D" parent="LgButton/Character"]
 position = Vector2(149.5, 126)
@@ -150,7 +138,6 @@ hframes = 4
 vframes = 7
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 224)
-script = ExtResource("7_ja4a1")
 
 [node name="Boots" type="Sprite2D" parent="LgButton/Character"]
 position = Vector2(133.5, 110)
@@ -160,7 +147,6 @@ hframes = 4
 vframes = 3
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 96)
-script = ExtResource("9_86eyd")
 
 [node name="Hair" type="Sprite2D" parent="LgButton/Character"]
 material = SubResource("ShaderMaterial_gcrkx")
@@ -170,7 +156,6 @@ hframes = 4
 vframes = 80
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 2560)
-script = ExtResource("12_sjtgs")
 
 [node name="Eyes" type="Sprite2D" parent="LgButton/Character"]
 material = SubResource("ShaderMaterial_qkcxb")
@@ -179,29 +164,26 @@ texture = ExtResource("14_876d0")
 hframes = 4
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 32)
-script = ExtResource("15_5kc5x")
 
-[node name="Name2" type="Label" parent="LgButton/Character"]
+[node name="Name" type="Label" parent="LgButton/Character"]
 offset_left = 192.0
 offset_top = 109.0
 offset_right = 255.0
 offset_bottom = 117.0
 theme = ExtResource("16_8vrow")
 text = "kaldunpiskagriz"
-script = ExtResource("17_nutjq")
 metadata/_edit_use_anchors_ = true
 
-[node name="TotalWealth2" type="Label" parent="LgButton/Character"]
+[node name="TotalWealth" type="Label" parent="LgButton/Character"]
 offset_left = 209.0
 offset_top = 118.0
 offset_right = 245.0
 offset_bottom = 126.0
 theme = ExtResource("16_8vrow")
 text = "500"
-script = ExtResource("18_bhl1a")
 metadata/_edit_use_anchors_ = true
 
-[node name="Date2" type="Label" parent="LgButton/Character"]
+[node name="Date" type="Label" parent="LgButton/Character"]
 offset_left = 190.0
 offset_top = 127.0
 offset_right = 198.0
@@ -209,17 +191,15 @@ offset_bottom = 135.0
 theme = ExtResource("16_8vrow")
 text = "19"
 vertical_alignment = 1
-script = ExtResource("19_4lvh1")
 metadata/_edit_use_anchors_ = true
 
-[node name="DaysSpent2" type="Label" parent="LgButton/Character"]
+[node name="DaysSpent" type="Label" parent="LgButton/Character"]
 offset_left = 218.0
 offset_top = 136.0
 offset_right = 226.0
 offset_bottom = 144.0
 theme = ExtResource("16_8vrow")
 text = "1"
-script = ExtResource("20_01bq2")
 metadata/_edit_use_anchors_ = true
 
 [node name="Money" type="Sprite2D" parent="LgButton/Character"]

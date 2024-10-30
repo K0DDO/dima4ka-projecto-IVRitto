@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bi7j64hllxrlh"]
+[gd_scene load_steps=28 format=3 uid="uid://bi7j64hllxrlh"]
 
 [ext_resource type="Texture2D" uid="uid://b3t25irmxml7u" path="res://Art/Backgrounds/houses/inside/house in1.png" id="1_kgupu"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_rh0fk"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="12_rx4tx"]
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="13_e41js"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="14_ewb3n"]
+[ext_resource type="Script" path="res://Scripts/Game/playerHouse/Saving.gd" id="16_x17ng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okwrb"]
 size = Vector2(19, 17)
@@ -134,6 +135,9 @@ hours = 0
 days = 1
 season = 1
 years = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21y63"]
+size = Vector2(17, 18)
 
 [node name="playerHouseSecondFloor" type="Node2D"]
 y_sort_enabled = true
@@ -346,6 +350,14 @@ script = ExtResource("13_e41js")
 date_time = SubResource("Resource_3k50h")
 ticks_pr_second = 100
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("16_x17ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(302.5, 207)
+shape = SubResource("RectangleShape2D_21y63")
+
 [connection signal="body_entered" from="Stair/Area2D" to="Stair/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Stair/Area2D" to="Stair/Area2D" method="_on_body_exited"]
 [connection signal="update" from="TimeSystem" to="Player/CanvasLayer/Time" method="_on_time_system_update"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

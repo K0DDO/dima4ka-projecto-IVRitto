@@ -19,7 +19,6 @@ signal manaChanged
 @export var maxMana = Global.maxMana
 @export var inventory: Inventory
 
-
 var speed : int = 70
 var direction = "Down"
 

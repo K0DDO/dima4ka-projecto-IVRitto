@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpuxwc3gwxkwd"]
+
+[ext_resource type="PackedScene" uid="uid://biuelrlbg1py2" path="res://Scenes/saving_peach.tscn" id="1_on2yp"]
+
+[node name="Saving Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 96.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 214.0
+color = Color(0.0547287, 0.00196289, 0.0862826, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(165, 107)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Saving Peach" parent="CanvasLayer" instance=ExtResource("1_on2yp")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 3.0
+offset_top = -16.0
+offset_right = 3.0
+offset_bottom = -16.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)

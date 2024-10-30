@@ -1,28 +1,15 @@
-extends Sprite2D
+extends Control
 
-@onready var animations = $Animation
+var progress = []
+var sceneName
+var scene_load_status = 0
 
-func _on_next_button_pressed():
-	animations.play("pressed")
-	if Global.skill == 0:
-		Global.friendship = 1
-	elif Global.skill == 1:
-		Global.combating = 1
-	elif Global.skill == 2:
-		Global.fishing = 1
-	elif Global.skill == 3:
-		Global.farming = 1
-	elif Global.skill == 4:
-		Global.collecting = 1
-	elif Global.skill == 5:
-		Global.magic = 1
-	await get_tree().create_timer(0.2).timeout
-	if Global.playername != "":
-		var loadingScreen = load("res://Scenes/loading_screen.tscn")
-		save_game(Global.playername)
-		get_tree().change_scene_to_packed(loadingScreen)
-
-func save_game(character_name: String):
+func _ready():
+	sceneName = "res://Scenes/Game/world/playerHouse/player_house_second_floor.tscn"
+	ResourceLoader.load_threaded_request(sceneName)
+	save_game(Global.playername)
+	
+func save_game(save_name: String):
 	var save_data = {}
 	save_data["playername"] = Global.playername
 	save_data["player_health"] = Global.currentHealth
@@ -57,13 +44,8 @@ func save_game(character_name: String):
 	save_data["incafe"] = Global.incafe
 	save_data["got_gold_key"] = Global.got_gold_key
 	
-	var base_save_path = "user://saves/" + character_name + ".json"
-	var save_path = base_save_path
-	var suffix = 1
-	while FileAccess.file_exists(save_path):
-		save_path = "user://saves/" + character_name + " (" + str(suffix) + ").json"
-		suffix += 1
-	Global.savename = character_name + "(" + str(suffix) + ")"
+	var save_path = "user://saves/" + save_name + ".json"
+	
 	var dir = DirAccess.open("user://saves/")
 	if dir == null:
 		DirAccess.make_dir_absolute("user://saves/")
@@ -72,4 +54,16 @@ func save_game(character_name: String):
 	if file:
 		file.store_string(JSON.stringify(save_data))
 		file.close()
+		print("засейвил")
 
+
+func _process(_delta):
+	scene_load_status = ResourceLoader.load_threaded_get_status(sceneName, progress)
+	$Label2.text = str(floor(progress[0]*100)) + "%"
+	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
+		var newScene = ResourceLoader.load_threaded_get(sceneName)
+		$Label2.visible = false
+		$Label.visible = false
+		$Label3.visible = true
+		await  get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_packed(newScene)

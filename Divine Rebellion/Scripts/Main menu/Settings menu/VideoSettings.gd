@@ -66,5 +66,4 @@ func _on_brightness_slider_value_changed(value):
 
 func _on_button_pressed():
 	get_tree().paused = false
-	Global.save_game()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

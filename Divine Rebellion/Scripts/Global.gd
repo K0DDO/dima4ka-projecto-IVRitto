@@ -3,7 +3,7 @@ extends Node
 var config
 var path_to_save_file := "user://game.cfg"
 var section_name := "game"
-
+var savename = ""
 # сцена
 var scene = ""
 
@@ -143,3 +143,5 @@ var currentMana = maxMana
 var incafe: bool = false
 
 var got_gold_key: bool = false
+
+var inventory

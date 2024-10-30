@@ -18,5 +18,6 @@ recipe_items = Array[ExtResource("1_y7a7v")]([ExtResource("1_o6yjo")])
 recipe_amounts = Array[int]([4])
 carft_amount = 1
 energy = 0
+health = 0
 type = "Material"
 description = ""
