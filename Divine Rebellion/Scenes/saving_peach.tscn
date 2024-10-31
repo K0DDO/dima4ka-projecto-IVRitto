@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biuelrlbg1py2"]
+[gd_scene load_steps=8 format=3 uid="uid://ciwonk4jy8lh"]
 
 [ext_resource type="Script" path="res://Scripts/saving_peach.gd" id="1_yyb31"]
 [ext_resource type="FontFile" uid="uid://cdd3saoayyjwl" path="res://Divine Rebellion Font.ttf" id="2_auro2"]

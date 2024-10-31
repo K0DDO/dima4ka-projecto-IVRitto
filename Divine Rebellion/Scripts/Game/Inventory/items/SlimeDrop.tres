@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cfjjhrw8vglgw"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Inventory/inventoryItem.gd" id="1_qot8x"]
+[ext_resource type="Texture2D" uid="uid://bljvj1v1o2vcb" path="res://Art/Mobs/water mob drop.png" id="2_yxttx"]
+
+[resource]
+script = ExtResource("1_qot8x")
+name = "slime"
+texture = ExtResource("2_yxttx")
+stackSize = 99
+itemType = "item"
+recipe_items = Array[ExtResource("1_qot8x")]([])
+recipe_amounts = Array[int]([])
+carft_amount = 1
+energy = 0
+health = 0
+type = "Material"
+description = ""

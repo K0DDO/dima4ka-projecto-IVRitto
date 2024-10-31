@@ -17,6 +17,10 @@ func _ready():
 
 func _on_pressed():
 	animation.play("pressed")
+	Saves.load_game(nome.text)
+	var loadingScreen = load("res://Scenes/loading_screen2.tscn")
+	Saves.save_game(Global.playername)
+	get_tree().change_scene_to_packed(loadingScreen)
 
 func set_vars(save_data: Dictionary):
 	nome.text = save_data["playername"]
@@ -26,18 +30,13 @@ func set_vars(save_data: Dictionary):
 	boots.set_frame_coords(Vector2i(0, save_data["bootsbutton"]))
 	hair.set_frame_coords(Vector2i(0, save_data["hairbutton"]))
 	eyes.set_frame_coords(Vector2i(0, 0))
-
-	# Клонируем материал для глаз и устанавливаем уникальный цвет
 	var eyes_material = eyes.material.duplicate()
 	eyes_material.set("shader_parameter/new_color", parse_color_string(save_data["eyescolor"]))
 	eyes.material = eyes_material
-
-	# Клонируем материал для волос и устанавливаем уникальные цвета
 	var hair_material = hair.material.duplicate()
 	hair_material.set("shader_parameter/new_color1", parse_color_string(save_data["haircolor"]))
 	hair_material.set("shader_parameter/new_color2", parse_color_string(save_data["acccolor"]))
 	hair.material = hair_material
-
 	total_wealth.text = str(save_data["totalwealth"])
 	
 	var textic = ""
@@ -67,7 +66,7 @@ func parse_color_string(color_string: String) -> Color:
 	var components = color_string.split(",")
 
 	if components.size() != 4:
-		return Color(1, 1, 1, 1)  # Возвращаем белый в случае ошибки
+		return Color(1, 1, 1, 1)
 
 	var r = clamp(components[0].strip_edges().to_float(), 0.0, 1.0)
 	var g = clamp(components[1].strip_edges().to_float(), 0.0, 1.0)

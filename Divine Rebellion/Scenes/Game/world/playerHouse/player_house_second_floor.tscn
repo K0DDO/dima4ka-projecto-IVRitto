@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bi7j64hllxrlh"]
+[gd_scene load_steps=29 format=3 uid="uid://bi7j64hllxrlh"]
 
 [ext_resource type="Texture2D" uid="uid://b3t25irmxml7u" path="res://Art/Backgrounds/houses/inside/house in1.png" id="1_kgupu"]
+[ext_resource type="Script" path="res://Scripts/Game/playerHouse/player_house_second_floor.gd" id="1_kugmq"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="1_rh0fk"]
 [ext_resource type="Texture2D" uid="uid://rrg55icriir5" path="res://Art/Backgrounds/houses/inside/house in2.png" id="2_7vl4u"]
 [ext_resource type="Script" path="res://Scripts/Game/changeScenes/toPlayerHouse1.gd" id="4_5bylo"]
@@ -141,6 +142,7 @@ size = Vector2(17, 18)
 
 [node name="playerHouseSecondFloor" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_kugmq")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(128, 80)
@@ -359,5 +361,8 @@ shape = SubResource("RectangleShape2D_21y63")
 
 [connection signal="body_entered" from="Stair/Area2D" to="Stair/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Stair/Area2D" to="Stair/Area2D" method="_on_body_exited"]
+[connection signal="manaChanged" from="Player" to="Player/CanvasLayer/Bar/magicbar" method="_on_player_mana_changed"]
+[connection signal="closed" from="Player/CanvasLayer/inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="Player/CanvasLayer/inventory" to="." method="_on_inventory_opened"]
 [connection signal="update" from="TimeSystem" to="Player/CanvasLayer/Time" method="_on_time_system_update"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

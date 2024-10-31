@@ -27,6 +27,7 @@ Global="*res://Scripts/Global.gd"
 TileMapSave="*res://Scripts/tileMapSaving.gd"
 Brightness="*res://Scenes/brightness.tscn"
 SaveSettingsData="*res://Scripts/save_settings_data.gd"
+Saves="*res://Scripts/saves.gd"
 
 [display]
 

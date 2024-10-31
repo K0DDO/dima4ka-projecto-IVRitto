@@ -13,6 +13,7 @@ func save_tilemap(tilemap: TileMap):
 				"alternative_tile": tilemap.get_cell_alternative_tile(layer, position)
 			}
 			tilemap_data[layer][position] = tile_data
+	Global.tilemap = tilemap_data
 
 func load_tilemap(tilemap: TileMap):
 	clear_tilemap(tilemap)

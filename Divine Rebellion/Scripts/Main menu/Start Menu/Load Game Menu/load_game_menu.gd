@@ -11,7 +11,6 @@ func get_save_files() -> Array:
 	var dir = DirAccess.open("user://saves/")
 	return dir.get_files()
 
-# Создаём кнопки и передаём данные из JSON-файлов
 func generate_save_buttons(save_files: Array):
 	var save_button_scene = load(save_button_scene_path)
 	for file_name in save_files:
@@ -24,7 +23,6 @@ func generate_save_buttons(save_files: Array):
 			save_data = json
 			file.close()
 		
-		# Инстанцируем кнопку и передаём словарь данных
 		var button_instance = save_button_scene.instantiate()
 		vbox_container.add_child(button_instance)
 		button_instance.set_vars(save_data)

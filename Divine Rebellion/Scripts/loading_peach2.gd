@@ -7,7 +7,6 @@ var scene_load_status = 0
 func _ready():
 	sceneName = "res://Scenes/Game/world/playerHouse/player_house_second_floor.tscn"
 	ResourceLoader.load_threaded_request(sceneName)
-	Saves.save_game(Global.playername)
 
 func _process(_delta):
 	scene_load_status = ResourceLoader.load_threaded_get_status(sceneName, progress)

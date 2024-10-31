@@ -32,11 +32,13 @@ func update_slots(slots_array: Array):
 		itemStackGui.update()
 
 func update():
+	Saves.save_inventory(inventory)
 	update_slots(slots)
 	update_slots(slots2)
 	inventory_updated.emit()
 	
 func _ready():
+	Saves.load_inventory(inventory)
 	connectSlots()
 	inventory.updated.connect(update)
 	update()
@@ -202,8 +204,8 @@ func remove_items(item_name: String, amount: int):
 		if slot.item and slot.item.name == item_name:
 			if slot.amount <= amount:
 				amount -= slot.amount
-				slot.item = null  # Удаляем предмет
-				slot.amount = 0  # Устанавливаем количество на 0
+				slot.item = null
+				slot.amount = 0
 			else:
 				slot.amount -= amount
 				break

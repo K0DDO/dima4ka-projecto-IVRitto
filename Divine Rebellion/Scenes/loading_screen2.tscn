@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpuxwc3gwxkwd"]
+[gd_scene load_steps=3 format=3 uid="uid://b77mr1muvtu8x"]
 
-[ext_resource type="PackedScene" uid="uid://ciwonk4jy8lh" path="res://Scenes/saving_peach.tscn" id="1_on2yp"]
+[ext_resource type="PackedScene" uid="uid://dnvyunerawxfp" path="res://Scenes/loading_peach.tscn" id="1_supdl"]
+[ext_resource type="Script" path="res://Scripts/loading_peach2.gd" id="2_c7c5g"]
 
-[node name="Saving Screen" type="Control"]
+[node name="Loading Screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +24,7 @@ position = Vector2(165, 107)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Saving Peach" parent="CanvasLayer" instance=ExtResource("1_on2yp")]
+[node name="Loading Peach" parent="CanvasLayer" instance=ExtResource("1_supdl")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
@@ -34,3 +35,4 @@ offset_bottom = -16.0
 grow_horizontal = 1
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
+script = ExtResource("2_c7c5g")

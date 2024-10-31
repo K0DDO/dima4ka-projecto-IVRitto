@@ -28,5 +28,5 @@ func save_current_time():
 func change_scene(new_scene: String):
 	if new_scene != null:
 		save_current_time()
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file(new_scene)
+		if new_scene:
+			get_tree().change_scene_to_file(new_scene)
