@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://pg1bo4hcn2xl"]
+
+[ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_p77bj"]
+[ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_e6j6g"]
+[ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_ysnd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi1pw"]
+atlas = ExtResource("1_p77bj")
+region = Rect2(1920, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nluet"]
+atlas = ExtResource("1_p77bj")
+region = Rect2(1440, 0, 480, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ekqa"]
+atlas = ExtResource("3_ysnd5")
+region = Rect2(0, 0, 960, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlx8a"]
+atlas = ExtResource("1_p77bj")
+region = Rect2(960, 0, 480, 540)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera and BG" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera and BG"]
+
+[node name="Sun" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Sun" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Sun"]
+position = Vector2(-240, -270)
+texture = SubResource("AtlasTexture_bi1pw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 294)
+
+[node name="BG Trees" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="BG Trees" type="Sprite2D" parent="Camera and BG/ParallaxBackground/BG Trees"]
+position = Vector2(-240, -259)
+texture = SubResource("AtlasTexture_nluet")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 307)
+
+[node name="Clouds" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+visible = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(240, 270)
+motion_mirroring = Vector2(980, 0)
+script = ExtResource("2_e6j6g")
+
+[node name="Clouds" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Clouds"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(213, -156)
+texture = SubResource("AtlasTexture_7ekqa")
+region_enabled = true
+region_rect = Rect2(0, 0, 1431, 270)
+
+[node name="Mountains" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Mountains" type="Sprite2D" parent="Camera and BG/ParallaxBackground/Mountains"]
+position = Vector2(-240, -254)
+texture = SubResource("AtlasTexture_rlx8a")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 306)
+
+[node name="Trees And Lake" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Earth" type="ParallaxLayer" parent="Camera and BG/ParallaxBackground"]
+position = Vector2(240, 270)
+
+[node name="Camera2D" type="Camera2D" parent="Camera and BG"]
+position = Vector2(240, 160)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]

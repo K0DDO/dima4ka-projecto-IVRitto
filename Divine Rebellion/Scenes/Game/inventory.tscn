@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b4hl7jk72yokj"]
+[gd_scene load_steps=65 format=3 uid="uid://b4hl7jk72yokj"]
 
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_30aun"]
 [ext_resource type="Script" path="res://Scripts/Game/Gui.gd" id="1_uakf1"]
@@ -52,6 +52,7 @@
 [ext_resource type="Resource" uid="uid://fmjpbaeix188" path="res://Scripts/Game/Inventory/items/woodenShovel.tres" id="46_avc2b"]
 [ext_resource type="Resource" uid="uid://cenelnrlvrxvf" path="res://Scripts/Game/Inventory/items/woodenWateringCan.tres" id="47_swsbg"]
 [ext_resource type="Resource" uid="uid://cbvupheadgjje" path="res://Scripts/Game/Inventory/items/carrotSeeds.tres" id="48_tjm58"]
+[ext_resource type="Theme" uid="uid://xiuxlcxvw8ag" path="res://new_game_menu.tres" id="51_2ax6q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_amcb2"]
 shader = ExtResource("12_isl8t")
@@ -171,6 +172,10 @@ _data = {
 "idle": SubResource("Animation_urqvf"),
 "pressed": SubResource("Animation_aghgw")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8rre"]
+atlas = ExtResource("1_30aun")
+region = Rect2(557, 61, 31, 13)
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -521,6 +526,7 @@ visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Profile" type="Node2D" parent="."]
+visible = false
 position = Vector2(-121, -67.5)
 
 [node name="Money" type="Sprite2D" parent="Profile"]
@@ -1551,7 +1557,6 @@ layout_mode = 2
 item = ExtResource("48_tjm58")
 
 [node name="Settings" type="Node2D" parent="."]
-visible = false
 position = Vector2(-120, -67.5)
 
 [node name="Video" type="Control" parent="Settings"]
@@ -1697,15 +1702,39 @@ popup/item_2/id = 2
 popup/item_3/text = "854x480"
 popup/item_3/id = 3
 
-[node name="Button" type="Button" parent="Settings/Video"]
+[node name="Sprite2D" type="NinePatchRect" parent="Settings/Video"]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 84.0
-offset_right = 175.0
-offset_bottom = 108.0
+offset_left = 164.0
+offset_top = 92.0
+offset_right = 198.0
+offset_bottom = 110.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_a8rre")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Button" type="Button" parent="Settings/Video/Sprite2D"]
+layout_mode = 0
+offset_right = 34.0
+offset_bottom = 20.0
+theme = ExtResource("51_2ax6q")
 theme_override_fonts/font = ExtResource("44_grotw")
-text = "exit"
 flat = true
+
+[node name="Label" type="Label" parent="Settings/Video/Sprite2D"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 14.0
+theme = ExtResource("51_2ax6q")
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Gui" type="Sprite2D" parent="Settings"]
 position = Vector2(156, 34)
@@ -1890,7 +1919,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="value_changed" from="Settings/Video/maxFPSSlider" to="Settings/Video" method="_on_max_fps_slider_value_changed"]
 [connection signal="value_changed" from="Settings/Video/brightnessSlider" to="Settings/Video" method="_on_brightness_slider_value_changed"]
 [connection signal="item_selected" from="Settings/Video/Resolution" to="Settings/Video" method="_on_resolution_item_selected"]
-[connection signal="pressed" from="Settings/Video/Button" to="Settings/Video" method="_on_button_pressed"]
+[connection signal="pressed" from="Settings/Video/Sprite2D/Button" to="Settings/Video" method="_on_button_pressed"]
 [connection signal="pressed" from="Tabs/Combatmini/Button" to="Tabs" method="_on_button1_pressed"]
 [connection signal="pressed" from="Tabs/Mapmini/Button" to="Tabs" method="_on_button2_pressed"]
 [connection signal="pressed" from="Tabs/Profilemini/Button" to="Tabs" method="_on_button3_pressed"]
