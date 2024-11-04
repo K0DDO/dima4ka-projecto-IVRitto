@@ -142,3 +142,39 @@ func parse_color_string(color_string: String) -> Color:
 	var a = clamp(components[3].strip_edges().to_float(), 0.0, 1.0)
 
 	return Color(r, g, b, a)
+
+func another_save_game(save_name: String):
+	var save_data = {}
+	save_data["tilemap"] = Global.tilemap
+	save_data["playername"] = Global.playername
+	save_data["inventory"] = Global.inventory
+	save_data["bodybutton"] = Global.bodybutton
+	save_data["eyescolor"] = Global.eyescolor
+	save_data["hairbutton"] = Global.hairbutton
+	save_data["haircolor"] = Global.haircolor
+	save_data["acccolor"] = Global.acccolor
+	save_data["topbutton"] = Global.topbutton
+	save_data["bottombutton"] = Global.bottombutton
+	save_data["bootsbutton"] = Global.bootsbutton
+	save_data["gender"] = Global.gender
+	save_data["skill"] = Global.skill
+	save_data["totalwealth"] = Global.totalwealth
+	save_data["currentmoney"] = Global.currentmoney
+	save_data["friendship"] = Global.friendship
+	save_data["combating"] = Global.combating
+	save_data["fishing"] = Global.fishing
+	save_data["farming"] = Global.farming
+	save_data["collecting"] = Global.collecting
+	save_data["magic"] = Global.magic
+	save_data["second"] = Global.second
+	save_data["minute"] = Global.minute
+	save_data["hour"] = Global.hour
+	save_data["day"] = Global.day
+	save_data["season"] = Global.season
+	save_data["year"] = Global.year
+	save_data["currentWaterLvl"] = Global.currentWaterLvl
+	save_data["currentHealth"] = Global.currentHealth
+	save_data["currentMana"] = Global.currentMana
+	save_data["incafe"] = Global.incafe
+	save_data["got_gold_key"] = Global.got_gold_key
+	return save_data

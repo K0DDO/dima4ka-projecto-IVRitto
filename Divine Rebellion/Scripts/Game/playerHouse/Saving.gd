@@ -9,5 +9,3 @@ func _on_body_entered(body):
 		animation.play("fade_out")
 		await animation.animation_finished
 		$"../TimeSystem".change_scene("res://Scenes/saving_screen.tscn")
-		Saves.save_game(Global.playername)
- 

@@ -1,6 +1,11 @@
 extends Sprite2D
 
+@onready var http_request = $"../../HTTPRequest"
 @onready var animations = $Animation
+
+var url = "http://127.0.0.1:8000/"
+var loadingScreen = load("res://Scenes/loading_screen.tscn")
+
 
 func _ready():
 	Global.bodybutton = 0
@@ -45,8 +50,11 @@ func _on_next_button_pressed():
 	elif Global.skill == 5:
 		Global.magic = 1
 	await get_tree().create_timer(0.2).timeout
-	if Global.playername != "":
-		var loadingScreen = load("res://Scenes/loading_screen.tscn")
+	if Global.username != "":
+		http_request.request(url+"save_data/"+Global.username, ["Content-Type: application/json"], HTTPClient.METHOD_PUT, JSON.stringify(Saves.another_save_game(Global.playername)))
+	else:
 		Saves.save_game(Global.playername)
 		get_tree().change_scene_to_packed(loadingScreen)
 
+func _on_http_request_request_completed(_result, _response_code, _headers, _body):
+	get_tree().change_scene_to_packed(loadingScreen)

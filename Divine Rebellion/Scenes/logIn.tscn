@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://pg1bo4hcn2xl"]
+[gd_scene load_steps=28 format=3 uid="uid://pg1bo4hcn2xl"]
 
+[ext_resource type="Script" path="res://Scripts/logIn.gd" id="1_ki2or"]
 [ext_resource type="Texture2D" uid="uid://c47xpbj12x1kw" path="res://Art/Backgrounds/menu background/menu background .png" id="1_p77bj"]
 [ext_resource type="Script" path="res://Scripts/Start Scene/CloudScript.gd" id="2_e6j6g"]
 [ext_resource type="Texture2D" uid="uid://ca1bshnt3utr5" path="res://Art/Backgrounds/menu background/menu clouds.png" id="3_ysnd5"]
+[ext_resource type="Texture2D" uid="uid://b1sjd5teia0q" path="res://Art/Tech/Сhoosing character menu/cc menu.png" id="4_yy7it"]
+[ext_resource type="Theme" uid="uid://xiuxlcxvw8ag" path="res://new_game_menu.tres" id="5_4b4cx"]
+[ext_resource type="Theme" uid="uid://b78i1nbh81d5p" path="res://Theme.tres" id="6_nnk4j"]
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="7_105ok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi1pw"]
 atlas = ExtResource("1_p77bj")
@@ -20,7 +25,122 @@ region = Rect2(0, 0, 960, 270)
 atlas = ExtResource("1_p77bj")
 region = Rect2(960, 0, 480, 540)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7o3o"]
+atlas = ExtResource("7_105ok")
+region = Rect2(557, 61, 31, 13)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0fm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wiv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pm1g4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q6w1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvpvb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3rd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nphmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uye0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kv21c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v6ge"]
+
+[sub_resource type="Animation" id="Animation_p3crg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p34vn"]
+resource_name = "fade_in"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 1), Color(0.054902, 0.00392157, 0.0862745, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l4yu8"]
+resource_name = "fade_out"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.054902, 0.00392157, 0.0862745, 0), Color(0.054902, 0.00392157, 0.0862745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wt3il"]
+_data = {
+"RESET": SubResource("Animation_p3crg"),
+"fade_in": SubResource("Animation_p34vn"),
+"fade_out": SubResource("Animation_l4yu8")
+}
+
+[node name="Login Scene" type="Node2D"]
+script = ExtResource("1_ki2or")
 
 [node name="Camera and BG" type="Node2D" parent="."]
 
@@ -82,4 +202,172 @@ position = Vector2(240, 270)
 position = Vector2(240, 160)
 zoom = Vector2(0.5, 0.5)
 
+[node name="AU menu" type="Sprite2D" parent="."]
+position = Vector2(81, 67)
+texture = ExtResource("4_yy7it")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 337, 207)
+
+[node name="Login" type="Label" parent="."]
+offset_left = 123.0
+offset_top = 121.0
+offset_right = 165.0
+offset_bottom = 144.0
+theme = ExtResource("5_4b4cx")
+text = "Login"
+
+[node name="LoginText" type="LineEdit" parent="Login"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 4.0
+offset_right = 223.0
+offset_bottom = 15.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_nnk4j")
+alignment = 1
+max_length = 15
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Password" type="Label" parent="."]
+offset_left = 123.0
+offset_top = 142.0
+offset_right = 201.0
+offset_bottom = 165.0
+theme = ExtResource("5_4b4cx")
+text = "Password"
+
+[node name="PasswordText" type="LineEdit" parent="Password"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 3.0
+offset_right = 223.0
+offset_bottom = 14.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_nnk4j")
+alignment = 1
+max_length = 15
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Message" type="Label" parent="."]
+visible = false
+offset_left = 111.0
+offset_top = 164.0
+offset_right = 371.0
+offset_bottom = 180.0
+theme = ExtResource("5_4b4cx")
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+text = "incorrect password"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 244.0
+offset_top = 187.0
+offset_right = 286.0
+offset_bottom = 204.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_o7o3o")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = -0.5
+offset_right = 42.5
+offset_bottom = 17.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w0fm2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0wiv3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pm1g4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4q6w1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvpvb")
+flat = true
+
+[node name="Label" type="Label" parent="NinePatchRect/Button"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.5
+offset_right = 53.0
+offset_bottom = 19.5
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_4b4cx")
+text = "Next"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+offset_left = 152.0
+offset_top = 187.0
+offset_right = 194.0
+offset_bottom = 204.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_o7o3o")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Button" type="Button" parent="NinePatchRect2"]
+layout_mode = 0
+offset_left = -0.5
+offset_right = 42.5
+offset_bottom = 17.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o3rd0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nphmm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uye0h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kv21c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5v6ge")
+flat = true
+
+[node name="Label" type="Label" parent="NinePatchRect2/Button"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.5
+offset_right = 69.0
+offset_bottom = 19.5
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("5_4b4cx")
+text = "Log out"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 188.0
+offset_top = 101.0
+offset_right = 257.0
+offset_bottom = 109.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("5_4b4cx")
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+text = "login or register"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -97.0
+offset_top = -29.0
+offset_right = 579.0
+offset_bottom = 354.0
+color = Color(0.054902, 0.00392157, 0.0862745, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_wt3il")
+}
+
 [connection signal="ready" from="Camera and BG/ParallaxBackground/Clouds/Clouds" to="Camera and BG/ParallaxBackground/Clouds" method="_on_clouds_ready"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NinePatchRect2/Button" to="." method="_on_button2_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

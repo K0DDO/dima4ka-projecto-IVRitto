@@ -147,3 +147,5 @@ var got_gold_key: bool = false
 var inventory
 
 var tilemap
+
+var username = ""
