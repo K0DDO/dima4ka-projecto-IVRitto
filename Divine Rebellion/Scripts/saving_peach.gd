@@ -10,6 +10,12 @@ var url = "http://127.0.0.1:8000/"
 func _ready():
 	sceneName = "res://Scenes/Game/world/playerHouse/player_house_second_floor.tscn"
 	ResourceLoader.load_threaded_request(sceneName)
+	Global.second = 0
+	Global.minute = 0
+	if Global.hour > 6:
+		Global.day = Global.day + 1
+	Global.hour = 7
+	Global.maxMana = Global.maxMana
 	Saves.save_game(Global.playername)
 
 func _process(_delta):

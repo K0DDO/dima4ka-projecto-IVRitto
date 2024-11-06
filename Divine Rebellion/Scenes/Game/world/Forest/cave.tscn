@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://mv1mejym2w81"]
+[gd_scene load_steps=35 format=3 uid="uid://mv1mejym2w81"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Forest/Cave/Cave.gd" id="1_ml6ur"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="2_231xt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpmem86b5cfc6" path="res://Scenes/Game/GUI/HotBar.tscn" id="6_c3wdf"]
 [ext_resource type="PackedScene" uid="uid://l51cxh44e8v4" path="res://Scenes/Game/GUI/timeBar.tscn" id="7_5jh1t"]
 [ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="8_aviin"]
+[ext_resource type="PackedScene" uid="uid://cmu7u5tkjem55" path="res://enemy/slime.tscn" id="8_bswlc"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/healthBar.gd" id="9_qwri0"]
 [ext_resource type="PackedScene" uid="uid://1cr6veqtiy1q" path="res://Scenes/fps_counter.tscn" id="10_q3hhr"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="10_x54uw"]
@@ -151,6 +152,7 @@ StoneScene2 = ExtResource("13_65ayf")
 StoneScene3 = ExtResource("15_5vf0d")
 StoneScene4 = ExtResource("17_a44k8")
 CoalScene = ExtResource("14_qtucx")
+MobScene = ExtResource("8_bswlc")
 GroundTileMap = NodePath("TileMap")
 
 [node name="ColorRect" type="ColorRect" parent="."]
