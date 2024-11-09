@@ -3865,7 +3865,6 @@ y_sort_enabled = true
 position = Vector2(20, 37)
 collision_layer = 3
 script = ExtResource("1_vtnf7")
-knockbackPower = 500
 inventory = ExtResource("2_g1elf")
 
 [node name="Body" type="Sprite2D" parent="."]
