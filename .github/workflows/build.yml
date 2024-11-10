@@ -53,17 +53,6 @@ jobs:
         with:
           version: ${{ env.GODOT_BASE_VERSION }}-${{ env.GODOT_BASE_VERSION_STATUS }}
 
-      - name: Linux dependencies
-        shell: bash
-        run: |
-          sudo apt-get update
-          # The actual dependencies
-          sudo apt-get install build-essential pkg-config libx11-dev libxcursor-dev \
-              libxinerama-dev libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev \
-              libdbus-1-dev libudev-dev libxi-dev libxrandr-dev yasm xvfb unzip \
-              libspeechd-dev speech-dispatcher libgl1-mesa-glx
-          sudo apt-get -f install
-
       - name: Windows dependencies
         shell: bash
         run: |
@@ -91,20 +80,6 @@ jobs:
         with:
           mono-bcl: "bcl-desktop-win32"
           mono-release: "windows-x86_64"
-
-      - name: Setup mono (linux-x86_64)
-        if: ${{ matrix.build-mono }}
-        uses: ./.github/actions/godot-mono
-        with:
-          mono-release: "linux-x86_64"
-
-      - name: Mono precompilation
-        if: ${{ matrix.build-mono }}
-        uses: ./.github/actions/godot-build
-        with:
-          sconsflags: mono_static=yes module_mono_enabled=yes mono_glue=no
-          platform: linuxbsd
-          tools: true
 
       # Generate mono glue
       - name: Generate Mono glue code
@@ -176,7 +151,7 @@ jobs:
 
   bundle-export-templates:
     needs:
-      [linux, macos, windows-64]
+      [windows-64]
     name: Bundle Export Templates
     runs-on: ubuntu-latest
     strategy:
