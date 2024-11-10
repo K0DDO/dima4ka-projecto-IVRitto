@@ -134,7 +134,7 @@ jobs:
         with:
           sconsflags: ${{ env.SCONSFLAGS }} ${{ env.MONO_SCONSFLAGS }} ${{ matrix.sconsflags }} bits=64 ${{ matrix.build-mono && 'mono_prefix=$HOME/mono-installs/desktop-windows-x86_64-release' || '' }} debug_symbols=no
           platform: windows
-          target: release
+          target: template_release
           tools: false
 
       - name: Upload Templates
