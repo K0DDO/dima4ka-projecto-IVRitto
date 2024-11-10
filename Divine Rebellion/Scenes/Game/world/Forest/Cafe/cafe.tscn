@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://7bdj4vng1sy6"]
+[gd_scene load_steps=40 format=3 uid="uid://7bdj4vng1sy6"]
 
 [ext_resource type="Texture2D" uid="uid://ddp0juw1ixwft" path="res://Art/Backgrounds/houses/inside/house5 in1.png" id="1_5gy8b"]
 [ext_resource type="Script" path="res://Scripts/Game/Forest/cafe/Cafe.gd" id="1_34lv5"]
+[ext_resource type="PackedScene" uid="uid://bsnu6mh4fq3eg" path="res://Scenes/NPCs/dima.tscn" id="2_ih35n"]
 [ext_resource type="Texture2D" uid="uid://h5j7putsf13b" path="res://Art/Backgrounds/houses/inside/house5 in2.png" id="2_mw221"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="3_0trid"]
 [ext_resource type="PackedScene" uid="uid://bmpc38bjmsiel" path="res://Scenes/Start menu/New Game/player.tscn" id="3_7h5bg"]
@@ -22,9 +23,16 @@
 [ext_resource type="Script" path="res://Scripts/Game/Inventory/GUI/manaBar.gd" id="14_isbbk"]
 [ext_resource type="PackedScene" uid="uid://cc1ees1vwd6da" path="res://Scenes/Game/GUI/notifications.tscn" id="15_xcu1k"]
 [ext_resource type="PackedScene" uid="uid://dmvq052l84i3" path="res://Scenes/Game/GUI/cafe_menu.tscn" id="17_vfisx"]
+[ext_resource type="PackedScene" uid="uid://c5q04gdqeekyu" path="res://Scenes/Game/GUI/tasks_menu.tscn" id="17_xs6ro"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6kica"]
+vertices = PackedVector2Array(461, 390, 460, 390, 460, 387, 461, 387, 474, 377, 473, 378, 472, 378, 472, 373, 474, 373, 553, 373, 553, 346, 710, 174, 750, 623, 521, 390, 520, 387, 524, 387, 538, 390, 476, 338, 476, 346, 460, 346, 460, 314, 336, 347, 427, 347, 427, 353, 337, 353, 346, 397, 378, 397, 378, 405, 441, 405, 441, 393, 445, 393, 445, 417, 473, 422, 474, 422, 474, 431, 509, 431, 509, 422, 510, 422, 524, 378, 525, 378, 528, 375, 532, 373, 538, 417, 536, 346, 534, 342, 531, 340, 529, 338, 527, 337, 524, 334, 524, 328, 138, 150, 489, 328, 482, 338, 484, 336, 489, 333, 488, 334, 336, 314, 95, 617, 337, 391, 343, 394, 465, 417, 467, 420, 471, 420, 517, 417, 513, 419)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(32, 33, 34), PackedInt32Array(35, 36, 37), PackedInt32Array(15, 38, 39, 16), PackedInt32Array(16, 39, 40, 41, 9), PackedInt32Array(16, 9, 12, 42), PackedInt32Array(27, 28, 31), PackedInt32Array(10, 43, 44, 11), PackedInt32Array(11, 44, 45, 46), PackedInt32Array(11, 46, 47, 48, 49), PackedInt32Array(50, 11, 49, 51, 20), PackedInt32Array(52, 17, 20, 53), PackedInt32Array(54, 55, 53, 20, 51), PackedInt32Array(50, 20, 56), PackedInt32Array(57, 50, 56, 21), PackedInt32Array(57, 21, 24, 58), PackedInt32Array(57, 58, 59, 25), PackedInt32Array(12, 57, 25, 27), PackedInt32Array(12, 27, 31, 34), PackedInt32Array(31, 60, 61, 34), PackedInt32Array(61, 62, 32, 34), PackedInt32Array(12, 34, 35), PackedInt32Array(63, 42, 12, 35, 37, 64)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(129, 140, 720, 165, 761, 634, 85, 627)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwbr8"]
-radius = 31.0161
+radius = 33.0151
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kes5c"]
 atlas = ExtResource("8_6a1ej")
@@ -170,6 +178,7 @@ size = Vector2(26, 25)
 y_sort_enabled = true
 position = Vector2(-96, -144)
 script = ExtResource("1_34lv5")
+npc_scene = ExtResource("2_ih35n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 96.0
@@ -177,6 +186,135 @@ offset_top = 144.0
 offset_right = 735.0
 offset_bottom = 625.0
 color = Color(0.054902, 0.00392157, 0.0862745, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_6kica")
+constrain_avoidance = true
+
+[node name="ChairUp" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(400, 244)
+
+[node name="ChairUp" type="Sprite2D" parent="NavigationRegion2D/ChairUp"]
+position = Vector2(-12, 145)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -20)
+region_enabled = true
+region_rect = Rect2(63, 67, 11, 27)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/ChairUp"]
+polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
+
+[node name="ChairUp2" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(416, 244)
+
+[node name="ChairUp" type="Sprite2D" parent="NavigationRegion2D/ChairUp2"]
+position = Vector2(-12, 145)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -20)
+region_enabled = true
+region_rect = Rect2(63, 67, 11, 27)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/ChairUp2"]
+polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
+
+[node name="ChairUp3" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(432, 244)
+
+[node name="ChairUp" type="Sprite2D" parent="NavigationRegion2D/ChairUp3"]
+position = Vector2(-12, 145)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -20)
+region_enabled = true
+region_rect = Rect2(63, 67, 11, 27)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/ChairUp3"]
+polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
+
+[node name="BarTable" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(400, 244)
+
+[node name="BarTable" type="Sprite2D" parent="NavigationRegion2D/BarTable"]
+position = Vector2(-54, 127)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -40)
+region_enabled = true
+region_rect = Rect2(190, 67, 106, 57)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/BarTable"]
+polygon = PackedVector2Array(-21, 139, -22, 141, -23, 143, -50, 143, -51, 142, -53, 141, -53, 119, 37, 119, 37, 97, 50, 97, 50, 139)
+
+[node name="ChairLeft" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(400, 245)
+
+[node name="ChairLeft" type="Sprite2D" parent="NavigationRegion2D/ChairLeft"]
+position = Vector2(51, 129)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -22)
+region_enabled = true
+region_rect = Rect2(74, 67, 12, 27)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/ChairLeft"]
+polygon = PackedVector2Array(51, 132, 62, 132, 62, 128, 51, 128)
+
+[node name="ChairLeft2" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(400, 233)
+
+[node name="ChairLeft" type="Sprite2D" parent="NavigationRegion2D/ChairLeft2"]
+position = Vector2(51, 129)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -22)
+region_enabled = true
+region_rect = Rect2(74, 67, 12, 27)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/ChairLeft2"]
+polygon = PackedVector2Array(51, 132, 62, 132, 62, 128, 51, 128)
+
+[node name="Table" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(400, 245)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Table"]
+polygon = PackedVector2Array(70, 118, 85, 118, 87, 121, 90, 121, 92, 123, 99, 123, 99, 132, 114, 132, 114, 123, 121, 123, 122, 122, 126, 120, 128, 118, 143, 118, 143, 111, 130, 111, 128, 106, 127, 104, 125, 103, 123, 101, 121, 100, 119, 98, 116, 97, 115, 97, 114, 97, 114, 93, 99, 93, 99, 97, 97, 97, 94, 97, 92, 98, 90, 99, 88, 101, 87, 103, 86, 103, 86, 105, 86, 107, 86, 110, 86, 111, 70, 111)
+
+[node name="Table" type="Sprite2D" parent="NavigationRegion2D/Table"]
+y_sort_enabled = true
+position = Vector2(70, 114)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -35)
+region_enabled = true
+region_rect = Rect2(296, 67, 73, 53)
+
+[node name="Table2" type="StaticBody2D" parent="NavigationRegion2D"]
+y_sort_enabled = true
+position = Vector2(385, 289)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Table2"]
+polygon = PackedVector2Array(70, 118, 85, 118, 87, 121, 90, 121, 92, 123, 99, 123, 99, 132, 114, 132, 114, 123, 121, 123, 122, 122, 126, 120, 128, 118, 143, 118, 143, 111, 130, 111, 128, 106, 127, 104, 125, 103, 123, 101, 121, 100, 119, 98, 116, 97, 115, 97, 114, 97, 114, 93, 99, 93, 99, 97, 97, 97, 94, 97, 92, 98, 90, 99, 88, 101, 87, 103, 86, 103, 86, 105, 86, 107, 86, 110, 86, 111, 70, 111)
+
+[node name="Table" type="Sprite2D" parent="NavigationRegion2D/Table2"]
+y_sort_enabled = true
+position = Vector2(70, 114)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -35)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(296, 67, 73, 53)
 
 [node name="smth" type="Node2D" parent="."]
 z_index = 1
@@ -211,142 +349,6 @@ texture = ExtResource("2_mw221")
 centered = false
 region_enabled = true
 region_rect = Rect2(298, 0, 41, 19)
-
-[node name="Kitchen" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/Kitchen"]
-polygon = PackedVector2Array(-54, 92, 37, 92, 37, 97, 50, 97, 50, 79, -54, 79)
-
-[node name="Kitchen" type="Sprite2D" parent="smth/Kitchen"]
-y_sort_enabled = true
-position = Vector2(-54, 80)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -31)
-region_enabled = true
-region_rect = Rect2(86, 67, 104, 48)
-
-[node name="BarTable" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(0, -1)
-
-[node name="BarTable" type="Sprite2D" parent="smth/BarTable"]
-position = Vector2(-54, 127)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -40)
-region_enabled = true
-region_rect = Rect2(190, 67, 106, 57)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/BarTable"]
-polygon = PackedVector2Array(-21, 139, -22, 141, -23, 143, -50, 143, -51, 142, -53, 141, -53, 119, 37, 119, 37, 97, 50, 97, 50, 139)
-
-[node name="ChairUp" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(0, -1)
-
-[node name="ChairUp" type="Sprite2D" parent="smth/ChairUp"]
-position = Vector2(-12, 145)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -20)
-region_enabled = true
-region_rect = Rect2(63, 67, 11, 27)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/ChairUp"]
-polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
-
-[node name="ChairUp2" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(16, -1)
-
-[node name="ChairUp" type="Sprite2D" parent="smth/ChairUp2"]
-position = Vector2(-12, 145)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -20)
-region_enabled = true
-region_rect = Rect2(63, 67, 11, 27)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/ChairUp2"]
-polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
-
-[node name="ChairUp3" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(32, -1)
-
-[node name="ChairUp" type="Sprite2D" parent="smth/ChairUp3"]
-position = Vector2(-12, 145)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -20)
-region_enabled = true
-region_rect = Rect2(63, 67, 11, 27)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/ChairUp3"]
-polygon = PackedVector2Array(-12, 145, -12, 151, -1, 151, -1, 145)
-
-[node name="ChairLeft" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-
-[node name="ChairLeft" type="Sprite2D" parent="smth/ChairLeft"]
-position = Vector2(51, 129)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -22)
-region_enabled = true
-region_rect = Rect2(74, 67, 12, 27)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/ChairLeft"]
-polygon = PackedVector2Array(51, 132, 62, 132, 62, 128, 51, 128)
-
-[node name="ChairLeft2" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(0, -12)
-
-[node name="ChairLeft" type="Sprite2D" parent="smth/ChairLeft2"]
-position = Vector2(51, 129)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -22)
-region_enabled = true
-region_rect = Rect2(74, 67, 12, 27)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/ChairLeft2"]
-polygon = PackedVector2Array(51, 132, 62, 132, 62, 128, 51, 128)
-
-[node name="Table" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/Table"]
-polygon = PackedVector2Array(70, 118, 85, 118, 87, 121, 90, 121, 92, 123, 99, 123, 99, 132, 114, 132, 114, 123, 121, 123, 122, 122, 126, 120, 128, 118, 143, 118, 143, 111, 130, 111, 128, 106, 127, 104, 125, 103, 123, 101, 121, 100, 119, 98, 116, 97, 115, 97, 114, 97, 114, 93, 99, 93, 99, 97, 97, 97, 94, 97, 92, 98, 90, 99, 88, 101, 87, 103, 86, 103, 86, 105, 86, 107, 86, 110, 86, 111, 70, 111)
-
-[node name="Table" type="Sprite2D" parent="smth/Table"]
-y_sort_enabled = true
-position = Vector2(70, 114)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -35)
-region_enabled = true
-region_rect = Rect2(296, 67, 73, 53)
-
-[node name="Table2" type="StaticBody2D" parent="smth"]
-y_sort_enabled = true
-position = Vector2(-23, 44)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/Table2"]
-polygon = PackedVector2Array(70, 118, 85, 118, 87, 121, 90, 121, 92, 123, 99, 123, 99, 132, 114, 132, 114, 123, 121, 123, 122, 122, 126, 120, 128, 118, 143, 118, 143, 111, 130, 111, 128, 106, 127, 104, 125, 103, 123, 101, 121, 100, 119, 98, 116, 97, 115, 97, 114, 97, 114, 93, 99, 93, 99, 97, 97, 97, 94, 97, 92, 98, 90, 99, 88, 101, 87, 103, 86, 103, 86, 105, 86, 107, 86, 110, 86, 111, 70, 111)
-
-[node name="Table" type="Sprite2D" parent="smth/Table2"]
-y_sort_enabled = true
-position = Vector2(70, 114)
-texture = ExtResource("2_mw221")
-centered = false
-offset = Vector2(0, -35)
-flip_h = true
-region_enabled = true
-region_rect = Rect2(296, 67, 73, 53)
 
 [node name="Flower" type="StaticBody2D" parent="smth"]
 y_sort_enabled = true
@@ -489,6 +491,21 @@ polygon = PackedVector2Array(-69, 117, -83, 117, -83, 112, -69, 112)
 position = Vector2(15, 1)
 shape = SubResource("CircleShape2D_hwbr8")
 
+[node name="Kitchen" type="StaticBody2D" parent="smth"]
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="smth/Kitchen"]
+polygon = PackedVector2Array(-54, 92, 37, 92, 37, 97, 50, 97, 50, 79, -54, 79)
+
+[node name="Kitchen" type="Sprite2D" parent="smth/Kitchen"]
+y_sort_enabled = true
+position = Vector2(-54, 80)
+texture = ExtResource("2_mw221")
+centered = false
+offset = Vector2(0, -31)
+region_enabled = true
+region_rect = Rect2(86, 67, 104, 48)
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("3_0trid")
@@ -497,7 +514,7 @@ layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(589830, 786434, 4, 2424876, 786434, 4)
 
 [node name="Player" parent="TileMap" groups=["player"] instance=ExtResource("3_7h5bg")]
-position = Vector2(404, 428)
+position = Vector2(403, 428)
 
 [node name="Folcam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(0.4, 0.4)
@@ -619,6 +636,14 @@ offset_right = 2.0
 offset_bottom = -13.0
 scale = Vector2(0.5, 0.5)
 
+[node name="Tasks menu" parent="TileMap/Player/CanvasLayer" instance=ExtResource("17_xs6ro")]
+visible = false
+offset_left = -30.0
+offset_top = 25.0
+offset_right = -30.0
+offset_bottom = 45.0
+scale = Vector2(0.3, 0.3)
+
 [node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("10_wnm1g")]
 process_mode = 3
 
@@ -638,6 +663,8 @@ autoplay = "fade_in"
 [node name="CafeMenu" parent="TileMap/Player/CanvasLayer" instance=ExtResource("17_vfisx")]
 visible = false
 
+[node name="Dima" parent="TileMap" instance=ExtResource("2_ih35n")]
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("11_1wphk")
 
@@ -649,9 +676,9 @@ shape = SubResource("RectangleShape2D_s43we")
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("12_inon6")
 date_time = SubResource("Resource_bceud")
-ticks_pr_second = 100
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." node_paths=PackedStringArray("time_system")]
+visible = false
 blend_mode = 2
 script = ExtResource("14_dd38a")
 day_color = Color(1, 1, 1, 1)
@@ -699,6 +726,12 @@ region_rect = Rect2(276, 0, 22, 31)
 z_index = 5
 position = Vector2(-400, -245)
 polygon = PackedVector2Array(319, 319, 347, 319, 347, 330, 319, 330)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(443, 391)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(403, 428)
 
 [connection signal="body_entered" from="smth/StaticBody2D/Area2D" to="smth/StaticBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="smth/StaticBody2D/Area2D" to="smth/StaticBody2D" method="_on_area_2d_body_exited"]

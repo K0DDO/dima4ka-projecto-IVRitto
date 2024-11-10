@@ -13,6 +13,7 @@ func _on_body_entered(body):
 		Global.day = 1
 		Global.season = 1
 		Global.year = 1
+		Global.mobdead = 0
 		Saves.save_inventory($"../../Player/CanvasLayer/inventory".inventory)
 		Saves.save_game(Global.playername)
 		

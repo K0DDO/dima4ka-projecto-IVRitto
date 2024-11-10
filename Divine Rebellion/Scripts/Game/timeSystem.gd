@@ -5,9 +5,7 @@ class_name TimeSystem
 signal update
 
 @export var date_time: DateTime
-@export var ticks_pr_second: int = 6
-@export var npc_scene: PackedScene
-@onready var tilemap = $"../TileMap"
+@export var ticks_pr_second: int = 1000
 
 func _ready():
 	date_time.seconds = Global.second
@@ -19,19 +17,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	date_time.increase_by_sec(delta * ticks_pr_second)
-	emit_signal("update", date_time)
-
-func _on_time_update(current_time: DateTime) -> void:
-	if current_time.hours == 12:
-		spawn_npc()
-
-func spawn_npc():
-	if tilemap and npc_scene:
-		var npc_instance = npc_scene.instantiate()
-		npc_instance.position = Vector2(100, 200)
-		tilemap.add_child(npc_instance)
-		npc_instance.name = "NPC"
-		print("NPC заспавнен в TileMap")
+	update.emit(date_time)
 
 func save_current_time():
 	Global.second = date_time.seconds
@@ -44,5 +30,5 @@ func save_current_time():
 func change_scene(new_scene: String):
 	if new_scene != null:
 		save_current_time()
-		get_tree().change_scene_to_file(new_scene)
-
+		if new_scene:
+			get_tree().change_scene_to_file(new_scene)

@@ -107,6 +107,7 @@ func hurtByPlayer(character):
 			await animation.animation_finished
 			spawn_drop(slime_drop)
 			spawn_effect(EFFECT_DIED)
+			Global.mobdead += 1
 			queue_free()
 
 		var player_position = character.global_position

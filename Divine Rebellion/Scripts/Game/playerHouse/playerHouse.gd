@@ -6,6 +6,9 @@ signal waterChanged
 @onready var tile_map = $TileMap
 @onready var player = $TileMap/Player
 @onready var hot_bar = $TileMap/Player/CanvasLayer/HotBar
+@onready var time_system = $TimeSystem
+
+@export var npc_scene: PackedScene
 
 var can_dig_custom_data = "can_dig"
 var can_plant_seed_custom_data = "can_plant_seed"
@@ -18,7 +21,8 @@ var contain_water_custom_data = "contain_water"
 var ground_layer = 0
 var environment_layer = 2
 var final_seed_level = 3
-
+var spawned = false
+var spawned2 = false
 var carrot_scene = preload("res://Scenes/Game/Collectables/Carrot.tscn")
 
 func _ready():
@@ -38,7 +42,6 @@ func _ready():
 			player.position = Vector2(200, 278)
 		Global.EntryPoint.fCavetF:
 			player.position = Vector2(361, 118)
-
 
 func _input(_event):
 	if Input.is_action_just_pressed("attack") and Global.tool == 3 and Global.tool_equip == true and !player.attack_ip and !player.usingTools_ip and Global.currentMana > 0:
@@ -199,3 +202,16 @@ func _on_inventory_closed():
 
 func _on_inventory_opened():
 	get_tree().paused = true
+
+func _process(delta: float) -> void:
+	if time_system.date_time.hours == 7 and time_system.date_time.minutes == 0 and !spawned:
+		print("spawn")
+		spawn_npc()
+		spawned = true
+
+func spawn_npc():
+	if tile_map and npc_scene:
+		var npc_instance = npc_scene.instantiate()
+		npc_instance.position = Vector2(700, 1200)
+		tile_map.add_child(npc_instance)
+		npc_instance.target = $Marker2D

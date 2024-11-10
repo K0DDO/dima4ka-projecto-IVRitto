@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://33jmqtxuug43"]
+
+[ext_resource type="Texture2D" uid="uid://d0x1u68lyi8ya" path="res://Art/Tech/GUI/GUI.png" id="1_7kqki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20rct"]
+atlas = ExtResource("1_7kqki")
+region = Rect2(559, 63, 27, 9)
+
+[node name="NinePatchRect" type="NinePatchRect"]
+offset_right = 142.0
+offset_bottom = 38.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_20rct")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

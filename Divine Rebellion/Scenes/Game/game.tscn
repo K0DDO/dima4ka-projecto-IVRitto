@@ -2428,7 +2428,6 @@ polygon = PackedVector2Array(1472, 235, 1472, 384, 0, 384, 0, 22, 1473, 22, 1472
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("20_65bw0")
 date_time = SubResource("Resource_vathl")
-ticks_pr_second = 100
 
 [node name="WoodenAxe" parent="." instance=ExtResource("3_5wmn4")]
 position = Vector2(574, 95)

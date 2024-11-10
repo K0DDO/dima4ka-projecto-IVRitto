@@ -149,3 +149,7 @@ var inventory
 var tilemap
 
 var username = ""
+
+var mobdead = 0
+
+var taskv = false

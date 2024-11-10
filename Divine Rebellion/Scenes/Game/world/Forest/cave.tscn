@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://mv1mejym2w81"]
+[gd_scene load_steps=36 format=3 uid="uid://mv1mejym2w81"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Forest/Cave/Cave.gd" id="1_ml6ur"]
 [ext_resource type="TileSet" uid="uid://5166i6nk7cl2" path="res://tiles.tres" id="2_231xt"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://du711f7cxhryg" path="res://Scenes/Game/items/ironOre.tscn" id="16_c1cnj"]
 [ext_resource type="PackedScene" uid="uid://cvbnynpiefh1c" path="res://Scenes/Game/items/stone4.tscn" id="17_a44k8"]
 [ext_resource type="PackedScene" uid="uid://cabcepa85ymut" path="res://Scenes/Game/items/stone.tscn" id="18_osapv"]
+[ext_resource type="PackedScene" uid="uid://c5q04gdqeekyu" path="res://Scenes/Game/GUI/tasks_menu.tscn" id="19_bahfx"]
 [ext_resource type="Script" path="res://Scripts/Game/timeSystem.gd" id="21_2shwy"]
 [ext_resource type="Script" path="res://Scripts/Game/date_time.gd" id="22_ttft7"]
 [ext_resource type="Script" path="res://Scripts/Game/Forest/Cave/fCavetF.gd" id="23_vrden"]
@@ -303,6 +304,14 @@ region_rect = Rect2(127, 243, 14, 7)
 
 [node name="CanvasLayer" parent="TileMap/Player/CanvasLayer" instance=ExtResource("10_q3hhr")]
 
+[node name="Tasks menu" parent="TileMap/Player/CanvasLayer" instance=ExtResource("19_bahfx")]
+visible = false
+offset_left = -30.0
+offset_top = 25.0
+offset_right = -30.0
+offset_bottom = 25.0
+scale = Vector2(0.3, 0.3)
+
 [node name="ColorRect" type="ColorRect" parent="TileMap/Player/CanvasLayer"]
 offset_left = -14.0
 offset_top = -14.0
@@ -344,7 +353,6 @@ polygon = PackedVector2Array(187, 288, 140, 288, 136, 280, 136, 276, 133, 274, 1
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("21_2shwy")
 date_time = SubResource("Resource_2b2xl")
-ticks_pr_second = 100
 
 [node name="ToForest" type="Area2D" parent="."]
 position = Vector2(0, 1)
