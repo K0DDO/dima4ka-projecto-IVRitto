@@ -32,15 +32,4 @@ runs:
     - ${{ inputs.package }}
     - ${{ inputs.projectDir }}
     - ${{ inputs.debugMode }}
-  steps:
-    - name: Choose Export Flag
-      id: export_flag
-      run: |
-        if [ "${{ inputs.debugMode }}" == "true" ]; then
-          echo "export_flag=--export-debug" >> $GITHUB_ENV
-        else
-          echo "export_flag=--export-release" >> $GITHUB_ENV
-    - name: Build Project
-      run: |
-        godot ${{ env.export_flag }} ${{ inputs.preset }}
 
