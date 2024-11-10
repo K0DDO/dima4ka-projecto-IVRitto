@@ -1,0 +1,47 @@
+name: Build and Test Godot Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [windows]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      
+      - name: Build Godot Project
+        id: build
+        uses: manleydev/build-godot-action@v1.4.1
+        with:
+          name: my_game
+          preset: ${{ matrix.platform }}
+          debugMode: "false"
+      
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Build-${{ matrix.platform }}
+          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Run Tests
+        run: |
+          godot --headless --test my_game_tests.gd --path ./project
+
