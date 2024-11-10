@@ -11,7 +11,7 @@ runs:
   using: "composite"
   steps:
     # Use python 3.x release (works cross platform)
-    - name: Set up Python 4.x
+    - name: Set up Python 3.x
       uses: actions/setup-python@v4
       with:
         # Semantic version range syntax or exact version of a Python version
