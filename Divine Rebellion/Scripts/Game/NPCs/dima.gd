@@ -78,7 +78,7 @@ func _input(_event):
 			task.visible = true
 			Global.taskv = true
 			message = 2
-	if Input.is_action_just_pressed("attack") and in_area and message == 2:
+	if Input.is_action_just_pressed("attack") and in_area and Global.taskv:
 		if Global.mobdead >= 5:
 			Global.currentmoney += 250
 			Global.totalwealth += 250

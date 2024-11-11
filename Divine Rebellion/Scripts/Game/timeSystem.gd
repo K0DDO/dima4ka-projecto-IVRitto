@@ -5,7 +5,7 @@ class_name TimeSystem
 signal update
 
 @export var date_time: DateTime
-@export var ticks_pr_second: int = 1000
+@export var ticks_pr_second: int = 100
 
 func _ready():
 	date_time.seconds = Global.second

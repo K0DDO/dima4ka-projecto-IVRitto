@@ -2415,6 +2415,26 @@ position = Vector2(774, 146)
 Log = ExtResource("2_24dvj")
 EFFECT_DIE = ExtResource("18_6jbmv")
 
+[node name="Stump2" parent="TileMap" instance=ExtResource("21_3msbk")]
+position = Vector2(968, 110)
+Log = ExtResource("2_24dvj")
+EFFECT_DIE = ExtResource("18_6jbmv")
+
+[node name="Stump5" parent="TileMap" instance=ExtResource("21_3msbk")]
+position = Vector2(1373, 346)
+Log = ExtResource("2_24dvj")
+EFFECT_DIE = ExtResource("18_6jbmv")
+
+[node name="Stump3" parent="TileMap" instance=ExtResource("21_3msbk")]
+position = Vector2(1033, 304)
+Log = ExtResource("2_24dvj")
+EFFECT_DIE = ExtResource("18_6jbmv")
+
+[node name="Stump4" parent="TileMap" instance=ExtResource("21_3msbk")]
+position = Vector2(1267, 79)
+Log = ExtResource("2_24dvj")
+EFFECT_DIE = ExtResource("18_6jbmv")
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.85
 blend_mode = 1

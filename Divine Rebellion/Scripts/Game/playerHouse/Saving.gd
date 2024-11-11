@@ -4,6 +4,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.has_method("player"):
+		Global.currentMana = Global.maxMana
 		Saves.save_inventory($"../Player/CanvasLayer/inventory".inventory)
 		Global.entry_point = Global.EntryPoint.STAIRS_FIRST_FLOOR
 		animation.play("fade_out")

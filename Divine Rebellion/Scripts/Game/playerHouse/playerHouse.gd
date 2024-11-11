@@ -204,7 +204,7 @@ func _on_inventory_opened():
 	get_tree().paused = true
 
 func _process(delta: float) -> void:
-	if time_system.date_time.hours == 7 and time_system.date_time.minutes == 0 and !spawned:
+	if time_system.date_time.hours == 7 and time_system.date_time.minutes == 10 and !spawned:
 		print("spawn")
 		spawn_npc()
 		spawned = true
