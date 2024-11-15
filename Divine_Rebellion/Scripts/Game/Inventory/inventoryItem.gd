@@ -2,10 +2,10 @@ extends Resource
 
 class_name InventoryItem
 
-@export var name: String = ""
+@export var name: String
 @export var texture: Texture2D
 @export var stackSize: int
-@export var itemType: String = ""
+@export var itemType: String
 
 @export var recipe_items: Array[InventoryItem] = []
 @export var recipe_amounts: Array[int] = []
