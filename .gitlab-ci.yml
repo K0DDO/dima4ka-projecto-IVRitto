@@ -14,8 +14,8 @@ stages:
   - deploy
 
 variables:
-  EXPORT_NAME: Divine Rebellion
-  PROJECT_PATH: Divine Rebellion
+  EXPORT_NAME: test-project
+  PROJECT_PATH: test-project
 
 # Open the editor to import assets in case the cache was empty or outdated
 import-assets:
