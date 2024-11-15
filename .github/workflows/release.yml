@@ -1,4 +1,4 @@
-name: Release
+name: Release 
 on:
   release:
     types: [released]
@@ -23,7 +23,7 @@ jobs:
     needs: [version]
     steps:
       - uses: actions/checkout@v3
-      - run:  echo IMAGE_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+      - run: echo IMAGE_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1.14.1
         with:
@@ -51,3 +51,17 @@ jobs:
             RELEASE_NAME=${{ needs.version.outputs.release_name }}
             GODOT_TEST_ARGS=${{ startsWith( needs.version.outputs.version, '3.' ) && '' || '--headless --quit' }}
             GODOT_PLATFORM=${{ startsWith( needs.version.outputs.version, '3.' ) && 'linux_headless.64' || 'linux.x86_64' }}
+  upload-save:
+    name: Attach Save File to Release
+    needs: [version, build]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Upload Save File
+        run: echo "Creating dummy save file for testing" > save_file_${{ needs.version.outputs.version }}.save
+      - name: Attach Save to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: save_file_${{ needs.version.outputs.version }}.save
+          token: ${{ secrets.GITHUB_TOKEN }}
