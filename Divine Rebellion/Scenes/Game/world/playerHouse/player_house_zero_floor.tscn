@@ -320,7 +320,6 @@ autoplay = "fade_in"
 [node name="TimeSystem" type="Node" parent="."]
 script = ExtResource("13_ii3q6")
 date_time = SubResource("Resource_xdmux")
-ticks_pr_second = 100
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
