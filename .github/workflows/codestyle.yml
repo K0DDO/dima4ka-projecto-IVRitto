@@ -1,0 +1,30 @@
+name: Code Style Check
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint GDScript Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install gdlint
+        run: |
+          pip install gdlint
+
+      - name: Run gdlint on GDScript files
+        run: |
+          gdlint path/to/your/gd/scripts --severity=style
