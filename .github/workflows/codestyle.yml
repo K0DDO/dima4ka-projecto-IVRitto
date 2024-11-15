@@ -21,10 +21,10 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install gdlint
+      - name: Install gdtoolkit
         run: |
-          pip install gdlint
+          pip install gdtoolkit
 
-      - name: Run gdlint on GDScript files
+      - name: Run gdformat (GDScript formatter)
         run: |
-          gdlint Divine_Rebellion/Scripts --severity=style
+          find Divine_Rebellion/Scripts -name "*.gd" | xargs gdformat --check
