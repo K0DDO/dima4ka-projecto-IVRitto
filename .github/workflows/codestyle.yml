@@ -24,7 +24,11 @@ jobs:
       - name: Install gdtoolkit
         run: |
           pip install gdtoolkit
-      
+
+#      - name: Run gdformat (GDScript formatter)
+#        run: |
+#          find Divine_Rebellion/Scripts -name "*.gd" | xargs gdformat
+
       - name: Apply gdformat
         run: |
           find Divine_Rebellion/Scripts -name "*.gd" -print0 | xargs -0 gdformat
