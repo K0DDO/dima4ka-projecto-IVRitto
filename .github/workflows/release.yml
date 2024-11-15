@@ -1,7 +1,7 @@
-name: Release
-on:
-  release:
-    types: [released]
+name: Release 
+on: 
+  push: 
+    branches: [master]
 env:
   IMAGE_NAME: godot-ci
 jobs:
@@ -23,8 +23,13 @@ jobs:
     needs: [version]
     steps:
       - uses: actions/checkout@v3
+<<<<<<< HEAD
       - run:  echo IMAGE_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
       - name: Login to GitHub Container Registry 
+=======
+      - run: echo IMAGE_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+      - name: Login to GitHub Container Registry
+>>>>>>> 4076d6270a285f602ea28ec2a752f412dc7e686e
         uses: docker/login-action@v1.14.1
         with:
           registry: ghcr.io
@@ -51,6 +56,7 @@ jobs:
             RELEASE_NAME=${{ needs.version.outputs.release_name }}
             GODOT_TEST_ARGS=${{ startsWith( needs.version.outputs.version, '3.' ) && '' || '--headless --quit' }}
             GODOT_PLATFORM=${{ startsWith( needs.version.outputs.version, '3.' ) && 'linux_headless.64' || 'linux.x86_64' }}
+<<<<<<< HEAD
   build-mono:
     name: Build Mono Image
     runs-on: ubuntu-20.04
@@ -86,3 +92,5 @@ jobs:
             ZIP_GODOT_PLATFORM=${{ startsWith( needs.version.outputs.version, '3.' ) && 'linux_headless_64' || 'linux_x86_64' }}
             FILENAME_GODOT_PLATFORM=${{ startsWith( needs.version.outputs.version, '3.' ) && 'linux_headless.64' || 'linux.x86_64' }}
             
+=======
+
