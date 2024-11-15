@@ -5,8 +5,8 @@ on: push
 
 env:
   GODOT_VERSION: 4.3
-  EXPORT_NAME: test-project
-  PROJECT_PATH: test-project
+  EXPORT_NAME: Divine Rebellion
+  PROJECT_PATH: Divine Rebellion
 
 jobs:
   export-windows:
@@ -27,8 +27,9 @@ jobs:
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Windows Build
         run: |
-          - EXPORT_DIR="build/windows"
-          - mkdir -v -p $EXPORT_DIR
+          - mkdir -v -p build/windows
+          - EXPORT_DIR="$(readlink -f build)"
+          - cd $PROJECT_PATH
           godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
