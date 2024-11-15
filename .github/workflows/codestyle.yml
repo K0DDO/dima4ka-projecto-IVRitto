@@ -28,5 +28,17 @@ jobs:
       - name: Run gdformat (GDScript formatter)
         run: |
           find Divine_Rebellion/Scripts -name "*.gd" -print0 | xargs -0 gdformat --check
+      
+      - name: Apply gdformat
+        run: |
+          find Divine_Rebellion/Scripts -name "*.gd" -print0 | xargs -0 gdformat
+      
+
+      - name: Check Code Style
+        run: |
+          if ! find Divine_Rebellion/Scripts -name "*.gd" -print0 | xargs -0 gdformat --check; then
+            echo "Code style issues detected. Run 'gdformat' locally to fix them."
+            exit 1
+          fi
 
 
