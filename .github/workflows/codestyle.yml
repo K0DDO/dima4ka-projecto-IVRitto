@@ -27,4 +27,4 @@ jobs:
 
       - name: Run gdlint on GDScript files
         run: |
-          gdlint path/to/your/gd/scripts --severity=style
+          gdlint Divine_Rebellion/Scripts --severity=style
