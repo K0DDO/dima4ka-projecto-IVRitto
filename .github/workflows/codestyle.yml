@@ -27,4 +27,5 @@ jobs:
       
       - name: Run gdformat (GDScript formatter)
         run: |
-          find Divine_Rebellion/Scripts -name "*.gd" | xargs gdformat --check || echo "Some files need reformatting."
+          find Divine_Rebellion/Scripts -name "*.gd" -print0 | xargs -0 gdformat --check
+
