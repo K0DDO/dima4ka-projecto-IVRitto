@@ -1,7 +1,7 @@
 name: Release 
-on:
-  release:
-    types: [released]
+on: 
+  push: 
+    branches: [master]
 env:
   IMAGE_NAME: godot-ci
 jobs:
