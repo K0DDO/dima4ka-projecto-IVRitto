@@ -5,8 +5,8 @@ on: push
 
 env:
   GODOT_VERSION: 4.3
-  EXPORT_NAME: Divine Rebellion
-  PROJECT_PATH: Divine Rebellion
+  EXPORT_NAME: Divine_Rebellion
+  PROJECT_PATH: Divine_Rebellion
 
 jobs:
   export-windows:
